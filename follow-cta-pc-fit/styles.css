@@ -5,15 +5,13 @@
   --gold: #c6932d;
   --lp-width: 430px;
   --cta-width: min(calc(100vw - 16px), 390px);
-  --desktop-design-ratio: 0.7058333333;
-  --desktop-layout-width: min(100vw, 1320px, calc(100vh / var(--desktop-design-ratio)));
-  --desktop-layout-height: calc(var(--desktop-layout-width) * var(--desktop-design-ratio));
-  --desktop-phone-width: calc(var(--desktop-layout-width) * 0.45456);
-  --desktop-gutter-width: calc(var(--desktop-layout-width) * 0.0308333333);
-  --desktop-side-content-width: calc(
-    (var(--desktop-layout-width) - var(--desktop-phone-width) - (var(--desktop-gutter-width) * 2)) / 2
+  --desktop-phone-width: clamp(430px, 30vw, 600px);
+  --desktop-gutter-width: clamp(18px, 2.1vw, 42px);
+  --desktop-left-panel-width: min(calc(100vh * 0.4628), 26vw);
+  --desktop-side-content-width: min(calc(100vh * 0.4191), 23.5vw);
+  --desktop-layout-width: calc(
+    var(--desktop-left-panel-width) + var(--desktop-gutter-width) + var(--desktop-phone-width) + var(--desktop-gutter-width) + var(--desktop-side-content-width)
   );
-  --desktop-left-panel-width: calc(var(--desktop-side-content-width) + var(--desktop-gutter-width));
   --desktop-gold-line: rgba(199, 158, 82, 0.82);
 }
 
@@ -959,7 +957,7 @@ a {
   .desktop-right-panel-image {
     display: block;
     width: 100%;
-    height: calc(var(--desktop-layout-height) + 2px);
+    height: 100vh;
     object-fit: fill;
     object-position: center top;
     transform: translateY(-1px);
@@ -967,9 +965,9 @@ a {
   }
 
   .desktop-left-panel-image {
-    width: calc(100% + 2px);
-    height: calc(var(--desktop-layout-height) + 2px);
-    transform: translate(-2px, -1px);
+    width: 100%;
+    height: 100vh;
+    transform: translateY(-1px);
     clip-path: inset(0 0 24px 0);
   }
 
@@ -1106,6 +1104,7 @@ a {
     position: relative;
     z-index: 5;
     width: var(--desktop-phone-width);
+    max-width: none;
     height: 100vh;
     margin-top: 0;
     padding: 0;
