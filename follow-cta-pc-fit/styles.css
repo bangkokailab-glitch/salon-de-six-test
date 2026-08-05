@@ -12,6 +12,9 @@
   --desktop-layout-width: calc(
     var(--desktop-left-panel-width) + var(--desktop-gutter-width) + var(--desktop-phone-width) + var(--desktop-gutter-width) + var(--desktop-side-content-width)
   );
+  --desktop-left-outside-width: max(0px, calc((100vw - var(--desktop-layout-width)) / 2));
+  --desktop-left-rail-width: calc((100vw - var(--desktop-phone-width)) / 2);
+  --desktop-left-white-gutter-width: max(8px, calc(var(--desktop-left-rail-width) - var(--desktop-left-outside-width) - var(--desktop-left-panel-width)));
   --desktop-gold-line: rgba(199, 158, 82, 0.82);
 }
 
@@ -896,7 +899,7 @@ a {
 
   body {
     min-height: 100vh;
-    background: #082b6c;
+    background: #fff;
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -913,16 +916,12 @@ a {
   }
 
   body::before {
-    left: -2px;
-    width: max(4px, calc((100vw - var(--desktop-layout-width)) / 2 + 4px));
-    background:
-      linear-gradient(90deg, rgba(5, 28, 77, 0.98), rgba(6, 37, 96, 0.98)),
-      #062560;
+    content: none;
   }
 
   body::after {
-    right: -2px;
-    width: max(4px, calc((100vw - var(--desktop-layout-width)) / 2 + 4px));
+    right: 0;
+    width: max(8px, calc((100vw - var(--desktop-layout-width)) / 2 + 8px));
     background: #082b6c;
   }
 
@@ -938,25 +937,25 @@ a {
   }
 
   .desktop-brand-panel {
-    left: calc((100vw - var(--desktop-layout-width)) / 2 - 1px);
-    width: calc(var(--desktop-left-panel-width) + 2px);
+    left: 0;
+    width: var(--desktop-left-rail-width);
     background:
-      linear-gradient(90deg, rgba(5, 28, 77, 0.98), rgba(4, 31, 87, 0.98)),
-      #05245f;
+      url("public/assets/desktop-left-outside-bg-v3.png") left top / 100% 100% no-repeat,
+      #051b4c;
     border-right: 0;
     overflow: hidden;
   }
 
   .desktop-brand-panel::before {
-    content: "";
+    content: none;
     position: absolute;
-    left: 0;
-    right: calc(var(--desktop-gutter-width) + 8px);
-    bottom: 0;
-    z-index: 2;
-    height: 10%;
+    left: max(0px, calc(var(--desktop-left-outside-width) - 24px));
+    top: 0;
+    z-index: 3;
+    width: 48px;
+    height: 100%;
     background:
-      linear-gradient(180deg, rgba(2, 17, 55, 0), rgba(2, 17, 55, 0.12) 72%, rgba(2, 17, 55, 0.22));
+      linear-gradient(90deg, rgba(5, 24, 64, 0), rgba(5, 24, 64, 0.38) 50%, rgba(5, 24, 64, 0));
     pointer-events: none;
   }
 
@@ -966,7 +965,7 @@ a {
     top: 0;
     right: 0;
     z-index: 2;
-    width: calc(var(--desktop-gutter-width) + 8px);
+    width: var(--desktop-left-white-gutter-width);
     height: 100%;
     background: #fff;
     pointer-events: none;
@@ -984,8 +983,9 @@ a {
   }
 
   .desktop-left-panel-image {
-    width: 100%;
+    width: var(--desktop-left-panel-width);
     height: 100vh;
+    margin-left: var(--desktop-left-outside-width);
     transform: translateY(-1px);
     clip-path: inset(0 0 10px 0);
   }
@@ -1131,7 +1131,7 @@ a {
     overscroll-behavior: contain;
     border: 0;
     border-radius: 0;
-    background: transparent;
+    background: #fff;
     box-shadow: none;
     scrollbar-width: none;
   }
@@ -1139,6 +1139,7 @@ a {
   .lp-canvas {
     width: 100%;
     margin: 0;
+    background: #fff;
   }
 
   .lp-canvas::after {
