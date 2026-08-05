@@ -4,7 +4,7 @@
   --navy: #06183a;
   --gold: #c6932d;
   --lp-width: 430px;
-  --cta-width: min(100vw, 390px);
+  --cta-width: min(calc(100vw - 16px), 390px);
   --desktop-layout-width: min(100vw, 1200px);
   --desktop-layout-height: min(100vh, calc(var(--desktop-layout-width) * 0.7058333333));
   --desktop-phone-width: calc(var(--desktop-layout-width) * 0.3466666667);
@@ -765,30 +765,39 @@ a {
 
 .floating-action {
   position: fixed;
-  left: calc((100vw - var(--cta-width)) / 2);
+  left: 50%;
   right: auto;
   bottom: max(14px, env(safe-area-inset-bottom));
   z-index: 20;
   width: var(--cta-width);
   max-width: none;
+  --cta-y: 22px;
+  --cta-scale: 0.98;
+  --cta-scale-active: 0.98;
   text-decoration: none;
   line-height: 0;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(22px) scale(0.98);
+  transform: translateX(-50%) translateY(var(--cta-y)) scale(var(--cta-scale));
+  transform-origin: center bottom;
   transition:
     opacity 220ms ease,
     transform 360ms cubic-bezier(0.2, 1.35, 0.32, 1);
 }
 
 .floating-action.is-visible {
+  --cta-y: 0px;
+  --cta-scale: 1;
+  --cta-scale-active: 1.018;
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0) scale(1);
+  animation: ctaButtonPulse 2.05s ease-in-out infinite;
 }
 
 .floating-action.is-scrolling {
-  transform: translateY(-6px) scale(1.025);
+  --cta-y: -6px;
+  --cta-scale: 1.008;
+  --cta-scale-active: 1.018;
 }
 
 @keyframes ctaImageMotion {
@@ -796,12 +805,20 @@ a {
   100% {
     filter:
       drop-shadow(0 0 0 rgba(41, 223, 93, 0));
-    transform: translateY(0) scale(1);
   }
   50% {
     filter:
       drop-shadow(0 0 8px rgba(41, 223, 93, 0.22));
-    transform: translateY(-4px) scale(1.035);
+  }
+}
+
+@keyframes ctaButtonPulse {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(var(--cta-y)) scale(var(--cta-scale));
+  }
+  50% {
+    transform: translateX(-50%) translateY(calc(var(--cta-y) - 4px)) scale(var(--cta-scale-active));
   }
 }
 
@@ -1091,22 +1108,22 @@ a {
 
 @media (max-width: 374px) {
   .floating-action {
-    --cta-width: 100vw;
+    --cta-width: calc(100vw - 14px);
   }
 }
 
 @supports (width: 100dvw) {
   :root {
-    --cta-width: min(100dvw, 390px);
+    --cta-width: min(calc(100dvw - 16px), 390px);
   }
 
   .floating-action {
-    left: calc((100dvw - var(--cta-width)) / 2);
+    left: 50%;
   }
 
   @media (max-width: 374px) {
     .floating-action {
-      --cta-width: 100dvw;
+      --cta-width: calc(100dvw - 14px);
     }
   }
 }
