@@ -6,9 +6,9 @@
   --lp-width: 430px;
   --cta-width: min(calc(100vw - 16px), 390px);
   --desktop-design-ratio: 0.7058333333;
-  --desktop-layout-width: min(100vw, 1200px, calc(100vh / var(--desktop-design-ratio)));
+  --desktop-layout-width: min(100vw, 1320px, calc(100vh / var(--desktop-design-ratio)));
   --desktop-layout-height: calc(var(--desktop-layout-width) * var(--desktop-design-ratio));
-  --desktop-phone-width: calc(var(--desktop-layout-width) * 0.3466666667);
+  --desktop-phone-width: calc(var(--desktop-layout-width) * 0.3788);
   --desktop-gutter-width: calc(var(--desktop-layout-width) * 0.0308333333);
   --desktop-side-content-width: calc(
     (var(--desktop-layout-width) - var(--desktop-phone-width) - (var(--desktop-gutter-width) * 2)) / 2
@@ -908,7 +908,7 @@ a {
     content: "";
     position: fixed;
     top: 0;
-    z-index: 0;
+    z-index: 1;
     width: max(0px, calc((100vw - var(--desktop-layout-width)) / 2));
     height: 100vh;
     pointer-events: none;
