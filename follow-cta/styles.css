@@ -1,0 +1,1109 @@
+:root {
+  color-scheme: light;
+  --page-bg: #eaf6fb;
+  --navy: #06183a;
+  --gold: #c6932d;
+  --lp-width: 430px;
+  --cta-width: min(calc(100vw - 120px), 320px);
+  --desktop-layout-width: min(100vw, 1200px);
+  --desktop-layout-height: min(100vh, calc(var(--desktop-layout-width) * 0.7058333333));
+  --desktop-phone-width: calc(var(--desktop-layout-width) * 0.3466666667);
+  --desktop-gutter-width: calc(var(--desktop-layout-width) * 0.0308333333);
+  --desktop-side-content-width: calc(
+    (var(--desktop-layout-width) - var(--desktop-phone-width) - (var(--desktop-gutter-width) * 2)) / 2
+  );
+  --desktop-left-panel-width: calc(var(--desktop-side-content-width) + var(--desktop-gutter-width));
+  --desktop-gold-line: rgba(199, 158, 82, 0.82);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  min-width: 320px;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+  color: var(--navy);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0)),
+    var(--page-bg);
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    "YuGothic",
+    system-ui,
+    sans-serif;
+  padding-bottom: calc(104px + env(safe-area-inset-bottom));
+}
+
+a {
+  color: inherit;
+}
+
+.desktop-brand-panel,
+.desktop-action-panel {
+  display: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.section-anchor {
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+  scroll-margin-top: 18px;
+}
+
+.section-anchor-top {
+  top: 0;
+}
+
+.section-anchor-reason {
+  top: 15.8157%;
+}
+
+.section-anchor-before-after {
+  top: 56.2357%;
+}
+
+.section-anchor-price {
+  top: 70.7119%;
+}
+
+.section-anchor-faq {
+  top: 85.3152%;
+}
+
+.section-anchor-owner {
+  top: 76.7591%;
+}
+
+.section-anchor-salon {
+  top: 93.1421%;
+}
+
+.section-anchor-google-map {
+  top: 93.1421%;
+}
+
+.section-anchor-cta {
+  top: 7.9774%;
+}
+
+.lp-shell {
+  width: 100%;
+  max-width: var(--lp-width);
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: none;
+}
+
+.lp-canvas {
+  position: relative;
+  width: 100%;
+}
+
+.lp-canvas::after {
+  content: none;
+}
+
+.lp-stage {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+}
+
+.lp-stage-main::before {
+  content: none;
+  position: absolute;
+  left: 0;
+  top: 80.3%;
+  z-index: 2;
+  width: 2.4%;
+  height: 19.7%;
+  background: linear-gradient(180deg, #eef9ff, #f7fcff 42%, #eaf7ff);
+  pointer-events: none;
+}
+
+.lp-stage-extra::before {
+  content: none;
+  position: absolute;
+  left: 0;
+  top: 28.7%;
+  z-index: 2;
+  width: 2.4%;
+  height: 66.8%;
+  background: linear-gradient(180deg, #eef9ff, #f8fcff 46%, #eaf8ff);
+  pointer-events: none;
+}
+
+.lp-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: none;
+  transform-origin: center top;
+}
+
+.section-clean-mask {
+  position: absolute;
+  z-index: 4;
+  background:
+    radial-gradient(circle at 10% 16%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 32%),
+    linear-gradient(180deg, #f3fbff 0%, #eaf8ff 56%, #f8fdff 100%);
+  pointer-events: none;
+}
+
+.option-menu-clean-mask {
+  left: 2.2%;
+  top: 45.48%;
+  width: 95.6%;
+  height: 3.78%;
+}
+
+.salon-map-clean-mask {
+  left: 3.4%;
+  top: 91.55%;
+  z-index: 3;
+  width: 93.2%;
+  height: 8.05%;
+  border-radius: 12px;
+}
+
+.header-phone-action {
+  position: absolute;
+  left: 52.7%;
+  top: 0.054%;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 43.65%;
+  height: 0.756%;
+  padding: 0;
+  overflow: clip;
+  border-radius: 10px;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: none;
+  animation: none;
+  contain: paint;
+  clip-path: inset(1px round 9px);
+  isolation: isolate;
+}
+
+.header-phone-line {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  min-width: 0;
+  line-height: 1;
+}
+
+.header-phone-icon {
+  flex: 0 0 auto;
+  width: clamp(10px, 2.8vw, 13px);
+  height: clamp(10px, 2.8vw, 13px);
+  fill: #fff;
+  filter: drop-shadow(0 1px 1px rgba(0, 20, 69, 0.75));
+}
+
+.header-phone-main,
+.header-phone-hours {
+  position: relative;
+  z-index: 1;
+  display: block;
+  color: #fff;
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    "YuGothic",
+    system-ui,
+    sans-serif;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 20, 69, 0.82);
+  white-space: nowrap;
+}
+
+.header-phone-main {
+  width: auto;
+  font-size: clamp(9px, 2.35vw, 11px);
+}
+
+.header-phone-hours {
+  width: 100%;
+  font-size: clamp(7.5px, 2.2vw, 10px);
+}
+
+.header-phone-action::before {
+  content: none;
+}
+
+.header-phone-action::after {
+  content: none;
+}
+
+.header-phone-action > span {
+  opacity: 0;
+}
+
+.first-view-action {
+  position: absolute;
+  left: 3.35%;
+  top: 7.977%;
+  width: 93.3%;
+  height: 0.878%;
+  z-index: 3;
+  display: none;
+  overflow: hidden;
+}
+
+.first-view-action img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  opacity: 1;
+}
+
+.option-menu-card {
+  position: absolute;
+  left: 4.2%;
+  top: 45.88%;
+  z-index: 5;
+  width: 91.6%;
+  height: 3.18%;
+  overflow: hidden;
+  border: 2px solid #082957;
+  border-radius: 9px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(246, 251, 255, 0.98)),
+    #fff;
+  box-shadow:
+    0 2px 9px rgba(0, 28, 71, 0.16),
+    inset 0 0 0 2px rgba(207, 175, 91, 0.75);
+  color: #071b3d;
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    "YuGothic",
+    system-ui,
+    sans-serif;
+}
+
+.option-menu-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 31px;
+  color: #fff;
+  background:
+    linear-gradient(180deg, #07265a, #031945),
+    #031945;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+}
+
+.option-menu-note {
+  margin: 0;
+  padding: 6px 12px 5px;
+  border-bottom: 1px solid rgba(155, 185, 219, 0.76);
+  color: #17345f;
+  font-size: 10.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.option-menu-list {
+  display: grid;
+}
+
+.option-menu-row {
+  display: grid;
+  grid-template-columns: 50px 1fr 132px;
+  align-items: center;
+  min-height: 39px;
+  border-bottom: 1px solid rgba(155, 185, 219, 0.72);
+}
+
+.option-menu-row:last-child {
+  border-bottom: 0;
+}
+
+.option-menu-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border-right: 1px solid rgba(155, 185, 219, 0.72);
+}
+
+.option-menu-icon svg {
+  display: block;
+  width: 25px;
+  height: 25px;
+  fill: #0a3470;
+}
+
+.option-menu-name {
+  padding: 0 12px;
+  border-right: 1px solid rgba(155, 185, 219, 0.72);
+  color: #061c42;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.05;
+}
+
+.option-menu-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 3px;
+  color: #06265c;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.option-menu-price span {
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.faq-accordion {
+  position: absolute;
+  left: 4.2%;
+  top: 86.9192%;
+  z-index: 5;
+  width: 91.6%;
+  height: auto;
+  max-height: none;
+  padding: 2px 2px 7px;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(180deg, #f2fbff, #e8f7ff);
+  box-shadow: none;
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    "YuGothic",
+    system-ui,
+    sans-serif;
+  scrollbar-width: none;
+}
+
+.embedded-map-frame {
+  position: absolute;
+  left: 6.35%;
+  top: 98.0968%;
+  z-index: 5;
+  display: block;
+  width: 87.3%;
+  height: 1.258%;
+  border: 0;
+  border-radius: 7px;
+  background: #dcefff;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.86),
+    0 2px 8px rgba(0, 24, 62, 0.15);
+}
+
+.faq-accordion::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.faq-accordion::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.faq-accordion::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(7, 39, 88, 0.45);
+}
+
+.faq-accordion details {
+  margin: 0 0 9px;
+  overflow: hidden;
+  border: 1px solid rgba(205, 220, 236, 0.94);
+  border-radius: 9px;
+  background:
+    linear-gradient(180deg, #fff, #f9fdff),
+    #fff;
+  box-shadow:
+    0 3px 9px rgba(15, 57, 107, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.76);
+}
+
+.faq-accordion summary {
+  display: grid;
+  grid-template-columns: 49px 39px minmax(0, 1fr) 34px;
+  gap: 0;
+  align-items: center;
+  min-height: 67px;
+  padding: 0 9px 0 8px;
+  color: #071b3d;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.2;
+  list-style: none;
+  cursor: pointer;
+}
+
+.faq-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-row-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 50px;
+  border-right: 1px dashed rgba(151, 170, 194, 0.7);
+}
+
+.faq-row-icon::before {
+  content: "?";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 2px solid #1672bc;
+  border-radius: 50%;
+  color: #1672bc;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.faq-row-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  height: 50px;
+  color: #bf8624;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-size: 25px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.faq-question {
+  min-width: 0;
+  padding: 0 7px 0 8px;
+}
+
+.faq-accordion summary::after {
+  content: "+";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  justify-self: end;
+  border: 1px solid rgba(198, 146, 43, 0.78);
+  border-radius: 50%;
+  color: #bd8623;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.faq-accordion details[open] summary::after {
+  content: "-";
+}
+
+.faq-answer {
+  margin: -1px 8px 10px 65px;
+  padding: 10px 12px 11px;
+  border: 1px solid rgba(197, 217, 237, 0.86);
+  border-radius: 7px;
+  background: linear-gradient(180deg, rgba(250, 253, 255, 0.98), rgba(241, 248, 254, 0.98));
+}
+
+.faq-accordion p {
+  margin: 0;
+  padding: 0;
+  color: #243a5f;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.52;
+}
+
+.faq-accordion .faq-answer-line {
+  font-weight: 800;
+}
+
+.faq-accordion .faq-note {
+  margin-top: 6px;
+  color: #405477;
+  font-size: 10.2px;
+  line-height: 1.45;
+}
+
+.salon-map-card {
+  position: absolute;
+  left: 7.3%;
+  top: 91.9%;
+  z-index: 4;
+  display: grid;
+  grid-template-rows: 0.68fr 0.95fr 0.76fr 0.76fr 3.25fr;
+  gap: 2px;
+  width: 85.4%;
+  height: 7.55%;
+  padding: 4px;
+  overflow: hidden;
+  border: 2px solid rgba(211, 179, 103, 0.92);
+  border-radius: 10px;
+  background:
+    linear-gradient(180deg, rgba(5, 31, 74, 0.98), rgba(3, 22, 56, 0.98)),
+    #031c46;
+  box-shadow: 0 3px 12px rgba(0, 17, 48, 0.25);
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    "YuGothic",
+    system-ui,
+    sans-serif;
+}
+
+.salon-info-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  border: 1px solid rgba(211, 179, 103, 0.72);
+  border-radius: 6px;
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgba(8, 45, 95, 0.98), rgba(3, 28, 70, 0.98)),
+    #031c46;
+  font-size: clamp(8px, 2.2vw, 10.5px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 14, 42, 0.82);
+}
+
+.salon-info-row {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  align-items: center;
+  min-width: 0;
+  padding: 0 10px;
+  border: 1px solid rgba(211, 179, 103, 0.72);
+  border-radius: 6px;
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgba(8, 45, 95, 0.95), rgba(3, 28, 70, 0.95)),
+    #031c46;
+  text-decoration: none;
+}
+
+.salon-info-label {
+  color: #e6be5d;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-size: clamp(8px, 2.2vw, 10.5px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 14, 42, 0.85);
+  white-space: nowrap;
+}
+
+.salon-info-value {
+  min-width: 0;
+  color: #fff;
+  font-size: clamp(8px, 2.2vw, 10.5px);
+  font-weight: 800;
+  line-height: 1.14;
+  letter-spacing: 0;
+  text-align: left;
+  text-shadow: 0 1px 2px rgba(0, 14, 42, 0.82);
+}
+
+.salon-info-address .salon-info-value {
+  font-size: clamp(8px, 2.2vw, 10.5px);
+}
+
+.salon-info-phone .salon-info-value {
+  font-size: clamp(8px, 2.2vw, 10.5px);
+  letter-spacing: 0;
+}
+
+.salon-map-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 8px;
+  background: #dcefff;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.82),
+    0 2px 8px rgba(0, 24, 62, 0.15);
+}
+
+.action-button {
+  position: relative;
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: none;
+  line-height: 0;
+  isolation: isolate;
+  contain: paint;
+}
+
+.first-view-action.action-button {
+  display: none;
+  position: absolute;
+}
+
+.action-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    105deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.24) 42%,
+    rgba(255, 255, 255, 0.86) 50%,
+    rgba(255, 255, 255, 0.22) 58%,
+    rgba(255, 255, 255, 0)
+  );
+  -webkit-mask-image: url("./public/assets/fv-action-button-sticky.png");
+  mask-image: url("./public/assets/fv-action-button-sticky.png");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  background-size: 260% 100%;
+  background-position: 170% 0;
+  opacity: 0;
+  pointer-events: none;
+  animation: ctaShine 2.05s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+.action-button img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  backface-visibility: hidden;
+  transform-origin: center center;
+  filter: none;
+  animation: ctaImageMotion 2.05s ease-in-out infinite;
+  will-change: filter, transform;
+}
+
+.first-view-action img {
+  height: 100%;
+  object-fit: fill;
+}
+
+.header-phone-action:focus-visible,
+.first-view-action:focus-visible,
+.floating-action:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+  box-shadow: 0 0 0 7px rgba(0, 139, 54, 0.48);
+}
+
+.floating-action {
+  position: fixed;
+  left: 50%;
+  bottom: max(14px, env(safe-area-inset-bottom));
+  z-index: 20;
+  width: var(--cta-width);
+  text-decoration: none;
+  line-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 22px) scale(0.98);
+  transition:
+    opacity 220ms ease,
+    transform 360ms cubic-bezier(0.2, 1.35, 0.32, 1);
+}
+
+.floating-action.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0) scale(1);
+}
+
+.floating-action.is-scrolling {
+  transform: translate(-50%, -6px) scale(1.025);
+}
+
+@keyframes ctaImageMotion {
+  0%,
+  100% {
+    filter:
+      drop-shadow(0 0 0 rgba(41, 223, 93, 0));
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 8px rgba(41, 223, 93, 0.22));
+    transform: translateY(-4px) scale(1.035);
+  }
+}
+
+@keyframes ctaShine {
+  0% {
+    background-position: 170% 0;
+    opacity: 0;
+  }
+  16% {
+    opacity: 0.78;
+  }
+  42%,
+  100% {
+    background-position: -70% 0;
+    opacity: 0;
+  }
+}
+
+@keyframes phoneButtonPulse {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.08);
+  }
+}
+
+
+@media (min-width: 431px) {
+  body {
+    padding-top: 24px;
+  }
+
+  .lp-shell {
+    border-radius: 0;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 1039px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+  }
+
+  .lp-shell,
+  .lp-canvas,
+  .lp-stage {
+    max-width: 100%;
+    overflow-x: hidden;
+    touch-action: pan-y;
+  }
+}
+
+@media (max-width: 430px) {
+  .lp-shell {
+    width: 100vw;
+    max-width: 100vw;
+  }
+}
+
+@media (min-width: 1040px) {
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    min-height: 100vh;
+    background: #fff;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .desktop-brand-panel,
+  .desktop-action-panel {
+    position: fixed;
+    top: calc((100vh - var(--desktop-layout-height)) / 2);
+    bottom: auto;
+    z-index: 10;
+    display: block;
+    height: var(--desktop-layout-height);
+    max-height: none;
+  }
+
+  .desktop-brand-panel {
+    left: calc((100vw - var(--desktop-layout-width)) / 2);
+    width: var(--desktop-left-panel-width);
+    background: #fff;
+    border-right: 0;
+    overflow: hidden;
+  }
+
+  .desktop-brand-panel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    width: calc(var(--desktop-gutter-width) + 8px);
+    height: 100%;
+    background: #fff;
+    pointer-events: none;
+  }
+
+  .desktop-left-panel-image,
+  .desktop-right-panel-image {
+    display: block;
+    width: 100%;
+    height: calc(100% + 2px);
+    object-fit: cover;
+    object-position: center top;
+    transform: translateY(-1px);
+  }
+
+  .desktop-action-panel {
+    right: calc((100vw - var(--desktop-layout-width)) / 2);
+    width: var(--desktop-side-content-width);
+    overflow: hidden;
+    padding-right: 0;
+    background: #fff;
+    border-left: 0;
+    scrollbar-width: none;
+  }
+
+  .desktop-action-panel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 8px;
+    height: 100%;
+    background: #fff;
+    pointer-events: none;
+  }
+
+  .desktop-action-panel::-webkit-scrollbar {
+    display: none;
+    width: 0;
+  }
+
+  .desktop-nav {
+    position: absolute;
+    left: 10.7%;
+    top: 13.85%;
+    z-index: 2;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 1.85%;
+    width: 78.6%;
+    height: 34%;
+    margin: 0;
+    border-bottom: 0;
+  }
+
+  .desktop-nav a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    border-radius: 0;
+    color: transparent;
+    background: transparent;
+    box-shadow: none;
+    font-size: 0;
+    line-height: 1.1;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    opacity: 0;
+  }
+
+  .desktop-nav a:hover,
+  .desktop-nav a:focus-visible {
+    opacity: 0;
+    background: transparent;
+    outline: 0;
+    outline-offset: 0;
+  }
+
+  .desktop-message {
+    display: none;
+  }
+
+  .desktop-shop-info {
+    display: grid;
+    gap: clamp(10px, 1.8vh, 16px);
+    width: min(82%, 310px);
+    margin: clamp(22px, 3vh, 34px) auto 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    color: #fff;
+    background: transparent;
+    box-shadow: none;
+    font-style: normal;
+    text-align: center;
+  }
+
+  .desktop-shop-info h2 {
+    margin: 0 0 6px;
+    color: #d6bc7d;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: clamp(16px, 1.2vw, 21px);
+    font-weight: 700;
+  }
+
+  .desktop-shop-info p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.92);
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: clamp(13px, 1.05vw, 16px);
+    font-weight: 600;
+    line-height: 1.42;
+  }
+
+  .desktop-shop-info a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .desktop-shop-info.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .desktop-copyright {
+    display: none;
+  }
+
+  .lp-shell {
+    width: var(--desktop-phone-width);
+    height: var(--desktop-layout-height);
+    margin-top: calc((100vh - var(--desktop-layout-height)) / 2);
+    padding: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    scrollbar-width: none;
+  }
+
+  .lp-canvas {
+    width: 100%;
+    margin: 0;
+  }
+
+  .lp-canvas::after {
+    content: "";
+    display: block;
+    height: calc(120px + env(safe-area-inset-bottom));
+  }
+
+  .lp-shell::-webkit-scrollbar {
+    display: none;
+    width: 0;
+  }
+
+  .lp-shell::-webkit-scrollbar-track {
+    background: rgba(5, 30, 67, 0.08);
+  }
+
+  .lp-shell::-webkit-scrollbar-thumb {
+    background: rgba(3, 39, 86, 0.32);
+    border-radius: 999px;
+  }
+}
+
+@media (max-width: 374px) {
+  .floating-action {
+    width: min(calc(100vw - 120px), 320px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
