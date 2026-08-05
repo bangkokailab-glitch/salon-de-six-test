@@ -12,9 +12,8 @@
   --desktop-layout-width: calc(
     var(--desktop-left-panel-width) + var(--desktop-gutter-width) + var(--desktop-phone-width) + var(--desktop-gutter-width) + var(--desktop-side-content-width)
   );
-  --desktop-left-outside-width: max(0px, calc((100vw - var(--desktop-layout-width)) / 2));
   --desktop-left-rail-width: calc((100vw - var(--desktop-phone-width)) / 2);
-  --desktop-left-white-gutter-width: max(8px, calc(var(--desktop-left-rail-width) - var(--desktop-left-outside-width) - var(--desktop-left-panel-width)));
+  --desktop-left-white-gutter-width: max(8px, calc(var(--desktop-left-rail-width) - var(--desktop-left-panel-width)));
   --desktop-gold-line: rgba(199, 158, 82, 0.82);
 }
 
@@ -939,9 +938,7 @@ a {
   .desktop-brand-panel {
     left: 0;
     width: var(--desktop-left-rail-width);
-    background:
-      url("public/assets/desktop-left-outside-bg-v3.png") left top / 100% 100% no-repeat,
-      #051b4c;
+    background: #fff;
     border-right: 0;
     overflow: hidden;
   }
@@ -949,7 +946,7 @@ a {
   .desktop-brand-panel::before {
     content: none;
     position: absolute;
-    left: max(0px, calc(var(--desktop-left-outside-width) - 24px));
+    left: 0;
     top: 0;
     z-index: 3;
     width: 48px;
@@ -985,7 +982,7 @@ a {
   .desktop-left-panel-image {
     width: var(--desktop-left-panel-width);
     height: 100vh;
-    margin-left: var(--desktop-left-outside-width);
+    margin-left: 0;
     transform: translateY(-1px);
     clip-path: inset(0 0 10px 0);
   }
