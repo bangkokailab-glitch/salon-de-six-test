@@ -7,8 +7,8 @@
   --cta-width: min(calc(100vw - 16px), 390px);
   --desktop-phone-width: clamp(430px, 30vw, 600px);
   --desktop-gutter-width: clamp(18px, 2.1vw, 42px);
-  --desktop-left-panel-width: min(calc(100vh * 0.4628), 26vw);
-  --desktop-side-content-width: min(calc(100vh * 0.4191), 23.5vw);
+  --desktop-left-panel-width: calc(100vh * 0.4628);
+  --desktop-side-content-width: calc(100vh * 0.4191);
   --desktop-layout-width: calc(
     var(--desktop-left-panel-width) + var(--desktop-gutter-width) + var(--desktop-phone-width) + var(--desktop-gutter-width) + var(--desktop-side-content-width)
   );
@@ -896,7 +896,7 @@ a {
 
   body {
     min-height: 100vh;
-    background: #fff;
+    background: #082b6c;
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -913,12 +913,16 @@ a {
   }
 
   body::before {
-    left: 0;
-    background: url("./public/assets/desktop-left-outside-bg.png") right top / 100% 100% no-repeat;
+    left: -2px;
+    width: max(4px, calc((100vw - var(--desktop-layout-width)) / 2 + 4px));
+    background:
+      linear-gradient(90deg, rgba(5, 28, 77, 0.98), rgba(6, 37, 96, 0.98)),
+      #062560;
   }
 
   body::after {
-    right: 0;
+    right: -2px;
+    width: max(4px, calc((100vw - var(--desktop-layout-width)) / 2 + 4px));
     background: #082b6c;
   }
 
@@ -934,11 +938,26 @@ a {
   }
 
   .desktop-brand-panel {
-    left: calc((100vw - var(--desktop-layout-width)) / 2);
-    width: var(--desktop-left-panel-width);
-    background: url("./public/assets/desktop-left-outside-bg.png") left top / 100% 100% no-repeat;
+    left: calc((100vw - var(--desktop-layout-width)) / 2 - 1px);
+    width: calc(var(--desktop-left-panel-width) + 2px);
+    background:
+      linear-gradient(90deg, rgba(5, 28, 77, 0.98), rgba(4, 31, 87, 0.98)),
+      #05245f;
     border-right: 0;
     overflow: hidden;
+  }
+
+  .desktop-brand-panel::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: calc(var(--desktop-gutter-width) + 8px);
+    bottom: 0;
+    z-index: 2;
+    height: 10%;
+    background:
+      linear-gradient(180deg, rgba(2, 17, 55, 0), rgba(2, 17, 55, 0.12) 72%, rgba(2, 17, 55, 0.22));
+    pointer-events: none;
   }
 
   .desktop-brand-panel::after {
@@ -961,19 +980,19 @@ a {
     object-fit: fill;
     object-position: center top;
     transform: translateY(-1px);
-    clip-path: inset(0 0 4px 0);
+    clip-path: inset(0 0 3px 0);
   }
 
   .desktop-left-panel-image {
     width: 100%;
     height: 100vh;
     transform: translateY(-1px);
-    clip-path: inset(0 0 24px 0);
+    clip-path: inset(0 0 10px 0);
   }
 
   .desktop-action-panel {
-    right: calc((100vw - var(--desktop-layout-width)) / 2);
-    width: var(--desktop-side-content-width);
+    right: calc((100vw - var(--desktop-layout-width)) / 2 - 1px);
+    width: calc(var(--desktop-side-content-width) + 2px);
     overflow: hidden;
     padding-right: 0;
     background: #082b6c;
