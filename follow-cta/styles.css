@@ -25,6 +25,9 @@ html {
   width: 100%;
   overflow-x: hidden;
   overscroll-behavior-x: none;
+  touch-action: pan-y;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -44,6 +47,7 @@ body {
     system-ui,
     sans-serif;
   padding-bottom: calc(104px + env(safe-area-inset-bottom));
+  touch-action: pan-y;
 }
 
 a {
@@ -767,7 +771,7 @@ a {
   position: fixed;
   left: 50%;
   right: auto;
-  bottom: max(14px, env(safe-area-inset-bottom));
+  bottom: max(0px, calc(env(safe-area-inset-bottom) - 18px));
   z-index: 20;
   width: var(--cta-width);
   max-width: none;
@@ -780,6 +784,7 @@ a {
   pointer-events: none;
   transform: translateX(-50%) translateY(var(--cta-y)) scale(var(--cta-scale));
   transform-origin: center bottom;
+  touch-action: manipulation;
   transition:
     opacity 220ms ease,
     transform 360ms cubic-bezier(0.2, 1.35, 0.32, 1);
@@ -1103,6 +1108,10 @@ a {
   .lp-shell::-webkit-scrollbar-thumb {
     background: rgba(3, 39, 86, 0.32);
     border-radius: 999px;
+  }
+
+  .floating-action {
+    bottom: max(14px, env(safe-area-inset-bottom));
   }
 }
 
