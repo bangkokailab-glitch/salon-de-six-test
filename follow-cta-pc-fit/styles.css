@@ -916,7 +916,23 @@ a {
 
   body::before {
     left: 0;
-    background: #05215e;
+    background:
+      radial-gradient(
+        ellipse at 112% 50%,
+        rgba(18, 84, 194, 0.34) 0%,
+        rgba(13, 65, 157, 0.18) 30%,
+        rgba(5, 33, 94, 0) 62%
+      ),
+      linear-gradient(
+        180deg,
+        #082861 0%,
+        #031c54 17%,
+        #05266c 31%,
+        #04256a 47%,
+        #02174e 66%,
+        #05215e 88%,
+        #05215e 100%
+      );
   }
 
   body::after {
