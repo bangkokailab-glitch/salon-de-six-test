@@ -8,7 +8,7 @@
   --desktop-design-ratio: 0.7058333333;
   --desktop-layout-width: min(100vw, 1320px, calc(100vh / var(--desktop-design-ratio)));
   --desktop-layout-height: calc(var(--desktop-layout-width) * var(--desktop-design-ratio));
-  --desktop-phone-width: calc(var(--desktop-layout-width) * 0.3788);
+  --desktop-phone-width: calc(var(--desktop-layout-width) * 0.45456);
   --desktop-gutter-width: calc(var(--desktop-layout-width) * 0.0308333333);
   --desktop-side-content-width: calc(
     (var(--desktop-layout-width) - var(--desktop-phone-width) - (var(--desktop-gutter-width) * 2)) / 2
@@ -916,23 +916,7 @@ a {
 
   body::before {
     left: 0;
-    background:
-      radial-gradient(
-        ellipse at 112% 50%,
-        rgba(18, 84, 194, 0.34) 0%,
-        rgba(13, 65, 157, 0.18) 30%,
-        rgba(5, 33, 94, 0) 62%
-      ),
-      linear-gradient(
-        180deg,
-        #082861 0%,
-        #031c54 17%,
-        #05266c 31%,
-        #04256a 47%,
-        #02174e 66%,
-        #05215e 88%,
-        #05215e 100%
-      );
+    background: url("./public/assets/desktop-left-outside-bg.png") right top / 100% 100% no-repeat;
   }
 
   body::after {
@@ -954,7 +938,7 @@ a {
   .desktop-brand-panel {
     left: calc((100vw - var(--desktop-layout-width)) / 2);
     width: var(--desktop-left-panel-width);
-    background: #05215e;
+    background: url("./public/assets/desktop-left-outside-bg.png") left top / 100% 100% no-repeat;
     border-right: 0;
     overflow: hidden;
   }
@@ -983,8 +967,9 @@ a {
   }
 
   .desktop-left-panel-image {
+    width: calc(100% + 2px);
     height: calc(var(--desktop-layout-height) + 2px);
-    transform: translateY(-1px);
+    transform: translate(-2px, -1px);
     clip-path: inset(0 0 24px 0);
   }
 
@@ -1064,52 +1049,53 @@ a {
   }
 
   .desktop-shop-info {
-    display: grid;
-    gap: clamp(10px, 1.8vh, 16px);
-    width: min(82%, 310px);
-    margin: clamp(22px, 3vh, 34px) auto 0;
-    padding: 0;
+    position: absolute;
+    left: 8px;
+    right: 0;
+    top: 48.4%;
+    bottom: 1.5%;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(10px, 1.75vh, 19px);
+    width: calc(100% - 8px);
+    margin: 0;
+    padding: clamp(6px, 1vh, 12px) 9.5%;
     border: 0;
     border-radius: 0;
     color: #fff;
-    background: transparent;
+    background: #082b6c;
     box-shadow: none;
     font-style: normal;
     text-align: center;
   }
 
+  .desktop-shop-info section {
+    margin: 0;
+  }
+
   .desktop-shop-info h2 {
-    margin: 0 0 6px;
+    margin: 0 0 clamp(4px, 0.8vh, 8px);
     color: #d6bc7d;
     font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
-    font-size: clamp(16px, 1.2vw, 21px);
+    font-size: clamp(15px, 1.2vw, 20px);
     font-weight: 700;
+    line-height: 1.05;
   }
 
   .desktop-shop-info p {
     margin: 0;
     color: rgba(255, 255, 255, 0.92);
     font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
-    font-size: clamp(13px, 1.05vw, 16px);
+    font-size: clamp(10px, 0.95vw, 15px);
     font-weight: 600;
-    line-height: 1.42;
+    line-height: 1.28;
   }
 
   .desktop-shop-info a {
     color: #fff;
     text-decoration: none;
-  }
-
-  .desktop-shop-info.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
   }
 
   .desktop-copyright {
