@@ -4,7 +4,7 @@
   --navy: #06183a;
   --gold: #c6932d;
   --lp-width: 430px;
-  --cta-width: min(calc(100vw - 120px), 320px);
+  --cta-width: min(100vw, 390px);
   --desktop-layout-width: min(100vw, 1200px);
   --desktop-layout-height: min(100vh, calc(var(--desktop-layout-width) * 0.7058333333));
   --desktop-phone-width: calc(var(--desktop-layout-width) * 0.3466666667);
@@ -723,8 +723,8 @@ a {
     rgba(255, 255, 255, 0.22) 58%,
     rgba(255, 255, 255, 0)
   );
-  -webkit-mask-image: url("./public/assets/fv-action-button-sticky.png");
-  mask-image: url("./public/assets/fv-action-button-sticky.png");
+  -webkit-mask-image: url("./public/assets/fv-action-button-follow-cta.png");
+  mask-image: url("./public/assets/fv-action-button-follow-cta.png");
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
@@ -765,15 +765,17 @@ a {
 
 .floating-action {
   position: fixed;
-  left: 50%;
+  left: calc((100vw - var(--cta-width)) / 2);
+  right: auto;
   bottom: max(14px, env(safe-area-inset-bottom));
   z-index: 20;
   width: var(--cta-width);
+  max-width: none;
   text-decoration: none;
   line-height: 0;
   opacity: 0;
   pointer-events: none;
-  transform: translate(-50%, 22px) scale(0.98);
+  transform: translateY(22px) scale(0.98);
   transition:
     opacity 220ms ease,
     transform 360ms cubic-bezier(0.2, 1.35, 0.32, 1);
@@ -782,11 +784,11 @@ a {
 .floating-action.is-visible {
   opacity: 1;
   pointer-events: auto;
-  transform: translate(-50%, 0) scale(1);
+  transform: translateY(0) scale(1);
 }
 
 .floating-action.is-scrolling {
-  transform: translate(-50%, -6px) scale(1.025);
+  transform: translateY(-6px) scale(1.025);
 }
 
 @keyframes ctaImageMotion {
@@ -1089,7 +1091,23 @@ a {
 
 @media (max-width: 374px) {
   .floating-action {
-    width: min(calc(100vw - 120px), 320px);
+    --cta-width: 100vw;
+  }
+}
+
+@supports (width: 100dvw) {
+  :root {
+    --cta-width: min(100dvw, 390px);
+  }
+
+  .floating-action {
+    left: calc((100dvw - var(--cta-width)) / 2);
+  }
+
+  @media (max-width: 374px) {
+    .floating-action {
+      --cta-width: 100dvw;
+    }
   }
 }
 
