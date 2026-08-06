@@ -5,7 +5,7 @@
   --gold: #c6932d;
   --lp-width: 430px;
   --cta-width: min(calc(100vw - 16px), 390px);
-  --desktop-phone-width: 520px;
+  --desktop-phone-width: 500px;
   --desktop-center-gutter-width: 42px;
   --desktop-side-rail-width: calc((100vw - var(--desktop-phone-width)) / 2);
   --desktop-side-visual-width: max(0px, calc(var(--desktop-side-rail-width) - var(--desktop-center-gutter-width)));
@@ -898,7 +898,11 @@ a {
   }
 
   body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--desktop-phone-width) minmax(0, 1fr);
+    grid-template-areas: "desktop-left desktop-center desktop-right";
     min-height: 100vh;
+    width: 100vw;
     background: #fff;
     padding-top: 0;
     padding-bottom: 0;
@@ -927,18 +931,21 @@ a {
 
   .desktop-brand-panel,
   .desktop-action-panel {
-    position: fixed;
+    position: relative;
     top: 0;
     bottom: auto;
     z-index: 10;
     display: block;
+    width: 100%;
+    min-width: 0;
     height: 100vh;
     max-height: none;
   }
 
   .desktop-brand-panel {
-    left: 0;
-    width: var(--desktop-side-rail-width);
+    grid-area: desktop-left;
+    --desktop-side-visual-width: max(0px, calc(100% - var(--desktop-center-gutter-width)));
+    --desktop-left-panel-width: min(var(--desktop-side-visual-width), var(--desktop-left-natural-width));
     background:
       radial-gradient(circle at calc(100% - 150px) 55%, rgba(11, 68, 169, 0.88), rgba(8, 45, 120, 0.9) 36%, rgba(5, 28, 78, 0.98) 74%, #03133a 100%);
     border-right: 0;
@@ -984,7 +991,8 @@ a {
   .desktop-left-panel-image {
     width: var(--desktop-left-panel-width);
     height: 100vh;
-    margin-left: calc(var(--desktop-side-visual-width) - var(--desktop-left-panel-width));
+    margin-right: var(--desktop-center-gutter-width);
+    margin-left: auto;
     object-position: right top;
     transform: translateY(-1px);
     clip-path: inset(0 var(--desktop-left-image-trim-right) 10px 0);
@@ -999,8 +1007,9 @@ a {
   }
 
   .desktop-action-panel {
-    right: 0;
-    width: var(--desktop-side-rail-width);
+    grid-area: desktop-right;
+    --desktop-side-visual-width: max(0px, calc(100% - var(--desktop-center-gutter-width)));
+    --desktop-right-panel-width: min(var(--desktop-side-visual-width), var(--desktop-right-natural-width));
     overflow: hidden;
     padding-right: 0;
     background: #082b6c;
@@ -1128,12 +1137,13 @@ a {
   }
 
   .lp-shell {
+    grid-area: desktop-center;
     position: relative;
     z-index: 5;
     width: var(--desktop-phone-width);
     max-width: none;
     height: 100vh;
-    margin-top: 0;
+    margin: 0;
     padding: 0;
     overflow-y: auto;
     overscroll-behavior: contain;
