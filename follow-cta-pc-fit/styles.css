@@ -6,14 +6,9 @@
   --lp-width: 430px;
   --cta-width: min(calc(100vw - 16px), 390px);
   --desktop-phone-width: clamp(430px, 30vw, 600px);
-  --desktop-gutter-width: clamp(18px, 2.1vw, 42px);
-  --desktop-left-panel-width: calc(100vh * 0.4628);
-  --desktop-side-content-width: calc(100vh * 0.4191);
-  --desktop-layout-width: calc(
-    var(--desktop-left-panel-width) + var(--desktop-gutter-width) + var(--desktop-phone-width) + var(--desktop-gutter-width) + var(--desktop-side-content-width)
-  );
-  --desktop-left-rail-width: calc((100vw - var(--desktop-phone-width)) / 2);
-  --desktop-left-white-gutter-width: max(8px, calc(var(--desktop-left-rail-width) - var(--desktop-left-panel-width)));
+  --desktop-center-gutter-width: 42px;
+  --desktop-side-rail-width: calc((100vw - var(--desktop-phone-width)) / 2);
+  --desktop-side-visual-width: max(0px, calc(var(--desktop-side-rail-width) - var(--desktop-center-gutter-width)));
   --desktop-gold-line: rgba(199, 158, 82, 0.82);
 }
 
@@ -905,11 +900,11 @@ a {
 
   body::before,
   body::after {
-    content: "";
+    content: none;
     position: fixed;
     top: 0;
     z-index: 1;
-    width: max(0px, calc((100vw - var(--desktop-layout-width)) / 2));
+    width: 0;
     height: 100vh;
     pointer-events: none;
   }
@@ -920,8 +915,8 @@ a {
 
   body::after {
     right: 0;
-    width: max(8px, calc((100vw - var(--desktop-layout-width)) / 2 + 8px));
-    background: #082b6c;
+    width: 0;
+    background: transparent;
   }
 
   .desktop-brand-panel,
@@ -937,7 +932,7 @@ a {
 
   .desktop-brand-panel {
     left: 0;
-    width: var(--desktop-left-rail-width);
+    width: var(--desktop-side-rail-width);
     background: #fff;
     border-right: 0;
     overflow: hidden;
@@ -962,7 +957,7 @@ a {
     top: 0;
     right: 0;
     z-index: 2;
-    width: var(--desktop-left-white-gutter-width);
+    width: var(--desktop-center-gutter-width);
     height: 100%;
     background: #fff;
     pointer-events: none;
@@ -980,19 +975,25 @@ a {
   }
 
   .desktop-left-panel-image {
-    width: var(--desktop-left-panel-width);
+    width: var(--desktop-side-visual-width);
     height: 100vh;
     margin-left: 0;
     transform: translateY(-1px);
     clip-path: inset(0 0 10px 0);
   }
 
+  .desktop-right-panel-image {
+    width: var(--desktop-side-visual-width);
+    height: 100vh;
+    margin-left: var(--desktop-center-gutter-width);
+  }
+
   .desktop-action-panel {
-    right: calc((100vw - var(--desktop-layout-width)) / 2 - 1px);
-    width: calc(var(--desktop-side-content-width) + 2px);
+    right: 0;
+    width: var(--desktop-side-rail-width);
     overflow: hidden;
     padding-right: 0;
-    background: #082b6c;
+    background: #fff;
     border-left: 0;
     scrollbar-width: none;
   }
@@ -1003,7 +1004,7 @@ a {
     top: 0;
     left: 0;
     z-index: 2;
-    width: 8px;
+    width: var(--desktop-center-gutter-width);
     height: 100%;
     background: #fff;
     pointer-events: none;
@@ -1016,13 +1017,13 @@ a {
 
   .desktop-nav {
     position: absolute;
-    left: 10.7%;
+    left: calc(var(--desktop-center-gutter-width) + var(--desktop-side-visual-width) * 0.107);
     top: 13.85%;
     z-index: 2;
     display: grid;
     grid-template-rows: repeat(5, 1fr);
     gap: 1.85%;
-    width: 78.6%;
+    width: calc(var(--desktop-side-visual-width) * 0.786);
     height: 34%;
     margin: 0;
     border-bottom: 0;
@@ -1064,7 +1065,7 @@ a {
 
   .desktop-shop-info {
     position: absolute;
-    left: 8px;
+    left: var(--desktop-center-gutter-width);
     right: 0;
     top: 48.4%;
     bottom: 1.5%;
@@ -1073,7 +1074,7 @@ a {
     flex-direction: column;
     justify-content: center;
     gap: clamp(10px, 1.75vh, 19px);
-    width: calc(100% - 8px);
+    width: var(--desktop-side-visual-width);
     margin: 0;
     padding: clamp(6px, 1vh, 12px) 9.5%;
     border: 0;
