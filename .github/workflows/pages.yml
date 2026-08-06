@@ -24,18 +24,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Prepare static assets
-        shell: bash
-        run: |
-          set -euo pipefail
-          base="https://salon-de-six-test-20260804.sales782396.chatgpt.site"
-          mkdir -p public/assets
-          curl -fsSL "$base/styles.css" -o styles.css
-          curl -fsSL "$base/public/assets/desktop-20260804-left-panel.png" -o public/assets/desktop-20260804-left-panel.png
-          curl -fsSL "$base/public/assets/desktop-20260804-right-panel.png" -o public/assets/desktop-20260804-right-panel.png
-          curl -fsSL "$base/public/assets/fv-action-button-sticky.png" -o public/assets/fv-action-button-sticky.png
-          curl -fsSL "$base/public/assets/salon-de-six-lp-20260804-composite.png?v=20260804-1" -o public/assets/salon-de-six-lp-20260804-composite.png
-          perl -0pi -e 's#https://salon-de-six-test-20260804\.sales782396\.chatgpt\.site/##g' index.html
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
