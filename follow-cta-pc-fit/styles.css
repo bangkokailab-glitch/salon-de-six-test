@@ -906,6 +906,8 @@ a {
     background: #082b6c;
     padding-top: 0;
     padding-bottom: 0;
+    gap: 0;
+    overflow: hidden;
   }
 
   body::before,
@@ -941,15 +943,14 @@ a {
     height: 100vh;
     max-height: none;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: #082b6c;
   }
 
   .desktop-brand-panel {
     grid-area: desktop-left;
-    --desktop-side-visual-width: 100%;
-    --desktop-left-panel-width: min(var(--desktop-side-visual-width), var(--desktop-left-natural-width));
-    background:
-      radial-gradient(circle at calc(100% - 150px) 55%, rgba(11, 68, 169, 0.88), rgba(8, 45, 120, 0.9) 36%, rgba(5, 28, 78, 0.98) 74%, #03133a 100%);
-    border-right: 0;
   }
 
   .desktop-brand-panel::before {
@@ -982,42 +983,35 @@ a {
     position: absolute;
     top: 0;
     display: block;
-    height: 100vh;
     width: auto;
+    height: 100vh;
     max-width: none;
     object-fit: contain;
     object-position: center top;
     transform: none;
     clip-path: none;
+    margin: 0;
+    border: 0;
   }
 
   .desktop-left-panel-image {
+    left: auto;
     right: 0;
-    width: auto;
-    height: 100vh;
-    margin: 0;
     object-position: right top;
     transform: translateX(var(--desktop-left-image-trim-right));
-    clip-path: inset(0 var(--desktop-left-image-trim-right) 10px 0);
+    clip-path: inset(0 var(--desktop-left-image-trim-right) 0 0);
   }
 
   .desktop-right-panel-image {
     left: 0;
-    width: auto;
-    height: 100vh;
-    margin: 0;
+    right: auto;
     object-position: left top;
     transform: translateX(calc(-1 * var(--desktop-right-image-trim-left)));
-    clip-path: inset(0 0 3px var(--desktop-right-image-trim-left));
+    clip-path: inset(0 0 0 var(--desktop-right-image-trim-left));
   }
 
   .desktop-action-panel {
     grid-area: desktop-right;
-    --desktop-side-visual-width: 100%;
-    --desktop-right-panel-width: min(var(--desktop-side-visual-width), var(--desktop-right-natural-width));
-    padding-right: 0;
-    background: #082b6c;
-    border-left: 0;
     scrollbar-width: none;
   }
 
@@ -1040,13 +1034,13 @@ a {
 
   .desktop-nav {
     position: absolute;
-    left: calc(var(--desktop-right-panel-width) * 0.107);
+    left: 10.7%;
     top: 13.85%;
     z-index: 2;
     display: grid;
     grid-template-rows: repeat(5, 1fr);
     gap: 1.85%;
-    width: calc(var(--desktop-right-panel-width) * 0.786);
+    width: 78.6%;
     height: 34%;
     margin: 0;
     border-bottom: 0;
@@ -1097,7 +1091,7 @@ a {
     flex-direction: column;
     justify-content: center;
     gap: clamp(10px, 1.75vh, 19px);
-    width: var(--desktop-right-panel-width);
+    width: 100%;
     margin: 0;
     padding: clamp(6px, 1vh, 12px) 9.5%;
     border: 0;
@@ -1144,12 +1138,15 @@ a {
     grid-area: desktop-center;
     position: relative;
     z-index: 5;
+    flex: 0 0 var(--desktop-phone-width);
     width: var(--desktop-phone-width);
-    max-width: none;
+    min-width: var(--desktop-phone-width);
+    max-width: var(--desktop-phone-width);
     height: 100vh;
     margin: 0;
     padding: 0;
     overflow-y: auto;
+    overflow-x: hidden;
     overscroll-behavior: contain;
     border: 0;
     border-radius: 0;
