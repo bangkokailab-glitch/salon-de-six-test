@@ -5,8 +5,8 @@
   --gold: #c6932d;
   --lp-width: 430px;
   --cta-width: min(calc(100vw - 16px), 390px);
-  --desktop-phone-width: 500px;
-  --desktop-center-gutter-width: 42px;
+  --desktop-phone-width: 430px;
+  --desktop-center-gutter-width: 0px;
   --desktop-side-rail-width: calc((100vw - var(--desktop-phone-width)) / 2);
   --desktop-side-visual-width: max(0px, calc(var(--desktop-side-rail-width) - var(--desktop-center-gutter-width)));
   --desktop-left-natural-width: 46.281vh;
@@ -902,8 +902,8 @@ a {
     grid-template-columns: minmax(0, 1fr) var(--desktop-phone-width) minmax(0, 1fr);
     grid-template-areas: "desktop-left desktop-center desktop-right";
     min-height: 100vh;
-    width: 100vw;
-    background: #fff;
+    width: 100%;
+    background: #082b6c;
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -940,16 +940,16 @@ a {
     min-width: 0;
     height: 100vh;
     max-height: none;
+    overflow: hidden;
   }
 
   .desktop-brand-panel {
     grid-area: desktop-left;
-    --desktop-side-visual-width: max(0px, calc(100% - var(--desktop-center-gutter-width)));
+    --desktop-side-visual-width: 100%;
     --desktop-left-panel-width: min(var(--desktop-side-visual-width), var(--desktop-left-natural-width));
     background:
       radial-gradient(circle at calc(100% - 150px) 55%, rgba(11, 68, 169, 0.88), rgba(8, 45, 120, 0.9) 36%, rgba(5, 28, 78, 0.98) 74%, #03133a 100%);
     border-right: 0;
-    overflow: hidden;
   }
 
   .desktop-brand-panel::before {
@@ -966,7 +966,7 @@ a {
   }
 
   .desktop-brand-panel::after {
-    content: "";
+    content: none;
     position: absolute;
     top: 0;
     right: 0;
@@ -979,38 +979,42 @@ a {
 
   .desktop-left-panel-image,
   .desktop-right-panel-image {
+    position: absolute;
+    top: 0;
     display: block;
     height: 100vh;
+    width: auto;
     max-width: none;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center top;
-    transform: translateY(-1px);
-    clip-path: inset(0 0 3px 0);
+    transform: none;
+    clip-path: none;
   }
 
   .desktop-left-panel-image {
-    width: var(--desktop-left-panel-width);
+    right: 0;
+    width: auto;
     height: 100vh;
-    margin-right: var(--desktop-center-gutter-width);
-    margin-left: auto;
+    margin: 0;
     object-position: right top;
-    transform: translateY(-1px);
+    transform: translateX(var(--desktop-left-image-trim-right));
     clip-path: inset(0 var(--desktop-left-image-trim-right) 10px 0);
   }
 
   .desktop-right-panel-image {
-    width: var(--desktop-right-panel-width);
+    left: 0;
+    width: auto;
     height: 100vh;
-    margin-left: var(--desktop-center-gutter-width);
+    margin: 0;
     object-position: left top;
+    transform: translateX(calc(-1 * var(--desktop-right-image-trim-left)));
     clip-path: inset(0 0 3px var(--desktop-right-image-trim-left));
   }
 
   .desktop-action-panel {
     grid-area: desktop-right;
-    --desktop-side-visual-width: max(0px, calc(100% - var(--desktop-center-gutter-width)));
+    --desktop-side-visual-width: 100%;
     --desktop-right-panel-width: min(var(--desktop-side-visual-width), var(--desktop-right-natural-width));
-    overflow: hidden;
     padding-right: 0;
     background: #082b6c;
     border-left: 0;
@@ -1018,7 +1022,7 @@ a {
   }
 
   .desktop-action-panel::before {
-    content: "";
+    content: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -1036,7 +1040,7 @@ a {
 
   .desktop-nav {
     position: absolute;
-    left: calc(var(--desktop-center-gutter-width) + var(--desktop-right-panel-width) * 0.107);
+    left: calc(var(--desktop-right-panel-width) * 0.107);
     top: 13.85%;
     z-index: 2;
     display: grid;
@@ -1084,7 +1088,7 @@ a {
 
   .desktop-shop-info {
     position: absolute;
-    left: var(--desktop-center-gutter-width);
+    left: 0;
     right: 0;
     top: 48.4%;
     bottom: 1.5%;
