@@ -1091,6 +1091,56 @@ a {
     outline-offset: 0;
   }
 
+  .desktop-shop-info {
+    position: absolute;
+    left: 10.7%;
+    right: auto;
+    top: 48.8%;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5.1%;
+    width: 78.6%;
+    height: 43.6%;
+    margin: 0;
+    padding: 1.3% 0 0;
+    border: 0;
+    color: #fff;
+    background: #0b3679;
+    box-shadow: none;
+    font-style: normal;
+    text-align: center;
+  }
+
+  .desktop-shop-info section {
+    margin: 0;
+  }
+
+  .desktop-shop-info h2 {
+    margin: 0 0 5px;
+    color: #f2cd58;
+    font-family: "Times New Roman", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .desktop-shop-info p {
+    margin: 0;
+    color: #fff;
+    font-family: "Times New Roman", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.05;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  }
+
+  .desktop-shop-info a {
+    color: inherit;
+    text-decoration: none;
+  }
+
   .desktop-message {
     display: none;
   }
@@ -1257,6 +1307,27 @@ a {
     height: 35.25vh;
     gap: 1.85vh;
     overflow: visible;
+  }
+
+  .desktop-shop-info {
+    left: var(--desktop-right-menu-left);
+    top: 48.8vh;
+    width: var(--desktop-right-menu-width);
+    max-width: max(0px, calc(100% - var(--desktop-right-menu-left) - 8px));
+    height: 43.6vh;
+    padding-top: 1.35vh;
+    gap: 4.75vh;
+    overflow: hidden;
+  }
+
+  .desktop-shop-info h2 {
+    margin-bottom: 0.65vh;
+    font-size: 2.2vh;
+  }
+
+  .desktop-shop-info p {
+    font-size: 1.36vh;
+    line-height: 1.05;
   }
 
   .sp-main {
