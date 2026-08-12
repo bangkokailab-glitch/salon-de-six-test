@@ -8,7 +8,7 @@
   --desktop-phone-width: 430px;
   --desktop-center-gutter-width: 0px;
   --desktop-center-gap: 32px;
-  --desktop-left-center-gap: 44px;
+  --desktop-left-center-gap: var(--desktop-center-gap);
   --desktop-side-rail-width: calc((100vw - var(--desktop-phone-width)) / 2);
   --desktop-side-visual-width: max(0px, calc(var(--desktop-side-rail-width) - var(--desktop-center-gutter-width)));
   --desktop-left-natural-width: 46.281vh;
@@ -1121,7 +1121,7 @@ a {
     margin: 0 0 5px;
     color: #f2cd58;
     font-family: "Times New Roman", "Hiragino Mincho ProN", "Yu Mincho", serif;
-    font-size: 19px;
+    font-size: 23px;
     font-weight: 700;
     line-height: 1;
   }
@@ -1130,9 +1130,9 @@ a {
     margin: 0;
     color: #fff;
     font-family: "Times New Roman", "Hiragino Mincho ProN", "Yu Mincho", serif;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 600;
-    line-height: 1.05;
+    line-height: 1.08;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
   }
 
@@ -1315,19 +1315,19 @@ a {
     width: var(--desktop-right-menu-width);
     max-width: max(0px, calc(100% - var(--desktop-right-menu-left) - 8px));
     height: 43.6vh;
-    padding-top: 1.35vh;
-    gap: 4.75vh;
+    padding-top: 1.3vh;
+    gap: 4.35vh;
     overflow: hidden;
   }
 
   .desktop-shop-info h2 {
     margin-bottom: 0.65vh;
-    font-size: 2.2vh;
+    font-size: 2.65vh;
   }
 
   .desktop-shop-info p {
-    font-size: 1.36vh;
-    line-height: 1.05;
+    font-size: 1.62vh;
+    line-height: 1.08;
   }
 
   .sp-main {
