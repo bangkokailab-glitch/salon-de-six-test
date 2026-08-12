@@ -7,6 +7,8 @@
   --cta-width: min(calc(100vw - 16px), 390px);
   --desktop-phone-width: 430px;
   --desktop-center-gutter-width: 0px;
+  --desktop-center-gap: 32px;
+  --desktop-left-center-gap: 44px;
   --desktop-side-rail-width: calc((100vw - var(--desktop-phone-width)) / 2);
   --desktop-side-visual-width: max(0px, calc(var(--desktop-side-rail-width) - var(--desktop-center-gutter-width)));
   --desktop-left-natural-width: 46.281vh;
@@ -1222,9 +1224,9 @@ a {
 @media (min-width: 431px) {
   :root {
     --desktop-side-bottom-crop: 12px;
-    --desktop-right-art-shift: 32px;
+    --desktop-right-art-shift: var(--desktop-center-gap);
     --desktop-right-image-trim-left: 3.2%;
-    --desktop-right-menu-left: calc(var(--desktop-right-art-shift) + 4.49vh);
+    --desktop-right-menu-left: calc(var(--desktop-center-gap) + 4.49vh);
     --desktop-right-menu-width: 32.94vh;
   }
 
@@ -1303,7 +1305,7 @@ a {
 
   .desktop-left-panel-image {
     left: auto;
-    right: 0;
+    right: var(--desktop-left-center-gap);
     object-position: right top;
     transform: translateX(var(--desktop-left-image-trim-right));
     clip-path: inset(0 var(--desktop-left-image-trim-right) var(--desktop-side-bottom-crop) 0);
