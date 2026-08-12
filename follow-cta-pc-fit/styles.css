@@ -473,18 +473,18 @@ a {
 
 .sp-map-address-correction {
   position: absolute;
-  left: 32.7%;
-  top: 96.312%;
+  left: 33.35%;
+  top: 96.345%;
   z-index: 6;
   display: block;
-  width: 55.5%;
-  padding: 0.18% 0 0.22%;
+  width: 52.8%;
+  padding: 1px 0;
   background: #052b68;
   color: #fff;
   font-family: Arial, "Helvetica Neue", sans-serif;
-  font-size: clamp(10px, 2.75vw, 23px);
+  font-size: 9.5px;
   font-weight: 800;
-  line-height: 1.08;
+  line-height: 1.12;
   letter-spacing: 0;
   text-align: left;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.58);
@@ -1109,6 +1109,29 @@ a {
     background: transparent;
     outline: 0;
     outline-offset: 0;
+  }
+
+  .desktop-nav a:nth-child(5) {
+    overflow: visible;
+    opacity: 1;
+  }
+
+  .desktop-nav a:nth-child(5)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0;
+    border-bottom: 1px solid rgba(211, 179, 103, 0.95);
+    box-shadow: none;
+    pointer-events: none;
+  }
+
+  .desktop-nav a:nth-child(5):hover,
+  .desktop-nav a:nth-child(5):focus-visible {
+    opacity: 1;
+    background: transparent;
   }
 
   .desktop-message {
