@@ -1100,7 +1100,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 5.1%;
+    gap: 4.2%;
     width: 78.6%;
     height: 43.6%;
     margin: 0;
@@ -1134,6 +1134,11 @@ a {
     font-weight: 600;
     line-height: 1.08;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  }
+
+  .desktop-shop-info .desktop-shop-info-emphasis {
+    font-size: 20px;
+    line-height: 1.02;
   }
 
   .desktop-shop-info a {
@@ -1316,7 +1321,7 @@ a {
     max-width: max(0px, calc(100% - var(--desktop-right-menu-left) - 8px));
     height: 43.6vh;
     padding-top: 1.3vh;
-    gap: 4.35vh;
+    gap: 3.65vh;
     overflow: hidden;
   }
 
@@ -1328,6 +1333,11 @@ a {
   .desktop-shop-info p {
     font-size: 1.62vh;
     line-height: 1.08;
+  }
+
+  .desktop-shop-info .desktop-shop-info-emphasis {
+    font-size: 2.1vh;
+    line-height: 1.02;
   }
 
   .sp-main {
