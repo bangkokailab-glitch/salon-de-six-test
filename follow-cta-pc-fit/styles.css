@@ -16,7 +16,7 @@
   --desktop-left-panel-width: min(var(--desktop-side-visual-width), var(--desktop-left-natural-width));
   --desktop-right-panel-width: min(var(--desktop-side-visual-width), var(--desktop-right-natural-width));
   --desktop-left-image-trim-right: 10.9%;
-  --desktop-right-image-trim-left: 1.65%;
+  --desktop-right-image-trim-left: 0%;
   --desktop-gold-line: rgba(199, 158, 82, 0.82);
 }
 
@@ -1205,7 +1205,7 @@ a {
   :root {
     --desktop-side-bottom-crop: 12px;
     --desktop-right-art-shift: var(--desktop-center-gap);
-    --desktop-right-image-trim-left: 3.2%;
+    --desktop-right-image-trim-left: 0%;
     --desktop-right-menu-left: calc(var(--desktop-center-gap) + 4.49vh);
     --desktop-right-menu-width: 32.94vh;
   }
