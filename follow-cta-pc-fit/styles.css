@@ -1095,14 +1095,14 @@ a {
     position: absolute;
     left: 10.7%;
     right: auto;
-    top: 48.8%;
+    top: 52.2%;
     z-index: 3;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 4.2%;
+    gap: 3.7%;
     width: 78.6%;
-    height: 43.6%;
+    height: 40.2%;
     margin: 0;
     padding: 1.3% 0 0;
     border: 0;
@@ -1316,12 +1316,12 @@ a {
 
   .desktop-shop-info {
     left: var(--desktop-right-menu-left);
-    top: 48.8vh;
+    top: 52.2vh;
     width: var(--desktop-right-menu-width);
     max-width: max(0px, calc(100% - var(--desktop-right-menu-left) - 8px));
-    height: 43.6vh;
+    height: 40.2vh;
     padding-top: 1.3vh;
-    gap: 3.65vh;
+    gap: 3.2vh;
     overflow: hidden;
   }
 
