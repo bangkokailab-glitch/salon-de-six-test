@@ -7,6 +7,8 @@
   --cta-width: min(calc(100vw - 16px), 390px);
   --desktop-phone-width: 430px;
   --desktop-center-gutter-width: 0px;
+  --desktop-center-gap: 32px;
+  --desktop-left-center-gap: var(--desktop-center-gap);
   --desktop-side-rail-width: calc((100vw - var(--desktop-phone-width)) / 2);
   --desktop-side-visual-width: max(0px, calc(var(--desktop-side-rail-width) - var(--desktop-center-gutter-width)));
   --desktop-left-natural-width: 46.281vh;
@@ -14,7 +16,7 @@
   --desktop-left-panel-width: min(var(--desktop-side-visual-width), var(--desktop-left-natural-width));
   --desktop-right-panel-width: min(var(--desktop-side-visual-width), var(--desktop-right-natural-width));
   --desktop-left-image-trim-right: 10.9%;
-  --desktop-right-image-trim-left: 1.65%;
+  --desktop-right-image-trim-left: 0%;
   --desktop-gold-line: rgba(199, 158, 82, 0.82);
 }
 
@@ -420,7 +422,7 @@ a {
 .faq-accordion {
   position: absolute;
   left: 4.2%;
-  top: 86.9192%;
+  top: 86.62%;
   z-index: 5;
   width: 91.6%;
   height: auto;
@@ -467,26 +469,6 @@ a {
   border: 0;
   background: transparent;
   text-decoration: none;
-}
-
-.sp-map-address-correction {
-  position: absolute;
-  left: 32.7%;
-  top: 96.312%;
-  z-index: 6;
-  display: block;
-  width: 55.5%;
-  padding: 0.18% 0 0.22%;
-  background: #052b68;
-  color: #fff;
-  font-family: Arial, "Helvetica Neue", sans-serif;
-  font-size: clamp(10px, 2.75vw, 23px);
-  font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: 0;
-  text-align: left;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.58);
-  pointer-events: none;
 }
 
 .faq-accordion::-webkit-scrollbar {
@@ -1109,28 +1091,23 @@ a {
     outline-offset: 0;
   }
 
-  .desktop-message {
-    display: none;
-  }
-
   .desktop-shop-info {
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 48.4%;
-    bottom: 1.5%;
+    left: 10.7%;
+    right: auto;
+    top: 52.2%;
     z-index: 3;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: clamp(10px, 1.75vh, 19px);
-    width: 100%;
+    justify-content: flex-start;
+    gap: 3.7%;
+    width: 78.6%;
+    height: 40.2%;
     margin: 0;
-    padding: clamp(6px, 1vh, 12px) 9.5%;
+    padding: 1.3% 0 0;
     border: 0;
-    border-radius: 0;
     color: #fff;
-    background: #082b6c;
+    background: transparent;
     box-shadow: none;
     font-style: normal;
     text-align: center;
@@ -1141,26 +1118,36 @@ a {
   }
 
   .desktop-shop-info h2 {
-    margin: 0 0 clamp(4px, 0.8vh, 8px);
-    color: #d6bc7d;
-    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
-    font-size: clamp(15px, 1.2vw, 20px);
+    margin: 0 0 5px;
+    color: #f2cd58;
+    font-family: "Times New Roman", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 23px;
     font-weight: 700;
-    line-height: 1.05;
+    line-height: 1;
   }
 
   .desktop-shop-info p {
     margin: 0;
-    color: rgba(255, 255, 255, 0.92);
-    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
-    font-size: clamp(10px, 0.95vw, 15px);
+    color: #fff;
+    font-family: "Times New Roman", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 15px;
     font-weight: 600;
-    line-height: 1.28;
+    line-height: 1.08;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  }
+
+  .desktop-shop-info .desktop-shop-info-emphasis {
+    font-size: 20px;
+    line-height: 1.02;
   }
 
   .desktop-shop-info a {
-    color: #fff;
+    color: inherit;
     text-decoration: none;
+  }
+
+  .desktop-message {
+    display: none;
   }
 
   .desktop-copyright {
@@ -1222,9 +1209,9 @@ a {
 @media (min-width: 431px) {
   :root {
     --desktop-side-bottom-crop: 12px;
-    --desktop-right-art-shift: 32px;
-    --desktop-right-image-trim-left: 3.2%;
-    --desktop-right-menu-left: calc(var(--desktop-right-art-shift) + 4.49vh);
+    --desktop-right-art-shift: var(--desktop-center-gap);
+    --desktop-right-image-trim-left: 0%;
+    --desktop-right-menu-left: calc(var(--desktop-center-gap) + 4.49vh);
     --desktop-right-menu-width: 32.94vh;
   }
 
@@ -1303,7 +1290,7 @@ a {
 
   .desktop-left-panel-image {
     left: auto;
-    right: 0;
+    right: var(--desktop-left-center-gap);
     object-position: right top;
     transform: translateX(var(--desktop-left-image-trim-right));
     clip-path: inset(0 var(--desktop-left-image-trim-right) var(--desktop-side-bottom-crop) 0);
@@ -1329,38 +1316,28 @@ a {
 
   .desktop-shop-info {
     left: var(--desktop-right-menu-left);
-    right: auto;
-    top: 48.4vh;
-    bottom: 0;
+    top: 52.2vh;
     width: var(--desktop-right-menu-width);
     max-width: max(0px, calc(100% - var(--desktop-right-menu-left) - 8px));
-    margin: 0;
-    padding: 0;
-    align-items: center;
-    justify-content: center;
-    gap: 13px;
-    overflow: hidden;
-    background: #082b6c;
-    text-align: center;
-  }
-
-  .desktop-shop-info section {
-    width: 100%;
-    max-width: none;
-    min-width: 0;
-    margin: 0;
+    height: 40.2vh;
+    padding-top: 1.3vh;
+    gap: 3.2vh;
     overflow: hidden;
   }
 
   .desktop-shop-info h2 {
-    margin: 0 0 6px;
-    font-size: 18px;
-    line-height: 1.05;
+    margin-bottom: 0.65vh;
+    font-size: 2.65vh;
   }
 
   .desktop-shop-info p {
-    font-size: 12px;
-    line-height: 1.25;
+    font-size: 1.62vh;
+    line-height: 1.08;
+  }
+
+  .desktop-shop-info .desktop-shop-info-emphasis {
+    font-size: 2.1vh;
+    line-height: 1.02;
   }
 
   .sp-main {
@@ -1415,8 +1392,7 @@ a {
     width: 0;
   }
 
-  .desktop-nav,
-  .desktop-shop-info {
+  .desktop-nav {
     pointer-events: auto;
   }
 
