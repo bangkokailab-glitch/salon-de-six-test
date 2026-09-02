@@ -8,25 +8,26 @@
   <title>ZERO ASIA｜売れるランディングページ制作</title>
   <meta name="description" content="タイ・バンコクの日系企業・店舗経営者様へ。広告とLPを組み合わせ、問い合わせにつなげる仕組みを設計します。">
   <link rel="stylesheet" href="./styles.css">
+  <script>
+    (() => {
+      const requested = new URLSearchParams(location.search).get("variant");
+      document.documentElement.dataset.variant = ["a", "b", "c"].includes(requested) ? requested : "a";
+    })();
+  </script>
 </head>
 <body>
   <main class="page">
     <section class="first-view" aria-label="ZERO ASIA ランディングページ制作">
       <img
         src="./assets/first-view.png"
-        width="1170"
-        height="2172"
+        width="853"
+        height="1846"
         alt="新規予約・商談の獲得に悩むタイの日系企業・店舗経営者様へ。なぜ、私たちがつくるLPは売上が伸びるのか。"
         fetchpriority="high"
       >
-      <a
-        class="first-view-performance-link"
-        href="#performance"
-        aria-label="売上を伸ばす5つの秘訣の続きを見る"
-      ></a>
     </section>
 
-    <section class="performance" id="performance" aria-labelledby="performance-title">
+    <section class="performance" aria-labelledby="performance-title">
       <div class="performance-intro">
         <h1 class="visually-hidden" id="performance-title">まずは実績をご覧ください。</h1>
         <div class="performance-heading-locked" aria-hidden="true">
@@ -55,15 +56,47 @@
       </div>
     </section>
 
-    <figure class="archive" aria-label="DESIGN ARCHIVEとデザイン実績ギャラリー">
-      <img
-        src="./assets/design-archive.png"
-        width="853"
-        height="1844"
-        alt="DESIGN ARCHIVE 延べ300社以上の制作実績、LP制作歴13年、デザイン実績ギャラリー"
-        loading="lazy"
-      >
-    </figure>
+    <section class="proof-suite" aria-label="制作と広告支援の総実績">
+      <div class="proof-metrics">
+        <p class="proof-kicker">成果で証明する、設計力と改善力。</p>
+
+        <div class="proof-grid">
+          <article class="proof-card">
+            <img src="./assets/authority-icon-years.png" width="260" height="320" alt="" loading="lazy">
+            <p class="proof-label">LP制作専門</p>
+            <p class="proof-value"><strong>13</strong><span>年</span></p>
+            <p class="proof-note">成果につなげる<br>LP専門設計</p>
+          </article>
+
+          <article class="proof-card proof-card-primary">
+            <img src="./assets/authority-icon-production.png" width="260" height="320" alt="" loading="lazy">
+            <p class="proof-label">LP制作・改善実績</p>
+            <p class="proof-value"><strong>300</strong><span>社超え</span></p>
+            <p class="proof-note">制作から改善まで<br>一貫支援</p>
+          </article>
+
+          <article class="proof-card">
+            <img src="./assets/authority-icon-ads.png" width="260" height="320" alt="" loading="lazy">
+            <p class="proof-label">ネット広告支援実績</p>
+            <p class="proof-value"><strong>100</strong><span>社超え</span></p>
+            <p class="proof-note">集客設計から成果まで<br>伴走支援</p>
+          </article>
+        </div>
+
+        <p class="proof-gallery-title">様々な業界で成果を生み出す<br class="proof-title-break">LP設計・改善実績。</p>
+      </div>
+
+      <figure class="proof-gallery" aria-label="LP制作事例ギャラリー">
+        <img
+          src="./assets/design-archive-source.png"
+          width="853"
+          height="1844"
+          alt="美容、化粧品、住宅、食品、資産形成などのLP制作事例"
+          loading="lazy"
+        >
+      </figure>
+      <div class="proof-exit" aria-hidden="true"><span></span></div>
+    </section>
 
     <section class="education" aria-labelledby="education-title">
       <h2 class="education-heading" id="education-title">広告費を増やす前に、<br>見直すべき場所があります。</h2>
