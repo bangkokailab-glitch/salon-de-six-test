@@ -1,10 +1,10 @@
 # ZIPLUS LP client preview
 
-Client-facing GitHub Pages preview for three first-view directions:
+Client-facing GitHub preview for three first-view directions. Public proposal labels map to the implementation folders as follows:
 
-- `/a/` — balanced company-benefit direction
-- `/c/` — document-conversion and authority direction
-- `/d/` — cinematic action-dock direction
+- A → `/d/` — cinematic action-dock direction
+- B → `/a/` — balanced company-benefit direction
+- C → `/c/` — document-conversion and authority direction
 
 This proposal preview is PC-only. Smartphone-specific design and implementation are out of scope.
 

@@ -639,6 +639,14 @@ body.variant-d {
   88%, 100% { transform: translateX(120%); }
 }
 
+/* Keep the audience badge below the header on shorter desktop viewports. */
+@media (min-width: 901px) and (max-height: 900px) {
+  .d-copy {
+    align-self: start;
+    padding-bottom: 0;
+  }
+}
+
 @media (max-width: 1180px) {
   .d-copy {
     width: 56vw;
