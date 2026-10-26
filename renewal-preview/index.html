@@ -1,15 +1,21 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" translate="no">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="robots" content="noindex,nofollow">
+  <meta name="google" content="notranslate">
   <meta name="theme-color" content="#06283f">
   <title>Salon de Six｜トップページ確認用</title>
-  <link rel="stylesheet" href="custom.css">
+  <link rel="stylesheet" href="custom.css?v=20261027-motion">
   <script src="carousel.js" defer></script>
+  <script src="motion.js?v=20261027-motion" defer></script>
 </head>
 <body>
+  <div class="page-backdrop" aria-hidden="true">
+    <div class="backdrop-layer backdrop-clear"><img src="assets/hero-background.webp" width="948" height="1660" alt="" fetchpriority="high"></div>
+    <div class="backdrop-layer backdrop-blur"><img src="assets/hero-background.webp" width="948" height="1660" alt="" decoding="async"></div>
+  </div>
   <div class="site-shell">
     <header class="site-header">
       <div class="image-window header-art" aria-hidden="true">
@@ -27,32 +33,49 @@
     </header>
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="image-window hero-art">
-          <img src="assets/hero-approved.webp" width="854" height="1842" alt="店内のSalon de Sixのロゴを紹介するカナさん" fetchpriority="high">
+        <div class="hero-copy">
+          <h1 id="hero-title">
+            <span class="hero-kicker" data-reveal style="--reveal-delay:80ms">キレイも、清潔も。</span>
+            <span class="hero-main" data-reveal style="--reveal-delay:300ms"><em>自分</em>らしく<span class="hero-period">。</span></span>
+          </h1>
+          <p class="hero-subcopy" data-reveal style="--reveal-delay:600ms"><strong>脱毛も、肌も、歯も。</strong><br>あなたらしいキレイを、<br>日本語で相談できる美容サロン。</p>
         </div>
-        <div class="sr-only">
-          <h1 id="hero-title">キレイも、清潔も。自分らしく。</h1>
-          <p>バンコクプロンポンの美容エステサロン Salon de Six</p>
-          <p>脱毛も、肌も、歯も。あなたらしいキレイを、日本語で相談できる美容サロン。</p>
-        </div>
+        <p class="sr-only">バンコクプロンポンの美容エステサロン Salon de Six。店内で背中を合わせて立つカナさんと男性の写真。</p>
       </section>
       <section id="declaration" class="declaration" aria-labelledby="declaration-title">
-        <img class="declaration-art" src="assets/declaration-approved.webp" width="973" height="1616" alt="" loading="lazy" decoding="async">
-        <div class="sr-only">
-          <h2 id="declaration-title">バンコクの日系美容エステサロン 顧客満足度No.1宣言</h2>
-          <p>総来店客数2,000人超え。創業4年。日本語対応。</p>
-          <h3>コスパ満足度No.1宣言</h3><p>続けやすい価格で、満足のいくケアを。</p>
-          <h3>通いやすさNo.1宣言</h3><p>BTSプロンポン駅徒歩3分。お買い物やお仕事帰りにも。</p>
-          <h3>施術満足度No.1宣言</h3><p>お悩みやご希望に合わせて、一人ひとりに丁寧なケアを。</p>
-          <h3>アフターケアNo.1宣言</h3><p>施術後のケアまで徹底。気になることも日本語でご相談。</p>
+        <img class="declaration-art" src="assets/declaration-frame.webp" width="973" height="1616" alt="" decoding="async">
+        <div class="declaration-intro" data-reveal>
+          <p>バンコクの日系美容エステサロン</p>
+          <h2 id="declaration-title"><span data-letters>顧客満足度</span><em class="no-one">No.1</em><span class="declare-word">宣言</span></h2>
+        </div>
+        <div class="declaration-stats" data-reveal data-counter-group>
+          <div class="stat-visitors"><p>総来店客数</p><span class="sr-only">2,000人超え</span><div aria-hidden="true"><b data-counter="2000">2,000</b><span>人超え</span></div></div>
+          <div class="stat-years"><p>創業</p><span class="sr-only">4年</span><div aria-hidden="true"><b data-counter="4" data-counter-duration="1100">4</b><span>年</span></div></div>
+          <div class="stat-language">日本語対応</div>
+        </div>
+        <div class="promise promise-1" data-reveal>
+          <h3><span data-letters>コスパ満足度</span><em class="no-one">No.1</em><span class="declare-word">宣言</span></h3>
+          <p>続けやすい価格で、<br>満足のいくケアを。</p>
+        </div>
+        <div class="promise promise-2" data-reveal>
+          <h3><span data-letters>通いやすさ</span><em class="no-one">No.1</em><span class="declare-word">宣言</span></h3>
+          <p>BTSプロンポン駅徒歩3分。<br>お買い物やお仕事帰りにも。</p>
+        </div>
+        <div class="promise promise-3" data-reveal>
+          <h3><span data-letters>施術満足度</span><em class="no-one">No.1</em><span class="declare-word">宣言</span></h3>
+          <p>お悩みやご希望に合わせて、<br>一人ひとりに丁寧なケアを。</p>
+        </div>
+        <div class="promise promise-4" data-reveal>
+          <h3><span data-letters>アフターケア</span><em class="no-one">No.1</em><span class="declare-word">宣言</span></h3>
+          <p>施術後のケアまで徹底。<br>気になることも日本語でご相談。</p>
         </div>
       </section>
       <section id="customers" class="customers" aria-labelledby="customers-title">
-        <div class="image-window customer-heading" aria-hidden="true">
-          <img src="assets/customers-approved.webp" width="999" height="1575" alt="" loading="lazy" decoding="async">
+        <div class="customer-heading">
+          <img src="assets/customer-heading-frame.webp" width="1952" height="806" alt="" loading="lazy" decoding="async">
+          <h2 id="customers-title" data-reveal="pop">多くのお客様に<br>選ばれています</h2>
+          <p data-reveal>ご来店いただいたお客様をご紹介</p>
         </div>
-        <h2 id="customers-title" class="sr-only">多くのお客様に選ばれています</h2>
-        <p class="sr-only">ご来店いただいたお客様をご紹介</p>
         <div class="customer-panel">
           <div class="carousel" role="region" aria-roledescription="カルーセル" aria-label="お客様のご来店紹介">
             <div class="customer-track" tabindex="0" aria-label="横にスワイプ、または左右の矢印キーでお客様を切り替え">
@@ -110,8 +133,8 @@
       </section>
     </main>
     <aside class="fixed-cta" aria-label="LINEで相談・予約">
-      <a class="image-window cta-art" href="https://lin.ee/7VR8UlP" target="_blank" rel="noopener noreferrer" aria-label="LINEで相談・予約（新しいタブで開きます）">
-        <img src="assets/hero-approved.webp" width="854" height="1842" alt="" aria-hidden="true">
+      <a class="cta-art" href="https://lin.ee/7VR8UlP" target="_blank" rel="noopener noreferrer" aria-label="LINEで相談・予約（新しいタブで開きます）">
+        <span class="cta-crop"><img src="assets/cta-cutout.webp" width="2172" height="724" alt="" aria-hidden="true"></span>
       </a>
     </aside>
   </div>

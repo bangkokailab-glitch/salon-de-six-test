@@ -1,0 +1,41 @@
+[
+  {
+    "asset": "hero-background.webp",
+    "dimensions": [
+      948,
+      1660
+    ],
+    "source_sha256": "6ab927c8ab47cf219ddda9d92f69d3db4acbc166125c4aa82b3e3a96178638a7",
+    "lossless_pixel_match": true
+  },
+  {
+    "asset": "declaration-frame.webp",
+    "dimensions": [
+      973,
+      1616
+    ],
+    "source_file": "declaration-frame-transparent.png",
+    "source_sha256": "1871c8e490106e0d4f223d7dc725bde38a2ac32ab42e5441c10989fd15919f05",
+    "lossless_pixel_match": true
+  },
+  {
+    "asset": "customer-heading-frame.webp",
+    "dimensions": [
+      1952,
+      806
+    ],
+    "source_file": "customer-heading-frame-transparent.png",
+    "source_sha256": "eccec4d670489a9c9a18b10efeb44e6725cfbc6ee2454cd7136042af62fa33da",
+    "lossless_pixel_match": true
+  },
+  {
+    "asset": "cta-cutout.webp",
+    "dimensions": [
+      2172,
+      724
+    ],
+    "source_file": "cta-cutout.png",
+    "source_sha256": "73a8ffa4f13a9c915ad4a76b0bd1e612f04c433290ed35aa1c93e865ffffa1de",
+    "lossless_pixel_match": true
+  }
+]
