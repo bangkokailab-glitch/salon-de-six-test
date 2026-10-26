@@ -1,0 +1,38 @@
+[
+  {
+    "source": "output/fv/20261027/v15-b-motion/salon-background.png",
+    "source_sha256": "0ddec2bc897086536cfa757b5d42778eb13d82bd217834b769d58ff4bdb47339",
+    "output": "salon-background-b.webp",
+    "size": [
+      853,
+      1844
+    ],
+    "mode": "RGB",
+    "pixel_match": true,
+    "bytes": 1608640
+  },
+  {
+    "source": "output/fv/20261027/v15-b-motion/people-cutout.png",
+    "source_sha256": "ee52e2b6ea3dace6ab2bd97aa3a04128e28ca2cfb23479de40cf800028d823ea",
+    "output": "people-b-cutout.webp",
+    "size": [
+      853,
+      1844
+    ],
+    "mode": "RGBA",
+    "pixel_match": true,
+    "bytes": 345396
+  },
+  {
+    "source": "/Users/naokiikeda/Documents/Codex/2026-09-29/salon-de-six/output/fv/20261027/v15-b-motion/hero-title-cutout.png",
+    "source_sha256": "b72e598c715b92e92566c03bba894a759e867610bedfacbe8d134576300c9fbf",
+    "output": "hero-title-b.webp",
+    "size": [
+      853,
+      1844
+    ],
+    "mode": "RGBA",
+    "pixel_match": true,
+    "bytes": 161182
+  }
+]

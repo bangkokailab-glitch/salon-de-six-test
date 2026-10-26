@@ -7,9 +7,10 @@
   const finishedCounters = new WeakSet();
   const counterGroups = new Map();
   const pendingTargets = new Set();
+  const pendingLoadTargets = new Set();
   let observer;
   let revealResizeFrame = 0;
-  let counterVisibilityFrame = 0;
+  let viewportFrame = 0;
   let reveals = [];
   let counters = [];
   let reduceMotion = false;
@@ -36,10 +37,11 @@
   function showEverything() {
     observer?.disconnect();
     pendingTargets.clear();
+    pendingLoadTargets.clear();
     if (revealResizeFrame) cancelAnimationFrame(revealResizeFrame);
     revealResizeFrame = 0;
-    if (counterVisibilityFrame) cancelAnimationFrame(counterVisibilityFrame);
-    counterVisibilityFrame = 0;
+    if (viewportFrame) cancelAnimationFrame(viewportFrame);
+    viewportFrame = 0;
     reveals.forEach((element) => element.classList.add('is-visible'));
     counters.forEach(finishCounter);
   }
@@ -139,15 +141,26 @@
     !finishedCounters.has(element) && !activeCounters.has(element)
   ));
 
-  function maybeStartVisibleCounters() {
-    if (counterVisibilityFrame) cancelAnimationFrame(counterVisibilityFrame);
-    counterVisibilityFrame = 0;
+  function visibleWindow() {
+    const cta = document.querySelector('.fixed-cta');
+    const header = document.querySelector('.site-header');
+    const height = window.innerHeight || document.documentElement.clientHeight;
+    return {
+      bottom: Math.min(height, cta ? cta.getBoundingClientRect().top : height) - 12,
+      top: header ? Math.max(0, header.getBoundingClientRect().bottom) : 0
+    };
+  }
+
+  function reveal(element) {
+    pendingTargets.delete(element);
+    pendingLoadTargets.delete(element);
+    element.classList.add('is-visible');
+    observer?.unobserve(element);
+  }
+
+  function maybeStartVisibleCounters(viewport = visibleWindow()) {
     if (reduceMotion || !hasWaitingCounters()) return;
     try {
-      const cta = document.querySelector('.fixed-cta');
-      const header = document.querySelector('.site-header');
-      const visibleBottom = (cta ? cta.getBoundingClientRect().top : window.innerHeight) - 12;
-      const visibleTop = header ? Math.max(0, header.getBoundingClientRect().bottom) : 0;
       counterGroups.forEach((elements, group) => {
         const waiting = elements.filter((element) => (
           !finishedCounters.has(element) && !activeCounters.has(element)
@@ -156,7 +169,10 @@
         const bounds = group.getBoundingClientRect();
         // IO can report visibility behind overlays or outside an iframe's
         // own visible area. Start only when the whole group clears both bars.
-        if (bounds.top >= visibleTop && bounds.bottom <= visibleBottom) {
+        if (bounds.height > 0 && bounds.width > 0
+          && bounds.top >= viewport.top && bounds.bottom <= viewport.bottom) {
+          // The counter group may have been missed by an iframe's IO root.
+          reveal(group);
           waiting.forEach(startCounter);
         }
       });
@@ -166,15 +182,40 @@
     }
   }
 
-  function queueCounterVisibilityCheck() {
-    if (!counterVisibilityFrame && !reduceMotion && hasWaitingCounters()) {
-      counterVisibilityFrame = requestAnimationFrame(maybeStartVisibleCounters);
+  function updateVisibleContent() {
+    if (viewportFrame) cancelAnimationFrame(viewportFrame);
+    viewportFrame = 0;
+    if (reduceMotion) return;
+    try {
+      // Hero copy must never wait for an iframe / parent IO intersection.
+      [...pendingLoadTargets].forEach(reveal);
+      const viewport = visibleWindow();
+      if (viewport.bottom <= viewport.top) return;
+      [...pendingTargets].forEach((element) => {
+        const bounds = element.getBoundingClientRect();
+        if (bounds.height <= 0 || bounds.width <= 0) return;
+        const visibleHeight = Math.min(bounds.bottom, viewport.bottom)
+          - Math.max(bounds.top, viewport.top);
+        const requiredHeight = Math.min(bounds.height * 0.12, 48);
+        // Reveal content already passed during an anchor jump / fast scroll,
+        // so it is not left transparent when the visitor scrolls back.
+        if (visibleHeight >= requiredHeight || bounds.bottom <= viewport.top) reveal(element);
+      });
+      maybeStartVisibleCounters(viewport);
+    } catch (error) {
+      failOpen(error);
+    }
+  }
+
+  function queueViewportCheck() {
+    if (!viewportFrame && !reduceMotion
+      && (pendingLoadTargets.size || pendingTargets.size || hasWaitingCounters())) {
+      viewportFrame = requestAnimationFrame(updateVisibleContent);
     }
   }
 
   try {
     // Without this class, all content and final numbers are visible by default.
-    root.classList.add('motion-ready');
     reveals = Array.from(document.querySelectorAll('[data-reveal]'));
     counters = Array.from(document.querySelectorAll('[data-counter]'));
     document.querySelectorAll('[data-letters]').forEach(splitLetters);
@@ -201,11 +242,12 @@
 
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) finishActiveCounters();
+      else queueViewportCheck();
     });
     window.addEventListener('pagehide', () => {
       finishActiveCounters();
-      if (counterVisibilityFrame) cancelAnimationFrame(counterVisibilityFrame);
-      counterVisibilityFrame = 0;
+      if (viewportFrame) cancelAnimationFrame(viewportFrame);
+      viewportFrame = 0;
     });
 
     if (reduceMotion || !('IntersectionObserver' in window) || !window.requestAnimationFrame) {
@@ -213,19 +255,9 @@
       return;
     }
 
-    const onIntersection = (entries) => {
-      try {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting || !pendingTargets.has(entry.target)) return;
-          pendingTargets.delete(entry.target);
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        });
-        maybeStartVisibleCounters();
-      } catch (error) {
-        failOpen(error);
-      }
-    };
+    // IO is an extra notification source. Local geometry is authoritative,
+    // including when the preview iframe is outside its parent's viewport.
+    const onIntersection = () => updateVisibleContent();
 
     function observePendingTargets() {
       revealResizeFrame = 0;
@@ -246,16 +278,49 @@
       }
     }
 
-    [...reveals, ...counterGroups.keys()].forEach((element) => pendingTargets.add(element));
+    reveals.forEach((element) => {
+      if (element.dataset.reveal === 'load') {
+        if (!element.style.getPropertyValue('--reveal-delay')) {
+          element.style.setProperty('--reveal-delay', `${pendingLoadTargets.size * 180}ms`);
+        }
+        pendingLoadTargets.add(element);
+      } else {
+        pendingTargets.add(element);
+      }
+    });
+    counterGroups.forEach((_, group) => pendingTargets.add(group));
+    root.classList.add('motion-ready');
+    const initializedAfterLoad = document.readyState === 'complete';
+    if (!initializedAfterLoad && !document.hidden) {
+      // Commit the initial opacity before adding is-visible. Otherwise the
+      // first rAF can collapse both states into one paint and skip the fade.
+      pendingLoadTargets.forEach((element) => {
+        void window.getComputedStyle(element).opacity;
+      });
+    }
     observePendingTargets();
-    window.addEventListener('scroll', queueCounterVisibilityCheck, { passive: true });
+    window.addEventListener('scroll', queueViewportCheck, { passive: true });
     window.addEventListener('resize', () => {
-      queueCounterVisibilityCheck();
+      queueViewportCheck();
       if (!revealResizeFrame && pendingTargets.size && !reduceMotion) {
         revealResizeFrame = requestAnimationFrame(observePendingTargets);
       }
     }, { passive: true });
-    queueCounterVisibilityCheck();
+    window.addEventListener('load', queueViewportCheck, { once: true });
+    window.addEventListener('pageshow', queueViewportCheck);
+    document.addEventListener('transitionend', (event) => {
+      // Reveals move by 17px; check the final geometry after they settle,
+      // even if the visitor has not scrolled during the entrance transition.
+      if ((event.propertyName === 'transform' || event.propertyName === 'opacity')
+        && event.target instanceof Element && event.target.matches('[data-reveal]')) {
+        queueViewportCheck();
+      }
+    });
+    document.fonts?.ready.then(queueViewportCheck).catch(() => {});
+    // A late script must not turn already painted copy transparent for a
+    // frame. Initial deferred execution still gives CSS one frame to animate.
+    if (initializedAfterLoad || document.hidden) updateVisibleContent();
+    else queueViewportCheck();
   } catch (error) {
     failOpen(error);
   }
