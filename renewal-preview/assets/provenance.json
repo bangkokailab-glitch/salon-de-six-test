@@ -1,0 +1,29 @@
+[
+  {
+    "asset": "hero-approved.webp",
+    "dimensions": [
+      854,
+      1842
+    ],
+    "lossless_pixel_match": true,
+    "source_sha256": "31b25bef787d2f4488308ac7bb5f2f6d536b0295d2716dd5ff387105a8360511"
+  },
+  {
+    "asset": "declaration-approved.webp",
+    "dimensions": [
+      973,
+      1616
+    ],
+    "lossless_pixel_match": true,
+    "source_sha256": "3705b19c9d08a35b0aa3498f0970e8dfb95e784aceccc0110cbd721240c741db"
+  },
+  {
+    "asset": "customers-approved.webp",
+    "dimensions": [
+      999,
+      1575
+    ],
+    "lossless_pixel_match": true,
+    "source_sha256": "80165d926198ad77e86b54ff165adff63d1ec9f2ca0cad3ea66d685c099abf6d"
+  }
+]
