@@ -14,7 +14,8 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && !document.
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <link rel="preload" as="image" href="public/assets/lp-section-0a-fast.webp" fetchpriority="high">
     <link rel="preload" as="image" type="image/webp" href="public/assets/fv-action-button-follow-cta-lossless-20261010.webp" fetchpriority="high" />
-    <title>Salon de Six | バンコク男磨きセット</title>
+    <link rel="stylesheet" href="performance-b40b4686c3.css">
+<title>Salon de Six | バンコク男磨きセット</title>
     <meta name="description" content="Salon de Sixのバンコク男磨きセット。LINEクーポンで1500THB。" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18274629419"></script>
     <script>
@@ -50,1518 +51,74 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && !document.
         return false;
       }
     </script>
-    <style>
-:root {
-  color-scheme: light;
-  --page-bg: #eaf6fb;
-  --navy: #06183a;
-  --gold: #c6932d;
-  --lp-width: 430px;
-  --cta-width: min(calc(100vw - 16px), 390px);
-  --desktop-phone-width: 430px;
-  --desktop-center-gutter-width: 0px;
-  --desktop-center-gap: 32px;
-  --desktop-left-center-gap: var(--desktop-center-gap);
-  --desktop-side-rail-width: calc((100vw - var(--desktop-phone-width)) / 2);
-  --desktop-side-visual-width: max(0px, calc(var(--desktop-side-rail-width) - var(--desktop-center-gutter-width)));
-  --desktop-left-natural-width: 46.281vh;
-  --desktop-right-natural-width: 41.913vh;
-  --desktop-left-panel-width: min(var(--desktop-side-visual-width), var(--desktop-left-natural-width));
-  --desktop-right-panel-width: min(var(--desktop-side-visual-width), var(--desktop-right-natural-width));
-  --desktop-left-image-trim-right: 10.9%;
-  --desktop-right-image-trim-left: 0%;
-  --desktop-gold-line: rgba(199, 158, 82, 0.82);
-}
 
-* {
-  box-sizing: border-box;
-}
 
-html {
-  scroll-behavior: smooth;
-  width: 100%;
-  overflow-x: hidden;
-  overscroll-behavior-x: none;
-  touch-action: pan-y;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
 
-body {
-  margin: 0;
-  width: 100%;
-  min-width: 320px;
-  overflow-x: hidden;
-  overscroll-behavior-x: none;
-  color: var(--navy);
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0)),
-    var(--page-bg);
-  font-family:
-    "Hiragino Kaku Gothic ProN",
-    "Yu Gothic",
-    "YuGothic",
-    system-ui,
-    sans-serif;
-  padding-bottom: calc(104px + env(safe-area-inset-bottom));
-  touch-action: pan-y;
-}
 
-a {
-  color: inherit;
-}
 
-.desktop-brand-panel,
-.desktop-action-panel {
-  display: none;
-}
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
 
-.section-anchor {
-  position: absolute;
-  left: 0;
-  width: 1px;
-  height: 1px;
-  pointer-events: none;
-  scroll-margin-top: 18px;
-}
 
-.section-anchor-top {
-  top: 0;
-}
 
-.section-anchor-reason {
-  top: 15.8157%;
-}
 
-.section-anchor-before-after {
-  top: 56.2357%;
-}
 
-.section-anchor-price {
-  top: 70.7119%;
-}
 
-.section-anchor-faq {
-  top: 85.3152%;
-}
 
-.section-anchor-owner {
-  top: 76.7591%;
-}
 
-.section-anchor-salon {
-  top: 93.1421%;
-}
-
-.section-anchor-google-map {
-  top: 93.1421%;
-}
-
-.section-anchor-cta {
-  top: 7.9774%;
-}
-
-.lp-shell {
-  width: 100%;
-  max-width: var(--lp-width);
-  margin: 0 auto;
-  background: #fff;
-  box-shadow: none;
-}
-
-.lp-canvas {
-  position: relative;
-  width: 100%;
-}
-
-.lp-canvas::after {
-  content: none;
-}
-
-.lp-stage {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  background: #fff;
-}
-
-.lp-stage-main::before {
-  content: none;
-  position: absolute;
-  left: 0;
-  top: 80.3%;
-  z-index: 2;
-  width: 2.4%;
-  height: 19.7%;
-  background: linear-gradient(180deg, #eef9ff, #f7fcff 42%, #eaf7ff);
-  pointer-events: none;
-}
-
-.lp-stage-extra::before {
-  content: none;
-  position: absolute;
-  left: 0;
-  top: 28.7%;
-  z-index: 2;
-  width: 2.4%;
-  height: 66.8%;
-  background: linear-gradient(180deg, #eef9ff, #f8fcff 46%, #eaf8ff);
-  pointer-events: none;
-}
-
-.lp-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  transform: none;
-  transform-origin: center top;
-}
-
-.section-clean-mask {
-  position: absolute;
-  z-index: 4;
-  background:
-    radial-gradient(circle at 10% 16%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 32%),
-    linear-gradient(180deg, #f3fbff 0%, #eaf8ff 56%, #f8fdff 100%);
-  pointer-events: none;
-}
-
-.option-menu-clean-mask {
-  left: 2.2%;
-  top: 45.48%;
-  width: 95.6%;
-  height: 3.78%;
-}
-
-.salon-map-clean-mask {
-  left: 3.4%;
-  top: 91.55%;
-  z-index: 3;
-  width: 93.2%;
-  height: 8.05%;
-  border-radius: 12px;
-}
-
-.header-phone-action {
-  position: absolute;
-  left: 52.7%;
-  top: 0.054%;
-  z-index: 4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-  width: 43.65%;
-  height: 0.756%;
-  padding: 0;
-  overflow: clip;
-  border-radius: 10px;
-  color: #fff;
-  background: transparent;
-  cursor: pointer;
-  text-decoration: none;
-  box-shadow: none;
-  animation: none;
-  contain: paint;
-  clip-path: inset(1px round 9px);
-  isolation: isolate;
-}
-
-.header-phone-line {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  width: 100%;
-  min-width: 0;
-  line-height: 1;
-}
-
-.header-phone-icon {
-  flex: 0 0 auto;
-  width: clamp(10px, 2.8vw, 13px);
-  height: clamp(10px, 2.8vw, 13px);
-  fill: #fff;
-  filter: drop-shadow(0 1px 1px rgba(0, 20, 69, 0.75));
-}
-
-.header-phone-main,
-.header-phone-hours {
-  position: relative;
-  z-index: 1;
-  display: block;
-  color: #fff;
-  font-family:
-    "Hiragino Kaku Gothic ProN",
-    "Yu Gothic",
-    "YuGothic",
-    system-ui,
-    sans-serif;
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: 0;
-  text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 20, 69, 0.82);
-  white-space: nowrap;
-}
-
-.header-phone-main {
-  width: auto;
-  font-size: clamp(9px, 2.35vw, 11px);
-}
-
-.header-phone-hours {
-  width: 100%;
-  font-size: clamp(7.5px, 2.2vw, 10px);
-}
-
-.header-phone-action::before {
-  content: none;
-}
-
-.header-phone-action::after {
-  content: none;
-}
-
-.header-phone-action > span {
-  opacity: 0;
-}
-
-.first-view-action {
-  position: absolute;
-  left: 3.35%;
-  top: 7.977%;
-  width: 93.3%;
-  height: 0.878%;
-  z-index: 3;
-  display: none;
-  overflow: hidden;
-}
-
-.first-view-action img {
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-  opacity: 1;
-}
-
-.option-menu-card {
-  position: absolute;
-  left: 4.2%;
-  top: 45.88%;
-  z-index: 5;
-  width: 91.6%;
-  height: 3.18%;
-  overflow: hidden;
-  border: 2px solid #082957;
-  border-radius: 9px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(246, 251, 255, 0.98)),
-    #fff;
-  box-shadow:
-    0 2px 9px rgba(0, 28, 71, 0.16),
-    inset 0 0 0 2px rgba(207, 175, 91, 0.75);
-  color: #071b3d;
-  font-family:
-    "Hiragino Kaku Gothic ProN",
-    "Yu Gothic",
-    "YuGothic",
-    system-ui,
-    sans-serif;
-}
-
-.option-menu-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 31px;
-  color: #fff;
-  background:
-    linear-gradient(180deg, #07265a, #031945),
-    #031945;
-  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
-  font-size: 17px;
-  font-weight: 800;
-  line-height: 1;
-  text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
-}
-
-.option-menu-note {
-  margin: 0;
-  padding: 6px 12px 5px;
-  border-bottom: 1px solid rgba(155, 185, 219, 0.76);
-  color: #17345f;
-  font-size: 10.5px;
-  font-weight: 700;
-  line-height: 1.35;
-  text-align: left;
-}
-
-.option-menu-list {
-  display: grid;
-}
-
-.option-menu-row {
-  display: grid;
-  grid-template-columns: 50px 1fr 132px;
-  align-items: center;
-  min-height: 39px;
-  border-bottom: 1px solid rgba(155, 185, 219, 0.72);
-}
-
-.option-menu-row:last-child {
-  border-bottom: 0;
-}
-
-.option-menu-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  border-right: 1px solid rgba(155, 185, 219, 0.72);
-}
-
-.option-menu-icon svg {
-  display: block;
-  width: 25px;
-  height: 25px;
-  fill: #0a3470;
-}
-
-.option-menu-name {
-  padding: 0 12px;
-  border-right: 1px solid rgba(155, 185, 219, 0.72);
-  color: #061c42;
-  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
-  font-size: 17px;
-  font-weight: 800;
-  letter-spacing: 0;
-  line-height: 1.05;
-}
-
-.option-menu-price {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 3px;
-  color: #06265c;
-  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
-  font-size: 24px;
-  font-weight: 900;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-.option-menu-price span {
-  font-size: 11px;
-  font-weight: 800;
-}
-
-.faq-accordion {
-  position: absolute;
-  left: 4.2%;
-  top: 86.62%;
-  z-index: 5;
-  width: 91.6%;
-  height: auto;
-  max-height: none;
-  padding: 2px 2px 7px;
-  overflow: visible;
-  border: 0;
-  border-radius: 0;
-  background: linear-gradient(180deg, #f2fbff, #e8f7ff);
-  box-shadow: none;
-  font-family:
-    "Hiragino Kaku Gothic ProN",
-    "Yu Gothic",
-    "YuGothic",
-    system-ui,
-    sans-serif;
-  scrollbar-width: none;
-}
-
-.embedded-map-frame {
-  position: absolute;
-  left: 6.35%;
-  top: 98.0968%;
-  z-index: 5;
-  display: block;
-  width: 87.3%;
-  height: 1.258%;
-  border: 0;
-  border-radius: 7px;
-  background: #dcefff;
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.86),
-    0 2px 8px rgba(0, 24, 62, 0.15);
-}
-
-.map-click-link {
-  position: absolute;
-  left: 6.35%;
-  top: 98.0968%;
-  z-index: 6;
-  display: block;
-  width: 87.3%;
-  height: 1.258%;
-  border: 0;
-  background: transparent;
-  text-decoration: none;
-}
-
-.faq-accordion::-webkit-scrollbar {
-  display: none;
-  width: 0;
-}
-
-.faq-accordion::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.58);
-}
-
-.faq-accordion::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: rgba(7, 39, 88, 0.45);
-}
-
-.faq-accordion details {
-  margin: 0 0 9px;
-  overflow: hidden;
-  border: 1px solid rgba(205, 220, 236, 0.94);
-  border-radius: 9px;
-  background:
-    linear-gradient(180deg, #fff, #f9fdff),
-    #fff;
-  box-shadow:
-    0 3px 9px rgba(15, 57, 107, 0.12),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.76);
-}
-
-.faq-accordion summary {
-  display: grid;
-  grid-template-columns: 49px 39px minmax(0, 1fr) 34px;
-  gap: 0;
-  align-items: center;
-  min-height: 67px;
-  padding: 0 9px 0 8px;
-  color: #071b3d;
-  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
-  font-size: 15px;
-  font-weight: 900;
-  line-height: 1.2;
-  list-style: none;
-  cursor: pointer;
-}
-
-.faq-accordion summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq-row-icon {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 50px;
-  border-right: 1px dashed rgba(151, 170, 194, 0.7);
-}
-
-.faq-row-icon::before {
-  content: "?";
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border: 2px solid #1672bc;
-  border-radius: 50%;
-  color: #1672bc;
-  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-  font-size: 16px;
-  font-weight: 900;
-  line-height: 1;
-}
-
-.faq-row-number {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-  height: 50px;
-  color: #bf8624;
-  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
-  font-size: 25px;
-  font-weight: 900;
-  line-height: 1;
-}
-
-.faq-question {
-  min-width: 0;
-  padding: 0 7px 0 8px;
-}
-
-.faq-accordion summary::after {
-  content: "+";
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 27px;
-  height: 27px;
-  justify-self: end;
-  border: 1px solid rgba(198, 146, 43, 0.78);
-  border-radius: 50%;
-  color: #bd8623;
-  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-  font-weight: 800;
-  line-height: 1;
-}
-
-.faq-accordion details[open] summary::after {
-  content: "-";
-}
-
-.faq-answer {
-  margin: -1px 8px 10px 65px;
-  padding: 10px 12px 11px;
-  border: 1px solid rgba(197, 217, 237, 0.86);
-  border-radius: 7px;
-  background: linear-gradient(180deg, rgba(250, 253, 255, 0.98), rgba(241, 248, 254, 0.98));
-}
-
-.faq-accordion p {
-  margin: 0;
-  padding: 0;
-  color: #243a5f;
-  font-size: 11px;
-  font-weight: 700;
-  line-height: 1.52;
-}
-
-.faq-accordion .faq-answer-line {
-  font-weight: 800;
-}
-
-.faq-accordion .faq-note {
-  margin-top: 6px;
-  color: #405477;
-  font-size: 10.2px;
-  line-height: 1.45;
-}
-
-.salon-map-card {
-  position: absolute;
-  left: 7.3%;
-  top: 91.9%;
-  z-index: 4;
-  display: grid;
-  grid-template-rows: 0.68fr 0.95fr 0.76fr 0.76fr 3.25fr;
-  gap: 2px;
-  width: 85.4%;
-  height: 7.55%;
-  padding: 4px;
-  overflow: hidden;
-  border: 2px solid rgba(211, 179, 103, 0.92);
-  border-radius: 10px;
-  background:
-    linear-gradient(180deg, rgba(5, 31, 74, 0.98), rgba(3, 22, 56, 0.98)),
-    #031c46;
-  box-shadow: 0 3px 12px rgba(0, 17, 48, 0.25);
-  font-family:
-    "Hiragino Kaku Gothic ProN",
-    "Yu Gothic",
-    "YuGothic",
-    system-ui,
-    sans-serif;
-}
-
-.salon-info-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-  border: 1px solid rgba(211, 179, 103, 0.72);
-  border-radius: 6px;
-  color: #fff;
-  background:
-    linear-gradient(90deg, rgba(8, 45, 95, 0.98), rgba(3, 28, 70, 0.98)),
-    #031c46;
-  font-size: clamp(8px, 2.2vw, 10.5px);
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: 0;
-  text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 14, 42, 0.82);
-}
-
-.salon-info-row {
-  display: grid;
-  grid-template-columns: 30% 1fr;
-  align-items: center;
-  min-width: 0;
-  padding: 0 10px;
-  border: 1px solid rgba(211, 179, 103, 0.72);
-  border-radius: 6px;
-  color: #fff;
-  background:
-    linear-gradient(90deg, rgba(8, 45, 95, 0.95), rgba(3, 28, 70, 0.95)),
-    #031c46;
-  text-decoration: none;
-}
-
-.salon-info-label {
-  color: #e6be5d;
-  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
-  font-size: clamp(8px, 2.2vw, 10.5px);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: 0;
-  text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 14, 42, 0.85);
-  white-space: nowrap;
-}
-
-.salon-info-value {
-  min-width: 0;
-  color: #fff;
-  font-size: clamp(8px, 2.2vw, 10.5px);
-  font-weight: 800;
-  line-height: 1.14;
-  letter-spacing: 0;
-  text-align: left;
-  text-shadow: 0 1px 2px rgba(0, 14, 42, 0.82);
-}
-
-.salon-info-address .salon-info-value {
-  font-size: clamp(8px, 2.2vw, 10.5px);
-}
-
-.salon-info-phone .salon-info-value {
-  font-size: clamp(8px, 2.2vw, 10.5px);
-  letter-spacing: 0;
-}
-
-.salon-map-frame {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  border-radius: 8px;
-  background: #dcefff;
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.82),
-    0 2px 8px rgba(0, 24, 62, 0.15);
-}
-
-.action-button {
-  position: relative;
-  display: block;
-  border-radius: 14px;
-  overflow: hidden;
-  background: transparent;
-  box-shadow: none;
-  line-height: 0;
-  isolation: isolate;
-  contain: paint;
-}
-
-.first-view-action.action-button {
-  display: none;
-  position: absolute;
-}
-
-.action-button::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background: linear-gradient(
-    105deg,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 0.24) 42%,
-    rgba(255, 255, 255, 0.86) 50%,
-    rgba(255, 255, 255, 0.22) 58%,
-    rgba(255, 255, 255, 0)
-  );
-  -webkit-mask-image: url("public/assets/fv-action-button-follow-cta-lossless-20261010.webp");
-  mask-image: url("public/assets/fv-action-button-follow-cta-lossless-20261010.webp");
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-  background-size: 260% 100%;
-  background-position: 170% 0;
-  opacity: 0;
-  pointer-events: none;
-  animation: ctaShine 2.05s ease-in-out infinite;
-  mix-blend-mode: screen;
-}
-
-.action-button img {
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: 100%;
-  height: auto;
-  backface-visibility: hidden;
-  transform-origin: center center;
-  filter: none;
-  animation: ctaImageMotion 2.05s ease-in-out infinite;
-  will-change: filter, transform;
-}
-
-.first-view-action img {
-  height: 100%;
-  object-fit: fill;
-}
-
-.header-phone-action:focus-visible,
-.first-view-action:focus-visible,
-.floating-action:focus-visible {
-  outline: 3px solid #fff;
-  outline-offset: 4px;
-  box-shadow: 0 0 0 7px rgba(0, 139, 54, 0.48);
-}
-
-.floating-action {
-  position: fixed;
-  left: 50%;
-  right: auto;
-  bottom: max(0px, calc(env(safe-area-inset-bottom) - 18px));
-  z-index: 20;
-  width: var(--cta-width);
-  max-width: none;
-  --cta-y: 22px;
-  --cta-scale: 0.98;
-  --cta-scale-active: 0.98;
-  text-decoration: none;
-  line-height: 0;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(-50%) translateY(var(--cta-y)) scale(var(--cta-scale));
-  transform-origin: center bottom;
-  touch-action: manipulation;
-  transition:
-    opacity 220ms ease,
-    transform 360ms cubic-bezier(0.2, 1.35, 0.32, 1);
-}
-
-.floating-action.is-visible {
-  --cta-y: 0px;
-  --cta-scale: 1;
-  --cta-scale-active: 1.018;
-  opacity: 1;
-  pointer-events: auto;
-  animation: ctaButtonPulse 2.05s ease-in-out infinite;
-}
-
-.floating-action.is-scrolling {
-  --cta-y: -6px;
-  --cta-scale: 1.008;
-  --cta-scale-active: 1.018;
-}
-
-@keyframes ctaImageMotion {
-  0%,
-  100% {
-    filter:
-      drop-shadow(0 0 0 rgba(41, 223, 93, 0));
-  }
-  50% {
-    filter:
-      drop-shadow(0 0 8px rgba(41, 223, 93, 0.22));
-  }
-}
-
-@keyframes ctaButtonPulse {
-  0%,
-  100% {
-    transform: translateX(-50%) translateY(var(--cta-y)) scale(var(--cta-scale));
-  }
-  50% {
-    transform: translateX(-50%) translateY(calc(var(--cta-y) - 4px)) scale(var(--cta-scale-active));
-  }
-}
-
-@keyframes ctaShine {
-  0% {
-    background-position: 170% 0;
-    opacity: 0;
-  }
-  16% {
-    opacity: 0.78;
-  }
-  42%,
-  100% {
-    background-position: -70% 0;
-    opacity: 0;
-  }
-}
-
-@keyframes phoneButtonPulse {
-  0%,
-  100% {
-    filter: brightness(1);
-  }
-  50% {
-    filter: brightness(1.08);
-  }
-}
-
-
-@media (min-width: 431px) {
-  body {
-    padding-top: 24px;
-  }
-
-  .lp-shell {
-    border-radius: 0;
-    overflow: visible;
-  }
-}
-
-@media (max-width: 1039px) {
-  html,
-  body {
-    max-width: 100%;
-    overflow-x: hidden;
-    overscroll-behavior-x: none;
-  }
-
-  .lp-shell,
-  .lp-canvas,
-  .lp-stage {
-    max-width: 100%;
-    overflow-x: hidden;
-    touch-action: pan-y;
-  }
-}
-
-@media (max-width: 430px) {
-  .lp-shell {
-    width: 100vw;
-    max-width: 100vw;
-  }
-}
-
-@media (min-width: 1040px) {
-  html,
-  body {
-    height: 100%;
-    overflow: hidden;
-  }
-
-  body {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) var(--desktop-phone-width) minmax(0, 1fr);
-    grid-template-areas: "desktop-left desktop-center desktop-right";
-    min-height: 100vh;
-    width: 100%;
-    background: #082b6c;
-    padding-top: 0;
-    padding-bottom: 0;
-    gap: 0;
-    overflow: hidden;
-  }
-
-  body::before,
-  body::after {
-    content: none;
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    width: 0;
-    height: 100vh;
-    pointer-events: none;
-  }
-
-  body::before {
-    content: none;
-  }
-
-  body::after {
-    right: 0;
-    width: 0;
-    background: transparent;
-  }
-
-  .desktop-brand-panel,
-  .desktop-action-panel {
-    position: relative;
-    top: 0;
-    bottom: auto;
-    z-index: 10;
-    display: block;
-    width: 100%;
-    min-width: 0;
-    height: 100vh;
-    max-height: none;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: #082b6c;
-  }
-
-  .desktop-brand-panel {
-    grid-area: desktop-left;
-  }
-
-  .desktop-brand-panel::before {
-    content: none;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 3;
-    width: 48px;
-    height: 100%;
-    background:
-      linear-gradient(90deg, rgba(5, 24, 64, 0), rgba(5, 24, 64, 0.38) 50%, rgba(5, 24, 64, 0));
-    pointer-events: none;
-  }
-
-  .desktop-brand-panel::after {
-    content: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
-    width: var(--desktop-center-gutter-width);
-    height: 100%;
-    background: #fff;
-    pointer-events: none;
-  }
-
-  .desktop-left-panel-image,
-  .desktop-right-panel-image {
-    position: absolute;
-    top: 0;
-    display: block;
-    width: auto;
-    height: 100vh;
-    max-width: none;
-    object-fit: contain;
-    object-position: center top;
-    transform: none;
-    clip-path: none;
-    margin: 0;
-    border: 0;
-  }
-
-  .desktop-left-panel-image {
-    left: auto;
-    right: 0;
-    object-position: right top;
-    transform: translateX(var(--desktop-left-image-trim-right));
-    clip-path: inset(0 var(--desktop-left-image-trim-right) 0 0);
-  }
-
-  .desktop-right-panel-image {
-    left: 0;
-    right: auto;
-    object-position: left top;
-    transform: translateX(calc(-1 * var(--desktop-right-image-trim-left)));
-    clip-path: inset(0 0 0 var(--desktop-right-image-trim-left));
-  }
-
-  .desktop-action-panel {
-    grid-area: desktop-right;
-    scrollbar-width: none;
-  }
-
-  .desktop-action-panel::before {
-    content: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    width: var(--desktop-center-gutter-width);
-    height: 100%;
-    background: #fff;
-    pointer-events: none;
-  }
-
-  .desktop-action-panel::-webkit-scrollbar {
-    display: none;
-    width: 0;
-  }
-
-  .desktop-nav {
-    position: absolute;
-    left: 10.7%;
-    top: 13.85%;
-    z-index: 2;
-    display: grid;
-    grid-template-rows: repeat(5, 1fr);
-    gap: 1.85%;
-    width: 78.6%;
-    height: 34%;
-    margin: 0;
-    border-bottom: 0;
-  }
-
-  .desktop-nav a {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 0;
-    height: 100%;
-    padding: 0;
-    overflow: hidden;
-    border: 0;
-    border-radius: 0;
-    color: transparent;
-    background: transparent;
-    box-shadow: none;
-    font-size: 0;
-    line-height: 1.1;
-    text-align: center;
-    text-decoration: none;
-    white-space: nowrap;
-    opacity: 0;
-  }
-
-  .desktop-nav a:hover,
-  .desktop-nav a:focus-visible {
-    opacity: 0;
-    background: transparent;
-    outline: 0;
-    outline-offset: 0;
-  }
-
-  .desktop-shop-info {
-    position: absolute;
-    left: 10.7%;
-    right: auto;
-    top: 52.2%;
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 3.7%;
-    width: 78.6%;
-    height: 40.2%;
-    margin: 0;
-    padding: 1.3% 0 0;
-    border: 0;
-    color: #fff;
-    background: transparent;
-    box-shadow: none;
-    font-style: normal;
-    text-align: center;
-  }
-
-  .desktop-shop-info section {
-    margin: 0;
-  }
-
-  .desktop-shop-info h2 {
-    margin: 0 0 5px;
-    color: #f2cd58;
-    font-family: "Times New Roman", "Hiragino Mincho ProN", "Yu Mincho", serif;
-    font-size: 23px;
-    font-weight: 700;
-    line-height: 1;
-  }
-
-  .desktop-shop-info p {
-    margin: 0;
-    color: #fff;
-    font-family: "Times New Roman", "Hiragino Mincho ProN", "Yu Mincho", serif;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 1.08;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-  }
-
-  .desktop-shop-info .desktop-shop-info-emphasis {
-    font-size: 20px;
-    line-height: 1.02;
-  }
-
-  .desktop-shop-info a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .desktop-message {
-    display: none;
-  }
-
-  .desktop-copyright {
-    display: none;
-  }
-
-  .lp-shell {
-    grid-area: desktop-center;
-    position: relative;
-    z-index: 5;
-    flex: 0 0 var(--desktop-phone-width);
-    width: var(--desktop-phone-width);
-    min-width: var(--desktop-phone-width);
-    max-width: var(--desktop-phone-width);
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    overscroll-behavior: contain;
-    border: 0;
-    border-radius: 0;
-    background: #fff;
-    box-shadow: none;
-    scrollbar-width: none;
-  }
-
-  .lp-canvas {
-    width: 100%;
-    margin: 0;
-    background: #fff;
-  }
-
-  .lp-canvas::after {
-    content: "";
-    display: block;
-    height: calc(120px + env(safe-area-inset-bottom));
-  }
-
-  .lp-shell::-webkit-scrollbar {
-    display: none;
-    width: 0;
-  }
-
-  .lp-shell::-webkit-scrollbar-track {
-    background: rgba(5, 30, 67, 0.08);
-  }
-
-  .lp-shell::-webkit-scrollbar-thumb {
-    background: rgba(3, 39, 86, 0.32);
-    border-radius: 999px;
-  }
-
-  .floating-action {
-    bottom: max(14px, env(safe-area-inset-bottom));
-  }
-}
-
-@media (min-width: 431px) {
-  :root {
-    --desktop-side-bottom-crop: 12px;
-    --desktop-right-art-shift: var(--desktop-center-gap);
-    --desktop-right-image-trim-left: 0%;
-    --desktop-right-menu-left: calc(var(--desktop-center-gap) + 4.49vh);
-    --desktop-right-menu-width: 32.94vh;
-  }
-
-  html,
-  body {
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    overflow: hidden;
-    background: #fff;
-  }
-
-  body {
-    display: block;
-    min-width: 0;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    background: #fff;
-  }
-
-  .side-left,
-  .side-right {
-    position: fixed;
-    top: 0;
-    bottom: auto;
-    z-index: 1;
-    display: block;
-    width: max(0px, calc((100vw - var(--desktop-phone-width)) / 2));
-    height: 100vh;
-    min-width: 0;
-    max-width: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    border: 0;
-    border-radius: 0;
-    background: #fff;
-    box-shadow: none;
-  }
-
-  .side-left {
-    left: 0;
-    right: auto;
-    pointer-events: none;
-  }
-
-  .side-right {
-    left: auto;
-    right: 0;
-    pointer-events: auto;
-  }
-
-  .side-left::before,
-  .side-left::after,
-  .side-right::before,
-  .side-right::after {
-    content: none;
-  }
-
-  .desktop-left-panel-image,
-  .desktop-right-panel-image {
-    position: absolute;
-    top: 0;
-    bottom: auto;
-    display: block;
-    width: auto;
-    height: calc(100vh + var(--desktop-side-bottom-crop));
-    max-width: none;
-    margin: 0;
-    border: 0;
-    border-radius: 0;
-    object-fit: contain;
-    box-shadow: none;
-  }
-
-  .desktop-left-panel-image {
-    left: auto;
-    right: var(--desktop-left-center-gap);
-    object-position: right top;
-    transform: translateX(var(--desktop-left-image-trim-right));
-    clip-path: inset(0 var(--desktop-left-image-trim-right) var(--desktop-side-bottom-crop) 0);
-  }
-
-  .desktop-right-panel-image {
-    left: 0;
-    right: auto;
-    object-position: left top;
-    transform: translateX(var(--desktop-right-art-shift));
-    clip-path: inset(0 0 var(--desktop-side-bottom-crop) var(--desktop-right-image-trim-left));
-  }
-
-  .desktop-nav {
-    left: var(--desktop-right-menu-left);
-    top: 13.85vh;
-    width: var(--desktop-right-menu-width);
-    max-width: max(0px, calc(100% - var(--desktop-right-menu-left) - 8px));
-    height: 35.25vh;
-    gap: 1.85vh;
-    overflow: visible;
-  }
-
-  .desktop-shop-info {
-    left: var(--desktop-right-menu-left);
-    top: 52.2vh;
-    width: var(--desktop-right-menu-width);
-    max-width: max(0px, calc(100% - var(--desktop-right-menu-left) - 8px));
-    height: 40.2vh;
-    padding-top: 1.3vh;
-    gap: 3.2vh;
-    overflow: hidden;
-  }
-
-  .desktop-shop-info h2 {
-    margin-bottom: 0.65vh;
-    font-size: 2.65vh;
-  }
-
-  .desktop-shop-info p {
-    font-size: 1.62vh;
-    line-height: 1.08;
-  }
-
-  .desktop-shop-info .desktop-shop-info-emphasis {
-    font-size: 2.1vh;
-    line-height: 1.02;
-  }
-
-  .sp-main {
-    position: relative;
-    z-index: 10;
-    display: block;
-    flex: 0 0 var(--desktop-phone-width);
-    width: var(--desktop-phone-width);
-    min-width: var(--desktop-phone-width);
-    max-width: var(--desktop-phone-width);
-    height: 100vh;
-    min-height: 100vh;
-    margin: 0 auto;
-    padding: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    overscroll-behavior: contain;
-    border: 0;
-    border-radius: 0;
-    background: #fff;
-    box-shadow: none;
-    scrollbar-width: none;
-  }
-
-  .sp-main,
-  .sp-main .lp-canvas,
-  .sp-main .lp-stage {
-    box-sizing: border-box;
-  }
-
-  .sp-main .lp-canvas,
-  .sp-main .lp-stage {
-    width: var(--desktop-phone-width);
-    min-width: var(--desktop-phone-width);
-    max-width: var(--desktop-phone-width);
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    border: 0;
-    background: #fff;
-  }
-
-  .sp-main .lp-image {
-    width: var(--desktop-phone-width);
-    min-width: var(--desktop-phone-width);
-    max-width: var(--desktop-phone-width);
-    height: auto;
-  }
-
-  .sp-main::-webkit-scrollbar {
-    display: none;
-    width: 0;
-  }
-
-  .desktop-nav {
-    pointer-events: auto;
-  }
-
-  .floating-action {
-    left: 50%;
-    bottom: max(14px, env(safe-area-inset-bottom));
-  }
-}
-
-@media (min-width: 431px) and (max-width: 859px) {
-  .side-left,
-  .side-right {
-    display: none;
-  }
-}
-
-@media (max-width: 374px) {
-  .floating-action {
-    --cta-width: calc(100vw - 14px);
-  }
-}
-
-@supports (width: 100dvw) {
-  :root {
-    --cta-width: min(calc(100dvw - 16px), 390px);
-  }
-
-  .floating-action {
-    left: 50%;
-  }
-
-  @media (max-width: 374px) {
-    .floating-action {
-      --cta-width: calc(100dvw - 14px);
+<script id="deferred-art-loader">(() => {
+  'use strict';
+  function initDeferredArt() {
+    const desktop = matchMedia('(min-width: 1040px)');
+    const shell = document.querySelector('.lp-shell');
+    const pending = new Set();
+    document.querySelectorAll('template[data-deferred-art]').forEach(template => {
+      const group = template.closest('section') || template.parentElement;
+      pending.add(group);
+    });
+    let observer;
+    function activate(group) {
+      group.querySelectorAll('template[data-deferred-art]').forEach(template => {
+        template.replaceWith(template.content.cloneNode(true));
+      });
+      pending.delete(group);
+      observer?.unobserve(group);
     }
+    function observe() {
+      observer?.disconnect();
+      if (!('IntersectionObserver' in window)) { [...pending].forEach(activate); return; }
+      observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => { if (entry.isIntersecting) activate(entry.target); });
+      }, {root:desktop.matches ? shell : null, rootMargin:'600px 0px', threshold:0});
+      pending.forEach(group => observer.observe(group));
+    }
+    function activateHash() {
+      let id; try { id=decodeURIComponent(location.hash.slice(1)); } catch { return; }
+      const target = id && document.getElementById(id);
+      if (!target) return;
+      const group = target.closest('section') || target;
+      if (pending.has(group)) activate(group);
+    }
+    // Start a destination's art before smooth scrolling can reach it.
+    document.addEventListener('click', event => {
+      const link=event.target.closest?.('a[href^="#"]');
+      if (!link) return;
+      let target; try { target=document.getElementById(decodeURIComponent(link.hash.slice(1))); } catch { return; }
+      const group=target?.closest('section') || target;
+      if (group && pending.has(group)) activate(group);
+    }, {capture:true});
+    observe(); activateHash();
+    desktop.addEventListener('change', observe);
+    window.addEventListener('hashchange', activateHash);
+    window.addEventListener('pageshow', observe);
+    window.addEventListener('beforeprint', () => [...pending].forEach(activate));
   }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-    </style>
-    <style>
-      html, body { width: 100%; overflow-x: hidden; overscroll-behavior-x: none; }
-      body, .lp-shell, .lp-canvas, .lp-stage, .desktop-brand-panel, .desktop-action-panel { border: 0 !important; box-shadow: none !important; }
-      .lp-canvas::before, .lp-canvas::after, .lp-stage::before, .lp-stage::after { border: 0 !important; box-shadow: none !important; }
-      .desktop-action-panel::after { content: none !important; }
-      .header-phone-action { overflow: hidden !important; box-shadow: none !important; animation: none !important; contain: paint !important; clip-path: inset(1px round 9px) !important; }
-      .header-phone-action::before, .header-phone-action::after { content: none !important; animation: none !important; box-shadow: none !important; }
-      .action-button { border-radius: 14px !important; overflow: hidden !important; background: transparent !important; box-shadow: none !important; line-height: 0 !important; contain: paint !important; isolation: isolate !important; }
-      .first-view-action.action-button { display: none !important; }
-      .action-button img { position: relative !important; z-index: 1 !important; display: block !important; width: 100% !important; filter: none !important; animation: ctaImageMotion 2.05s ease-in-out infinite !important; transform-origin: center center !important; will-change: filter, transform; }
-      .first-view-action img { height: 100% !important; object-fit: fill !important; }
-      .action-button::after { content: "" !important; position: absolute !important; inset: 0 !important; z-index: 2 !important; border-radius: inherit !important; background: linear-gradient(105deg, rgba(255,255,255,0), rgba(255,255,255,.24) 42%, rgba(255,255,255,.82) 50%, rgba(255,255,255,.2) 58%, rgba(255,255,255,0)) !important; -webkit-mask-image: url("public/assets/fv-action-button-follow-cta-lossless-20261010.webp") !important; mask-image: url("public/assets/fv-action-button-follow-cta-lossless-20261010.webp") !important; -webkit-mask-repeat: no-repeat !important; mask-repeat: no-repeat !important; -webkit-mask-size: 100% 100% !important; mask-size: 100% 100% !important; background-size: 260% 100% !important; background-position: 170% 0; opacity: 0; pointer-events: none !important; animation: ctaShine 2.05s ease-in-out infinite !important; mix-blend-mode: screen; }
-      .header-phone-action:focus-visible, .floating-action:focus-visible { outline: 0 !important; box-shadow: none !important; }
-      .section-anchor-reason { top: 15.8157% !important; }
-      .section-anchor-before-after { top: 56.2357% !important; }
-      .section-anchor-price { top: 70.7119% !important; }
-      .section-anchor-faq { top: 85.3152% !important; }
-      .section-anchor-owner { top: 76.7591% !important; }
-      .section-anchor-salon, .section-anchor-google-map { top: 93.1421% !important; }
-      .faq-accordion { top: 86.62% !important; }
-      .embedded-map-frame { top: 98.0968% !important; }
-      @keyframes ctaImageMotion { 0%, 100% { filter: drop-shadow(0 0 0 rgba(41,223,93,0)); } 50% { filter: drop-shadow(0 0 8px rgba(41,223,93,.22)); } }
-      @keyframes ctaShine { 0% { background-position: 170% 0; opacity: 0; } 16% { opacity: .72; } 42%, 100% { background-position: -70% 0; opacity: 0; } }
-      @media (min-width: 1040px) { body { background: #fff !important; } .desktop-brand-panel { border-right: 0 !important; } .desktop-action-panel { border-left: 0 !important; } .desktop-brand-panel::after, .desktop-action-panel::before { content: none !important; background: transparent !important; border: 0 !important; box-shadow: none !important; } .desktop-brand-panel, .desktop-action-panel, .side-left, .side-right { background: #fff !important; } .lp-shell { border: 0 !important; box-shadow: none !important; background: #fff !important; } .lp-canvas::after { content: ""; display: block; height: calc(120px + env(safe-area-inset-bottom)); } }
-    </style>
-    <style id="restored-options-styles">
-
-/* Local restoration: existing image assets are unchanged. */
-.restored-image-slice { position: relative; width: 100%; overflow: hidden; }
-.restored-image-slice > .lp-image { position: absolute; width: 100%; max-width: none; left: 0; top: 0; }
-.restored-image-slice-bottom > .lp-image { top: -153.514265831594%; }
-.restored-offer { position: relative; width: 100%; margin: 0; padding: 0; }
-.restored-options-image { display: block; width: 100%; height: auto; }
-
-.section-anchor-top { top: 0.0000000000% !important; }
-.section-anchor-reason { top: 15.3728798629% !important; }
-.section-anchor-before-after { top: 54.6611696041% !important; }
-.section-anchor-price { top: 68.7320538187% !important; }
-.section-anchor-faq { top: 85.7263563288% !important; }
-.section-anchor-owner { top: 77.4098165995% !important; }
-.section-anchor-salon, .section-anchor-google-map { top: 93.3341127606% !important; }
-.section-anchor-cta { top: 7.7540426171% !important; }
-.header-phone-action { top: 0.0524880665% !important; }
-.faq-accordion { top: 86.9946235345% !important; }
-.embedded-map-frame, .map-click-link { top: 98.1500872579% !important; }
-.header-phone-action { height: 0.7348329303% !important; }
-.embedded-map-frame, .map-click-link { height: 1.2227775481% !important; }
-</style>
-
-<link rel="stylesheet" href="revision.css?v=20261029-hero-sequence-complete">
-<link rel="stylesheet" href="revision-v2.css?v=20261029-reason-corners">
-<link rel="stylesheet" href="feature-a-v3.css?v=20261029-machine-copy">
-<link rel="stylesheet" href="revision-v3.css?v=20261029-credit-haze">
-<link rel="stylesheet" href="revision-v4.css?v=20261029-reason-ribbon">
-<link rel="stylesheet" href="revision-v5.css?v=20261028-5">
-<link rel="preload" href="public/assets/fonts/salon-mincho-v8.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="typography-v8.css?v=20261028-8"><link rel="stylesheet" href="faq-crest.css?v=20261029-open-match"><link rel="stylesheet" href="cta-edge.css?v=20261029-trim"><link rel="stylesheet" href="lower-owner.css?v=20261029-owner"><link rel="stylesheet" href="pricing-icons.css?v=20261029-two-rows"><link rel="stylesheet" href="panel-frames.css?v=20261029-shared-frame">
-<link rel="stylesheet" href="hero-natural-bottom.css?v=20261029-no-haze">
-<link rel="stylesheet" href="cta-motion.css?v=20261029-zero-motion">
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',initDeferredArt,{once:true});
+  else initDeferredArt();
+})();</script>
 </head>
 <body>
     <aside class="desktop-brand-panel side-left" aria-label="Salon de Six ブランド情報">
-          <picture><source media="(min-width: 1040px)" srcset="public/assets/desktop-20260804-left-panel-lossless-20261010.webp" type="image/webp" /><img class="desktop-left-panel-image" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" width="392" height="847" alt="Salon de Six かっこいいは作れる" decoding="async" fetchpriority="low" /></picture>
+          <picture><source media="(min-width: 1040px)" srcset="public/assets/performance-20261029/desktop-20260804-left-panel-lossless-20261010-q92.webp" type="image/webp" /><img class="desktop-left-panel-image" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" width="392" height="847" alt="Salon de Six かっこいいは作れる" decoding="async" fetchpriority="low" /></picture>
     </aside>
 
     <aside class="desktop-action-panel side-right" aria-label="Salon de Six ページメニュー">
@@ -1613,7 +170,7 @@ a {
       <g clip-path="url(#hero-price-badge-restore-left)"><g transform="translate(-350 0)"><image href="public/assets/lp-section-0b-fast.webp" x="0" y="900" width="865" height="1050"/></g></g>
       <g clip-path="url(#hero-price-badge-restore-right)"><g transform="translate(-270 0)"><image href="public/assets/lp-section-0b-fast.webp" x="0" y="900" width="865" height="1050"/></g></g>
     </g>
-    <g class="hero-price-badge-centered" transform="translate(105 0)" aria-hidden="true"><g clip-path="url(#hero-price-badge-source)"><image href="public/assets/lp-section-0b-fast.webp" x="0" y="900" width="865" height="1050"/></g></g></svg></div></div><section class="revision-section" id="eight-care"><div class="section-heading renewal-ribbon" data-reveal><img class="renewal-ribbon-art" src="public/assets/revision/heading-renewal-ribbon.webp" width="2169" height="725" alt="" aria-hidden="true" loading="lazy" decoding="async"><h2>8部位丸ごと体験</h2></div><div class="art-window foreground-layer" style="aspect-ratio:865/476" role="img" aria-label="ヒゲ・歯・眉毛・鼻毛・耳毛・スキンケア・手の脱毛・爪磨き" data-reveal><svg viewBox="0 1950 865 476" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <g class="hero-price-badge-centered" transform="translate(105 0)" aria-hidden="true"><g clip-path="url(#hero-price-badge-source)"><image href="public/assets/lp-section-0b-fast.webp" x="0" y="900" width="865" height="1050"/></g></g></svg></div></div><section class="revision-section" id="eight-care"><div class="section-heading renewal-ribbon" data-reveal><img class="renewal-ribbon-art" src="public/assets/performance-20261029/heading-renewal-ribbon-q95.webp" width="2169" height="725" alt="" aria-hidden="true" loading="lazy" decoding="async"><h2>8部位丸ごと体験</h2></div><div class="art-window foreground-layer" style="aspect-ratio:865/476" role="img" aria-label="ヒゲ・歯・眉毛・鼻毛・耳毛・スキンケア・手の脱毛・爪磨き" data-reveal><template data-deferred-art><svg viewBox="0 1950 865 476" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-original-1950" x="0" y="1950" width="865" height="476" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1624,7 +181,18 @@ a {
         <g clip-path="url(#text-original-1950)"><g filter="url(#ink-original-1950)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></g>
         <g fill="white"><rect x="136" y="3272" width="598" height="70" rx="35"/><polygon points="139,2666 726,2666 865,2829 865,3158 740,3312 126,3312 0,3158 0,2829"/></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-original-1950)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></svg></div><div class="art-window foreground-layer" style="aspect-ratio:865/209" role="img" aria-label="90分でまとめて整える" data-reveal><svg viewBox="0 2426 865 209" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-1950)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></svg></template><noscript><svg viewBox="0 1950 865 476" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-original-1950" x="0" y="1950" width="865" height="476" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-original-1950" clipPathUnits="userSpaceOnUse"><rect x="60" y="1774" width="735" height="166" rx="0"/><rect x="45" y="1970" width="780" height="446" rx="0"/><rect x="100" y="2428" width="687" height="62" rx="0"/><rect x="49" y="2500" width="773" height="48" rx="0"/><rect x="236" y="2548" width="430" height="83" rx="0"/><rect x="374" y="2635" width="120" height="57" rx="0"/></clipPath>
+      <mask id="foreground-original-1950" x="0" y="1950" width="865" height="476" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-original-1950)"><g filter="url(#ink-original-1950)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></g>
+        <g fill="white"><rect x="136" y="3272" width="598" height="70" rx="35"/><polygon points="139,2666 726,2666 865,2829 865,3158 740,3312 126,3312 0,3158 0,2829"/></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-1950)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></svg></noscript></div><div class="art-window foreground-layer" style="aspect-ratio:865/209" role="img" aria-label="90分でまとめて整える" data-reveal><template data-deferred-art><svg viewBox="0 2426 865 209" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-original-2426" x="0" y="2426" width="865" height="209" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1635,7 +203,18 @@ a {
         <g clip-path="url(#text-original-2426)"><g filter="url(#ink-original-2426)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></g>
         <g fill="white"><rect x="136" y="3272" width="598" height="70" rx="35"/><polygon points="139,2666 726,2666 865,2829 865,3158 740,3312 126,3312 0,3158 0,2829"/></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-original-2426)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></svg></div><div class="art-window foreground-layer" style="aspect-ratio:865/710" role="img" aria-label="8つのケアを一度に体験" data-reveal><svg viewBox="0 2635 865 710" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-2426)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></svg></template><noscript><svg viewBox="0 2426 865 209" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-original-2426" x="0" y="2426" width="865" height="209" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-original-2426" clipPathUnits="userSpaceOnUse"><rect x="60" y="1774" width="735" height="166" rx="0"/><rect x="45" y="1970" width="780" height="446" rx="0"/><rect x="100" y="2428" width="687" height="62" rx="0"/><rect x="49" y="2500" width="773" height="48" rx="0"/><rect x="236" y="2548" width="430" height="83" rx="0"/><rect x="374" y="2635" width="120" height="57" rx="0"/></clipPath>
+      <mask id="foreground-original-2426" x="0" y="2426" width="865" height="209" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-original-2426)"><g filter="url(#ink-original-2426)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></g>
+        <g fill="white"><rect x="136" y="3272" width="598" height="70" rx="35"/><polygon points="139,2666 726,2666 865,2829 865,3158 740,3312 126,3312 0,3158 0,2829"/></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-2426)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></svg></noscript></div><div class="art-window foreground-layer" style="aspect-ratio:865/710" role="img" aria-label="8つのケアを一度に体験" data-reveal><template data-deferred-art><svg viewBox="0 2635 865 710" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-original-2635" x="0" y="2635" width="865" height="710" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1646,7 +225,18 @@ a {
         <g clip-path="url(#text-original-2635)"><g filter="url(#ink-original-2635)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></g>
         <g fill="white"><rect x="136" y="3272" width="598" height="70" rx="35"/><polygon points="139,2666 726,2666 865,2829 865,3158 740,3312 126,3312 0,3158 0,2829"/></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-original-2635)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></svg></div><p class="care-occasion content-rail" data-reveal>商談前・会食前・デート前にも<span>利用しやすい</span></p></section><section class="revision-section" id="reason"><div class="section-heading renewal-ribbon" data-reveal><img class="renewal-ribbon-art" src="public/assets/revision/heading-renewal-ribbon.webp" width="2169" height="725" alt="" aria-hidden="true" loading="lazy" decoding="async"><h2>選ばれる理由</h2></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:837/284" role="img" aria-label="バンコク男磨きセットが選ばれる3つの理由。" data-reveal><svg viewBox="14 3608 837 284" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-2635)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></svg></template><noscript><svg viewBox="0 2635 865 710" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-original-2635" x="0" y="2635" width="865" height="710" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-original-2635" clipPathUnits="userSpaceOnUse"><rect x="60" y="1774" width="735" height="166" rx="0"/><rect x="45" y="1970" width="780" height="446" rx="0"/><rect x="100" y="2428" width="687" height="62" rx="0"/><rect x="49" y="2500" width="773" height="48" rx="0"/><rect x="236" y="2548" width="430" height="83" rx="0"/><rect x="374" y="2635" width="120" height="57" rx="0"/></clipPath>
+      <mask id="foreground-original-2635" x="0" y="2635" width="865" height="710" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-original-2635)"><g filter="url(#ink-original-2635)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></g>
+        <g fill="white"><rect x="136" y="3272" width="598" height="70" rx="35"/><polygon points="139,2666 726,2666 865,2829 865,3158 740,3312 126,3312 0,3158 0,2829"/></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-2635)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></svg></noscript></div><p class="care-occasion content-rail" data-reveal>商談前・会食前・デート前にも<span>利用しやすい</span></p></section><section class="revision-section" id="reason"><div class="section-heading renewal-ribbon" data-reveal><img class="renewal-ribbon-art" src="public/assets/performance-20261029/heading-renewal-ribbon-q95.webp" width="2169" height="725" alt="" aria-hidden="true" loading="lazy" decoding="async"><h2>選ばれる理由</h2></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:837/284" role="img" aria-label="バンコク男磨きセットが選ばれる3つの理由。" data-reveal><template data-deferred-art><svg viewBox="14 3608 837 284" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-original-3608" x="0" y="3608" width="865" height="284" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1657,7 +247,18 @@ a {
         <g clip-path="url(#text-original-3608)"><g filter="url(#ink-original-3608)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></g>
         <g fill="white"></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-original-3608)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:837/107" role="img" aria-label="脱毛だけで終わらせない。清潔感を引き出す身だしなみケアを90分でまとめて整える。" data-reveal><svg viewBox="14 3892 837 107" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-3608)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></template><noscript><svg viewBox="14 3608 837 284" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-original-3608" x="0" y="3608" width="865" height="284" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-original-3608" clipPathUnits="userSpaceOnUse"><rect x="14" y="3608" width="837" height="284" rx="0"/></clipPath>
+      <mask id="foreground-original-3608" x="0" y="3608" width="865" height="284" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-original-3608)"><g filter="url(#ink-original-3608)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></g>
+        <g fill="white"></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-3608)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></noscript></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:837/107" role="img" aria-label="脱毛だけで終わらせない。清潔感を引き出す身だしなみケアを90分でまとめて整える。" data-reveal><template data-deferred-art><svg viewBox="14 3892 837 107" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-original-3892" x="0" y="3892" width="865" height="107" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1668,7 +269,18 @@ a {
         <g clip-path="url(#text-original-3892)"><g filter="url(#ink-original-3892)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></g>
         <g fill="white"></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-original-3892)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></div><div class="reason-cards"><div class="art-window foreground-layer content-rail" style="aspect-ratio:761/232" role="img" aria-label="選ばれる理由1" data-reveal><svg viewBox="52 4022 761 232" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-3892)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></template><noscript><svg viewBox="14 3892 837 107" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-original-3892" x="0" y="3892" width="865" height="107" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-original-3892" clipPathUnits="userSpaceOnUse"><rect x="14" y="3892" width="837" height="107" rx="0"/></clipPath>
+      <mask id="foreground-original-3892" x="0" y="3892" width="865" height="107" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-original-3892)"><g filter="url(#ink-original-3892)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></g>
+        <g fill="white"></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-3892)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></noscript></div><div class="reason-cards"><div class="art-window foreground-layer content-rail" style="aspect-ratio:761/232" role="img" aria-label="選ばれる理由1" data-reveal><template data-deferred-art><svg viewBox="52 4022 761 232" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-original-4022" x="0" y="4022" width="865" height="232" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1679,7 +291,18 @@ a {
         <g clip-path="url(#text-original-4022)"><g filter="url(#ink-original-4022)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></g>
         <g fill="white"><path d="M79 4026 H785 C788 4042 795 4052 813 4057 V4222 C798 4227 788 4237 785 4253 H79 C76 4237 66 4227 51 4222 V4057 C69 4052 76 4042 79 4026 Z"/></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-original-4022)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:761/232" role="img" aria-label="選ばれる理由2" data-reveal><svg viewBox="52 4266 761 232" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-4022)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></template><noscript><svg viewBox="52 4022 761 232" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-original-4022" x="0" y="4022" width="865" height="232" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-original-4022" clipPathUnits="userSpaceOnUse"></clipPath>
+      <mask id="foreground-original-4022" x="0" y="4022" width="865" height="232" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-original-4022)"><g filter="url(#ink-original-4022)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></g>
+        <g fill="white"><path d="M79 4026 H785 C788 4042 795 4052 813 4057 V4222 C798 4227 788 4237 785 4253 H79 C76 4237 66 4227 51 4222 V4057 C69 4052 76 4042 79 4026 Z"/></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-4022)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></noscript></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:761/232" role="img" aria-label="選ばれる理由2" data-reveal><template data-deferred-art><svg viewBox="52 4266 761 232" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-original-4266" x="0" y="4266" width="865" height="232" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1690,7 +313,18 @@ a {
         <g clip-path="url(#text-original-4266)"><g filter="url(#ink-original-4266)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></g>
         <g fill="white"><path d="M79 4269 H785 C788 4285 795 4295 813 4300 V4464 C798 4469 788 4479 785 4495 H79 C76 4479 66 4469 51 4464 V4300 C69 4295 76 4285 79 4269 Z"/></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-original-4266)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:761/232" role="img" aria-label="選ばれる理由3" data-reveal><svg viewBox="52 4510 761 232" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-4266)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></template><noscript><svg viewBox="52 4266 761 232" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-original-4266" x="0" y="4266" width="865" height="232" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-original-4266" clipPathUnits="userSpaceOnUse"></clipPath>
+      <mask id="foreground-original-4266" x="0" y="4266" width="865" height="232" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-original-4266)"><g filter="url(#ink-original-4266)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></g>
+        <g fill="white"><path d="M79 4269 H785 C788 4285 795 4295 813 4300 V4464 C798 4469 788 4479 785 4495 H79 C76 4479 66 4469 51 4464 V4300 C69 4295 76 4285 79 4269 Z"/></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-4266)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></noscript></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:761/232" role="img" aria-label="選ばれる理由3" data-reveal><template data-deferred-art><svg viewBox="52 4510 761 232" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-original-4510" x="0" y="4510" width="865" height="232" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1701,7 +335,18 @@ a {
         <g clip-path="url(#text-original-4510)"><g filter="url(#ink-original-4510)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></g>
         <g fill="white"><path d="M79 4511 H785 C788 4527 795 4537 813 4542 V4707 C798 4712 788 4722 785 4738 H79 C76 4722 66 4712 51 4707 V4542 C69 4537 76 4527 79 4511 Z"/></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-original-4510)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></div></div></section><section class="revision-section" id="reason-01"><div class="section-heading original-plaque compact-plaque" data-reveal><span class="plaque-art" aria-hidden="true"><svg viewBox="189 3493 485 122" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-4510)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></template><noscript><svg viewBox="52 4510 761 232" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-original-4510" x="0" y="4510" width="865" height="232" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-original-4510" clipPathUnits="userSpaceOnUse"></clipPath>
+      <mask id="foreground-original-4510" x="0" y="4510" width="865" height="232" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-original-4510)"><g filter="url(#ink-original-4510)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></g>
+        <g fill="white"><path d="M79 4511 H785 C788 4527 795 4537 813 4542 V4707 C798 4712 788 4722 785 4738 H79 C76 4722 66 4712 51 4707 V4542 C69 4537 76 4527 79 4511 Z"/></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-4510)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></noscript></div></div></section><section class="revision-section" id="reason-01"><div class="section-heading original-plaque compact-plaque" data-reveal><span class="plaque-art" aria-hidden="true"><template data-deferred-art><svg viewBox="189 3493 485 122" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-plaque-1" x="0" y="3493" width="865" height="122" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1712,7 +357,18 @@ a {
         <g clip-path="url(#text-plaque-1)"><g filter="url(#ink-plaque-1)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></g>
         <g fill="white"></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-plaque-1)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></svg><span class="plaque-label-cover"></span></span><h2>選ばれる特徴01</h2></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:838/282" role="img" aria-label="コスパがいい料金比較。単品で受けるよりも、まとめて整える方が圧倒的におトク。" data-reveal><svg viewBox="12 4935 838 282" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-plaque-1)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></svg></template><noscript><svg viewBox="189 3493 485 122" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-plaque-1" x="0" y="3493" width="865" height="122" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-plaque-1" clipPathUnits="userSpaceOnUse"><rect x="177" y="3493" width="511" height="122" rx="0"/></clipPath>
+      <mask id="foreground-plaque-1" x="0" y="3493" width="865" height="122" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-plaque-1)"><g filter="url(#ink-plaque-1)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></g>
+        <g fill="white"></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-plaque-1)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></svg></noscript><span class="plaque-label-cover"></span></span><h2>選ばれる特徴01</h2></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:838/282" role="img" aria-label="コスパがいい料金比較。単品で受けるよりも、まとめて整える方が圧倒的におトク。" data-reveal><template data-deferred-art><svg viewBox="12 4935 838 282" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-original-4935" x="0" y="4935" width="865" height="282" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1723,7 +379,18 @@ a {
         <g clip-path="url(#text-original-4935)"><g filter="url(#ink-original-4935)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></g>
         <g fill="white"></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-original-4935)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:832/1172" role="img" aria-label="単品で受けた場合の相場とSalon de Sixセットの比較。" data-reveal><svg viewBox="20 5217 832 1172" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-4935)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></template><noscript><svg viewBox="12 4935 838 282" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-original-4935" x="0" y="4935" width="865" height="282" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-original-4935" clipPathUnits="userSpaceOnUse"><rect x="12" y="4935" width="838" height="282" rx="0"/></clipPath>
+      <mask id="foreground-original-4935" x="0" y="4935" width="865" height="282" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-original-4935)"><g filter="url(#ink-original-4935)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></g>
+        <g fill="white"></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-4935)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></noscript></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:832/1172" role="img" aria-label="単品で受けた場合の相場とSalon de Sixセットの比較。" data-reveal><template data-deferred-art><svg viewBox="20 5217 832 1172" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-original-5217" x="0" y="5217" width="865" height="1172" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1734,7 +401,18 @@ a {
         <g clip-path="url(#text-original-5217)"><g filter="url(#ink-original-5217)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></g>
         <g fill="white"><rect x="20" y="5231" width="475" height="1142" rx="32"/><rect x="518" y="5217" width="334" height="1172" rx="25"/></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-original-5217)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></div><div class="comparison-total"><div class="art-window foreground-layer content-rail" style="aspect-ratio:837/246" role="img" aria-label="単品合計7,950THB相当と実質1,500THB。" data-reveal><svg viewBox="16 6397 837 246" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-5217)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></template><noscript><svg viewBox="20 5217 832 1172" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-original-5217" x="0" y="5217" width="865" height="1172" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-original-5217" clipPathUnits="userSpaceOnUse"></clipPath>
+      <mask id="foreground-original-5217" x="0" y="5217" width="865" height="1172" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-original-5217)"><g filter="url(#ink-original-5217)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></g>
+        <g fill="white"><rect x="20" y="5231" width="475" height="1142" rx="32"/><rect x="518" y="5217" width="334" height="1172" rx="25"/></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-5217)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></noscript></div><div class="comparison-total"><div class="art-window foreground-layer content-rail" style="aspect-ratio:837/246" role="img" aria-label="単品合計7,950THB相当と実質1,500THB。" data-reveal><template data-deferred-art><svg viewBox="16 6397 837 246" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-original-6397" x="0" y="6397" width="865" height="246" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1745,7 +423,18 @@ a {
         <g clip-path="url(#text-original-6397)"><g filter="url(#ink-original-6397)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></g>
         <g fill="white"><rect x="16" y="6397" width="837" height="246" rx="26"/></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-original-6397)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></div></div></section><section class="revision-section" id="reason-02"><div class="section-heading original-plaque compact-plaque" data-reveal><span class="plaque-art" aria-hidden="true"><svg viewBox="189 3493 485 122" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-6397)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></template><noscript><svg viewBox="16 6397 837 246" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-original-6397" x="0" y="6397" width="865" height="246" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-original-6397" clipPathUnits="userSpaceOnUse"></clipPath>
+      <mask id="foreground-original-6397" x="0" y="6397" width="865" height="246" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-original-6397)"><g filter="url(#ink-original-6397)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></g>
+        <g fill="white"><rect x="16" y="6397" width="837" height="246" rx="26"/></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-6397)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/></g></svg></noscript></div></div></section><section class="revision-section" id="reason-02"><div class="section-heading original-plaque compact-plaque" data-reveal><span class="plaque-art" aria-hidden="true"><template data-deferred-art><svg viewBox="189 3493 485 122" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-plaque-2" x="0" y="3493" width="865" height="122" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1756,7 +445,18 @@ a {
         <g clip-path="url(#text-plaque-2)"><g filter="url(#ink-plaque-2)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></g>
         <g fill="white"></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-plaque-2)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></svg><span class="plaque-label-cover"></span></span><h2>選ばれる特徴02</h2></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:854/1433" role="img" aria-label="同時施術で、時短が可能。約90分でまとめて施術。"><svg viewBox="11 6764 854 1433" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-plaque-2)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></svg></template><noscript><svg viewBox="189 3493 485 122" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-plaque-2" x="0" y="3493" width="865" height="122" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-plaque-2" clipPathUnits="userSpaceOnUse"><rect x="177" y="3493" width="511" height="122" rx="0"/></clipPath>
+      <mask id="foreground-plaque-2" x="0" y="3493" width="865" height="122" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-plaque-2)"><g filter="url(#ink-plaque-2)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></g>
+        <g fill="white"></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-plaque-2)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></svg></noscript><span class="plaque-label-cover"></span></span><h2>選ばれる特徴02</h2></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:854/1433" role="img" aria-label="同時施術で、時短が可能。約90分でまとめて施術。"><template data-deferred-art><svg viewBox="11 6764 854 1433" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-original-6764" x="0" y="6764" width="865" height="1433" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1767,7 +467,18 @@ a {
         <g clip-path="url(#text-original-6764)"><g filter="url(#ink-original-6764)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/><image href="public/assets/lp-section-2-fast.webp" x="0" y="7286" width="865" height="3643"/></g></g>
         <g fill="white"><rect x="11" y="7110" width="458" height="1087" rx="30"/><ellipse cx="709" cy="7028" rx="126" ry="127"/><polygon points="605,6777 865,6777 865,6889 573,6889"/></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-original-6764)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/><image href="public/assets/lp-section-2-fast.webp" x="0" y="7286" width="865" height="3643"/></g></svg><div class="timing-clean-copy" data-reveal><h3>同時施術で、<br><em>時短</em>が可能。</h3><p>2〜3名体制で同時に進めるから、<br>複数の身だしなみケアを<strong>約90分</strong>で<br>まとめて施術。</p></div><img class="reason02-photo-repair" data-reveal src="public/assets/revision/reason02-photo-hq.webp" width="770" height="2041" alt="女性スタッフがホワイトニングと爪磨きを同時に行う施術イメージ" loading="lazy" decoding="async"></div><p class="timing-clean-note content-rail" data-reveal>※施術の順番は異なることがあります。</p><p class="care-occasion content-rail" data-reveal>商談前・会食前・デート前にも<span>利用しやすい</span></p><div class="art-window foreground-layer content-rail" style="aspect-ratio:850/141" role="img" aria-label="商談前・会食前・デート前に。" data-reveal><svg viewBox="15 8305 850 141" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-6764)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/><image href="public/assets/lp-section-2-fast.webp" x="0" y="7286" width="865" height="3643"/></g></svg></template><noscript><svg viewBox="11 6764 854 1433" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-original-6764" x="0" y="6764" width="865" height="1433" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-original-6764" clipPathUnits="userSpaceOnUse"></clipPath>
+      <mask id="foreground-original-6764" x="0" y="6764" width="865" height="1433" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-original-6764)"><g filter="url(#ink-original-6764)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/><image href="public/assets/lp-section-2-fast.webp" x="0" y="7286" width="865" height="3643"/></g></g>
+        <g fill="white"><rect x="11" y="7110" width="458" height="1087" rx="30"/><ellipse cx="709" cy="7028" rx="126" ry="127"/><polygon points="605,6777 865,6777 865,6889 573,6889"/></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-6764)"><image href="public/assets/lp-section-1-fast.webp" x="0" y="3643" width="865" height="3643"/><image href="public/assets/lp-section-2-fast.webp" x="0" y="7286" width="865" height="3643"/></g></svg></noscript><div class="timing-clean-copy" data-reveal><h3>同時施術で、<br><em>時短</em>が可能。</h3><p>2〜3名体制で同時に進めるから、<br>複数の身だしなみケアを<strong>約90分</strong>で<br>まとめて施術。</p></div><img class="reason02-photo-repair" data-reveal src="public/assets/performance-20261029/reason02-photo-hq-q92.webp" width="770" height="2041" alt="女性スタッフがホワイトニングと爪磨きを同時に行う施術イメージ" loading="lazy" decoding="async"></div><p class="timing-clean-note content-rail" data-reveal>※施術の順番は異なることがあります。</p><p class="care-occasion content-rail" data-reveal>商談前・会食前・デート前にも<span>利用しやすい</span></p><div class="art-window foreground-layer content-rail" style="aspect-ratio:850/141" role="img" aria-label="商談前・会食前・デート前に。" data-reveal><template data-deferred-art><svg viewBox="15 8305 850 141" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-original-8305" x="0" y="8305" width="865" height="141" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1778,7 +489,18 @@ a {
         <g clip-path="url(#text-original-8305)"><g filter="url(#ink-original-8305)"><image href="public/assets/lp-section-2-fast.webp" x="0" y="7286" width="865" height="3643"/></g></g>
         <g fill="white"><polygon points="55,8305 239,8305 280,8375 239,8446 55,8446 15,8375"/><polygon points="347,8305 532,8305 572,8375 532,8446 347,8446 306,8375"/><polygon points="640,8305 823,8305 865,8375 823,8446 640,8446 599,8375"/></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-original-8305)"><image href="public/assets/lp-section-2-fast.webp" x="0" y="7286" width="865" height="3643"/></g></svg></div></section><section class="revision-section" id="reason-03"><div class="section-heading original-plaque compact-plaque" data-reveal><span class="plaque-art" aria-hidden="true"><svg viewBox="189 3493 485 122" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-8305)"><image href="public/assets/lp-section-2-fast.webp" x="0" y="7286" width="865" height="3643"/></g></svg></template><noscript><svg viewBox="15 8305 850 141" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-original-8305" x="0" y="8305" width="865" height="141" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-original-8305" clipPathUnits="userSpaceOnUse"></clipPath>
+      <mask id="foreground-original-8305" x="0" y="8305" width="865" height="141" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-original-8305)"><g filter="url(#ink-original-8305)"><image href="public/assets/lp-section-2-fast.webp" x="0" y="7286" width="865" height="3643"/></g></g>
+        <g fill="white"><polygon points="55,8305 239,8305 280,8375 239,8446 55,8446 15,8375"/><polygon points="347,8305 532,8305 572,8375 532,8446 347,8446 306,8375"/><polygon points="640,8305 823,8305 865,8375 823,8446 640,8446 599,8375"/></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-8305)"><image href="public/assets/lp-section-2-fast.webp" x="0" y="7286" width="865" height="3643"/></g></svg></noscript></div></section><section class="revision-section" id="reason-03"><div class="section-heading original-plaque compact-plaque" data-reveal><span class="plaque-art" aria-hidden="true"><template data-deferred-art><svg viewBox="189 3493 485 122" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-plaque-3" x="0" y="3493" width="865" height="122" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1789,7 +511,18 @@ a {
         <g clip-path="url(#text-plaque-3)"><g filter="url(#ink-plaque-3)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></g>
         <g fill="white"></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-plaque-3)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></svg><span class="plaque-label-cover"></span></span><h2>選ばれる特徴03</h2></div><div class="feature-a-v3 content-rail">
+    </defs><g class="approved-foreground" mask="url(#foreground-plaque-3)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></svg></template><noscript><svg viewBox="189 3493 485 122" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-plaque-3" x="0" y="3493" width="865" height="122" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-plaque-3" clipPathUnits="userSpaceOnUse"><rect x="177" y="3493" width="511" height="122" rx="0"/></clipPath>
+      <mask id="foreground-plaque-3" x="0" y="3493" width="865" height="122" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-plaque-3)"><g filter="url(#ink-plaque-3)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></g>
+        <g fill="white"></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-plaque-3)"><image href="public/assets/lp-section-0c-fast.webp" x="0" y="1950" width="865" height="1693"/></g></svg></noscript><span class="plaque-label-cover"></span></span><h2>選ばれる特徴03</h2></div><div class="feature-a-v3 content-rail">
       <div class="fa-intro" data-reveal>
         <h3><em>クオリティが高い</em><br>Salon de Sixのマシン</h3>
         <span class="fa-divider" aria-hidden="true"><i></i><b>◇</b><i></i></span>
@@ -1797,7 +530,7 @@ a {
       </div>
       <article class="fa-chapter" data-reveal>
         <div class="fa-visual fa-visual-01">
-      <img class="fa-photo" src="public/assets/revision/feature03-a-beard-hq.webp" width="1738" height="905" alt="女性スタッフが男性のお客様のヒゲをケアする施術イメージ" loading="lazy" decoding="async">
+      <img class="fa-photo" src="public/assets/performance-20261029/feature03-a-beard-hq-q92.webp" width="1738" height="905" alt="女性スタッフが男性のお客様のヒゲをケアする施術イメージ" loading="lazy" decoding="async">
       <svg class="fa-curve" viewBox="0 0 728 380" preserveAspectRatio="none" aria-hidden="true" focusable="false">
         <defs><linearGradient id="fa-navy-01" x1="0" x2="1"><stop offset="0" stop-color="#0b4b78" stop-opacity=".72"/><stop offset=".48" stop-color="#00294f" stop-opacity=".94"/><stop offset="1" stop-color="#021c3d" stop-opacity=".98"/></linearGradient></defs>
         <path class="fa-curve-halo" d="M341 76 C459 12 613 -8 728 46 L728 380 L323 380 C407 291 405 176 341 76Z"/>
@@ -1813,7 +546,7 @@ a {
       </article>
       <article class="fa-chapter" data-reveal>
         <div class="fa-visual fa-visual-02">
-      <img class="fa-photo" src="public/assets/revision/feature03-a-whitening-hq.webp" width="1738" height="905" alt="女性スタッフが男性のお客様のホワイトニングを行う施術イメージ" loading="lazy" decoding="async">
+      <img class="fa-photo" src="public/assets/performance-20261029/feature03-a-whitening-hq-q92.webp" width="1738" height="905" alt="女性スタッフが男性のお客様のホワイトニングを行う施術イメージ" loading="lazy" decoding="async">
       <svg class="fa-curve" viewBox="0 0 728 380" preserveAspectRatio="none" aria-hidden="true" focusable="false">
         <defs><linearGradient id="fa-navy-02" x1="0" x2="1"><stop offset="0" stop-color="#0b4b78" stop-opacity=".72"/><stop offset=".48" stop-color="#00294f" stop-opacity=".94"/><stop offset="1" stop-color="#021c3d" stop-opacity=".98"/></linearGradient></defs>
         <path class="fa-curve-halo" d="M341 76 C459 12 613 -8 728 46 L728 380 L323 380 C407 291 405 176 341 76Z"/>
@@ -1826,17 +559,22 @@ a {
           <div class="fa-tech"><b>TECH<br>CARE</b><p>歯の着色汚れにしっかりアプローチ。<br>清潔感のある口元へ。</p></div>
         </div>
       </article>
-      <div class="fa-closing unified-frame-panel" data-reveal><span class="unified-panel-frame" aria-hidden="true"><svg class="panel-frame-defs" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true"><defs>
+      <div class="fa-closing unified-frame-panel" data-reveal><span class="unified-panel-frame" aria-hidden="true"><template data-deferred-art><svg class="panel-frame-defs" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true"><defs>
       <linearGradient id="feature-closing-frame-fill" x1="0" y1="0" x2="1" y2=".6"><stop stop-color="#06385b"/><stop offset=".6" stop-color="#021e40"/><stop offset="1" stop-color="#04213d"/></linearGradient>
-      <mask id="feature-closing-frame-alpha" x="31" y="76" width="1357" height="984" maskUnits="userSpaceOnUse" style="mask-type:alpha"><image href="public/assets/revision/pricing-eight-two-rows-20261029.webp" width="1419" height="1109"/></mask>
+      <mask id="feature-closing-frame-alpha" x="31" y="76" width="1357" height="984" maskUnits="userSpaceOnUse" style="mask-type:alpha"><image href="public/assets/performance-20261029/pricing-eight-two-rows-20261029-q95.webp" width="1419" height="1109"/></mask>
       <mask id="feature-closing-frame-ring" x="31" y="76" width="1357" height="984" maskUnits="userSpaceOnUse" style="mask-type:luminance"><rect x="31" y="76" width="1357" height="984" fill="white"/><path d="M106 104 H1316 Q1321 141 1361 155 V978 C1339 986 1324 1001 1316 1028 H102 C98 1008 81 987 58 978 V155 Q98 144 106 104 Z" fill="black"/></mask>
-      <g id="feature-closing-frame-paint"><rect x="31" y="76" width="1357" height="984" fill="url(#feature-closing-frame-fill)" mask="url(#feature-closing-frame-alpha)"/><image href="public/assets/revision/pricing-eight-two-rows-20261029.webp" width="1419" height="1109" mask="url(#feature-closing-frame-ring)"/></g>
-    </defs></svg><svg class="panel-frame-piece" viewBox="31 76 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#feature-closing-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="121 76 1177 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#feature-closing-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="1298 76 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#feature-closing-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="31 166 90 804" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#feature-closing-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="121 166 1177 804" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#feature-closing-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="1298 166 90 804" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#feature-closing-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="31 970 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#feature-closing-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="121 970 1177 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#feature-closing-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="1298 970 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#feature-closing-frame-paint"/></svg></span>
+      <g id="feature-closing-frame-paint"><rect x="31" y="76" width="1357" height="984" fill="url(#feature-closing-frame-fill)" mask="url(#feature-closing-frame-alpha)"/><image href="public/assets/performance-20261029/pricing-eight-two-rows-20261029-q95.webp" width="1419" height="1109" mask="url(#feature-closing-frame-ring)"/></g>
+    </defs></svg></template><noscript><svg class="panel-frame-defs" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true"><defs>
+      <linearGradient id="feature-closing-frame-fill" x1="0" y1="0" x2="1" y2=".6"><stop stop-color="#06385b"/><stop offset=".6" stop-color="#021e40"/><stop offset="1" stop-color="#04213d"/></linearGradient>
+      <mask id="feature-closing-frame-alpha" x="31" y="76" width="1357" height="984" maskUnits="userSpaceOnUse" style="mask-type:alpha"><image href="public/assets/performance-20261029/pricing-eight-two-rows-20261029-q95.webp" width="1419" height="1109"/></mask>
+      <mask id="feature-closing-frame-ring" x="31" y="76" width="1357" height="984" maskUnits="userSpaceOnUse" style="mask-type:luminance"><rect x="31" y="76" width="1357" height="984" fill="white"/><path d="M106 104 H1316 Q1321 141 1361 155 V978 C1339 986 1324 1001 1316 1028 H102 C98 1008 81 987 58 978 V155 Q98 144 106 104 Z" fill="black"/></mask>
+      <g id="feature-closing-frame-paint"><rect x="31" y="76" width="1357" height="984" fill="url(#feature-closing-frame-fill)" mask="url(#feature-closing-frame-alpha)"/><image href="public/assets/performance-20261029/pricing-eight-two-rows-20261029-q95.webp" width="1419" height="1109" mask="url(#feature-closing-frame-ring)"/></g>
+    </defs></svg></noscript><svg class="panel-frame-piece" viewBox="31 76 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#feature-closing-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="121 76 1177 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#feature-closing-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="1298 76 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#feature-closing-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="31 166 90 804" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#feature-closing-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="121 166 1177 804" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#feature-closing-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="1298 166 90 804" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#feature-closing-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="31 970 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#feature-closing-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="121 970 1177 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#feature-closing-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="1298 970 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#feature-closing-frame-paint"/></svg></span>
         <p>脱毛も歯も、口元も身だしなみも、<br>まとめて清潔感のある印象へ。</p>
         <span class="fa-divider" aria-hidden="true"><i></i><b>◇</b><i></i></span>
         <small>Salon de Sixは、洗練された大人の清潔感を引き出す<br>メンズトータルケアを提供します。</small>
       </div>
-    </div></section><section class="revision-section" id="before-after"><div class="section-heading renewal-ribbon" data-reveal><img class="renewal-ribbon-art" src="public/assets/revision/heading-renewal-ribbon.webp" width="2169" height="725" alt="" aria-hidden="true" loading="lazy" decoding="async"><h2>Before / After</h2></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:817/184" role="img" aria-label="細部を整えるだけで、近づいた時の印象は変わります。" data-reveal><svg viewBox="24 12391 817 184" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </div></section><section class="revision-section" id="before-after"><div class="section-heading renewal-ribbon" data-reveal><img class="renewal-ribbon-art" src="public/assets/performance-20261029/heading-renewal-ribbon-q95.webp" width="2169" height="725" alt="" aria-hidden="true" loading="lazy" decoding="async"><h2>Before / After</h2></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:817/184" role="img" aria-label="細部を整えるだけで、近づいた時の印象は変わります。" data-reveal><template data-deferred-art><svg viewBox="24 12391 817 184" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-original-12391" x="0" y="12391" width="865" height="184" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1847,7 +585,18 @@ a {
         <g clip-path="url(#text-original-12391)"><g filter="url(#ink-original-12391)"><image href="public/assets/lp-section-3-fast.webp" x="0" y="10929" width="865" height="3643"/></g></g>
         <g fill="white"></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-original-12391)"><image href="public/assets/lp-section-3-fast.webp" x="0" y="10929" width="865" height="3643"/></g></svg></div><div class="before-after-cards"><div class="art-window foreground-layer content-rail" style="aspect-ratio:690/843" role="img" aria-label="ヒゲ脱毛のビフォーアフター" data-reveal><svg viewBox="90 12640 690 843" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-12391)"><image href="public/assets/lp-section-3-fast.webp" x="0" y="10929" width="865" height="3643"/></g></svg></template><noscript><svg viewBox="24 12391 817 184" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-original-12391" x="0" y="12391" width="865" height="184" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-original-12391" clipPathUnits="userSpaceOnUse"><rect x="24" y="12391" width="817" height="184" rx="0"/></clipPath>
+      <mask id="foreground-original-12391" x="0" y="12391" width="865" height="184" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-original-12391)"><g filter="url(#ink-original-12391)"><image href="public/assets/lp-section-3-fast.webp" x="0" y="10929" width="865" height="3643"/></g></g>
+        <g fill="white"></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-12391)"><image href="public/assets/lp-section-3-fast.webp" x="0" y="10929" width="865" height="3643"/></g></svg></noscript></div><div class="before-after-cards"><div class="art-window foreground-layer content-rail" style="aspect-ratio:690/843" role="img" aria-label="ヒゲ脱毛のビフォーアフター" data-reveal><template data-deferred-art><svg viewBox="90 12640 690 843" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-original-12640" x="0" y="12640" width="865" height="843" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1858,7 +607,18 @@ a {
         <g clip-path="url(#text-original-12640)"><g filter="url(#ink-original-12640)"><image href="public/assets/lp-section-3-fast.webp" x="0" y="10929" width="865" height="3643"/></g></g>
         <g fill="white"><rect x="90" y="12640" width="690" height="843" rx="26"/></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-original-12640)"><image href="public/assets/lp-section-3-fast.webp" x="0" y="10929" width="865" height="3643"/></g></svg></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:690/840" role="img" aria-label="ホワイトニングのビフォーアフター" data-reveal><svg viewBox="90 13599 690 840" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-12640)"><image href="public/assets/lp-section-3-fast.webp" x="0" y="10929" width="865" height="3643"/></g></svg></template><noscript><svg viewBox="90 12640 690 843" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-original-12640" x="0" y="12640" width="865" height="843" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-original-12640" clipPathUnits="userSpaceOnUse"></clipPath>
+      <mask id="foreground-original-12640" x="0" y="12640" width="865" height="843" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-original-12640)"><g filter="url(#ink-original-12640)"><image href="public/assets/lp-section-3-fast.webp" x="0" y="10929" width="865" height="3643"/></g></g>
+        <g fill="white"><rect x="90" y="12640" width="690" height="843" rx="26"/></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-12640)"><image href="public/assets/lp-section-3-fast.webp" x="0" y="10929" width="865" height="3643"/></g></svg></noscript></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:690/840" role="img" aria-label="ホワイトニングのビフォーアフター" data-reveal><template data-deferred-art><svg viewBox="90 13599 690 840" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-original-13599" x="0" y="13599" width="865" height="840" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1869,7 +629,18 @@ a {
         <g clip-path="url(#text-original-13599)"><g filter="url(#ink-original-13599)"><image href="public/assets/lp-section-3-fast.webp" x="0" y="10929" width="865" height="3643"/></g></g>
         <g fill="white"><rect x="90" y="13599" width="690" height="840" rx="26"/></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-original-13599)"><image href="public/assets/lp-section-3-fast.webp" x="0" y="10929" width="865" height="3643"/></g></svg></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:690/831" role="img" aria-label="眉毛スタイリングのビフォーアフター" data-reveal><svg viewBox="90 14570 690 831" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-13599)"><image href="public/assets/lp-section-3-fast.webp" x="0" y="10929" width="865" height="3643"/></g></svg></template><noscript><svg viewBox="90 13599 690 840" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-original-13599" x="0" y="13599" width="865" height="840" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-original-13599" clipPathUnits="userSpaceOnUse"></clipPath>
+      <mask id="foreground-original-13599" x="0" y="13599" width="865" height="840" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-original-13599)"><g filter="url(#ink-original-13599)"><image href="public/assets/lp-section-3-fast.webp" x="0" y="10929" width="865" height="3643"/></g></g>
+        <g fill="white"><rect x="90" y="13599" width="690" height="840" rx="26"/></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-13599)"><image href="public/assets/lp-section-3-fast.webp" x="0" y="10929" width="865" height="3643"/></g></svg></noscript></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:690/831" role="img" aria-label="眉毛スタイリングのビフォーアフター" data-reveal><template data-deferred-art><svg viewBox="90 14570 690 831" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-original-14570" x="0" y="14570" width="865" height="831" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1880,7 +651,18 @@ a {
         <g clip-path="url(#text-original-14570)"><g filter="url(#ink-original-14570)"><image href="public/assets/lp-section-3-fast.webp" x="0" y="10929" width="865" height="3643"/><image href="public/assets/lp-section-4-fast.webp" x="0" y="14572" width="865" height="3643"/></g></g>
         <g fill="white"><rect x="90" y="14570" width="690" height="831" rx="26"/></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-original-14570)"><image href="public/assets/lp-section-3-fast.webp" x="0" y="10929" width="865" height="3643"/><image href="public/assets/lp-section-4-fast.webp" x="0" y="14572" width="865" height="3643"/></g></svg></div></div></section><section class="revision-section" id="price"><div class="section-heading renewal-ribbon" data-reveal><img class="renewal-ribbon-art" src="public/assets/revision/heading-renewal-ribbon.webp" width="2169" height="725" alt="" aria-hidden="true" loading="lazy" decoding="async"><h2><span class="heading-kicker">バンコク男磨きセット</span><span class="heading-main">料金プラン</span></h2></div><div class="pricing-parts"><div class="art-window foreground-layer content-rail" style="aspect-ratio:954/268" role="img" aria-label="LINEクーポンで初回実質1,500THB。" data-reveal><svg viewBox="35 180 954 268" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-14570)"><image href="public/assets/lp-section-3-fast.webp" x="0" y="10929" width="865" height="3643"/><image href="public/assets/lp-section-4-fast.webp" x="0" y="14572" width="865" height="3643"/></g></svg></template><noscript><svg viewBox="90 14570 690 831" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-original-14570" x="0" y="14570" width="865" height="831" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-original-14570" clipPathUnits="userSpaceOnUse"></clipPath>
+      <mask id="foreground-original-14570" x="0" y="14570" width="865" height="831" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-original-14570)"><g filter="url(#ink-original-14570)"><image href="public/assets/lp-section-3-fast.webp" x="0" y="10929" width="865" height="3643"/><image href="public/assets/lp-section-4-fast.webp" x="0" y="14572" width="865" height="3643"/></g></g>
+        <g fill="white"><rect x="90" y="14570" width="690" height="831" rx="26"/></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-14570)"><image href="public/assets/lp-section-3-fast.webp" x="0" y="10929" width="865" height="3643"/><image href="public/assets/lp-section-4-fast.webp" x="0" y="14572" width="865" height="3643"/></g></svg></noscript></div></div></section><section class="revision-section" id="price"><div class="section-heading renewal-ribbon" data-reveal><img class="renewal-ribbon-art" src="public/assets/performance-20261029/heading-renewal-ribbon-q95.webp" width="2169" height="725" alt="" aria-hidden="true" loading="lazy" decoding="async"><h2><span class="heading-kicker">バンコク男磨きセット</span><span class="heading-main">料金プラン</span></h2></div><div class="pricing-parts"><div class="art-window foreground-layer content-rail" style="aspect-ratio:954/268" role="img" aria-label="LINEクーポンで初回実質1,500THB。" data-reveal><template data-deferred-art><svg viewBox="35 180 954 268" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-pricing-reference-180" x="0" y="180" width="1024" height="268" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1891,7 +673,18 @@ a {
         <g clip-path="url(#text-pricing-reference-180)"><g filter="url(#ink-pricing-reference-180)"><image href="public/assets/revision/pricing-reference.webp" x="0" y="0" width="1024" height="1536"/></g></g>
         <g fill="white"></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-pricing-reference-180)"><image href="public/assets/revision/pricing-reference.webp" x="0" y="0" width="1024" height="1536"/></g></svg></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:1357/984" role="img" aria-label="8種メニュー単品合計。上段はヒゲ・歯・眉毛・鼻毛、下段は耳毛・スキンケア・手・爪。単品合計7,950THB相当。" data-reveal><svg viewBox="31 76 1357 984" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-pricing-reference-180)"><image href="public/assets/revision/pricing-reference.webp" x="0" y="0" width="1024" height="1536"/></g></svg></template><noscript><svg viewBox="35 180 954 268" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-pricing-reference-180" x="0" y="180" width="1024" height="268" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-pricing-reference-180" clipPathUnits="userSpaceOnUse"><rect x="70" y="190" width="895" height="258" rx="0"/></clipPath>
+      <mask id="foreground-pricing-reference-180" x="0" y="180" width="1024" height="268" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-pricing-reference-180)"><g filter="url(#ink-pricing-reference-180)"><image href="public/assets/revision/pricing-reference.webp" x="0" y="0" width="1024" height="1536"/></g></g>
+        <g fill="white"></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-pricing-reference-180)"><image href="public/assets/revision/pricing-reference.webp" x="0" y="0" width="1024" height="1536"/></g></svg></noscript></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:1357/984" role="img" aria-label="8種メニュー単品合計。上段はヒゲ・歯・眉毛・鼻毛、下段は耳毛・スキンケア・手・爪。単品合計7,950THB相当。" data-reveal><template data-deferred-art><svg viewBox="31 76 1357 984" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-pricing-eight-two-rows-20261029-76" x="0" y="76" width="1419" height="984" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1899,10 +692,10 @@ a {
       </filter>
       <clipPath id="text-pricing-eight-two-rows-20261029-76" clipPathUnits="userSpaceOnUse"></clipPath>
       <mask id="foreground-pricing-eight-two-rows-20261029-76" x="0" y="76" width="1419" height="984" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
-        <g clip-path="url(#text-pricing-eight-two-rows-20261029-76)"><g filter="url(#ink-pricing-eight-two-rows-20261029-76)"><image href="public/assets/revision/pricing-eight-two-rows-20261029.webp" x="0" y="0" width="1419" height="1109"/></g></g>
+        <g clip-path="url(#text-pricing-eight-two-rows-20261029-76)"><g filter="url(#ink-pricing-eight-two-rows-20261029-76)"><image href="public/assets/performance-20261029/pricing-eight-two-rows-20261029-q95.webp" x="0" y="0" width="1419" height="1109"/></g></g>
         <g fill="white"><rect x="31" y="76" width="1357" height="984" rx="0"/></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-pricing-eight-two-rows-20261029-76)"><image href="public/assets/revision/pricing-eight-two-rows-20261029.webp" x="0" y="0" width="1419" height="1109"/></g><g class="pricing-original-icons" aria-hidden="true"><defs><clipPath id="pricing-icon-clearings"><circle cx="258" cy="338" r="110"/><circle cx="556" cy="338" r="110"/><circle cx="857" cy="338" r="110"/><circle cx="1157" cy="338" r="110"/><circle cx="258" cy="668" r="110"/><circle cx="556" cy="668" r="110"/><circle cx="857" cy="668" r="110"/><circle cx="1157" cy="668" r="110"/></clipPath></defs><g clip-path="url(#pricing-icon-clearings)"><image href="public/assets/revision/pricing-blank-circles-20261029.webp" width="1419" height="1109" preserveAspectRatio="none"/></g><svg x="188.846" y="251.000" width="138.308" height="174.000" viewBox="112 825 93 117">
+    </defs><g class="approved-foreground" mask="url(#foreground-pricing-eight-two-rows-20261029-76)"><image href="public/assets/performance-20261029/pricing-eight-two-rows-20261029-q95.webp" x="0" y="0" width="1419" height="1109"/></g><g class="pricing-original-icons" aria-hidden="true"><defs><clipPath id="pricing-icon-clearings"><circle cx="258" cy="338" r="110"/><circle cx="556" cy="338" r="110"/><circle cx="857" cy="338" r="110"/><circle cx="1157" cy="338" r="110"/><circle cx="258" cy="668" r="110"/><circle cx="556" cy="668" r="110"/><circle cx="857" cy="668" r="110"/><circle cx="1157" cy="668" r="110"/></clipPath></defs><g clip-path="url(#pricing-icon-clearings)"><image href="public/assets/performance-20261029/pricing-blank-circles-20261029-q95.webp" width="1419" height="1109" preserveAspectRatio="none"/></g><svg x="188.846" y="251.000" width="138.308" height="174.000" viewBox="112 825 93 117">
 <defs><filter id="pricing-source-icon-beard-ink" x="112" y="825" width="93" height="117" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2"/></filter><mask id="pricing-source-icon-beard-mask" x="112" y="825" width="93" height="117" maskUnits="userSpaceOnUse" style="mask-type:alpha"><g filter="url(#pricing-source-icon-beard-ink)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></mask></defs><g mask="url(#pricing-source-icon-beard-mask)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></svg><svg x="475.692" y="251.000" width="160.615" height="174.000" viewBox="293 829 96 104">
 <defs><filter id="pricing-source-icon-tooth-ink" x="293" y="829" width="96" height="104" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2"/></filter><mask id="pricing-source-icon-tooth-mask" x="293" y="829" width="96" height="104" maskUnits="userSpaceOnUse" style="mask-type:alpha"><g filter="url(#pricing-source-icon-tooth-ink)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></mask></defs><g mask="url(#pricing-source-icon-tooth-mask)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></svg><svg x="770.000" y="268.243" width="174.000" height="139.514" viewBox="469 841 111 89">
 <defs><filter id="pricing-source-icon-brow-ink" x="469" y="841" width="111" height="89" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2"/></filter><mask id="pricing-source-icon-brow-mask" x="469" y="841" width="111" height="89" maskUnits="userSpaceOnUse" style="mask-type:alpha"><g filter="url(#pricing-source-icon-brow-ink)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></mask></defs><g mask="url(#pricing-source-icon-brow-mask)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></svg><svg x="1073.919" y="251.000" width="166.162" height="174.000" viewBox="657 832 106 111">
@@ -1910,7 +703,26 @@ a {
 <defs><filter id="pricing-source-icon-ear-ink" x="115" y="1094" width="87" height="117" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2"/></filter><mask id="pricing-source-icon-ear-mask" x="115" y="1094" width="87" height="117" maskUnits="userSpaceOnUse" style="mask-type:alpha"><g filter="url(#pricing-source-icon-ear-ink)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></mask></defs><g mask="url(#pricing-source-icon-ear-mask)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></svg><svg x="484.353" y="581.000" width="143.294" height="174.000" viewBox="288 1092 98 119">
 <defs><filter id="pricing-source-icon-skin-ink" x="288" y="1092" width="98" height="119" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2"/></filter><mask id="pricing-source-icon-skin-mask" x="288" y="1092" width="98" height="119" maskUnits="userSpaceOnUse" style="mask-type:alpha"><g filter="url(#pricing-source-icon-skin-ink)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></mask></defs><g mask="url(#pricing-source-icon-skin-mask)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></svg><svg x="785.130" y="581.000" width="143.739" height="174.000" viewBox="475 1092 95 115">
 <defs><filter id="pricing-source-icon-hand-ink" x="475" y="1092" width="95" height="115" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2"/></filter><mask id="pricing-source-icon-hand-mask" x="475" y="1092" width="95" height="115" maskUnits="userSpaceOnUse" style="mask-type:alpha"><g filter="url(#pricing-source-icon-hand-ink)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></mask></defs><g mask="url(#pricing-source-icon-hand-mask)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></svg><svg x="1091.939" y="581.000" width="130.122" height="174.000" viewBox="665 1092 86 115">
-<defs><filter id="pricing-source-icon-nail-ink" x="665" y="1092" width="86" height="115" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2"/></filter><mask id="pricing-source-icon-nail-mask" x="665" y="1092" width="86" height="115" maskUnits="userSpaceOnUse" style="mask-type:alpha"><g filter="url(#pricing-source-icon-nail-ink)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></mask></defs><g mask="url(#pricing-source-icon-nail-mask)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></svg></g></svg></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:954/526" role="img" aria-label="通常価格2,500THB、LINE登録で1,000THB割引、初回実質1,500THB。" data-reveal><svg viewBox="35 758 954 526" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+<defs><filter id="pricing-source-icon-nail-ink" x="665" y="1092" width="86" height="115" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2"/></filter><mask id="pricing-source-icon-nail-mask" x="665" y="1092" width="86" height="115" maskUnits="userSpaceOnUse" style="mask-type:alpha"><g filter="url(#pricing-source-icon-nail-ink)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></mask></defs><g mask="url(#pricing-source-icon-nail-mask)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></svg></g></svg></template><noscript><svg viewBox="31 76 1357 984" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-pricing-eight-two-rows-20261029-76" x="0" y="76" width="1419" height="984" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-pricing-eight-two-rows-20261029-76" clipPathUnits="userSpaceOnUse"></clipPath>
+      <mask id="foreground-pricing-eight-two-rows-20261029-76" x="0" y="76" width="1419" height="984" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-pricing-eight-two-rows-20261029-76)"><g filter="url(#ink-pricing-eight-two-rows-20261029-76)"><image href="public/assets/performance-20261029/pricing-eight-two-rows-20261029-q95.webp" x="0" y="0" width="1419" height="1109"/></g></g>
+        <g fill="white"><rect x="31" y="76" width="1357" height="984" rx="0"/></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-pricing-eight-two-rows-20261029-76)"><image href="public/assets/performance-20261029/pricing-eight-two-rows-20261029-q95.webp" x="0" y="0" width="1419" height="1109"/></g><g class="pricing-original-icons" aria-hidden="true"><defs><clipPath id="pricing-icon-clearings"><circle cx="258" cy="338" r="110"/><circle cx="556" cy="338" r="110"/><circle cx="857" cy="338" r="110"/><circle cx="1157" cy="338" r="110"/><circle cx="258" cy="668" r="110"/><circle cx="556" cy="668" r="110"/><circle cx="857" cy="668" r="110"/><circle cx="1157" cy="668" r="110"/></clipPath></defs><g clip-path="url(#pricing-icon-clearings)"><image href="public/assets/performance-20261029/pricing-blank-circles-20261029-q95.webp" width="1419" height="1109" preserveAspectRatio="none"/></g><svg x="188.846" y="251.000" width="138.308" height="174.000" viewBox="112 825 93 117">
+<defs><filter id="pricing-source-icon-beard-ink" x="112" y="825" width="93" height="117" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2"/></filter><mask id="pricing-source-icon-beard-mask" x="112" y="825" width="93" height="117" maskUnits="userSpaceOnUse" style="mask-type:alpha"><g filter="url(#pricing-source-icon-beard-ink)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></mask></defs><g mask="url(#pricing-source-icon-beard-mask)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></svg><svg x="475.692" y="251.000" width="160.615" height="174.000" viewBox="293 829 96 104">
+<defs><filter id="pricing-source-icon-tooth-ink" x="293" y="829" width="96" height="104" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2"/></filter><mask id="pricing-source-icon-tooth-mask" x="293" y="829" width="96" height="104" maskUnits="userSpaceOnUse" style="mask-type:alpha"><g filter="url(#pricing-source-icon-tooth-ink)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></mask></defs><g mask="url(#pricing-source-icon-tooth-mask)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></svg><svg x="770.000" y="268.243" width="174.000" height="139.514" viewBox="469 841 111 89">
+<defs><filter id="pricing-source-icon-brow-ink" x="469" y="841" width="111" height="89" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2"/></filter><mask id="pricing-source-icon-brow-mask" x="469" y="841" width="111" height="89" maskUnits="userSpaceOnUse" style="mask-type:alpha"><g filter="url(#pricing-source-icon-brow-ink)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></mask></defs><g mask="url(#pricing-source-icon-brow-mask)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></svg><svg x="1073.919" y="251.000" width="166.162" height="174.000" viewBox="657 832 106 111">
+<defs><filter id="pricing-source-icon-nose-ink" x="657" y="832" width="106" height="111" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2"/></filter><mask id="pricing-source-icon-nose-mask" x="657" y="832" width="106" height="111" maskUnits="userSpaceOnUse" style="mask-type:alpha"><g filter="url(#pricing-source-icon-nose-ink)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></mask></defs><g mask="url(#pricing-source-icon-nose-mask)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></svg><svg x="193.308" y="581.000" width="129.385" height="174.000" viewBox="115 1094 87 117">
+<defs><filter id="pricing-source-icon-ear-ink" x="115" y="1094" width="87" height="117" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2"/></filter><mask id="pricing-source-icon-ear-mask" x="115" y="1094" width="87" height="117" maskUnits="userSpaceOnUse" style="mask-type:alpha"><g filter="url(#pricing-source-icon-ear-ink)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></mask></defs><g mask="url(#pricing-source-icon-ear-mask)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></svg><svg x="484.353" y="581.000" width="143.294" height="174.000" viewBox="288 1092 98 119">
+<defs><filter id="pricing-source-icon-skin-ink" x="288" y="1092" width="98" height="119" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2"/></filter><mask id="pricing-source-icon-skin-mask" x="288" y="1092" width="98" height="119" maskUnits="userSpaceOnUse" style="mask-type:alpha"><g filter="url(#pricing-source-icon-skin-ink)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></mask></defs><g mask="url(#pricing-source-icon-skin-mask)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></svg><svg x="785.130" y="581.000" width="143.739" height="174.000" viewBox="475 1092 95 115">
+<defs><filter id="pricing-source-icon-hand-ink" x="475" y="1092" width="95" height="115" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2"/></filter><mask id="pricing-source-icon-hand-mask" x="475" y="1092" width="95" height="115" maskUnits="userSpaceOnUse" style="mask-type:alpha"><g filter="url(#pricing-source-icon-hand-ink)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></mask></defs><g mask="url(#pricing-source-icon-hand-mask)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></svg><svg x="1091.939" y="581.000" width="130.122" height="174.000" viewBox="665 1092 86 115">
+<defs><filter id="pricing-source-icon-nail-ink" x="665" y="1092" width="86" height="115" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2"/></filter><mask id="pricing-source-icon-nail-mask" x="665" y="1092" width="86" height="115" maskUnits="userSpaceOnUse" style="mask-type:alpha"><g filter="url(#pricing-source-icon-nail-ink)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></mask></defs><g mask="url(#pricing-source-icon-nail-mask)"><image href="public/assets/lp-section-0c-fast.webp" width="865" height="1693"/></g></svg></g></svg></noscript></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:954/526" role="img" aria-label="通常価格2,500THB、LINE登録で1,000THB割引、初回実質1,500THB。" data-reveal><template data-deferred-art><svg viewBox="35 758 954 526" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-pricing-reference-758" x="0" y="758" width="1024" height="526" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1921,10 +733,21 @@ a {
         <g clip-path="url(#text-pricing-reference-758)"><g filter="url(#ink-pricing-reference-758)"><image href="public/assets/revision/pricing-reference.webp" x="0" y="0" width="1024" height="1536"/></g></g>
         <g fill="white"><rect x="35" y="758" width="940" height="520" rx="25"/></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-pricing-reference-758)"><image href="public/assets/revision/pricing-reference.webp" x="0" y="0" width="1024" height="1536"/></g></svg></div></div></section><section id="restored-options" class="options-preserved ticket-selected-b" style="display:grid;gap:12px" aria-label="2回目以降もお得な回数券とオプションプラン"><div class="art-window foreground-layer content-rail" style="aspect-ratio:968/837" role="img" aria-label="2回目以降もお得な回数券あり。5回分購入で1回無料。1回あたりの料金がお得に。ご予定に合わせて通える。有効期限内で自由に利用可能。" data-reveal><svg viewBox="28 46 968 837" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><filter id="ticket-b-offer-gold" x="28" y="46" width="968" height="837" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14"/></filter><clipPath id="ticket-b-offer-ornaments"><rect x="70" y="47" width="100" height="78"/><rect x="855" y="47" width="100" height="78"/></clipPath><mask id="ticket-b-offer-mask" x="28" y="46" width="968" height="837" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path d="M60 130 H963 C969 153 978 161 994 166 V844 C973 846 963 860 961 882 H63 C61 861 51 849 30 844 V166 C52 161 57 148 60 130 Z" fill="white"/><path d="M178 47 H847 C850 62 858 70 866 76 C870 84 874 93 874 100 C872 112 868 121 861 129 L848 145 H179 C174 138 170 131 163 124 C155 115 151 106 152 95 C153 84 157 75 165 70 C172 62 176 55 178 47 Z" fill="white"/><g clip-path="url(#ticket-b-offer-ornaments)"><g filter="url(#ticket-b-offer-gold)"><image href="public/assets/revision/ticket-options-b-approved-20261029.webp" width="1024" height="1536"/></g></g></mask></defs><g mask="url(#ticket-b-offer-mask)"><image href="public/assets/revision/ticket-options-b-approved-20261029.webp" width="1024" height="1536"/></g></svg></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:968/568" role="img" aria-label="オプションプランも充実。VIO脱毛追加1,500THB〜、全身脱毛追加4,900THB〜、追加の脱毛700THB〜。単品メニュー相談はLINEで確認。" data-reveal><svg viewBox="28 896 968 568" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><mask id="ticket-b-options-mask" x="28" y="896" width="968" height="568" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path d="M60 897 H963 Q969 919 993 927 V1437 Q973 1444 963 1462 H58 Q52 1445 30 1438 V927 Q51 921 60 897 Z" fill="white"/></mask></defs><g mask="url(#ticket-b-options-mask)"><image href="public/assets/revision/ticket-options-b-approved-20261029.webp" width="1024" height="1536"/></g></svg></div></section><!-- VISIT FLOW: insert between preserved ticket/options section and FAQ. -->
+    </defs><g class="approved-foreground" mask="url(#foreground-pricing-reference-758)"><image href="public/assets/revision/pricing-reference.webp" x="0" y="0" width="1024" height="1536"/></g></svg></template><noscript><svg viewBox="35 758 954 526" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-pricing-reference-758" x="0" y="758" width="1024" height="526" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-pricing-reference-758" clipPathUnits="userSpaceOnUse"></clipPath>
+      <mask id="foreground-pricing-reference-758" x="0" y="758" width="1024" height="526" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-pricing-reference-758)"><g filter="url(#ink-pricing-reference-758)"><image href="public/assets/revision/pricing-reference.webp" x="0" y="0" width="1024" height="1536"/></g></g>
+        <g fill="white"><rect x="35" y="758" width="940" height="520" rx="25"/></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-pricing-reference-758)"><image href="public/assets/revision/pricing-reference.webp" x="0" y="0" width="1024" height="1536"/></g></svg></noscript></div></div></section><section id="restored-options" class="options-preserved ticket-selected-b" style="display:grid;gap:12px" aria-label="2回目以降もお得な回数券とオプションプラン"><div class="art-window foreground-layer content-rail" style="aspect-ratio:968/837" role="img" aria-label="2回目以降もお得な回数券あり。5回分購入で1回無料。1回あたりの料金がお得に。ご予定に合わせて通える。有効期限内で自由に利用可能。" data-reveal><template data-deferred-art><svg viewBox="28 46 968 837" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><filter id="ticket-b-offer-gold" x="28" y="46" width="968" height="837" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14"/></filter><clipPath id="ticket-b-offer-ornaments"><rect x="70" y="47" width="100" height="78"/><rect x="855" y="47" width="100" height="78"/></clipPath><mask id="ticket-b-offer-mask" x="28" y="46" width="968" height="837" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path d="M60 130 H963 C969 153 978 161 994 166 V844 C973 846 963 860 961 882 H63 C61 861 51 849 30 844 V166 C52 161 57 148 60 130 Z" fill="white"/><path d="M178 47 H847 C850 62 858 70 866 76 C870 84 874 93 874 100 C872 112 868 121 861 129 L848 145 H179 C174 138 170 131 163 124 C155 115 151 106 152 95 C153 84 157 75 165 70 C172 62 176 55 178 47 Z" fill="white"/><g clip-path="url(#ticket-b-offer-ornaments)"><g filter="url(#ticket-b-offer-gold)"><image href="public/assets/revision/ticket-options-b-approved-20261029.webp" width="1024" height="1536"/></g></g></mask></defs><g mask="url(#ticket-b-offer-mask)"><image href="public/assets/revision/ticket-options-b-approved-20261029.webp" width="1024" height="1536"/></g></svg></template><noscript><svg viewBox="28 46 968 837" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><filter id="ticket-b-offer-gold" x="28" y="46" width="968" height="837" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14"/></filter><clipPath id="ticket-b-offer-ornaments"><rect x="70" y="47" width="100" height="78"/><rect x="855" y="47" width="100" height="78"/></clipPath><mask id="ticket-b-offer-mask" x="28" y="46" width="968" height="837" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path d="M60 130 H963 C969 153 978 161 994 166 V844 C973 846 963 860 961 882 H63 C61 861 51 849 30 844 V166 C52 161 57 148 60 130 Z" fill="white"/><path d="M178 47 H847 C850 62 858 70 866 76 C870 84 874 93 874 100 C872 112 868 121 861 129 L848 145 H179 C174 138 170 131 163 124 C155 115 151 106 152 95 C153 84 157 75 165 70 C172 62 176 55 178 47 Z" fill="white"/><g clip-path="url(#ticket-b-offer-ornaments)"><g filter="url(#ticket-b-offer-gold)"><image href="public/assets/revision/ticket-options-b-approved-20261029.webp" width="1024" height="1536"/></g></g></mask></defs><g mask="url(#ticket-b-offer-mask)"><image href="public/assets/revision/ticket-options-b-approved-20261029.webp" width="1024" height="1536"/></g></svg></noscript></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:968/568" role="img" aria-label="オプションプランも充実。VIO脱毛追加1,500THB〜、全身脱毛追加4,900THB〜、追加の脱毛700THB〜。単品メニュー相談はLINEで確認。" data-reveal><template data-deferred-art><svg viewBox="28 896 968 568" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><mask id="ticket-b-options-mask" x="28" y="896" width="968" height="568" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path d="M60 897 H963 Q969 919 993 927 V1437 Q973 1444 963 1462 H58 Q52 1445 30 1438 V927 Q51 921 60 897 Z" fill="white"/></mask></defs><g mask="url(#ticket-b-options-mask)"><image href="public/assets/revision/ticket-options-b-approved-20261029.webp" width="1024" height="1536"/></g></svg></template><noscript><svg viewBox="28 896 968 568" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><mask id="ticket-b-options-mask" x="28" y="896" width="968" height="568" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path d="M60 897 H963 Q969 919 993 927 V1437 Q973 1444 963 1462 H58 Q52 1445 30 1438 V927 Q51 921 60 897 Z" fill="white"/></mask></defs><g mask="url(#ticket-b-options-mask)"><image href="public/assets/revision/ticket-options-b-approved-20261029.webp" width="1024" height="1536"/></g></svg></noscript></div></section><!-- VISIT FLOW: insert between preserved ticket/options section and FAQ. -->
 <section id="visit-flow" class="revision-section revision-flow" aria-label="予約から来店までの流れ">
-  <div class="section-heading renewal-ribbon" data-reveal><img class="renewal-ribbon-art" src="public/assets/revision/heading-renewal-ribbon.webp" width="2169" height="725" alt="" aria-hidden="true" loading="lazy" decoding="async"><h2>予約から<br>来店までの流れ</h2></div>
-  <div class="art-window foreground-layer content-rail flow-unified-panel" style="aspect-ratio:926/1105" role="img" aria-label="予約から来店までの3ステップ。LINEでクーポンを受け取る、LINEで予約する、ご予約の日時に来店してクーポンを提示し施術を受ける。" data-reveal><svg viewBox="49 270 926 1105" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+  <div class="section-heading renewal-ribbon" data-reveal><img class="renewal-ribbon-art" src="public/assets/performance-20261029/heading-renewal-ribbon-q95.webp" width="2169" height="725" alt="" aria-hidden="true" loading="lazy" decoding="async"><h2>予約から<br>来店までの流れ</h2></div>
+  <div class="art-window foreground-layer content-rail flow-unified-panel" style="aspect-ratio:926/1105" role="img" aria-label="予約から来店までの3ステップ。LINEでクーポンを受け取る、LINEで予約する、ご予約の日時に来店してクーポンを提示し施術を受ける。" data-reveal><template data-deferred-art><svg viewBox="49 270 926 1105" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-flow-corrected-270" x="0" y="270" width="1024" height="1105" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -1935,17 +758,33 @@ a {
         <g clip-path="url(#text-flow-corrected-270)"><g filter="url(#ink-flow-corrected-270)"><image href="public/assets/revision/flow-corrected.webp" x="0" y="0" width="1024" height="1536"/></g></g>
         <g fill="white"><rect x="72" y="312" width="880" height="1029" rx="0"/></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-flow-corrected-270)"><image href="public/assets/revision/flow-corrected.webp" x="0" y="0" width="1024" height="1536"/></g></svg><span class="unified-panel-frame" aria-hidden="true"><svg class="panel-frame-defs" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-flow-corrected-270)"><image href="public/assets/revision/flow-corrected.webp" x="0" y="0" width="1024" height="1536"/></g></svg></template><noscript><svg viewBox="49 270 926 1105" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-flow-corrected-270" x="0" y="270" width="1024" height="1105" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-flow-corrected-270" clipPathUnits="userSpaceOnUse"></clipPath>
+      <mask id="foreground-flow-corrected-270" x="0" y="270" width="1024" height="1105" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-flow-corrected-270)"><g filter="url(#ink-flow-corrected-270)"><image href="public/assets/revision/flow-corrected.webp" x="0" y="0" width="1024" height="1536"/></g></g>
+        <g fill="white"><rect x="72" y="312" width="880" height="1029" rx="0"/></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-flow-corrected-270)"><image href="public/assets/revision/flow-corrected.webp" x="0" y="0" width="1024" height="1536"/></g></svg></noscript><span class="unified-panel-frame" aria-hidden="true"><template data-deferred-art><svg class="panel-frame-defs" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true"><defs>
       <linearGradient id="visit-flow-frame-fill" x1="0" y1="0" x2="1" y2=".6"><stop stop-color="#fffdf7"/><stop offset="1" stop-color="#fffdf7"/></linearGradient>
-      <mask id="visit-flow-frame-alpha" x="31" y="76" width="1357" height="984" maskUnits="userSpaceOnUse" style="mask-type:alpha"><image href="public/assets/revision/pricing-eight-two-rows-20261029.webp" width="1419" height="1109"/></mask>
+      <mask id="visit-flow-frame-alpha" x="31" y="76" width="1357" height="984" maskUnits="userSpaceOnUse" style="mask-type:alpha"><image href="public/assets/performance-20261029/pricing-eight-two-rows-20261029-q95.webp" width="1419" height="1109"/></mask>
       <mask id="visit-flow-frame-ring" x="31" y="76" width="1357" height="984" maskUnits="userSpaceOnUse" style="mask-type:luminance"><rect x="31" y="76" width="1357" height="984" fill="white"/><path d="M106 104 H1316 Q1321 141 1361 155 V978 C1339 986 1324 1001 1316 1028 H102 C98 1008 81 987 58 978 V155 Q98 144 106 104 Z" fill="black"/></mask>
-      <g id="visit-flow-frame-paint"><rect x="31" y="76" width="1357" height="984" fill="url(#visit-flow-frame-fill)" mask="url(#visit-flow-frame-alpha)"/><image href="public/assets/revision/pricing-eight-two-rows-20261029.webp" width="1419" height="1109" mask="url(#visit-flow-frame-ring)"/></g>
-    </defs></svg><svg class="panel-frame-piece" viewBox="31 76 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#visit-flow-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="121 76 1177 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#visit-flow-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="1298 76 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#visit-flow-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="31 166 90 804" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#visit-flow-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="121 166 1177 804" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#visit-flow-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="1298 166 90 804" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#visit-flow-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="31 970 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#visit-flow-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="121 970 1177 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#visit-flow-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="1298 970 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#visit-flow-frame-paint"/></svg></span><div class="flow-arrival-scene"><img src="public/assets/revision/flow-arrival.webp" width="1024" height="1024" alt="サロンでスタッフにクーポンを提示する来店イメージ" loading="lazy" decoding="async"></div></div>
+      <g id="visit-flow-frame-paint"><rect x="31" y="76" width="1357" height="984" fill="url(#visit-flow-frame-fill)" mask="url(#visit-flow-frame-alpha)"/><image href="public/assets/performance-20261029/pricing-eight-two-rows-20261029-q95.webp" width="1419" height="1109" mask="url(#visit-flow-frame-ring)"/></g>
+    </defs></svg></template><noscript><svg class="panel-frame-defs" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true"><defs>
+      <linearGradient id="visit-flow-frame-fill" x1="0" y1="0" x2="1" y2=".6"><stop stop-color="#fffdf7"/><stop offset="1" stop-color="#fffdf7"/></linearGradient>
+      <mask id="visit-flow-frame-alpha" x="31" y="76" width="1357" height="984" maskUnits="userSpaceOnUse" style="mask-type:alpha"><image href="public/assets/performance-20261029/pricing-eight-two-rows-20261029-q95.webp" width="1419" height="1109"/></mask>
+      <mask id="visit-flow-frame-ring" x="31" y="76" width="1357" height="984" maskUnits="userSpaceOnUse" style="mask-type:luminance"><rect x="31" y="76" width="1357" height="984" fill="white"/><path d="M106 104 H1316 Q1321 141 1361 155 V978 C1339 986 1324 1001 1316 1028 H102 C98 1008 81 987 58 978 V155 Q98 144 106 104 Z" fill="black"/></mask>
+      <g id="visit-flow-frame-paint"><rect x="31" y="76" width="1357" height="984" fill="url(#visit-flow-frame-fill)" mask="url(#visit-flow-frame-alpha)"/><image href="public/assets/performance-20261029/pricing-eight-two-rows-20261029-q95.webp" width="1419" height="1109" mask="url(#visit-flow-frame-ring)"/></g>
+    </defs></svg></noscript><svg class="panel-frame-piece" viewBox="31 76 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#visit-flow-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="121 76 1177 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#visit-flow-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="1298 76 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#visit-flow-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="31 166 90 804" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#visit-flow-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="121 166 1177 804" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#visit-flow-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="1298 166 90 804" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#visit-flow-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="31 970 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#visit-flow-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="121 970 1177 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#visit-flow-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="1298 970 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#visit-flow-frame-paint"/></svg></span><div class="flow-arrival-scene"><img src="public/assets/revision/flow-arrival.webp" width="1024" height="1024" alt="サロンでスタッフにクーポンを提示する来店イメージ" loading="lazy" decoding="async"></div></div>
 
 </section>
 <!-- END VISIT FLOW -->
 
-<section class="revision-section" id="faq"><div class="section-heading renewal-ribbon" data-reveal><img class="renewal-ribbon-art" src="public/assets/revision/heading-renewal-ribbon.webp" width="2169" height="725" alt="" aria-hidden="true" loading="lazy" decoding="async"><h2>よくある質問</h2></div><div class="faq-accordion" aria-label="よくある質問（FAQ）">
+<section class="revision-section" id="faq"><div class="section-heading renewal-ribbon" data-reveal><img class="renewal-ribbon-art" src="public/assets/performance-20261029/heading-renewal-ribbon-q95.webp" width="2169" height="725" alt="" aria-hidden="true" loading="lazy" decoding="async"><h2>よくある質問</h2></div><div class="faq-accordion" aria-label="よくある質問（FAQ）">
             <details><summary><span class="faq-row-icon" aria-hidden="true"></span><span class="faq-row-number">1</span><span class="faq-question">お支払いについて</span></summary><div class="faq-answer"><p class="faq-answer-line">利用可能な支払い方法： 現金、QR決済、クレジットカード</p><p class="faq-note">※クレジットカードをご利用の際は、別途3%の手数料を頂戴しております。</p><p class="faq-note">※クレジットカード決済において、American Express（アメックス）、Diners Club（ダイナース）はご利用いただけませんので、あらかじめご了承ください。</p></div></details>
             <details><summary><span class="faq-row-icon" aria-hidden="true"></span><span class="faq-row-number">2</span><span class="faq-question">脱毛時の痛みはありますか？</span></summary><div class="faq-answer"><p>照射口がマイナス温度まで冷却される最新マシンを採用しているため、痛みはほとんど感じません。快適に過ごしていただけるよう、全工程において配慮しております。</p></div></details>
             <details><summary><span class="faq-row-icon" aria-hidden="true"></span><span class="faq-row-number">3</span><span class="faq-question">どれくらいの頻度で通うのがベストですか？</span></summary><div class="faq-answer"><p>効果を最大限に引き出すため、2週間に1回のペースでのご来店を推奨しております。</p></div></details>
@@ -1955,21 +794,26 @@ a {
             <details><summary><span class="faq-row-icon" aria-hidden="true"></span><span class="faq-row-number">7</span><span class="faq-question">サービスの一部を除外して料金を安くできますか？</span></summary><div class="faq-answer"><p>誠に恐れ入りますが、コース内容の変更や特定のサービスを除外することによる減額はいたしかねます。あらかじめご了承ください。</p></div></details>
             <details><summary><span class="faq-row-icon" aria-hidden="true"></span><span class="faq-row-number">8</span><span class="faq-question">LINEクーポンの使い方は？</span></summary><div class="faq-answer"><p>公式LINEでクーポンを受け取り、LINEでご予約ください。ご予約の日時にご来店いただき、施術前にクーポン画面をスタッフへご提示ください。</p></div></details>
           </div>
-          </section><section id="google-map" class="revision-section revision-access" aria-label="サロンドシックス店舗情報"><div class="section-heading renewal-ribbon" data-reveal><img class="renewal-ribbon-art" src="public/assets/revision/heading-renewal-ribbon.webp" width="2169" height="725" alt="" aria-hidden="true" loading="lazy" decoding="async"><h2><span class="heading-brand" lang="en">Salon de Six</span><span class="heading-main">店舗情報</span></h2></div><div class="store-info-body">
+          </section><section id="google-map" class="revision-section revision-access" aria-label="サロンドシックス店舗情報"><div class="section-heading renewal-ribbon" data-reveal><img class="renewal-ribbon-art" src="public/assets/performance-20261029/heading-renewal-ribbon-q95.webp" width="2169" height="725" alt="" aria-hidden="true" loading="lazy" decoding="async"><h2><span class="heading-brand" lang="en">Salon de Six</span><span class="heading-main">店舗情報</span></h2></div><div class="store-info-body">
   <figure class="store-info-photo" data-reveal>
-    <img src="public/assets/revision/salon-interior-official.jpg" width="2048" height="851" alt="Salon de Sixのロゴを紹介するオーナーKanaと、ピンクのソファのある店内" loading="lazy" decoding="async">
+    <img src="public/assets/performance-20261029/salon-interior-official-q92.webp" width="2048" height="851" alt="Salon de Sixのロゴを紹介するオーナーKanaと、ピンクのソファのある店内" loading="lazy" decoding="async">
   </figure>
 
   <div class="revision-access__map store-info-map" data-reveal>
-    <iframe title="Salon de Sixの所在地をGoogleマップで確認" src="https://www.google.com/maps?q=Salon%20de%20Six%20Bangkok&amp;output=embed" loading="eager" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    <template data-deferred-art><iframe title="Salon de Sixの所在地をGoogleマップで確認" src="https://www.google.com/maps?q=Salon%20de%20Six%20Bangkok&amp;output=embed" loading="eager" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></template><noscript><iframe title="Salon de Sixの所在地をGoogleマップで確認" src="https://www.google.com/maps?q=Salon%20de%20Six%20Bangkok&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></noscript>
   </div>
 
-  <dl class="store-info-table unified-frame-panel" aria-label="Salon de Six 店舗情報" data-reveal><span class="unified-panel-frame" aria-hidden="true"><svg class="panel-frame-defs" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true"><defs>
+  <dl class="store-info-table unified-frame-panel" aria-label="Salon de Six 店舗情報" data-reveal><span class="unified-panel-frame" aria-hidden="true"><template data-deferred-art><svg class="panel-frame-defs" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true"><defs>
       <linearGradient id="store-info-frame-fill" x1="0" y1="0" x2="1" y2=".6"><stop stop-color="#073457"/><stop offset="1" stop-color="#021b37"/></linearGradient>
-      <mask id="store-info-frame-alpha" x="31" y="76" width="1357" height="984" maskUnits="userSpaceOnUse" style="mask-type:alpha"><image href="public/assets/revision/pricing-eight-two-rows-20261029.webp" width="1419" height="1109"/></mask>
+      <mask id="store-info-frame-alpha" x="31" y="76" width="1357" height="984" maskUnits="userSpaceOnUse" style="mask-type:alpha"><image href="public/assets/performance-20261029/pricing-eight-two-rows-20261029-q95.webp" width="1419" height="1109"/></mask>
       <mask id="store-info-frame-ring" x="31" y="76" width="1357" height="984" maskUnits="userSpaceOnUse" style="mask-type:luminance"><rect x="31" y="76" width="1357" height="984" fill="white"/><path d="M106 104 H1316 Q1321 141 1361 155 V978 C1339 986 1324 1001 1316 1028 H102 C98 1008 81 987 58 978 V155 Q98 144 106 104 Z" fill="black"/></mask>
-      <g id="store-info-frame-paint"><rect x="31" y="76" width="1357" height="984" fill="url(#store-info-frame-fill)" mask="url(#store-info-frame-alpha)"/><image href="public/assets/revision/pricing-eight-two-rows-20261029.webp" width="1419" height="1109" mask="url(#store-info-frame-ring)"/></g>
-    </defs></svg><svg class="panel-frame-piece" viewBox="31 76 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#store-info-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="121 76 1177 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#store-info-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="1298 76 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#store-info-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="31 166 90 804" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#store-info-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="121 166 1177 804" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#store-info-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="1298 166 90 804" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#store-info-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="31 970 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#store-info-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="121 970 1177 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#store-info-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="1298 970 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#store-info-frame-paint"/></svg></span>
+      <g id="store-info-frame-paint"><rect x="31" y="76" width="1357" height="984" fill="url(#store-info-frame-fill)" mask="url(#store-info-frame-alpha)"/><image href="public/assets/performance-20261029/pricing-eight-two-rows-20261029-q95.webp" width="1419" height="1109" mask="url(#store-info-frame-ring)"/></g>
+    </defs></svg></template><noscript><svg class="panel-frame-defs" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true"><defs>
+      <linearGradient id="store-info-frame-fill" x1="0" y1="0" x2="1" y2=".6"><stop stop-color="#073457"/><stop offset="1" stop-color="#021b37"/></linearGradient>
+      <mask id="store-info-frame-alpha" x="31" y="76" width="1357" height="984" maskUnits="userSpaceOnUse" style="mask-type:alpha"><image href="public/assets/performance-20261029/pricing-eight-two-rows-20261029-q95.webp" width="1419" height="1109"/></mask>
+      <mask id="store-info-frame-ring" x="31" y="76" width="1357" height="984" maskUnits="userSpaceOnUse" style="mask-type:luminance"><rect x="31" y="76" width="1357" height="984" fill="white"/><path d="M106 104 H1316 Q1321 141 1361 155 V978 C1339 986 1324 1001 1316 1028 H102 C98 1008 81 987 58 978 V155 Q98 144 106 104 Z" fill="black"/></mask>
+      <g id="store-info-frame-paint"><rect x="31" y="76" width="1357" height="984" fill="url(#store-info-frame-fill)" mask="url(#store-info-frame-alpha)"/><image href="public/assets/performance-20261029/pricing-eight-two-rows-20261029-q95.webp" width="1419" height="1109" mask="url(#store-info-frame-ring)"/></g>
+    </defs></svg></noscript><svg class="panel-frame-piece" viewBox="31 76 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#store-info-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="121 76 1177 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#store-info-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="1298 76 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#store-info-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="31 166 90 804" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#store-info-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="121 166 1177 804" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#store-info-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="1298 166 90 804" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#store-info-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="31 970 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#store-info-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="121 970 1177 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#store-info-frame-paint"/></svg><svg class="panel-frame-piece" viewBox="1298 970 90 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#store-info-frame-paint"/></svg></span>
     <div class="store-info-row">
       <dt><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.1 3.2 4.5 4.3C3 4.9 4.5 11 8.8 15.3s10.4 5.8 11 4.3l1.1-2.6-4.3-2.5-1.9 1.5c-2.6-1.3-5.4-4.1-6.7-6.7l1.5-1.9Z"/></svg><span>電話番号</span></dt>
       <dd><a href="tel:+66983918717">098-391-8717</a></dd>
@@ -1992,7 +836,7 @@ a {
     </div>
   </dl>
 </div>
-</section><section class="revision-section" id="owner-message"><div class="section-heading renewal-ribbon" data-reveal><img class="renewal-ribbon-art" src="public/assets/revision/heading-renewal-ribbon.webp" width="2169" height="725" alt="" aria-hidden="true" loading="lazy" decoding="async"><h2><span class="heading-kicker heading-kicker-long">最後まで読んでいただいた方へ</span><span class="heading-main">オーナーメッセージ</span></h2></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:795/286" role="img" aria-label="近づいた時ほど、清潔感は伝わります。" data-reveal><svg viewBox="41 16890 795 286" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+</section><section class="revision-section" id="owner-message"><div class="section-heading renewal-ribbon" data-reveal><img class="renewal-ribbon-art" src="public/assets/performance-20261029/heading-renewal-ribbon-q95.webp" width="2169" height="725" alt="" aria-hidden="true" loading="lazy" decoding="async"><h2><span class="heading-kicker heading-kicker-long">最後まで読んでいただいた方へ</span><span class="heading-main">オーナーメッセージ</span></h2></div><div class="art-window foreground-layer content-rail" style="aspect-ratio:795/286" role="img" aria-label="近づいた時ほど、清潔感は伝わります。" data-reveal><template data-deferred-art><svg viewBox="41 16890 795 286" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-original-16890" x="0" y="16890" width="865" height="286" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -2003,7 +847,18 @@ a {
         <g clip-path="url(#text-original-16890)"><g filter="url(#ink-original-16890)"><image href="public/assets/lp-section-4-fast.webp" x="0" y="14572" width="865" height="3643"/></g></g>
         <g fill="white"></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-original-16890)"><image href="public/assets/lp-section-4-fast.webp" x="0" y="14572" width="865" height="3643"/></g></svg></div><div class="art-window foreground-layer content-rail owner-message-art" style="aspect-ratio:865/1450" role="img" aria-label="Salon de Six オーナー Kana Hatanoからのメッセージ。忙しい男性の身だしなみをまとめてケアします。" data-reveal><svg viewBox="0 17200 865 1450" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-16890)"><image href="public/assets/lp-section-4-fast.webp" x="0" y="14572" width="865" height="3643"/></g></svg></template><noscript><svg viewBox="41 16890 795 286" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-original-16890" x="0" y="16890" width="865" height="286" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-original-16890" clipPathUnits="userSpaceOnUse"><rect x="41" y="16890" width="795" height="286" rx="0"/></clipPath>
+      <mask id="foreground-original-16890" x="0" y="16890" width="865" height="286" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-original-16890)"><g filter="url(#ink-original-16890)"><image href="public/assets/lp-section-4-fast.webp" x="0" y="14572" width="865" height="3643"/></g></g>
+        <g fill="white"></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-16890)"><image href="public/assets/lp-section-4-fast.webp" x="0" y="14572" width="865" height="3643"/></g></svg></noscript></div><div class="art-window foreground-layer content-rail owner-message-art" style="aspect-ratio:865/1450" role="img" aria-label="Salon de Six オーナー Kana Hatanoからのメッセージ。忙しい男性の身だしなみをまとめてケアします。" data-reveal><template data-deferred-art><svg viewBox="0 17200 865 1450" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
       <filter id="ink-original-17200" x="0" y="17200" width="865" height="1450" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
         <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
@@ -2014,4 +869,15 @@ a {
         <g clip-path="url(#text-original-17200)"><g filter="url(#ink-original-17200)"><image href="public/assets/lp-section-4-fast.webp" x="0" y="14572" width="865" height="3643"/><image href="public/assets/lp-section-5-fast.webp" x="0" y="18215" width="865" height="3643"/></g></g>
         <g fill="white"><rect x="0" y="17200" width="865" height="1450" rx="0"/></g>
       </mask>
-    </defs><g class="approved-foreground" mask="url(#foreground-original-17200)"><image href="public/assets/lp-section-4-fast.webp" x="0" y="14572" width="865" height="3643"/><image href="public/assets/lp-section-5-fast.webp" x="0" y="18215" width="865" height="3643"/></g></svg><p class="owner-signature" aria-hidden="true"><span>Salon de Six オーナー</span><strong lang="en">Kana Hatano</strong></p></div></section></div></div></div></main><a class="floating-action action-button is-visible" href="https://lin.ee/7VR8UlP" onclick="return gtag_report_conversion(this.href);" aria-label="今なら実質1500THB、今すぐクーポン券を受け取る"><img fetchpriority="high" decoding="async" src="public/assets/fv-action-button-follow-cta-lossless-20261010.webp" width="817" height="194" alt="" /><span class="cta-label-motion" aria-hidden="true"><img src="public/assets/fv-action-button-follow-cta-lossless-20261010.webp" width="817" height="194" alt="" decoding="async"></span></a><script src="revision.js?v=20261029-original-stars" defer></script></body></html>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-17200)"><image href="public/assets/lp-section-4-fast.webp" x="0" y="14572" width="865" height="3643"/><image href="public/assets/lp-section-5-fast.webp" x="0" y="18215" width="865" height="3643"/></g></svg></template><noscript><svg viewBox="0 17200 865 1450" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <filter id="ink-original-17200" x="0" y="17200" width="865" height="1450" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 -6 0 4.2" result="navy"/>
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  7 0 -7 0 -.14" result="gold"/>
+        <feComposite in="navy" in2="gold" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+      <clipPath id="text-original-17200" clipPathUnits="userSpaceOnUse"></clipPath>
+      <mask id="foreground-original-17200" x="0" y="17200" width="865" height="1450" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:alpha">
+        <g clip-path="url(#text-original-17200)"><g filter="url(#ink-original-17200)"><image href="public/assets/lp-section-4-fast.webp" x="0" y="14572" width="865" height="3643"/><image href="public/assets/lp-section-5-fast.webp" x="0" y="18215" width="865" height="3643"/></g></g>
+        <g fill="white"><rect x="0" y="17200" width="865" height="1450" rx="0"/></g>
+      </mask>
+    </defs><g class="approved-foreground" mask="url(#foreground-original-17200)"><image href="public/assets/lp-section-4-fast.webp" x="0" y="14572" width="865" height="3643"/><image href="public/assets/lp-section-5-fast.webp" x="0" y="18215" width="865" height="3643"/></g></svg></noscript><p class="owner-signature" aria-hidden="true"><span>Salon de Six オーナー</span><strong lang="en">Kana Hatano</strong></p></div></section></div></div></div></main><a class="floating-action action-button is-visible" href="https://lin.ee/7VR8UlP" onclick="return gtag_report_conversion(this.href);" aria-label="今なら実質1500THB、今すぐクーポン券を受け取る"><img fetchpriority="high" decoding="async" src="public/assets/fv-action-button-follow-cta-lossless-20261010.webp" width="817" height="194" alt="" /><span class="cta-label-motion" aria-hidden="true"><img src="public/assets/fv-action-button-follow-cta-lossless-20261010.webp" width="817" height="194" alt="" decoding="async"></span></a><script src="revision.js?v=20261029-original-stars" defer></script></body></html>
