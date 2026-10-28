@@ -1,6 +1,7 @@
 /* Keep approved artwork and its water background; motion is foreground only. */
 body.motion-ready [data-reveal]{transition:opacity .7s ease,transform .8s cubic-bezier(.2,.65,.25,1);transition-delay:var(--reveal-delay,0ms)}
 .hero-credit-clean{position:absolute;right:3.4%;top:60.7%;width:26%;margin:0;padding:1.2cqw .9cqw;color:#111;background:none;border:0;box-shadow:none;text-align:left;line-height:1.6;z-index:7;font-family:Georgia,'Yu Mincho','Hiragino Mincho ProN',serif;letter-spacing:0}
+.hero-credit-clean::before{content:'';position:absolute;inset:-1.2cqw -1.8cqw -1cqw;z-index:-1;border-radius:50%;background:radial-gradient(ellipse at 50% 43%,rgba(255,255,255,.8) 0%,rgba(255,255,255,.65) 46%,rgba(255,255,255,.25) 70%,rgba(255,255,255,0) 100%);filter:blur(.7cqw);pointer-events:none}
 .hero-credit-clean small{display:block;font-size:2.1cqw;white-space:nowrap}
 .hero-credit-clean strong{display:block;font-family:inherit;font-size:2.9cqw;white-space:nowrap;font-weight:600;text-transform:uppercase}
 .hero-credit-clean::after{content:'';display:block;height:1px;margin-top:.8cqw;background:linear-gradient(90deg,#b89022,#dfc45f 80%,transparent)}
