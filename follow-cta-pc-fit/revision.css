@@ -487,6 +487,7 @@ html.hero-motion-pending [data-hero-step] { opacity:0; transform:translateY(12px
 html.hero-motion-pending [data-hero-step="headline"] { opacity:1; transform:none; }
 html.hero-motion-pending [data-char] { opacity:0; transform:translateY(10px) scale(.93); }
 body.motion-ready [data-hero-step="intro"],html.hero-motion-pending [data-hero-step="intro"] { transform:none; transition:opacity .75s ease; }
+body.motion-ready [data-hero-step="care-strip"],html.hero-motion-pending [data-hero-step="care-strip"] { transform:none; transition:opacity .75s ease; }
 body.motion-ready [data-hero-step="credit"],html.hero-motion-pending [data-hero-step="credit"] { transform:translateY(8px) scale(.96); transition:opacity .8s ease,transform .8s cubic-bezier(.18,.75,.25,1); }
 body.motion-ready [data-hero-step="credit"].is-visible { transform:none; }
 .exact-original-hero.hero-motion-complete .hero-motion-layer { display:none; }

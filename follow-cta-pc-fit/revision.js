@@ -159,14 +159,16 @@
         ["headline", 950],
         ["offer", 2200],
         ["context", 2950],
-        ["credit", 3750]
+        ["credit", 3750],
+        ["care-strip", 4600],
+        ["price", 5450]
       ];
       sequence.forEach(([step, delay]) => {
         scheduleHero(() => {
           document.querySelectorAll(`[data-hero-step="${step}"]`).forEach(reveal);
         }, delay);
       });
-      scheduleHero(finishHero, 4650);
+      scheduleHero(finishHero, 6350);
     }
 
     document.querySelectorAll('[data-hero-step="headline"]').forEach((headline) => {
