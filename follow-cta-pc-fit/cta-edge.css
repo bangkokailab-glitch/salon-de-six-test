@@ -1,0 +1,7 @@
+/* Trim only the white matte outside the existing green CTA artwork.
+   Coordinates from the unchanged 817 × 194 source: x=9..802, y=9..185,
+   40px corner radii. Percentage units scale the same contour on every screen.
+   Clip the parent so the original image and moving shine share one clean edge. */
+.floating-action.action-button {
+  clip-path: inset(4.639175% 1.835985% 4.639175% 1.101591% round 4.895961% / 20.618557%);
+}
