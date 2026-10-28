@@ -1,0 +1,31 @@
+:root{color:#082c43;background:#eef4f7;font-family:'Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;font-synthesis:none}
+*{box-sizing:border-box}body{margin:0}a{color:inherit}button{font:inherit}
+.comparison-intro{max-width:1120px;margin:auto;padding:32px 20px 24px}
+.comparison-intro .eyebrow{font-size:11px;letter-spacing:.16em;color:#936f28;margin:0 0 10px}
+.comparison-intro h1{font-family:'Hiragino Mincho ProN','Yu Mincho',serif;font-size:27px;line-height:1.4;letter-spacing:.02em;margin:0 0 12px}
+.comparison-intro p{font-size:14px;line-height:1.85;margin:0;max-width:740px}
+.tabs{display:none}
+.options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;max-width:1150px;margin:0 auto;padding:0 14px 28px;align-items:start}
+.option{min-width:0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 8px 30px #153a4c0e;border:1px solid #dbe6eb}
+.option-head{padding:22px 18px 20px;background:#fff;min-height:175px;border-bottom:1px solid #dce8ed}
+.option-head h2{font-family:'Hiragino Mincho ProN','Yu Mincho',serif;font-size:22px;line-height:1.4;letter-spacing:.02em;margin:8px 0}
+.option-head h2 b{color:#a27d2e;font-family:Georgia,serif;margin-right:8px;font-size:27px}
+.option-head p{margin:0;font-size:13px;line-height:1.8;color:#526473}
+.recommend{display:inline-block;padding:4px 9px;background:#062d47;color:#fbebc0;border-radius:2px;font-size:10px;letter-spacing:.08em}
+.theme-name{font-size:10px;letter-spacing:.14em;color:#977b42;min-height:22px;display:block}
+.revision-stage{position:relative;container-type:inline-size;width:100%;padding:24px 0 32px;color:#051b3b;font-family:'Hiragino Mincho ProN','Yu Mincho','YuMincho',serif;background:#ecf8fe url('assets/water-background.webp') center top/cover fixed no-repeat;--content-rail:92.0231214%}
+.revision-stage *,.revision-stage *::before,.revision-stage *::after{box-sizing:border-box}
+.revision-stage p{margin:0}
+.revision-stage .faq-accordion{position:relative!important;inset:auto!important;width:var(--content-rail)!important;margin:0 auto!important;height:auto!important;overflow:visible!important;display:grid;gap:13px;padding:0!important;background:transparent!important}
+.comparison-footer{padding:8px 20px 36px;text-align:center;font-size:12px;color:#667885;line-height:1.8}
+.comparison-footer a{display:inline-block;margin-top:10px;min-height:40px;padding:10px 14px;border:1px solid #c8d8df;border-radius:6px;background:white;text-decoration:none}
+@media(max-width:899px){
+ .comparison-intro{padding:24px 18px 20px}.comparison-intro h1{font-size:24px}.comparison-intro p{font-size:13px}
+ .tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));position:sticky;top:0;z-index:10;padding:10px 14px;gap:7px;background:#eef4f7f5;backdrop-filter:blur(12px);border-bottom:1px solid #d5e0e6}
+ .tabs button{min-height:47px;border:1px solid #b8cad5;background:#fff;border-radius:6px;color:#092b43;font-size:13px;font-weight:700;cursor:pointer}
+ .tabs button[aria-selected="true"]{background:#082b43;border-color:#082b43;color:#f4dba2}
+ .tabs button:focus-visible{outline:3px solid #4b97c6;outline-offset:2px}
+ .options{display:block;max-width:430px;padding:0 0 24px}.option{border-radius:0;border:0;box-shadow:none;margin-bottom:24px}
+ .option-head{min-height:0;padding:21px 18px 18px}.option-head h2{font-size:22px}.option-head p{max-width:370px}
+ body.js-options .option:not(.is-selected){display:none}
+}

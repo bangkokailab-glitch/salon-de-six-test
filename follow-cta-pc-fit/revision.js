@@ -5,13 +5,22 @@
     const shell = document.querySelector(".lp-shell");
     const desktop = window.matchMedia("(min-width: 1040px)");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    // Reveal real content units in reading order, instead of a whole long section.
+    document.querySelectorAll('.machine-intro,.machine-chapter,.fa-intro,.fa-chapter').forEach(group => {
+      group.removeAttribute('data-reveal');
+      Array.from(group.children).filter(child=>!child.classList.contains('gold-sparkle')).forEach(child => child.setAttribute('data-reveal',''));
+    });
+    document.querySelectorAll('.faq-accordion details,.store-info-row').forEach(item => item.setAttribute('data-reveal',''));
     const revealItems = Array.from(document.querySelectorAll("[data-reveal]"));
+    const sparkleFields = Array.from(document.querySelectorAll('[data-sparkle-field]'));
     const heroItems = Array.from(document.querySelectorAll("[data-hero-step]"));
     const hero = document.querySelector(".exact-original-hero");
     const heroTimers = new Set();
     let heroFinished = false;
     let revealObserver;
     let imageObserver;
+    let sparkleObserver;
+    const sectionRevealClock = new WeakMap();
 
     const scrollRoot = () => desktop.matches && shell ? shell : null;
     const reveal = (element) => element.classList.add("is-visible");
@@ -28,6 +37,8 @@
     function showAllContent() {
       finishHero();
       revealItems.forEach(reveal);
+      sparkleFields.forEach(field => field.classList.remove('is-sparkling'));
+      sparkleObserver?.disconnect();
       revealObserver?.disconnect();
     }
 
@@ -38,14 +49,31 @@
         return;
       }
       revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
+        const entering=entries.filter(entry => entry.isIntersecting)
+          .sort((a,b) => revealItems.indexOf(a.target)-revealItems.indexOf(b.target));
+        entering.forEach((entry) => {
           if (!entry.isIntersecting) return;
+          const section=entry.target.closest('section') || shell;
+          const now=performance.now();
+          const previous=sectionRevealClock.get(section) || (now-150);
+          const scheduled=Math.min(Math.max(now,previous+150),now+900);
+          sectionRevealClock.set(section,scheduled);
+          entry.target.style.setProperty('--reveal-delay',`${Math.round(scheduled-now)}ms`);
           reveal(entry.target);
           revealObserver.unobserve(entry.target);
         });
-      }, { root: scrollRoot(), rootMargin: "0px 0px 100px", threshold: 0 });
+      }, { root: scrollRoot(), rootMargin: "0px 0px -100px", threshold: 0.08 });
       revealItems.filter((item) => !item.classList.contains("is-visible"))
         .forEach((item) => revealObserver.observe(item));
+    }
+
+    function observeSparkles() {
+      sparkleObserver?.disconnect();
+      if(reducedMotion.matches || !('IntersectionObserver' in window)) return;
+      sparkleObserver=new IntersectionObserver(entries => entries.forEach(entry => {
+        entry.target.classList.toggle('is-sparkling',entry.isIntersecting && !document.hidden);
+      }),{root:scrollRoot(),threshold:0});
+      sparkleFields.forEach(field => sparkleObserver.observe(field));
     }
 
     function loadLegacyImage(image) {
@@ -163,6 +191,7 @@
     document.querySelectorAll(".floating-action").forEach(reveal);
     observeLegacyImages();
     observeReveals();
+    observeSparkles();
     // Content stays readable if JavaScript is unavailable or motion is reduced.
     document.body.classList.add("motion-ready");
     if (reducedMotion.matches || document.hidden || !("IntersectionObserver" in window)) {
@@ -202,14 +231,17 @@
       observeReveals();
       observeLegacyImages();
       observeMaps();
+      observeSparkles();
     });
     reducedMotion.addEventListener("change", () => {
       if (reducedMotion.matches) showAllContent();
-      else observeReveals();
+      else { observeReveals(); observeSparkles(); }
     });
     document.addEventListener("visibilitychange", () => {
-      if (document.hidden) finishHero();
-      else observeReveals();
+      if (document.hidden) {
+        finishHero();
+        sparkleFields.forEach(field => field.classList.remove('is-sparkling'));
+      } else { observeReveals(); observeSparkles(); }
     });
     window.addEventListener("pageshow", (event) => {
       // Returning from LINE must not restart or hide already presented content.
@@ -217,6 +249,7 @@
       document.querySelectorAll(".floating-action").forEach(reveal);
       observeReveals();
       observeLegacyImages();
+      observeSparkles();
     });
   }
 

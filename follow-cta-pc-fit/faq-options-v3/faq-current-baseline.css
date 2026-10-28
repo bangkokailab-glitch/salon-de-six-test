@@ -1,0 +1,180 @@
+/* Snapshot of the existing FAQ-only cascade. Answers are deliberately unchanged. */
+
+/* LP inline */
+.faq-accordion{
+  position: absolute;
+  left: 4.2%;
+  top: 86.62%;
+  z-index: 5;
+  width: 91.6%;
+  height: auto;
+  max-height: none;
+  padding: 2px 2px 7px;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(180deg, #f2fbff, #e8f7ff);
+  box-shadow: none;
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    "YuGothic",
+    system-ui,
+    sans-serif;
+  scrollbar-width: none;
+}
+.faq-accordion::-webkit-scrollbar{
+  display: none;
+  width: 0;
+}
+.faq-accordion::-webkit-scrollbar-track{
+  background: rgba(255, 255, 255, 0.58);
+}
+.faq-accordion::-webkit-scrollbar-thumb{
+  border-radius: 999px;
+  background: rgba(7, 39, 88, 0.45);
+}
+.faq-accordion details{
+  margin: 0 0 9px;
+  overflow: hidden;
+  border: 1px solid rgba(205, 220, 236, 0.94);
+  border-radius: 9px;
+  background:
+    linear-gradient(180deg, #fff, #f9fdff),
+    #fff;
+  box-shadow:
+    0 3px 9px rgba(15, 57, 107, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.76);
+}
+.faq-accordion summary{
+  display: grid;
+  grid-template-columns: 49px 39px minmax(0, 1fr) 34px;
+  gap: 0;
+  align-items: center;
+  min-height: 67px;
+  padding: 0 9px 0 8px;
+  color: #071b3d;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.2;
+  list-style: none;
+  cursor: pointer;
+}
+.faq-accordion summary::-webkit-details-marker{
+  display: none;
+}
+.faq-row-icon{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 50px;
+  border-right: 1px dashed rgba(151, 170, 194, 0.7);
+}
+.faq-row-icon::before{
+  content: "?";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 2px solid #1672bc;
+  border-radius: 50%;
+  color: #1672bc;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1;
+}
+.faq-row-number{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  height: 50px;
+  color: #bf8624;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-size: 25px;
+  font-weight: 900;
+  line-height: 1;
+}
+.faq-question{
+  min-width: 0;
+  padding: 0 7px 0 8px;
+}
+.faq-accordion summary::after{
+  content: "+";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  justify-self: end;
+  border: 1px solid rgba(198, 146, 43, 0.78);
+  border-radius: 50%;
+  color: #bd8623;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  font-weight: 800;
+  line-height: 1;
+}
+.faq-accordion details[open] summary::after{
+  content: "-";
+}
+.faq-answer{
+  margin: -1px 8px 10px 65px;
+  padding: 10px 12px 11px;
+  border: 1px solid rgba(197, 217, 237, 0.86);
+  border-radius: 7px;
+  background: linear-gradient(180deg, rgba(250, 253, 255, 0.98), rgba(241, 248, 254, 0.98));
+}
+.faq-accordion p{
+  margin: 0;
+  padding: 0;
+  color: #243a5f;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.52;
+}
+.faq-accordion .faq-answer-line{
+  font-weight: 800;
+}
+.faq-accordion .faq-note{
+  margin-top: 6px;
+  color: #405477;
+  font-size: 10.2px;
+  line-height: 1.45;
+}
+.faq-accordion{ top: 86.62% !important; }
+.faq-accordion{ top: 86.9946235345% !important; }
+
+/* revision.css */
+.revision-stage .faq-accordion{ position:relative!important; top:auto!important; left:auto!important; right:auto!important; bottom:auto!important; width:auto!important; height:auto!important; margin:0 4%!important; padding:0!important; display:grid; gap:12px; background:transparent!important; }
+.revision-stage .faq-accordion details{ margin:0!important; padding:0!important; border:1px solid #c4d9e1!important; border-radius:12px; overflow:hidden; background:#ffffffed!important; box-shadow:0 4px 12px #113c5d0a; }
+.revision-stage .faq-accordion summary{ position:relative; display:flex; align-items:center; min-height:74px!important; padding:16px 38px 16px 12px!important; gap:10px; list-style:none; font-size:16px!important; line-height:1.7!important; }
+.revision-stage .faq-accordion summary::-webkit-details-marker{ display:none; }
+.revision-stage .faq-row-icon{ display:none; }
+.revision-stage .faq-row-number{ position:static!important; flex:0 0 28px; color:#b98b28; font-size:25px!important; font-weight:700; line-height:1.2; }
+.revision-stage .faq-question{ min-width:0; font-size:16px!important; line-height:1.65!important; text-align:left; font-weight:700; }
+.revision-stage .faq-accordion summary::after{ content:'+'; position:absolute; right:10px; top:50%; transform:translateY(-50%); width:24px; height:24px; border:1px solid #bfa15c; border-radius:50%; color:#a27a23; font:20px/22px sans-serif; text-align:center; background:transparent; }
+.revision-stage .faq-accordion details[open] summary::after{ content:'−'; }
+.revision-stage .faq-answer{ position:static!important; display:block; width:100%; height:auto; margin:0!important; padding:0 16px 20px!important; border:0!important; border-radius:0!important; box-shadow:none!important; background:transparent!important; font-family:'Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif; font-size:15px!important; line-height:1.9!important; }
+.revision-stage .faq-answer p{ margin:0 0 10px; font-size:15px!important; line-height:1.9!important; }
+.revision-stage .faq-answer p:last-child{ margin-bottom:0; }
+.revision-stage .faq-note{ font-size:14px!important; }
+.revision-stage .faq-accordion summary::before{ content:none!important; }
+.revision-stage .faq-answer, .revision-stage .faq-answer p{ font-weight:400!important; }
+.revision-stage .faq-accordion{ margin:8px 4% 0!important; gap:13px; }
+.revision-stage .faq-accordion details{ border:3px double #c5a15b!important; border-radius:13px; box-shadow:0 3px 8px #002b4d24,inset 0 0 0 1px #fff!important; background:linear-gradient(110deg,#fffdf5,#f5fcff)!important; }
+.revision-stage .faq-accordion summary{ padding:15px 46px 15px 12px!important; gap:12px; min-height:76px!important; background:linear-gradient(115deg,#fff9e9,#fff 48%,#eaf7ff); }
+.revision-stage .faq-row-number{ display:flex; align-items:center; justify-content:center; flex:0 0 36px; width:36px; height:36px; border:1px solid #bb8b2f; border-radius:50%; color:#092747; background:radial-gradient(circle at 33% 20%,#fff2bc,#e2b44e 70%,#a37525); box-shadow:inset 0 0 0 2px #fff8dd; font-family:Georgia,serif; font-size:24px!important; }
+.revision-stage .faq-question{ font-size:16px!important; letter-spacing:.01em; color:#062443; }
+.revision-stage .faq-accordion summary::after{ width:29px; height:29px; right:9px; border:2px solid #cba14c; color:#ffe5a1; background:linear-gradient(#124064,#03213e); box-shadow:0 1px 3px #06244330; font:23px/25px Arial,sans-serif; }
+.revision-stage .faq-accordion details[open] summary{ background:linear-gradient(115deg,#103a5a,#041c37); }
+.revision-stage .faq-accordion details[open] .faq-question{ color:#fff4d7; }
+.revision-stage .faq-answer{ padding:16px 16px 20px!important; }
+
+/* revision-v2.css */
+.revision-stage .faq-accordion{width:var(--content-rail)!important;margin:8px auto 0!important}
+.revision-stage .faq-row-number{display:grid;place-items:center;line-height:1!important;padding:0!important;position:static!important;inset:auto!important;transform:none!important;text-align:center;font-style:normal;font-variant-numeric:lining-nums tabular-nums;font-family:Georgia,'Times New Roman',serif}
