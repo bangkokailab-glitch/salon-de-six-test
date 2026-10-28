@@ -30,6 +30,7 @@
       heroTimers.forEach(window.clearTimeout);
       heroTimers.clear();
       heroItems.forEach(reveal);
+      document.documentElement.classList.remove("hero-motion-pending");
       hero?.classList.remove("hero-motion-running");
       hero?.classList.add("hero-motion-complete");
     }
@@ -108,7 +109,7 @@
     }
 
     async function prepareHero() {
-      if (!hero || !heroItems.length) {
+      if (!hero || !heroItems.length || !document.documentElement.classList.contains("hero-motion-pending")) {
         finishHero();
         return;
       }
@@ -150,18 +151,22 @@
     function startHero() {
       if (heroFinished) return;
       hero?.classList.add("hero-motion-running");
+      // Commit the hidden state before the first fade, even when all images are cached.
+      hero?.getBoundingClientRect();
+      document.documentElement.classList.remove("hero-motion-pending");
       const sequence = [
-        ["intro", 0],
-        ["headline", 650],
-        ["offer", 1700],
-        ["context", 2300]
+        ["intro", 120],
+        ["headline", 950],
+        ["offer", 2200],
+        ["context", 2950],
+        ["credit", 3750]
       ];
       sequence.forEach(([step, delay]) => {
         scheduleHero(() => {
           document.querySelectorAll(`[data-hero-step="${step}"]`).forEach(reveal);
         }, delay);
       });
-      scheduleHero(finishHero, 3800);
+      scheduleHero(finishHero, 4650);
     }
 
     document.querySelectorAll('[data-hero-step="headline"]').forEach((headline) => {
