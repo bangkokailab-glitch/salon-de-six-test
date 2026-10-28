@@ -1,0 +1,5 @@
+/* Keep the approved price artwork and rails; only the menu panel grows. */
+#price .pricing-parts {
+  display:grid;
+  gap:12px;
+}
