@@ -1,0 +1,187 @@
+/* Approved revision: use the FV price frame as the shared horizontal rail. */
+.revision-stage{--content-rail:92.0231214%;--navy:#052747;--gold:#b78d32}
+.content-rail{width:var(--content-rail);margin-inline:auto}
+.section-heading.original-plaque{width:var(--content-rail)}
+.reason-cards{display:grid;gap:10px;margin-top:10px}
+.comparison-total{margin-top:12px}
+.care-occasion{margin-top:9px!important;text-align:center;white-space:nowrap;font-size:clamp(13px,3.6cqw,16px);line-height:1.8;font-weight:600;text-shadow:0 0 4px #fff,0 0 8px #fff}
+.care-occasion span{color:#956e22;font-weight:800}
+.care-occasion::before,.care-occasion::after{content:'—';color:#b89142;margin:0 .3em}
+.timing-clean-copy{position:absolute;left:0;top:0;width:62%;text-shadow:0 0 3px #fff,0 0 7px #fff}
+.timing-clean-copy h3{margin:0 0 8px;font-weight:800;font-size:clamp(25px,7.5cqw,32px);line-height:1.3;letter-spacing:-.035em}
+.timing-clean-copy em{font-style:normal;color:#b18a31}
+.timing-clean-copy p{font-size:clamp(12px,3.4cqw,14.5px);line-height:1.65;letter-spacing:-.025em}
+.timing-clean-copy strong{color:#a17c2c}
+.art-window img.reason02-photo-repair{left:53.3957845%;top:27.6343336%;width:46.6042155%;height:73.9706909%;object-fit:cover;object-position:center}
+.timing-clean-note{font-family:'Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;font-size:13px;line-height:1.7;margin-top:7px!important;margin-bottom:8px!important;text-shadow:0 0 4px #fff,0 0 7px #fff}
+.before-after-cards{display:grid;gap:14px;margin-top:12px}
+.revision-stage .faq-accordion{width:var(--content-rail)!important;margin:8px auto 0!important}
+.revision-stage .faq-row-number{display:grid;place-items:center;line-height:1!important;padding:0!important;position:static!important;inset:auto!important;transform:none!important;text-align:center;font-style:normal;font-variant-numeric:lining-nums tabular-nums;font-family:Georgia,'Times New Roman',serif}
+.machine-a{background:transparent}
+.machine-intro{text-align:center;text-shadow:0 0 4px #fff,0 0 8px #fff;margin:9px 0 20px}
+.machine-intro h3{font-size:clamp(23px,6.4cqw,28px);line-height:1.4;letter-spacing:-.025em;font-weight:800}
+.machine-intro h3 em{color:#b58b31;font-style:normal}
+.machine-intro>p{font-family:'Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;font-size:14px;line-height:1.7;margin-top:12px}
+.machine-chapter{margin-top:20px}
+.machine-visual{position:relative;min-height:235px;overflow:hidden;isolation:isolate}
+.machine-photo{position:absolute;inset:0 30% 0 0;overflow:hidden}
+.machine-photo>svg{display:block;width:100%;height:100%;object-fit:cover}
+.machine-message{position:relative;z-index:1;width:56%;margin-left:auto;padding:30px 9px 26px 16px;color:#fff;background:linear-gradient(115deg,#0a3d63dc,#032541 62%);border-radius:75% 0 0 7% / 18% 0 0 30%;min-height:235px;box-shadow:inset 0 -2px #d3ac58}
+.machine-name{display:flex;align-items:center;gap:8px;margin-bottom:16px;padding-bottom:9px;border-bottom:1px solid #d5b75f}
+.machine-name>b{font-family:Georgia,serif;font-size:48px;line-height:1;font-style:italic;color:#efd16e;letter-spacing:-.07em}
+.machine-name h4{font-size:15px;line-height:1.45;font-weight:700;margin:0}
+.machine-name h4 strong{font-size:16px;white-space:nowrap}
+.machine-promise{font-size:16px;line-height:1.6;font-weight:700}
+.machine-detail{font-family:'Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;font-size:12px;line-height:1.6;margin-top:11px!important}
+.machine-info{position:relative;margin-top:-3px;padding:13px 14px 16px;background:linear-gradient(110deg,#fffef8,#fff 65%,#f3fbff);border:2px solid #ccaa54;border-radius:13px;box-shadow:inset 0 0 0 2px #fff8e4,0 3px 7px #0a3c501c}
+.machine-benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:9px;font-family:'Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;font-weight:700}
+.machine-benefits>span{display:grid;place-content:center;text-align:center;padding:7px 1px;border:1px solid #d6ac49;border-radius:6px;font-size:12px;line-height:1.5}
+.machine-points{list-style:none;padding:0;margin:0;font-family:'Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif}
+.machine-points li{display:grid;grid-template-columns:29px minmax(0,1fr);gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid #d8b86b}
+.machine-points li:last-child{border-bottom:0;padding-bottom:3px}
+.machine-points li>span{width:29px;height:29px;display:grid;place-items:center;border:1px solid #ce9b2f;border-radius:50%;background:linear-gradient(135deg,#fff4b9,#edb332);font-family:Arial,sans-serif;font-weight:700;font-size:19px;line-height:1;color:#073052}
+.machine-points li p{font-size:15px;line-height:1.65;font-weight:600}
+.machine-tech{display:grid;grid-template-columns:47px minmax(0,1fr);gap:10px;align-items:center;margin-top:14px;padding:10px 8px;border:1px solid #cda44b;border-radius:8px}
+.machine-tech>b{width:44px;height:44px;display:grid;place-content:center;text-align:center;background:#062946;border:1px solid #c6a142;border-radius:50%;color:#efd27c;font:700 11px/1.05 Arial,sans-serif}
+.machine-tech p{font-family:'Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;font-size:14px;line-height:1.55}
+.machine-closing{margin-top:17px;padding:21px 9px;background:linear-gradient(120deg,#0a3755,#031b34);border:1px solid #d2ac57;border-radius:0 0 28px 28px;text-align:center;color:#f2d17f}
+.machine-closing>p{font-size:20px;line-height:1.6;font-weight:700}
+.machine-closing>small{display:block;margin-top:12px;padding-top:12px;border-top:1px solid #bb944d;font-family:'Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;font-size:12px;line-height:1.7}
+.post-hero-content{padding-bottom:calc(23.75cqw + 14px + env(safe-area-inset-bottom))}
+body{padding-bottom:0!important}
+@media(max-width:374px){.machine-message{padding-left:12px}.machine-name{gap:5px}.machine-name>b{font-size:42px}.machine-name h4,.machine-name h4 strong{font-size:14px}.machine-promise{font-size:15px}.machine-points li p{font-size:14px}.machine-closing>p{font-size:18px}}
+
+/* Store information: an unbroken navy/gold table over the fixed water layer. */
+.revision-access .store-info-body {
+  width:var(--content-rail,92.0231214%);
+  margin:10px auto 0;
+}
+.revision-access .store-info-photo {
+  display:block;
+  width:100%;
+  aspect-ratio:4/3;
+  margin:0 0 20px;
+  overflow:hidden;
+  border-radius:12px;
+  background:#e2e9e9;
+  box-shadow:0 4px 13px #09274522;
+}
+.revision-access .store-info-photo img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:right center;
+}
+.revision-access .store-info-table {
+  display:grid;
+  grid-template-rows:auto auto 1fr 1fr;
+  width:100%;
+  margin:0;
+  padding:3px;
+  overflow:hidden;
+  border:2px solid #d4aa4d;
+  border-radius:17px;
+  background:linear-gradient(120deg,#073457 0%,#021b37 78%);
+  box-shadow:inset 0 0 0 1px #fff2bd,0 4px 12px #09274520;
+  color:#fffef7;
+}
+.revision-access .store-info-row {
+  display:grid;
+  grid-template-columns:74px minmax(0,1fr);
+  align-items:stretch;
+  min-height:91px;
+  padding:12px 10px 12px 2px;
+  border-bottom:1px solid #d7b55f;
+}
+.revision-access .store-info-row:last-child {border-bottom:0;}
+.revision-access .store-info-row dt {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  margin:0 10px 0 0;
+  padding:0 9px 0 0;
+  border-right:1px solid #d7b55f;
+  color:#f3d178;
+  font-size:15px;
+  font-weight:700;
+  line-height:1.45;
+  white-space:nowrap;
+}
+.revision-access .store-info-row dt svg {
+  display:block;
+  width:25px;
+  height:25px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.65;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.revision-access .store-info-row dd {
+  align-self:center;
+  min-width:0;
+  margin:0;
+  font-family:'Hiragino Mincho ProN','Yu Mincho','YuMincho',serif;
+  font-size:16px;
+  font-weight:600;
+  line-height:1.65;
+  letter-spacing:0;
+  overflow-wrap:break-word;
+}
+.revision-access .store-info-row dd[lang="en"] {word-break:normal;}
+.revision-access .store-info-row dd span {font:inherit;}
+.revision-access .store-info-row dd a {
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  color:inherit;
+  font:inherit;
+  text-decoration-thickness:1px;
+  text-underline-offset:4px;
+}
+.revision-access .store-info-row dd a:focus-visible,
+.revision-access .store-info-footer a:focus-visible {
+  outline:2px solid #e5bf64;
+  outline-offset:4px;
+}
+.revision-access .store-info-map {
+  display:block;
+  width:100%;
+  aspect-ratio:4/3;
+  margin:20px 0 0;
+  border:1px solid #a6c9db;
+  border-radius:12px;
+}
+.revision-access .store-info-footer {
+  width:100%;
+  margin:0;
+  padding:19px 0 0;
+  color:#092746;
+  text-align:center;
+}
+.revision-access .store-info-footer .revision-access__franchise {
+  margin-bottom:4px;
+  font-size:22px;
+}
+.revision-access .store-info-footer p {
+  margin:0;
+  font-size:14px;
+  line-height:1.65;
+}
+.revision-access .store-info-footer a {min-height:28px;}
+@media(max-width:374px) {
+  .revision-access .store-info-row {
+    grid-template-columns:67px minmax(0,1fr);
+    padding-right:9px;
+  }
+  .revision-access .store-info-row dt {margin-right:8px;padding-right:8px;font-size:14px;}
+}
+
+.revision-stage .content-rail{margin-inline:auto}
+.machine-promise,.machine-detail{text-wrap:balance}
+
+.section-heading.original-plaque{aspect-ratio:485/122}
+.original-plaque .plaque-label-cover{left:21.03%;width:58.56%}
