@@ -1,0 +1,8 @@
+/* Remove only the baked-in white fade below the hero offer; retain the photograph and reveal sequence. */
+.hero-natural-bottom,.hero-context-transparent {position:absolute;display:block;pointer-events:none;}
+.hero-natural-bottom {left:0;top:74.829931973%;width:100%;height:11.111111111%;overflow:hidden;mask-image:linear-gradient(to bottom,transparent,#000 6%);}
+.hero-natural-bottom img,.hero-context-transparent img {display:block;width:100%;height:100%;max-width:100%;}
+.hero-context-transparent {left:4.393063584%;top:76.114890401%;width:92.25433526%;height:9.070294785%;}
+/* A hairline outline belongs only to the letters, never to a white background panel. */
+.hero-context-transparent img {filter:drop-shadow(.55px 0 0 #fff) drop-shadow(-.55px 0 0 #fff) drop-shadow(0 .55px 0 #fff) drop-shadow(0 -.55px 0 #fff);}
+body.motion-ready .hero-context-transparent[data-hero-step],html.hero-motion-pending .hero-context-transparent[data-hero-step] {transform:none;transition:opacity .75s ease;}
