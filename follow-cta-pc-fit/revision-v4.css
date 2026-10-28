@@ -1,0 +1,50 @@
+/* Reuse the approved homepage ribbon for major LP headings only. */
+.section-heading.renewal-ribbon {
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  place-items:center;
+  width:100%;
+  min-height:0;
+  height:auto;
+  aspect-ratio:916/263;
+  margin:0 auto 12px;
+  padding:0;
+  overflow:hidden;
+  isolation:isolate;
+  container-type:inline-size;
+  background:transparent;
+  filter:none;
+}
+.section-heading.renewal-ribbon::before,
+.section-heading.renewal-ribbon::after {display:none;}
+.renewal-ribbon .renewal-ribbon-art {
+  position:absolute;
+  top:50%;left:0;
+  width:100%;height:auto;
+  transform:translateY(-50%);
+  pointer-events:none;
+  z-index:-1;
+}
+.section-heading.renewal-ribbon h2 {
+  margin:0;
+  width:73%;
+  max-width:none;
+  justify-self:center;
+  font-family:'Yu Mincho','Hiragino Mincho ProN','Noto Serif JP',serif;
+  font-size:clamp(26px,7.6cqw,33px);
+  line-height:1.14;
+  font-weight:700;
+  letter-spacing:0;
+  color:#f6da91;
+  text-shadow:0 1px 1px #001a2e;
+  text-align:center;
+  white-space:normal;
+  padding-bottom:1px;
+}
+/* Preserve 24px / 22px type; tighten only the original small plaque. */
+.section-heading.original-plaque.compact-plaque {
+  width:74%;
+  aspect-ratio:4.8;
+  margin-bottom:10px;
+}
+.compact-plaque .plaque-label-cover {left:19%;width:62%;top:22%;height:57%;}
