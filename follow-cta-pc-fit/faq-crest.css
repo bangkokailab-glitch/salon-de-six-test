@@ -1,61 +1,71 @@
-/* Approved FAQ C: preserve existing answers and open-item appearance. */
-.revision-stage #faq .faq-accordion details:not([open]) {
+/* Approved FAQ C: use the same question crest in both open and closed states. */
+.revision-stage #faq .faq-accordion details {
   border:0!important; background:transparent!important; box-shadow:none!important;
 }
-.revision-stage #faq .faq-accordion details:not([open]) summary {
+.revision-stage #faq .faq-accordion details summary {
   min-height:88px!important; padding:17px 49px 17px 14px!important;
   gap:14px; font-weight:600; -webkit-tap-highlight-color:transparent;
 }
-.revision-stage #faq .faq-accordion details:not([open]) .faq-question {
+.revision-stage #faq .faq-accordion details .faq-question {
   padding:0; font-size:16px!important; line-height:1.6!important;
   font-weight:700; letter-spacing:.015em; overflow-wrap:break-word;
 }
-.revision-stage #faq .faq-accordion details:not([open]) .faq-row-number {
+.revision-stage #faq .faq-accordion details .faq-row-number {
   flex:0 0 42px; width:42px; height:42px; line-height:1!important;
   display:grid; place-items:center; padding:0!important; font-size:29px!important;
   font-weight:400; font-variant-numeric:lining-nums tabular-nums;
 }
-.revision-stage #faq .faq-accordion details:not([open]) summary:focus-visible {
+.revision-stage #faq .faq-accordion details summary:focus-visible {
   outline:3px solid #3b8ec4; outline-offset:-4px;
 }
 
 /* C — a matte navy crest with genuine cut corners, not a recolored round card. */
-.revision-stage #faq .faq-accordion details:not([open]) {
+.revision-stage #faq .faq-accordion details {
   padding:2px!important; border-radius:0;
   background:linear-gradient(130deg,#cda94d,#fff1ba 35%,#a6812d 72%,#e4c577)!important;
   clip-path:polygon(13px 0,calc(100% - 13px) 0,100% 13px,100% calc(100% - 13px),calc(100% - 13px) 100%,13px 100%,0 calc(100% - 13px),0 13px);
 }
-.revision-stage #faq .faq-accordion details:not([open]) summary {
+.revision-stage #faq .faq-accordion details summary {
   min-height:84px!important; padding:16px 47px 16px 14px!important;
   background:linear-gradient(120deg,#113750,#06263f 62%,#08233c);
   clip-path:polygon(12px 0,calc(100% - 12px) 0,100% 12px,100% calc(100% - 12px),calc(100% - 12px) 100%,12px 100%,0 calc(100% - 12px),0 12px);
 }
-.revision-stage #faq .faq-accordion details:not([open]) .faq-row-number {
+.revision-stage #faq .faq-accordion details .faq-row-number {
   flex-basis:42px; width:42px; height:48px; padding-right:12px!important;
   font-size:39px!important; color:#f0d78e; border:0; border-right:1px solid #a58e5b;
   border-radius:0; background:none; box-shadow:none;
 }
-.revision-stage #faq .faq-accordion details:not([open]) .faq-question {
+.revision-stage #faq .faq-accordion details .faq-question {
   color:#fffaf0; font-weight:600;
 }
-.revision-stage #faq .faq-accordion details:not([open]) summary::after {
+.revision-stage #faq .faq-accordion details summary::after {
   content:'+'; right:12px; width:25px; height:25px; border:1px solid #e4ce92;
   border-radius:0; background:#08243d; box-shadow:none;
   color:#eedba6; font:300 23px/1 Arial,sans-serif;
 }
 @media (prefers-reduced-motion:no-preference) and (hover:hover) {
-  .revision-stage #faq .faq-accordion details:not([open]) summary {
+  .revision-stage #faq .faq-accordion details summary {
     transition:filter .18s ease;
   }
-  .revision-stage #faq .faq-accordion details:not([open]) summary:hover {
+  .revision-stage #faq .faq-accordion details summary:hover {
     filter:brightness(1.035);
   }
 }
 
 /* Match the approved proposal typography without changing answer text. */
-.revision-stage #faq .faq-accordion details:not([open]) .faq-question {
+.revision-stage #faq .faq-accordion details .faq-question {
   font-family:'Hiragino Mincho ProN','Yu Mincho','YuMincho',serif!important;
 }
-.revision-stage #faq .faq-accordion details:not([open]) .faq-row-number {
+.revision-stage #faq .faq-accordion details .faq-row-number {
   font-family:Georgia,'Times New Roman',serif!important;
+}
+
+/* Only the disclosure symbol changes when expanded. */
+.revision-stage #faq .faq-accordion details[open] summary::after {
+  content:'−';
+}
+/* Keep the readable answer surface inside the same cut-corner gold outline. */
+.revision-stage #faq .faq-accordion .faq-answer {
+  background:linear-gradient(110deg,#fffdf5,#f5fcff)!important;
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,12px 100%,0 calc(100% - 12px));
 }
