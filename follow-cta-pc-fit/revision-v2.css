@@ -59,7 +59,7 @@ body{padding-bottom:0!important}
 .revision-access .store-info-photo {
   display:block;
   width:100%;
-  aspect-ratio:4/3;
+  aspect-ratio:2048/851;
   margin:0 0 20px;
   overflow:hidden;
   border-radius:12px;
@@ -69,9 +69,9 @@ body{padding-bottom:0!important}
 .revision-access .store-info-photo img {
   display:block;
   width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:right center;
+  height:auto;
+  object-fit:contain;
+  object-position:center;
 }
 .revision-access .store-info-table {
   display:grid;
