@@ -8,18 +8,16 @@
     // Reveal real content units in reading order, instead of a whole long section.
     document.querySelectorAll('.machine-intro,.machine-chapter,.fa-intro,.fa-chapter').forEach(group => {
       group.removeAttribute('data-reveal');
-      Array.from(group.children).filter(child=>!child.classList.contains('gold-sparkle')).forEach(child => child.setAttribute('data-reveal',''));
+      Array.from(group.children).forEach(child => child.setAttribute('data-reveal',''));
     });
     document.querySelectorAll('.faq-accordion details,.store-info-row').forEach(item => item.setAttribute('data-reveal',''));
     const revealItems = Array.from(document.querySelectorAll("[data-reveal]"));
-    const sparkleFields = Array.from(document.querySelectorAll('[data-sparkle-field]'));
     const heroItems = Array.from(document.querySelectorAll("[data-hero-step]"));
     const hero = document.querySelector(".exact-original-hero");
     const heroTimers = new Set();
     let heroFinished = false;
     let revealObserver;
     let imageObserver;
-    let sparkleObserver;
     const sectionRevealClock = new WeakMap();
 
     const scrollRoot = () => desktop.matches && shell ? shell : null;
@@ -38,8 +36,6 @@
     function showAllContent() {
       finishHero();
       revealItems.forEach(reveal);
-      sparkleFields.forEach(field => field.classList.remove('is-sparkling'));
-      sparkleObserver?.disconnect();
       revealObserver?.disconnect();
     }
 
@@ -66,15 +62,6 @@
       }, { root: scrollRoot(), rootMargin: "0px 0px -100px", threshold: 0.08 });
       revealItems.filter((item) => !item.classList.contains("is-visible"))
         .forEach((item) => revealObserver.observe(item));
-    }
-
-    function observeSparkles() {
-      sparkleObserver?.disconnect();
-      if(reducedMotion.matches || !('IntersectionObserver' in window)) return;
-      sparkleObserver=new IntersectionObserver(entries => entries.forEach(entry => {
-        entry.target.classList.toggle('is-sparkling',entry.isIntersecting && !document.hidden);
-      }),{root:scrollRoot(),threshold:0});
-      sparkleFields.forEach(field => sparkleObserver.observe(field));
     }
 
     function loadLegacyImage(image) {
@@ -198,7 +185,6 @@
     document.querySelectorAll(".floating-action").forEach(reveal);
     observeLegacyImages();
     observeReveals();
-    observeSparkles();
     // Content stays readable if JavaScript is unavailable or motion is reduced.
     document.body.classList.add("motion-ready");
     if (reducedMotion.matches || document.hidden || !("IntersectionObserver" in window)) {
@@ -238,17 +224,15 @@
       observeReveals();
       observeLegacyImages();
       observeMaps();
-      observeSparkles();
     });
     reducedMotion.addEventListener("change", () => {
       if (reducedMotion.matches) showAllContent();
-      else { observeReveals(); observeSparkles(); }
+      else { observeReveals(); }
     });
     document.addEventListener("visibilitychange", () => {
       if (document.hidden) {
         finishHero();
-        sparkleFields.forEach(field => field.classList.remove('is-sparkling'));
-      } else { observeReveals(); observeSparkles(); }
+      } else { observeReveals(); }
     });
     window.addEventListener("pageshow", (event) => {
       // Returning from LINE must not restart or hide already presented content.
@@ -256,7 +240,6 @@
       document.querySelectorAll(".floating-action").forEach(reveal);
       observeReveals();
       observeLegacyImages();
-      observeSparkles();
     });
   }
 
