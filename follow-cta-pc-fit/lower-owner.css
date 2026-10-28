@@ -1,0 +1,71 @@
+/* Only the three requested heading labels, owner signature and page ending. */
+#price .renewal-ribbon h2,
+#google-map .renewal-ribbon h2,
+#owner-message .renewal-ribbon h2 {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:3px;
+}
+.renewal-ribbon .heading-kicker {
+  display:block;
+  font-size:clamp(14px,4.2cqw,18px);
+  line-height:1.25;
+  white-space:nowrap;
+}
+.renewal-ribbon .heading-kicker-long {font-size:clamp(12px,3.65cqw,16px);}
+.renewal-ribbon .heading-brand {
+  display:block;
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:clamp(20px,5.8cqw,25px);
+  line-height:1.1;
+  white-space:nowrap;
+}
+.renewal-ribbon .heading-main {display:block;white-space:nowrap;}
+.post-hero-content .section-heading.renewal-ribbon :is(.heading-kicker,.heading-main) {font-family:inherit!important;}
+.post-hero-content .section-heading.renewal-ribbon .heading-brand {font-family:Georgia,'Times New Roman',serif!important;}
+
+/* Original owner panel is 865 × 1450. Keep the flourish and gold frame intact. */
+.owner-message-art {container-type:inline-size;}
+.owner-message-art .owner-signature {
+  position:absolute;
+  z-index:2;
+  left:5.549133%;
+  top:77.793103%;
+  width:45.895954%;
+  height:7.172414%;
+  margin:0;
+  padding:1cqw 1.4cqw 0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  gap:1.3cqw;
+  color:#f4d693;
+  background:#012239;
+  text-shadow:0 1px 1px #0008;
+}
+.post-hero-content .owner-message-art .owner-signature strong {
+  display:block;
+  font-family:Baskerville,'Palatino Linotype','Book Antiqua',Georgia,serif!important;
+  font-size:5.15cqw;
+  font-weight:500;
+  font-style:italic;
+  line-height:1;
+  white-space:nowrap;
+}
+.post-hero-content .owner-message-art .owner-signature span {
+  display:block;
+  font-family:'Hiragino Mincho ProN','Yu Mincho','YuMincho',serif!important;
+  font-size:3.15cqw;
+  font-weight:600;
+  line-height:1.15;
+  letter-spacing:0;
+  white-space:nowrap;
+}
+
+/* The existing photo tail supplies most CTA clearance. At maximum scroll,
+   retain only a small gap between the signature frame and CTA's highest point. */
+.post-hero-content {
+  padding-bottom:calc(28px + max(0px,env(safe-area-inset-bottom) - 8px));
+}
