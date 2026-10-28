@@ -1,0 +1,167 @@
+{
+  "url": "http://127.0.0.1:8769/renewal-preview/",
+  "createdAt": "2026-10-28T01:52:51.940Z",
+  "viewports": [
+    {
+      "width": 360,
+      "documentWidth": 360,
+      "h1": 1,
+      "h2": [
+        "バンコク・プロンポンで美容ケアをお探しの方へ",
+        "お悩みから探す",
+        "メディア情報・SNS",
+        "店舗情報"
+      ],
+      "images": [],
+      "missingLinks": 0,
+      "services": 7,
+      "externalScripts": [],
+      "scrollHeight": 3703,
+      "photoRatios": [
+        1.775,
+        1.775,
+        1.775,
+        1.775,
+        1.775,
+        1.775,
+        1.775,
+        1.775,
+        1.78
+      ],
+      "errors": []
+    },
+    {
+      "width": 390,
+      "documentWidth": 390,
+      "h1": 1,
+      "h2": [
+        "バンコク・プロンポンで美容ケアをお探しの方へ",
+        "お悩みから探す",
+        "メディア情報・SNS",
+        "店舗情報"
+      ],
+      "images": [],
+      "missingLinks": 0,
+      "services": 7,
+      "externalScripts": [],
+      "scrollHeight": 3914,
+      "photoRatios": [
+        1.775,
+        1.775,
+        1.775,
+        1.775,
+        1.775,
+        1.775,
+        1.775,
+        1.775,
+        1.781
+      ],
+      "errors": []
+    },
+    {
+      "width": 768,
+      "documentWidth": 768,
+      "h1": 1,
+      "h2": [
+        "バンコク・プロンポンで美容ケアをお探しの方へ",
+        "お悩みから探す",
+        "メディア情報・SNS",
+        "店舗情報"
+      ],
+      "images": [],
+      "missingLinks": 0,
+      "services": 7,
+      "externalScripts": [],
+      "scrollHeight": 4786,
+      "photoRatios": [
+        1.778,
+        1.778,
+        1.778,
+        1.778,
+        1.778,
+        1.778,
+        1.778,
+        1.778,
+        1.776
+      ],
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "documentWidth": 1440,
+      "h1": 1,
+      "h2": [
+        "バンコク・プロンポンで美容ケアをお探しの方へ",
+        "お悩みから探す",
+        "メディア情報・SNS",
+        "店舗情報"
+      ],
+      "images": [],
+      "missingLinks": 0,
+      "services": 7,
+      "externalScripts": [],
+      "scrollHeight": 4786,
+      "photoRatios": [
+        1.778,
+        1.778,
+        1.778,
+        1.778,
+        1.778,
+        1.778,
+        1.778,
+        1.778,
+        1.776
+      ],
+      "errors": []
+    }
+  ],
+  "interactions": [
+    {
+      "width": 360,
+      "menu": true,
+      "sevenSlides": true,
+      "keyboard": true,
+      "thumbs": true,
+      "videoOnClick": true,
+      "videoStops": true,
+      "instagram": true,
+      "sticky": true
+    },
+    {
+      "width": 390,
+      "menu": true,
+      "sevenSlides": true,
+      "keyboard": true,
+      "thumbs": true,
+      "videoOnClick": true,
+      "videoStops": true,
+      "instagram": true,
+      "sticky": true
+    },
+    {
+      "width": 768,
+      "menu": true,
+      "sevenSlides": true,
+      "keyboard": true,
+      "thumbs": true,
+      "videoOnClick": true,
+      "videoStops": true,
+      "instagram": true,
+      "sticky": true
+    },
+    {
+      "width": 1440,
+      "menu": true,
+      "sevenSlides": true,
+      "keyboard": true,
+      "thumbs": true,
+      "videoOnClick": true,
+      "videoStops": true,
+      "instagram": true,
+      "sticky": true
+    }
+  ],
+  "reducedMotion": true,
+  "noJavaScriptFallback": true,
+  "pass": true
+}

@@ -1,0 +1,257 @@
+{
+  "date": "2026-10-28",
+  "method": "Crop and WebP encode approved images; no generative edits.",
+  "assets": [
+    {
+      "name": "hero.webp",
+      "source": "hero-c-art-deco.png",
+      "crop": null,
+      "width": 1019,
+      "height": 1543,
+      "bytes": 255926,
+      "sha256": "823f09bfbc0d3a28067a49c0f0a36a9283bff701c7ae5a012d33da89803233cd"
+    },
+    {
+      "name": "header.webp",
+      "source": "header-original.png",
+      "crop": null,
+      "width": 622,
+      "height": 96,
+      "bytes": 10914,
+      "sha256": "42772b8fb0afb03729fdfa9a10722a5f941a312b49da7077a8197c768c35caf2"
+    },
+    {
+      "name": "favicon.webp",
+      "source": "header-original.png",
+      "crop": {
+        "left": 34,
+        "top": 17,
+        "width": 71,
+        "height": 71
+      },
+      "width": 48,
+      "height": 48,
+      "bytes": 1100,
+      "sha256": "afee1b000f3ba8fd93d1cf143b9cd447be4f4dafe09988443292dc9f5527b3f7"
+    },
+    {
+      "name": "line-coupon.webp",
+      "source": "hero-c-art-deco.png",
+      "crop": {
+        "left": 24,
+        "top": 1318,
+        "width": 974,
+        "height": 180
+      },
+      "width": 974,
+      "height": 180,
+      "bytes": 39414,
+      "sha256": "3653ee742281cb564118ae861ecbf39528afe36cc0aa3552ea489ad036df9476"
+    },
+    {
+      "name": "heading-intro.webp",
+      "source": "intro-approved-ribbon.png",
+      "crop": {
+        "left": 0,
+        "top": 85,
+        "width": 916,
+        "height": 263
+      },
+      "width": 916,
+      "height": 263,
+      "bytes": 50104,
+      "sha256": "6253c35bac0eef8f3e020fe0f041d2143ef343a15bfa7981483e8d6f3950f044"
+    },
+    {
+      "name": "heading-concerns.webp",
+      "source": "c-thumbnails-dots-v3.png",
+      "crop": {
+        "left": 0,
+        "top": 52,
+        "width": 1024,
+        "height": 262
+      },
+      "width": 1024,
+      "height": 262,
+      "bytes": 40408,
+      "sha256": "0bc9a3ef9719c61f65a303ef7024d19894de6bd7839edf5ea2ef6cec356c2f16"
+    },
+    {
+      "name": "heading-media.webp",
+      "source": "a-video-first.png",
+      "crop": {
+        "left": 0,
+        "top": 34,
+        "width": 1024,
+        "height": 222
+      },
+      "width": 1024,
+      "height": 222,
+      "bytes": 39132,
+      "sha256": "2ca8ccc1b0dd18b29652f46d1ebf153be6886fe45aa4e434c828957544c704a3"
+    },
+    {
+      "name": "heading-shop.webp",
+      "source": "b-photo-above-map.png",
+      "crop": {
+        "left": 0,
+        "top": 16,
+        "width": 960,
+        "height": 206
+      },
+      "width": 960,
+      "height": 206,
+      "bytes": 31300,
+      "sha256": "a394e52f27a453b92a5cb42b5f2139d3e84a79ebbff1639f90477edbb9ff1424"
+    },
+    {
+      "name": "salon.webp",
+      "source": "salon-official-photo.jpg",
+      "crop": null,
+      "width": 960,
+      "height": 426,
+      "bytes": 46646,
+      "sha256": "2d023704a245cb585dc6d3661fafb878f06f8c652adc179f142d0997ee6ad020"
+    },
+    {
+      "name": "hair-removal.webp",
+      "source": "codex-clipboard-f238abfd-ce4a-417e-ac9c-de3b6d822e80.png",
+      "crop": {
+        "left": 24,
+        "top": 34,
+        "width": 746,
+        "height": 405
+      },
+      "width": 746,
+      "height": 405,
+      "bytes": 39348,
+      "sha256": "c8adc311221f2d20bd6bef60d56c78ed619317619948b7528d8585809c4d1191"
+    },
+    {
+      "name": "mens-set.webp",
+      "source": "codex-clipboard-f238abfd-ce4a-417e-ac9c-de3b6d822e80.png",
+      "crop": {
+        "left": 24,
+        "top": 772,
+        "width": 746,
+        "height": 392
+      },
+      "width": 746,
+      "height": 392,
+      "bytes": 25996,
+      "sha256": "73839d0bdc932aedc2ca9623661fecc4107d79f7d73e89de1e85878ed2bda315"
+    },
+    {
+      "name": "whitening.webp",
+      "source": "codex-clipboard-f238abfd-ce4a-417e-ac9c-de3b6d822e80.png",
+      "crop": {
+        "left": 24,
+        "top": 1384,
+        "width": 746,
+        "height": 350
+      },
+      "width": 746,
+      "height": 350,
+      "bytes": 22540,
+      "sha256": "f7037e880817c70e1101d2235b1ef59540fe7606306b46ba336a09e9edbf8c13"
+    },
+    {
+      "name": "facial.webp",
+      "source": "exec-11222351-910e-4a18-bb88-a8c84498464a.png",
+      "crop": {
+        "left": 26,
+        "top": 18,
+        "width": 670,
+        "height": 346
+      },
+      "width": 670,
+      "height": 346,
+      "bytes": 20298,
+      "sha256": "fae881dc4bf54f87e536996959e59d19bd5949d943f6105a40bdcd04050dab01"
+    },
+    {
+      "name": "headspa.webp",
+      "source": "exec-11222351-910e-4a18-bb88-a8c84498464a.png",
+      "crop": {
+        "left": 26,
+        "top": 558,
+        "width": 670,
+        "height": 358
+      },
+      "width": 670,
+      "height": 358,
+      "bytes": 25738,
+      "sha256": "50ce693aee97470ef9dcc4a3d5f874a97120c5751b1a32a92c19c0645bce2e0d"
+    },
+    {
+      "name": "eyebrow.webp",
+      "source": "exec-11222351-910e-4a18-bb88-a8c84498464a.png",
+      "crop": {
+        "left": 26,
+        "top": 1106,
+        "width": 670,
+        "height": 355
+      },
+      "width": 670,
+      "height": 355,
+      "bytes": 24338,
+      "sha256": "21a1b8644287511b4845164df457341f3ba7db593d96ea4a1160b80f4545a545"
+    },
+    {
+      "name": "eyelash.webp",
+      "source": "exec-11222351-910e-4a18-bb88-a8c84498464a.png",
+      "crop": {
+        "left": 26,
+        "top": 1650,
+        "width": 670,
+        "height": 310
+      },
+      "width": 670,
+      "height": 310,
+      "bytes": 22948,
+      "sha256": "97811c93ddf2987e46b63cbabad211ff8989bb4a1d4d89bdb93c99afb022b63f"
+    },
+    {
+      "name": "instagram-1.webp",
+      "source": "customer-01-instagram.jpg",
+      "crop": {
+        "left": 0,
+        "top": 225,
+        "width": 591,
+        "height": 591
+      },
+      "width": 440,
+      "height": 440,
+      "bytes": 18234,
+      "sha256": "f0056652fe7a36749d3ec57f20324b8779b5c100891ade24dbead0eec5e8fff1"
+    },
+    {
+      "name": "instagram-2.webp",
+      "source": "customer-02-instagram.jpg",
+      "crop": {
+        "left": 0,
+        "top": 225,
+        "width": 591,
+        "height": 591
+      },
+      "width": 440,
+      "height": 440,
+      "bytes": 23244,
+      "sha256": "a1fac480333806c2a76385b935a4f5f85cae7dc37344a08462f603af2eb1f697"
+    },
+    {
+      "name": "instagram-3.webp",
+      "source": "customer-03-instagram.jpg",
+      "crop": {
+        "left": 0,
+        "top": 237,
+        "width": 591,
+        "height": 591
+      },
+      "width": 440,
+      "height": 440,
+      "bytes": 28340,
+      "sha256": "68d7ec9768132889189a281661cb2bb78f5e9a84bd718bb6162396cc95d0ce7f"
+    }
+  ]
+}
