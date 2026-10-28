@@ -178,3 +178,12 @@
 @media (prefers-reduced-motion:reduce) {
   .feature-a-v3 [data-reveal] {opacity:1!important;transform:none!important;}
 }
+
+/* Image typography stays wholly inside the approved A panel's narrowest curve. */
+.post-hero-content .feature-a-v3 .fa-visual .fa-photo-copy.fa-copy-art {
+  left:57.7%; right:2.75%; top:25%;
+  margin:0; padding:0; line-height:0;
+}
+.feature-a-v3 .fa-copy-art>img {
+  display:block; width:100%; height:auto; max-width:100%;
+}
