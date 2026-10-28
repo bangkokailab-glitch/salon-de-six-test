@@ -1,0 +1,64 @@
+/* Motion only, matched to the supplied ZERO reference on 2026-10-29.
+   Keep the original 817 × 194 artwork, LINE logo, frame and cropped edge. */
+.floating-action.action-button {
+  animation: salonCtaReferenceBob 3.6s ease-in-out infinite !important;
+  will-change: transform;
+}
+.floating-action.action-button img {
+  animation: none !important;
+  filter: none !important;
+  transform: none;
+  will-change: auto;
+}
+.floating-action.action-button::after {
+  /* Avoid mixing the previous 2.05-second shine with the reference motion. */
+  content: none !important;
+  animation: none !important;
+}
+.floating-action.action-button .cta-label-motion {
+  position: absolute;
+  z-index: 2;
+  left: 23.745410%; /* x=194 of the unchanged 817px original */
+  top: 16.494845%; /* y=32 of the 194px original */
+  width: 61.444308%; /* 502px */
+  height: 61.855670%; /* 120px */
+  overflow: hidden;
+  pointer-events: none;
+  transform-origin: center center;
+  /* Feather only the empty green margins, never the lettering. */
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 1%, #000 99%, transparent), linear-gradient(transparent, #000 5%, #000 95%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 1%, #000 99%, transparent), linear-gradient(transparent, #000 5%, #000 95%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  animation: salonCtaReferenceLabelPop 3.2s ease-in-out infinite;
+  will-change: transform;
+}
+.floating-action.action-button .cta-label-motion img {
+  position: absolute !important;
+  width: 162.749004% !important; /* 817 / 502 */
+  height: 161.666667% !important; /* 194 / 120 */
+  max-width: none !important;
+  left: -38.645418%; /* -194 / 502 */
+  top: -26.666667%; /* -32 / 120 */
+}
+@keyframes salonCtaReferenceBob {
+  0%, 100% { transform: translateX(-50%) translateY(6px); }
+  50% { transform: translateX(-50%) translateY(-6px); }
+}
+@keyframes salonCtaReferenceLabelPop {
+  0%, 52%, 100% { transform: translateY(0) scale(1); }
+  64% { transform: translateY(-2px) scale(1.08); }
+  74% { transform: translateY(1px) scale(1.02); }
+  84% { transform: translateY(-1px) scale(1.06); }
+  94% { transform: translateY(0) scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .floating-action.action-button {
+    animation: none !important;
+    transform: translateX(-50%) !important;
+  }
+  .floating-action.action-button .cta-label-motion {
+    animation: none !important;
+    transform: none !important;
+  }
+}
