@@ -515,7 +515,9 @@ function createTestClient({ apiOrigin = '', clientId = '', fetchImpl = fetch, no
     async completeSignIn(credential) {
       if (!challenge) throw new Error('invalid_login');
       try { const value = await call('/auth/google', { method: 'POST', body: { challengeId: challenge.challengeId, credential } });
-        if (!/^[a-f0-9]{64}$/.test(value.token || '') || !Number.isFinite(value.expiresAt) || value.expiresAt <= now() || value.expiresAt > now() + 900000 || value.mode !== 'test_read_only') throw new Error('invalid_response');
+        if (!/^[a-f0-9]{64}$/.test(value.token || '') || !Number.isFinite(value.expiresAt) || value.mode !== 'test_read_only') throw new Error('invalid_response');
+        if (value.expiresAt <= now()) throw new Error('session_expired');
+        if (value.expiresAt > now() + 900000) throw new Error('session_clock_ahead');
         token = value.token; expiresAt = value.expiresAt; challenge = null;
         state = { ...state, status: 'authenticated', error: null }; emit();
       } catch (error) { dataError(error); throw error; }
@@ -553,7 +555,10 @@ function mountTestPanel(root, client, googleProvider = () => window.google) {
   login.type = refresh.type = logout.type = 'button'; errors.hidden = true;
   const actions = make('div', '', 'button-row'); actions.append(login, refresh, logout);
   root.replaceChildren(status, detail, actions, googleButton, errors, content);
-  const report = () => { errors.hidden = false; errors.textContent = '接続を確認できませんでした。表示中の実データを消去しました。設定またはログイン状態をご確認ください。'; };
+  const report = () => { errors.hidden = false;
+    const reason = client.snapshot().error;
+    const guidance = { session_clock_ahead: '端末とサーバーの時刻に差があるため、ログインできませんでした。', session_expired: 'ログインの有効期限を過ぎました。もう一度ログインしてください。', invalid_response: '接続先から受け取った情報を確認できませんでした。', TimeoutError: '接続が時間内に完了しませんでした。もう一度お試しください。' };
+    errors.textContent = guidance[reason] || '接続を確認できませんでした。表示中の実データを消去しました。設定またはログイン状態をご確認ください。'; };
   login.onclick = async () => {
     errors.hidden = true;
     try {
