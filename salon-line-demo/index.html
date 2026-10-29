@@ -582,7 +582,7 @@ function mountTestPanel(root, client, googleProvider = () => window.google) {
     content.replaceChildren();
     if (state.status !== 'connected') return;
     const customerList = make('div', '', 'button-row');
-    for (const customer of state.customers) { const button = make('button', customer.displayName, 'action secondary'); button.type = 'button';
+    for (const [customerIndex, customer] of state.customers.entries()) { const button = make('button', customer.displayName || `TEST顧客 ${customerIndex + 1}`, 'action secondary'); button.type = 'button';
       button.onclick = async () => { try { await client.conversation(customer.id); } catch { report(); } }; customerList.append(button); }
     content.append(make('h3', 'TEST顧客'), customerList, make('h3', 'TEST予約'));
     if (!state.bookings.length) content.append(make('p', '対象のTEST予約はありません。', 'empty'));
