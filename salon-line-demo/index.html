@@ -24,7 +24,7 @@
 
 .demo-banner{border:2px solid #dfbc66;background:#fff8e8;color:#684b15;border-radius:14px;padding:14px 17px;margin-bottom:16px;font-size:13px;line-height:1.65}.demo-banner strong{display:block;font-size:15px}.demo-local-note{margin-top:15px;border:1px solid #60715e;border-radius:8px;padding:8px 9px}.demo-controls{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.demo-controls select,.demo-controls input{border:1px solid #cdd9ce;border-radius:9px;padding:8px 10px;background:#fff;max-width:100%}.demo-status{font-size:12px;color:#617368}.demo-note{font-size:12px;color:#855d15;background:#fff6df;padding:10px 12px;border-radius:9px}.demo-list{display:grid;gap:9px}.demo-row{display:flex;gap:12px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;border-bottom:1px solid #e8eee8;padding:9px 0}.demo-row:last-child{border-bottom:0}.demo-tile{border:1px solid #e4e8df;border-radius:12px;padding:12px;background:#fff}.demo-tile small{display:block;color:#708172;margin-top:4px}.demo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:13px}.demo-check{display:flex;align-items:center;gap:8px;font-size:13px}.demo-check input{width:17px;height:17px}.demo-inline-form{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end}.demo-inline-form .field{min-width:150px;flex:1}.demo-inline-form .action{height:39px}.demo-chat{min-height:290px;max-height:470px}.demo-chat .bubble{max-width:85%}.demo-action-small{font-size:12px;padding:7px 10px}.demo-action-small:focus-visible,.sidebar nav button:focus-visible{outline:3px solid #e7c466;outline-offset:2px}.demo-danger{color:#9f3f35}.demo-right{margin-left:auto}.demo-empty{color:#758879;font-size:13px;padding:16px}.demo-link{display:inline-block;margin-top:8px}.demo-count{color:#657764;font-size:12px}.demo-feature-label{background:#e9f3e8;color:#2e6540;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:800}
 </style></head>
-<body><div class="shell"><aside class="sidebar"><div class="brand"><span class="brand-mark">S</span><span><strong>Salon de Six</strong><small>DEMO 管理画面</small></span></div><nav aria-label="メインメニュー"><span class="nav-caption">OPERATIONS</span><button data-view="bookings"><span aria-hidden="true">▦</span> 予約</button><button data-view="inbox" class="active"><span aria-hidden="true">✉</span> Inbox</button><button data-view="shifts"><span aria-hidden="true">◷</span> シフト</button><button data-view="menus"><span aria-hidden="true">☰</span> メニュー</button><button data-view="settings"><span aria-hidden="true">⚙</span> 設定</button><span class="nav-caption nav-caption-secondary">MANAGEMENT</span><button data-view="overview">概要</button><button data-view="requests">予約希望</button><button data-view="review">要確認</button><button data-view="customers">顧客一覧</button><button data-view="knowledge">質問と回答</button><button data-view="crm">CRM・配信設定</button></nav><div class="sidebar-bottom">架空データ専用・外部送信なし<br><span>時刻：バンコク（UTC+7）</span><div class="demo-local-note">この端末内にだけ保存します</div></div></aside>
+<body><div class="shell"><aside class="sidebar"><div class="brand"><span class="brand-mark">S</span><span><strong>Salon de Six</strong><small>DEMO 管理画面</small></span></div><nav aria-label="メインメニュー"><span class="nav-caption">OPERATIONS</span><button data-view="bookings"><span aria-hidden="true">▦</span> 予約</button><button data-view="inbox" class="active"><span aria-hidden="true">✉</span> Inbox</button><button data-view="shifts"><span aria-hidden="true">◷</span> シフト</button><button data-view="menus"><span aria-hidden="true">☰</span> メニュー</button><button data-view="settings"><span aria-hidden="true">⚙</span> 設定</button><span class="nav-caption nav-caption-secondary">MANAGEMENT</span><button data-view="overview">概要</button><button data-view="requests">予約希望</button><button data-view="review">要確認</button><button data-view="customers">顧客一覧</button><button data-view="knowledge">質問と回答</button><button data-view="crm">CRM・配信設定</button><button data-view="test">実TEST接続</button></nav><div class="sidebar-bottom">架空データ専用・外部送信なし<br><span>時刻：バンコク（UTC+7）</span><div class="demo-local-note">この端末内にだけ保存します</div></div></aside>
 <div class="main-wrap"><header class="topbar"><div><span class="eyebrow">SALON DE SIX / CLIENT DEMO</span><h1 id="page-title">Inbox</h1></div><div class="top-actions"><span id="connection-pill" class="pill warn">実TEST未接続</span><button id="refresh" class="icon-button" type="button" aria-label="再読み込み">↻</button></div></header><main id="app"><div class="loading">読み込み中…</div></main><p id="notice" role="status" aria-live="polite"></p></div></div><script>const DEMO_FAQ=[{"id":"hours","category":"基本情報","question":"営業時間は？","answer":"営業時間は10:00〜20:00です。年末年始とソンクランの休業日は、スタッフへご確認ください。"},{"id":"address","category":"基本情報","question":"お店の住所は？","answer":"住所は595, 3rd Floor, 3-4 Soi Sukhumvit 33/1, Khlong Tan Nuea, Watthana, Bangkok 10110です。"},{"id":"phone","category":"基本情報","question":"電話番号は？","answer":"お電話は0983918717へお願いします。"},{"id":"parking","category":"基本情報","question":"駐車場はありますか？","answer":"専用駐車場はありません。近隣のEmQuartierの駐車料金は、現地でご確認ください。"},{"id":"payment","category":"基本情報","question":"支払い方法は？","answer":"現金、QR決済、VISA・MasterCard・JCBをご利用いただけます。カード決済には3%の手数料がかかります。American ExpressとDinersはご利用いただけません。"},{"id":"bts","category":"アクセス","question":"最寄りのBTS駅は？","answer":"最寄りのBTS駅はプロンポン駅です。"},{"id":"children","category":"来店","question":"子どもと一緒に来店できますか？","answer":"お子様と一緒にご来店いただけます。"},{"id":"early","category":"来店","question":"予約時間より早く着いても大丈夫ですか？","answer":"早めにご来店いただけますが、お待ちいただく場合があります。"},{"id":"same-day","category":"予約","question":"当日予約はできますか？","answer":"当日のご予約希望も受け付けます。空き状況をスタッフが確認してご案内します。"},{"id":"late","category":"来店","question":"予約に遅れそうな場合は？","answer":"遅れる場合は店舗へご連絡ください。施術時間が短くなる場合があります。"},{"id":"booking-request","category":"予約","question":"予約希望を送ると予約は確定しますか？","answer":"まだ予約は確定しません。希望日時とメニューを伺い、スタッフが空き状況を確認してご連絡します。"},{"id":"all-genders","category":"来店","question":"男性も女性も利用できますか？","answer":"男性も女性もご利用いただけます。"},{"id":"seasonal-closure","category":"営業時間","question":"年末年始とソンクランは営業していますか？","answer":"年末年始とソンクランは休業します。具体的な休業日はスタッフへご確認ください。"},{"id":"hair-full-face-vio","category":"脱毛","question":"全身脱毛には顔やVIOも含まれますか？","answer":"はい。全身脱毛には顔・VIOも含まれています。"},{"id":"pw-overview","category":"PW","question":"PWとは何ですか？","answer":"Premium Whitening by ecxia Japanを使用した美容ホワイトニングです。歯の表面の着色汚れを除去し、本来の自然な白さへ導きます。"},{"id":"pw-not-medical","category":"PW","question":"PWは医療ホワイトニングですか？","answer":"いいえ。PWは美容サービスです。歯科医院で行うホワイトニングとは施術方法や目的が異なります。"},{"id":"pw-time","category":"PW","question":"PWの施術時間はどのくらいですか？","answer":"施術時間の目安は約45〜50分です。予約枠の長さはスタッフが確認します。"},{"id":"pw-food","category":"PW","question":"PWの施術後に食事制限はありますか？","answer":"PW施術後の飲食制限はありません。"},{"id":"pw-coffee","category":"PW","question":"PWの施術後にコーヒーやお茶を飲んでも大丈夫ですか？","answer":"はい。問題ありません。ただし、着色しやすい飲食物を頻繁に摂取すると再び着色することがあります。"},{"id":"pw-smoking","category":"PW","question":"PWの施術後にタバコを吸っても大丈夫ですか？","answer":"問題ありませんが、喫煙は着色の原因になります。"},{"id":"pw-natural-white","category":"PW","question":"PWで本来の歯より白くなりますか？","answer":"PWは歯の表面の着色を除去し、本来の自然な白さへ導く美容ホワイトニングです。本来の歯以上に白くする施術ではありません。"},{"id":"plasma-overview","category":"Plasma","question":"プラズマシャワーとは何ですか？","answer":"特殊な低温プラズマを使用し、お肌を健やかな状態へ整える肌管理プログラムです。肌への負担を抑えながら、お肌のコンディションを整えます。"},{"id":"plasma-time","category":"Plasma","question":"プラズマシャワーの施術時間はどのくらいですか？","answer":"施術時間の目安は約70分です。予約枠の長さはスタッフが確認します。"},{"id":"plasma-makeup","category":"Plasma","question":"プラズマシャワーにはメイクをしたまま行けますか？","answer":"はい。メイクをしたままご来店いただけます。施術前にクレンジングを行います。"}];
 // Synthetic, browser-local demo model. No LINE ID, Calendar ID, API call or
 // production customer record is accepted here.
@@ -220,7 +220,7 @@ function safeDemoState(value) {
   const app = document.querySelector('#app');
   const title = document.querySelector('#page-title');
   const notice = document.querySelector('#notice');
-  const names = { overview: '概要', inbox: '対応チャット', customers: '顧客一覧',
+  const names = { test: '実TEST接続', overview: '概要', inbox: '対応チャット', customers: '顧客一覧',
     requests: '予約希望', bookings: '予約カレンダー', shifts: 'スタッフ体制',
     menus: 'メニュー・キャンペーン', review: '要確認', knowledge: '質問と回答',
     crm: 'CRM・配信設定', settings: '店舗・予約設定' };
@@ -356,7 +356,7 @@ function safeDemoState(value) {
   function render() {
     title.textContent = names[view];
     document.querySelectorAll('[data-view]').forEach(item => item.classList.toggle('active', item.dataset.view === view));
-    const html = view === 'overview' ? overviewView()
+    const html = view === 'test' ? panel('実TEST接続', '<div id="test-connection-root"></div>') : view === 'overview' ? overviewView()
       : view === 'inbox' ? inboxView()
       : view === 'customers' ? customersView()
       : view === 'bookings' ? bookingsView()
@@ -366,7 +366,7 @@ function safeDemoState(value) {
       : view === 'knowledge' ? knowledgeView()
       : view === 'shifts' ? panel('スタッフ体制', `<div class="cards">${metric('平日', state.settings.staffWeekday, '担当固定なし')}${metric('土日祝', state.settings.staffWeekend, 'タイの祝日基準')}</div><p class="subtle">個別シフトと実カレンダーの勤務情報は、この架空デモには入っていません。人数設定は「設定」で操作できます。</p>`)
       : settingsView();
-    app.innerHTML = banner + html;
+    app.innerHTML = (view === 'test' ? '' : banner) + html; document.getElementById('connection-pill').textContent = '実TEST未接続'; document.dispatchEvent(new Event('salon-test-panel'));
   }
 
   document.addEventListener('click', event => {
@@ -467,4 +467,135 @@ function safeDemoState(value) {
   });
   render();
 })();
+</script><script type="module">// No token or customer data is persisted to localStorage/sessionStorage.
+function createTestClient({ apiOrigin = '', clientId = '', fetchImpl = fetch, now = () => Date.now() } = {}) {
+  let origin = '';
+  try { const u = new URL(apiOrigin); if (u.protocol === 'https:' && u.origin === apiOrigin && !u.username && !u.password) origin = apiOrigin; } catch {}
+  const configured = !!origin && /^\d+-[a-zA-Z0-9_-]+\.apps\.googleusercontent\.com$/.test(clientId);
+  let token = null, expiresAt = 0, challenge = null, generation = 0;
+  let state = { status: configured ? 'ready' : 'not_connected', customers: [], bookings: [], messages: [], error: null };
+  const listeners = new Set();
+  const emit = () => { for (const listener of listeners) listener(structuredClone(state)); };
+  function clear(status, error = null) { generation++; token = null; expiresAt = 0; challenge = null;
+    state = { status, customers: [], bookings: [], messages: [], error }; emit(); }
+  function expire() { if (token && now() >= expiresAt) clear('expired'); }
+  async function call(path, { method = 'GET', body, authenticated = false } = {}) {
+    if (!configured) throw new Error('not_connected');
+    expire(); if (authenticated && !token) throw new Error('unauthorized');
+    const current = generation;
+    const response = await fetchImpl(origin + path, { method, credentials: 'omit', cache: 'no-store', redirect: 'error',
+      signal: AbortSignal.timeout(10000), headers: { ...(body ? { 'content-type': 'application/json' } : {}),
+        ...(authenticated ? { authorization: `Bearer ${token}` } : {}) }, body: body ? JSON.stringify(body) : undefined });
+    if (current !== generation) throw new Error('stale_response');
+    if (response.status === 401) { clear('expired'); throw new Error('unauthorized'); }
+    if (!response.ok) throw new Error(response.status === 503 ? 'not_connected' : 'request_failed');
+    const data = await response.json();
+    if (current !== generation) throw new Error('stale_response');
+    return data;
+  }
+  function dataError(error) { if (!['stale_response','unauthorized'].includes(error.message)) {
+    state = { ...state, status: 'error', customers: [], bookings: [], messages: [], error: error.message }; emit();
+  } }
+  function projection(data, operation) {
+    if (data?.version !== 1 || data.scope !== 'registered_test_customers' || data.operation !== operation || data.readOnly !== true) throw new Error('invalid_response');
+    return data;
+  }
+  return {
+    configured,
+    snapshot() { expire(); return structuredClone(state); },
+    subscribe(listener) { listeners.add(listener); listener(this.snapshot()); return () => listeners.delete(listener); },
+    async beginSignIn() {
+      if (!configured) throw new Error('not_connected');
+      clear('signing_in');
+      try { const value = await call('/auth/challenge', { method: 'POST', body: {} });
+        if (value.clientId !== clientId || !/^[a-f0-9]{64}$/.test(value.challengeId || '') || !/^[a-f0-9]{64}$/.test(value.nonce || '')) throw new Error('invalid_response');
+        challenge = value; return { clientId, nonce: value.nonce };
+      } catch (error) { dataError(error); throw error; }
+    },
+    async completeSignIn(credential) {
+      if (!challenge) throw new Error('invalid_login');
+      try { const value = await call('/auth/google', { method: 'POST', body: { challengeId: challenge.challengeId, credential } });
+        if (!/^[a-f0-9]{64}$/.test(value.token || '') || !Number.isFinite(value.expiresAt) || value.expiresAt <= now() || value.expiresAt > now() + 900000 || value.mode !== 'test_read_only') throw new Error('invalid_response');
+        token = value.token; expiresAt = value.expiresAt; challenge = null;
+        state = { ...state, status: 'authenticated', error: null }; emit();
+      } catch (error) { dataError(error); throw error; }
+    },
+    async refresh() {
+      try { const current = generation; const [customerData, bookingData] = await Promise.all([
+        call('/api/test/customers', { authenticated: true }), call('/api/test/bookings', { authenticated: true })]);
+        if (current !== generation) return;
+        const customers = projection(customerData, 'customers').customers, bookings = projection(bookingData, 'bookings').bookings;
+        if (!Array.isArray(customers) || !Array.isArray(bookings)) throw new Error('invalid_response');
+        state = { status: 'connected', customers, bookings, messages: [], error: null }; emit();
+      } catch (error) { dataError(error); throw error; }
+    },
+    async conversation(customerId) {
+      if (!state.customers.some(x => x.id === customerId) || !/^[a-zA-Z0-9-]{1,64}$/.test(customerId)) throw new Error('not_found');
+      try { const data = projection(await call(`/api/test/customers/${encodeURIComponent(customerId)}/conversation`, { authenticated: true }), 'conversation');
+        if (data.completeTranscript !== false || !Array.isArray(data.messages)) throw new Error('invalid_response');
+        state = { ...state, messages: data.messages }; emit();
+      } catch (error) { dataError(error); throw error; }
+    },
+    async logout() { const oldToken = token; clear(configured ? 'ready' : 'not_connected');
+      if (!oldToken) return;
+      try { await fetchImpl(origin + '/auth/logout', { method: 'POST', credentials: 'omit', redirect: 'error',
+        signal: AbortSignal.timeout(5000), headers: { authorization: `Bearer ${oldToken}` } }); } catch { /* Local session always cleared; server session expires within 15 min. */ }
+    },
+  };
+}
+
+function mountTestPanel(root, client, googleProvider = () => window.google) {
+  const make = (tag, text, className) => { const e = document.createElement(tag); if (text) e.textContent = text; if (className) e.className = className; return e; };
+  const status = make('p', '', 'demo-note'), detail = make('p', '', 'subtle');
+  const login = make('button', 'Googleログインの準備', 'action'), refresh = make('button', 'TESTデータを取得', 'action secondary');
+  const logout = make('button', 'ログアウト', 'action secondary');
+  const googleButton = make('div'), content = make('div'), errors = make('p', '', 'error');
+  login.type = refresh.type = logout.type = 'button'; errors.hidden = true;
+  const actions = make('div', '', 'button-row'); actions.append(login, refresh, logout);
+  root.replaceChildren(status, detail, actions, googleButton, errors, content);
+  const report = () => { errors.hidden = false; errors.textContent = '接続を確認できませんでした。表示中の実データを消去しました。設定またはログイン状態をご確認ください。'; };
+  login.onclick = async () => {
+    errors.hidden = true;
+    try {
+      const config = await client.beginSignIn();
+      if (!googleProvider()?.accounts?.id) await new Promise((resolve, reject) => {
+        const script = document.createElement('script'); script.src = 'https://accounts.google.com/gsi/client';
+        script.onload = resolve; script.onerror = reject; document.head.append(script);
+      });
+      googleProvider().accounts.id.initialize({ client_id: config.clientId, nonce: config.nonce, auto_select: false,
+        callback: async response => { try { await client.completeSignIn(response.credential); await client.refresh(); } catch { report(); } } });
+      googleProvider().accounts.id.renderButton(googleButton, { type: 'standard', text: 'signin_with', theme: 'outline', size: 'large' });
+    } catch { report(); }
+  };
+  refresh.onclick = async () => { errors.hidden = true; try { await client.refresh(); } catch { report(); } };
+  logout.onclick = async () => { googleButton.replaceChildren(); await client.logout(); };
+  const statuses = { not_connected: '実TEST未接続', ready: '実TEST未接続・ログインが必要です', signing_in: 'ログイン準備中',
+    authenticated: 'ログイン済み・TESTデータ未取得', connected: '実TESTデータを取得済み（閲覧のみ）', expired: 'ログイン期限切れ', error: '実TESTの接続を確認できません' };
+  const unsubscribe = client.subscribe(state => {
+    status.textContent = statuses[state.status] || statuses.error;
+    const pill = document.getElementById('connection-pill');
+    if (pill) pill.textContent = state.status === 'connected' ? '実TEST閲覧のみ' : '実TEST未接続';
+    detail.textContent = '実TESTの登録済み利用者だけを表示します。会話は保存済み要約です。Google予定の状態は保存記録であり、この画面での再照合はまだ行いません。';
+    login.disabled = !client.configured || state.status === 'signing_in';
+    refresh.disabled = !['authenticated','connected'].includes(state.status);
+    logout.disabled = ['not_connected','ready'].includes(state.status);
+    content.replaceChildren();
+    if (state.status !== 'connected') return;
+    const customerList = make('div', '', 'button-row');
+    for (const customer of state.customers) { const button = make('button', customer.displayName, 'action secondary'); button.type = 'button';
+      button.onclick = async () => { try { await client.conversation(customer.id); } catch { report(); } }; customerList.append(button); }
+    content.append(make('h3', 'TEST顧客'), customerList, make('h3', 'TEST予約'));
+    if (!state.bookings.length) content.append(make('p', '対象のTEST予約はありません。', 'empty'));
+    for (const booking of state.bookings) content.append(make('p', `${booking.startsAt} / ${booking.menu} / ${booking.status}`, 'demo-note'));
+    content.append(make('h3', '保存済みの会話要約'));
+    for (const message of state.messages) content.append(make('p', `${message.at} / ${message.direction}: ${message.text}`, 'demo-note'));
+  });
+  const expiryTimer = setInterval(() => client.snapshot(), 15000);
+  return () => { unsubscribe(); clearInterval(expiryTimer); };
+}
+// Configuration remains empty until a real endpoint and approved client ID exist.
+const localClient = createTestClient({ apiOrigin: '', clientId: '' });
+let unmount;
+function mount() { unmount?.(); const root = document.getElementById('test-connection-root'); if (root) unmount = mountTestPanel(root, localClient); }
+if (typeof document !== 'undefined') { document.addEventListener('salon-test-panel', mount); mount(); }
 </script></body></html>
