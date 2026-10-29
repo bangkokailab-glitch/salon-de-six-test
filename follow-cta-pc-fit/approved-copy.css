@@ -1,0 +1,5 @@
+/* Approved comparison-sheet copy, 2026-10-29. Preserve artwork proportions and fixed water. */
+.revision-stage .adopted-copy{position:relative;display:block;flex:none;width:var(--content-rail);height:auto;margin:0 auto 12px;isolation:isolate;filter:drop-shadow(0 0 2px rgba(255,255,255,.85));}
+.revision-stage .adopted-copy>svg,.revision-stage .adopted-copy>noscript>svg{display:block;position:absolute;inset:0;width:100%;height:100%;overflow:visible;}
+.feature-a-v3>.adopted-copy{width:100%;margin-bottom:16px;}
+#reason-02 .approved-timing-details img.reason02-photo-repair{left:53.3957845%;top:4.599816%;width:46.6042155%;height:97.5161%;}
