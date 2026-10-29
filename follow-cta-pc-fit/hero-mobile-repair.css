@@ -1,0 +1,61 @@
+/* v32 mobile repair: retain the original hero, copy and animation timings. */
+
+/* The navy intro is a trapezoid. Its temporary reveal cover used to be a
+   rectangle and protruded into the photograph at the lower-right corner.
+   Limit the cover and revealing source pixels to the original angled panel. */
+.exact-original-hero .hero-motion-layer > .hero-raster-mask.mask-navy:first-child {
+  -webkit-clip-path: polygon(0 0,100% 0,100% 44.9664%,93.17073% 100%,0 100%);
+  clip-path: polygon(0 0,100% 0,100% 44.9664%,93.17073% 100%,0 100%);
+}
+
+/* Position the existing no-haze photograph and its transparent caption using
+   the 865 px artwork width, not a percentage of an implicitly sized absolute
+   parent. This keeps the exact artwork coordinates in mobile WebKit too.
+   The permanent patch stays visible before, during and after the text reveal. */
+.exact-original-hero .hero-natural-bottom {
+  top:114.450867052cqw; /* y=990 in the original 865 px wide artwork */
+  height:16.994219653cqw; /* 147 original pixels */
+  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 6%);
+  mask-image:linear-gradient(to bottom,transparent,#000 6%);
+}
+.exact-original-hero .hero-context-transparent {
+  top:116.416184971cqw; /* y=1007 */
+  height:13.872832370cqw; /* preserve the existing 120 px text crop */
+}
+.exact-original-hero .hero-natural-bottom img,
+.exact-original-hero .hero-context-transparent img {
+  position:static;
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  object-fit:fill;
+}
+
+/* A single continuous photograph underneath the offer/caption avoids the
+   visible boundary between the old full image and the narrow trousers patch.
+   Requires hero_continuous_patch.py's source replacement. */
+.exact-original-hero .hero-natural-bottom {
+  display:none;
+}
+.exact-original-hero .hero-raster-mask.mask-restored {
+  /* Blend only the top onto the white shirt. Keep the lower edge opaque so
+     the old baked white fade cannot reappear above the care icons. */
+  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 3%);
+  mask-image:linear-gradient(to bottom,transparent,#000 3%);
+}
+.exact-original-hero.hero-motion-complete .hero-motion-layer {
+  display:block;
+}
+.exact-original-hero.hero-motion-complete .hero-motion-layer > :not(.mask-restored):not([data-hero-step="offer"]) {
+  display:none;
+}
+.exact-original-hero .hero-context-transparent img {
+  /* Tight letter edging for the black trousers; no white rectangle or haze. */
+  filter:drop-shadow(1px 0 0 #fff) drop-shadow(-1px 0 0 #fff)
+         drop-shadow(0 1px 0 #fff) drop-shadow(0 -1px 0 #fff);
+}
+@media(prefers-reduced-motion:reduce) {
+  .exact-original-hero .hero-motion-layer {display:block!important;}
+  .exact-original-hero .hero-motion-layer > :not(.mask-restored):not([data-hero-step="offer"]) {display:none!important;}
+}
