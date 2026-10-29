@@ -1,0 +1,27 @@
+/* Keep the approved A photo/curve/title; give the body copy the full rail width. */
+.post-hero-content .feature-a-v3 .fa-visual .fa-photo-copy.fa-copy-art {
+  left: 54%; right: 3%; top: 31%;
+  aspect-ratio: 864 / 297;
+  overflow: hidden;
+}
+.post-hero-content .feature-a-v3 .fa-visual-02 .fa-photo-copy.fa-copy-art {
+  aspect-ratio: 864 / 319;
+}
+.feature-a-v3 .fa-visual::after {
+  content: "";
+  position: absolute;
+  inset: 76% 0 0;
+  background: linear-gradient(to bottom, #03274700, #032747);
+  pointer-events: none;
+}
+.feature-a-v3 .fa-machine-description {
+  position: relative;
+  margin: -1px 0 0;
+  background: #032747;
+  line-height: 0;
+}
+.feature-a-v3 .fa-machine-description > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
