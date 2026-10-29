@@ -1,0 +1,37 @@
+/* Reservation-flow Mincho treatment. Typography only: keep existing layout,
+   sizing, spacing, colours, frames and disclosure controls unchanged. */
+@font-face {
+  font-family: 'Salon Flow Mincho';
+  src: url('public/assets/fonts/salon-flow-mincho-20261029.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+}
+
+.revision-stage .post-hero-content .flow-type-ink text,
+.revision-stage .post-hero-content .flow-type-ink tspan {
+  font-family: 'Salon Flow Mincho', 'Noto Serif JP', serif !important;
+  font-style: normal;
+  font-kerning: normal;
+  letter-spacing: 0;
+}
+
+.revision-stage #faq .faq-accordion details :is(.faq-question, .faq-row-number, .faq-answer, .faq-answer p, .faq-answer span, .faq-answer a, .faq-answer strong, .faq-answer em) {
+  font-family: 'Salon Flow Mincho', 'Noto Serif JP', serif !important;
+}
+.revision-stage #faq .faq-accordion details .faq-question {
+  font-weight: 700 !important;
+}
+.revision-stage #faq .faq-accordion details :is(.faq-row-number, .faq-answer, .faq-answer p, .faq-answer span, .faq-answer a, .faq-answer strong, .faq-answer em) {
+  font-weight: 600 !important;
+}
+
+.revision-stage .revision-access .store-info-row :is(dt, dd, dt span, dd span, dd a, dd strong, dd em) {
+  font-family: 'Salon Flow Mincho', 'Noto Serif JP', serif !important;
+}
+.revision-stage .revision-access .store-info-row :is(dt, dt span) {
+  font-weight: 700 !important;
+}
+.revision-stage .revision-access .store-info-row :is(dd, dd span, dd a, dd strong, dd em) {
+  font-weight: 600 !important;
+}
