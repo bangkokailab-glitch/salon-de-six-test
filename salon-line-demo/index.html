@@ -516,9 +516,12 @@ function createTestClient({ apiOrigin = '', clientId = '', fetchImpl = fetch, no
       if (!challenge) throw new Error('invalid_login');
       try { const value = await call('/auth/google', { method: 'POST', body: { challengeId: challenge.challengeId, credential } });
         if (!/^[a-f0-9]{64}$/.test(value.token || '') || !Number.isFinite(value.expiresAt) || value.mode !== 'test_read_only') throw new Error('invalid_response');
-        if (value.expiresAt <= now()) throw new Error('session_expired');
-        if (value.expiresAt > now() + 900000) throw new Error('session_clock_ahead');
-        token = value.token; expiresAt = value.expiresAt; challenge = null;
+        const receivedAt = now();
+        if (value.expiresAt <= receivedAt) throw new Error('session_expired');
+        // The API enforces the real expiry. Allow bounded clock skew here,
+        // but never retain browser data for longer than 15 local minutes.
+        if (value.expiresAt > receivedAt + 900000 + 60000) throw new Error('session_clock_ahead');
+        token = value.token; expiresAt = Math.min(value.expiresAt, receivedAt + 900000); challenge = null;
         state = { ...state, status: 'authenticated', error: null }; emit();
       } catch (error) { dataError(error); throw error; }
     },
