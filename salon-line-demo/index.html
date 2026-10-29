@@ -526,7 +526,7 @@ function createTestClient({ apiOrigin = '', clientId = '', fetchImpl = fetch, no
         ...(authenticated ? { authorization: `Bearer ${token}` } : {}) }, body: body ? JSON.stringify(body) : undefined });
     if (current !== generation) throw new Error('stale_response');
     if (response.status === 401) { clear(path === '/auth/google' ? 'error' : 'expired'); throw new Error('unauthorized'); }
-    if (!response.ok) { const failure=await response.json().catch(()=>({})); throw new Error(['disabled','not_found','stale_preview','preview_expired','target_busy','birthday_consent_required'].includes(failure.error)?failure.error:response.status===503?'not_connected':'request_failed'); }
+    if (!response.ok) { const failure=await response.json().catch(()=>({})); throw new Error(['disabled','not_found','stale_preview','preview_expired','target_busy','birthday_consent_required','gateway_write_key_invalid','private_write_key_invalid','write_key_not_separate','write_signature_mismatch','verification_requires_stopped','verification_scope_invalid'].includes(failure.error)?failure.error:response.status===503?'not_connected':'request_failed'); }
     const data = await response.json();
     if (current !== generation) throw new Error('stale_response');
     return data;
@@ -580,7 +580,7 @@ function createTestClient({ apiOrigin = '', clientId = '', fetchImpl = fetch, no
       } catch (error) { dataError(error); throw error; }
     },
     async operations(operation, body = {}) {
-      if (!['preview','confirm','state','simulate','calendar'].includes(operation)) throw new Error('not_found');
+      if (!['preview','confirm','state','simulate','calendar','verify'].includes(operation)) throw new Error('not_found');
       const value=await call('/api/test/operations/'+operation,{method:'POST',body,authenticated:true});
       if(value?.version!==1||value.scope!=='registered_test_customers'||value.operation!==operation||value.customerNotified!==false)throw new Error('invalid_response');
       return value;
@@ -670,10 +670,21 @@ function mountTestPanel(root, client, googleProvider = () => window.google) {
   const status = make('p', '', 'demo-note'), detail = make('p', '', 'subtle');
   const login = make('button', 'Googleログインの準備', 'action'), refresh = make('button', 'TESTデータを取得', 'action secondary');
   const logout = make('button', 'ログアウト', 'action secondary');
+  const verify = make('button', '接続設定を確認（更新なし）', 'action secondary'), verificationResult=make('p','','subtle');
   const googleButton = make('div'), content = make('div'), errors = make('p', '', 'error');
-  login.type = refresh.type = logout.type = 'button'; errors.hidden = true;
-  const actions = make('div', '', 'button-row'); actions.append(login, refresh, logout);
-  root.replaceChildren(status, detail, actions, googleButton, errors, content);
+  login.type = refresh.type = logout.type = verify.type = 'button'; errors.hidden = true;
+  const actions = make('div', '', 'button-row'); actions.append(login, refresh, logout, verify);
+  root.replaceChildren(status, detail, actions, googleButton, errors, verificationResult, content);
+  let verificationEpoch=0;
+  verify.onclick=async()=>{
+    const epoch=++verificationEpoch;verify.disabled=true;verificationResult.textContent='更新を停止したまま接続設定を確認しています…';
+    try{
+      const r=await client.operations('verify');if(epoch!==verificationEpoch)return;
+      if(r.readOnly!==true||r.writeSignatureVerified!==true||r.writeKeyFormatValid!==true||r.updatesDisabled!==true||!Number.isInteger(r.allowedCustomerCount))throw Error('invalid_response');
+      verificationResult.textContent=`接続設定の確認に成功しました。両サーバーの認証と登録済みTEST顧客${r.allowedCustomerCount}名の許可を確認しました。更新は停止中です。`;
+    }catch(e){if(epoch!==verificationEpoch)return;verificationResult.textContent=({gateway_write_key_invalid:'API側の更新鍵が未設定、または形式が正しくありません。',private_write_key_invalid:'管理Site側の更新鍵が未設定、または形式が正しくありません。',write_key_not_separate:'更新鍵と閲覧用鍵を別々に設定する必要があります。',write_signature_mismatch:'両サーバーの更新鍵による署名が一致しません。',verification_scope_invalid:'登録済みTEST顧客の許可設定を確認できません。',verification_requires_stopped:'この確認はすべての更新機能が停止中の場合だけ実行できます。'})[e.message]||'接続設定の確認が完了しませんでした。更新は有効化しません。';}
+    finally{if(epoch===verificationEpoch)verify.disabled=!['authenticated','connected'].includes(client.snapshot().status);}
+  };
   const report = () => { errors.hidden = false;
     const reason = client.snapshot().error;
     const guidance = { session_clock_ahead: '端末とサーバーの時刻に差があるため、ログインできませんでした。', session_expired: 'ログインの有効期限を過ぎました。もう一度ログインしてください。', invalid_response: '接続先から受け取った情報を確認できませんでした。', TimeoutError: '接続が時間内に完了しませんでした。もう一度お試しください。' };
@@ -703,6 +714,8 @@ function mountTestPanel(root, client, googleProvider = () => window.google) {
     login.disabled = !client.configured || state.status === 'signing_in';
     refresh.disabled = !['authenticated','connected'].includes(state.status);
     logout.disabled = ['not_connected','ready'].includes(state.status);
+    verify.disabled=!['authenticated','connected'].includes(state.status);
+    if(verify.disabled){verificationEpoch++;verificationResult.textContent='';}
     content.replaceChildren();
     if (state.status !== 'connected') return;
     const customerList = make('div', '', 'button-row');
@@ -715,7 +728,7 @@ function mountTestPanel(root, client, googleProvider = () => window.google) {
     for (const message of state.messages) content.append(make('p', `${message.at} / ${message.direction}: ${message.text}`, 'demo-note'));
   });
   const expiryTimer = setInterval(() => client.snapshot(), 15000);
-  return () => { unsubscribe(); clearInterval(expiryTimer); };
+  return () => { verificationEpoch++;unsubscribe(); clearInterval(expiryTimer); };
 }
 // Configuration remains empty until a real endpoint and approved client ID exist.
 const localClient = createTestClient({ apiOrigin: 'https://salon-de-six-test-client-api.sales782396.chatgpt.site', clientId: '145507506805-5mkm6j4c99f96k0mc41iv2sc3ci8vpdl.apps.googleusercontent.com' });
