@@ -540,6 +540,7 @@ function createTestClient({ apiOrigin = '', clientId = '', fetchImpl = fetch, no
   }
   return {
     configured,
+    isAuthenticated() { expire(); return token !== null; },
     snapshot() { expire(); return structuredClone(state); },
     subscribe(listener) { listeners.add(listener); listener(this.snapshot()); return () => listeners.delete(listener); },
     async beginSignIn() {
@@ -683,7 +684,7 @@ function mountTestPanel(root, client, googleProvider = () => window.google) {
       if(r.readOnly!==true||r.writeSignatureVerified!==true||r.writeKeyFormatValid!==true||r.updatesDisabled!==true||!Number.isInteger(r.allowedCustomerCount))throw Error('invalid_response');
       verificationResult.textContent=`接続設定の確認に成功しました。両サーバーの認証と登録済みTEST顧客${r.allowedCustomerCount}名の許可を確認しました。更新は停止中です。`;
     }catch(e){if(epoch!==verificationEpoch)return;verificationResult.textContent=({gateway_write_key_invalid:'API側の更新鍵が未設定、または形式が正しくありません。',private_write_key_invalid:'管理Site側の更新鍵が未設定、または形式が正しくありません。',write_key_not_separate:'更新鍵と閲覧用鍵を別々に設定する必要があります。',write_signature_mismatch:'両サーバーの更新鍵による署名が一致しません。',verification_scope_invalid:'登録済みTEST顧客の許可設定を確認できません。',verification_requires_stopped:'この確認はすべての更新機能が停止中の場合だけ実行できます。'})[e.message]||'接続設定の確認が完了しませんでした。更新は有効化しません。';}
-    finally{if(epoch===verificationEpoch)verify.disabled=!['authenticated','connected'].includes(client.snapshot().status);}
+    finally{if(epoch===verificationEpoch)verify.disabled=!client.isAuthenticated();}
   };
   const report = () => { errors.hidden = false;
     const reason = client.snapshot().error;
@@ -707,14 +708,15 @@ function mountTestPanel(root, client, googleProvider = () => window.google) {
   const statuses = { not_connected: '実TEST未接続', ready: '実TEST未接続・ログインが必要です', signing_in: 'ログイン準備中',
     authenticated: 'ログイン済み・TESTデータ未取得', connected: '実TESTデータを取得済み', expired: 'ログイン期限切れ', error: '実TESTの接続を確認できません' };
   const unsubscribe = client.subscribe(state => {
-    status.textContent = statuses[state.status] || statuses.error;
+    const authenticated=client.isAuthenticated();
+    status.textContent = state.status==='error'&&authenticated?'Googleログイン済み・TESTデータの取得を確認できません':statuses[state.status] || statuses.error;
     const pill = document.getElementById('connection-pill');
     if (pill) pill.textContent = state.status === 'connected' ? '実TEST管理' : '実TEST未接続';
     detail.textContent = '実TESTの登録済み利用者だけを表示します。会話は保存済み要約です。Google予定の状態は保存記録であり、この画面での再照合はまだ行いません。';
     login.disabled = !client.configured || state.status === 'signing_in';
-    refresh.disabled = !['authenticated','connected'].includes(state.status);
+    refresh.disabled = !authenticated;
     logout.disabled = ['not_connected','ready'].includes(state.status);
-    verify.disabled=!['authenticated','connected'].includes(state.status);
+    verify.disabled=!authenticated;
     if(verify.disabled){verificationEpoch++;verificationResult.textContent='';}
     content.replaceChildren();
     if (state.status !== 'connected') return;
