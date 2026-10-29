@@ -24,11 +24,13 @@
 
 .demo-banner{border:2px solid #dfbc66;background:#fff8e8;color:#684b15;border-radius:14px;padding:14px 17px;margin-bottom:16px;font-size:13px;line-height:1.65}.demo-banner strong{display:block;font-size:15px}.demo-local-note{margin-top:15px;border:1px solid #60715e;border-radius:8px;padding:8px 9px}.demo-controls{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.demo-controls select,.demo-controls input{border:1px solid #cdd9ce;border-radius:9px;padding:8px 10px;background:#fff;max-width:100%}.demo-status{font-size:12px;color:#617368}.demo-note{font-size:12px;color:#855d15;background:#fff6df;padding:10px 12px;border-radius:9px}.demo-list{display:grid;gap:9px}.demo-row{display:flex;gap:12px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;border-bottom:1px solid #e8eee8;padding:9px 0}.demo-row:last-child{border-bottom:0}.demo-tile{border:1px solid #e4e8df;border-radius:12px;padding:12px;background:#fff}.demo-tile small{display:block;color:#708172;margin-top:4px}.demo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:13px}.demo-check{display:flex;align-items:center;gap:8px;font-size:13px}.demo-check input{width:17px;height:17px}.demo-inline-form{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end}.demo-inline-form .field{min-width:150px;flex:1}.demo-inline-form .action{height:39px}.demo-chat{min-height:290px;max-height:470px}.demo-chat .bubble{max-width:85%}.demo-action-small{font-size:12px;padding:7px 10px}.demo-action-small:focus-visible,.sidebar nav button:focus-visible{outline:3px solid #e7c466;outline-offset:2px}.demo-danger{color:#9f3f35}.demo-right{margin-left:auto}.demo-empty{color:#758879;font-size:13px;padding:16px}.demo-link{display:inline-block;margin-top:8px}.demo-count{color:#657764;font-size:12px}.demo-feature-label{background:#e9f3e8;color:#2e6540;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:800}
 </style></head>
-<body><div class="shell"><aside class="sidebar"><div class="brand"><span class="brand-mark">S</span><span><strong>Salon de Six</strong><small>DEMO 管理画面</small></span></div><nav aria-label="メインメニュー"><span class="nav-caption">OPERATIONS</span><button data-view="bookings"><span aria-hidden="true">▦</span> 予約</button><button data-view="inbox" class="active"><span aria-hidden="true">✉</span> Inbox</button><button data-view="shifts"><span aria-hidden="true">◷</span> シフト</button><button data-view="menus"><span aria-hidden="true">☰</span> メニュー</button><button data-view="settings"><span aria-hidden="true">⚙</span> 設定</button><span class="nav-caption nav-caption-secondary">MANAGEMENT</span><button data-view="overview">概要</button><button data-view="requests">予約希望</button><button data-view="review">要確認</button><button data-view="customers">顧客一覧</button><button data-view="knowledge">質問と回答</button><button data-view="crm">CRM・配信設定</button><button data-view="test">実TEST接続</button></nav><div class="sidebar-bottom">架空デモ＋認証付きTEST閲覧<br><span>時刻：バンコク（UTC+7）</span><div class="demo-local-note">デモ入力のみ端末内に保存</div></div></aside>
+<body><div class="shell"><aside class="sidebar"><div class="brand"><span class="brand-mark">S</span><span><strong>Salon de Six</strong><small>DEMO 管理画面</small></span></div><nav aria-label="メインメニュー"><span class="nav-caption">OPERATIONS</span><button data-view="bookings"><span aria-hidden="true">▦</span> 予約</button><button data-view="inbox" class="active"><span aria-hidden="true">✉</span> Inbox</button><button data-view="shifts"><span aria-hidden="true">◷</span> シフト</button><button data-view="menus"><span aria-hidden="true">☰</span> メニュー</button><button data-view="settings"><span aria-hidden="true">⚙</span> 設定</button><span class="nav-caption nav-caption-secondary">MANAGEMENT</span><button data-view="overview">概要</button><button data-view="requests">予約希望</button><button data-view="review">要確認</button><button data-view="customers">顧客一覧</button><button data-view="knowledge">質問と回答</button><button data-view="crm">CRM・配信設定</button><button data-view="test">実TEST管理</button></nav><div class="sidebar-bottom">架空デモ＋認証付きTEST管理<br><span>時刻：バンコク（UTC+7）</span><div class="demo-local-note">架空デモ入力のみ端末内に保存</div></div></aside>
 <div class="main-wrap"><header class="topbar"><div><span class="eyebrow">SALON DE SIX / CLIENT DEMO</span><h1 id="page-title">Inbox</h1></div><div class="top-actions"><span id="connection-pill" class="pill warn">実TEST未接続</span><button id="refresh" class="icon-button" type="button" aria-label="再読み込み">↻</button></div></header><main id="app"><div class="loading">読み込み中…</div></main><p id="notice" role="status" aria-live="polite"></p></div></div><script>const DEMO_FAQ=[{"id":"hours","category":"基本情報","question":"営業時間は？","answer":"営業時間は10:00〜20:00です。年末年始とソンクランの休業日は、スタッフへご確認ください。"},{"id":"address","category":"基本情報","question":"お店の住所は？","answer":"住所は595, 3rd Floor, 3-4 Soi Sukhumvit 33/1, Khlong Tan Nuea, Watthana, Bangkok 10110です。"},{"id":"phone","category":"基本情報","question":"電話番号は？","answer":"お電話は0983918717へお願いします。"},{"id":"parking","category":"基本情報","question":"駐車場はありますか？","answer":"専用駐車場はありません。近隣のEmQuartierの駐車料金は、現地でご確認ください。"},{"id":"payment","category":"基本情報","question":"支払い方法は？","answer":"現金、QR決済、VISA・MasterCard・JCBをご利用いただけます。カード決済には3%の手数料がかかります。American ExpressとDinersはご利用いただけません。"},{"id":"bts","category":"アクセス","question":"最寄りのBTS駅は？","answer":"最寄りのBTS駅はプロンポン駅です。"},{"id":"children","category":"来店","question":"子どもと一緒に来店できますか？","answer":"お子様と一緒にご来店いただけます。"},{"id":"early","category":"来店","question":"予約時間より早く着いても大丈夫ですか？","answer":"早めにご来店いただけますが、お待ちいただく場合があります。"},{"id":"same-day","category":"予約","question":"当日予約はできますか？","answer":"当日のご予約希望も受け付けます。空き状況をスタッフが確認してご案内します。"},{"id":"late","category":"来店","question":"予約に遅れそうな場合は？","answer":"遅れる場合は店舗へご連絡ください。施術時間が短くなる場合があります。"},{"id":"booking-request","category":"予約","question":"予約希望を送ると予約は確定しますか？","answer":"まだ予約は確定しません。希望日時とメニューを伺い、スタッフが空き状況を確認してご連絡します。"},{"id":"all-genders","category":"来店","question":"男性も女性も利用できますか？","answer":"男性も女性もご利用いただけます。"},{"id":"seasonal-closure","category":"営業時間","question":"年末年始とソンクランは営業していますか？","answer":"年末年始とソンクランは休業します。具体的な休業日はスタッフへご確認ください。"},{"id":"hair-full-face-vio","category":"脱毛","question":"全身脱毛には顔やVIOも含まれますか？","answer":"はい。全身脱毛には顔・VIOも含まれています。"},{"id":"pw-overview","category":"PW","question":"PWとは何ですか？","answer":"Premium Whitening by ecxia Japanを使用した美容ホワイトニングです。歯の表面の着色汚れを除去し、本来の自然な白さへ導きます。"},{"id":"pw-not-medical","category":"PW","question":"PWは医療ホワイトニングですか？","answer":"いいえ。PWは美容サービスです。歯科医院で行うホワイトニングとは施術方法や目的が異なります。"},{"id":"pw-time","category":"PW","question":"PWの施術時間はどのくらいですか？","answer":"施術時間の目安は約45〜50分です。予約枠の長さはスタッフが確認します。"},{"id":"pw-food","category":"PW","question":"PWの施術後に食事制限はありますか？","answer":"PW施術後の飲食制限はありません。"},{"id":"pw-coffee","category":"PW","question":"PWの施術後にコーヒーやお茶を飲んでも大丈夫ですか？","answer":"はい。問題ありません。ただし、着色しやすい飲食物を頻繁に摂取すると再び着色することがあります。"},{"id":"pw-smoking","category":"PW","question":"PWの施術後にタバコを吸っても大丈夫ですか？","answer":"問題ありませんが、喫煙は着色の原因になります。"},{"id":"pw-natural-white","category":"PW","question":"PWで本来の歯より白くなりますか？","answer":"PWは歯の表面の着色を除去し、本来の自然な白さへ導く美容ホワイトニングです。本来の歯以上に白くする施術ではありません。"},{"id":"plasma-overview","category":"Plasma","question":"プラズマシャワーとは何ですか？","answer":"特殊な低温プラズマを使用し、お肌を健やかな状態へ整える肌管理プログラムです。肌への負担を抑えながら、お肌のコンディションを整えます。"},{"id":"plasma-time","category":"Plasma","question":"プラズマシャワーの施術時間はどのくらいですか？","answer":"施術時間の目安は約70分です。予約枠の長さはスタッフが確認します。"},{"id":"plasma-makeup","category":"Plasma","question":"プラズマシャワーにはメイクをしたまま行けますか？","answer":"はい。メイクをしたままご来店いただけます。施術前にクレンジングを行います。"}];
 // Synthetic, browser-local demo model. No LINE ID, Calendar ID, API call or
 // production customer record is accepted here.
-const DEMO_STORAGE_KEY = 'salon-de-six-synthetic-admin-v2';
+const DEMO_STORAGE_KEY = 'salon-de-six-synthetic-admin-next-v3';
+
+const DEMO_FAQ_BY_LANGUAGE={"ja":[{"id":"hours","category":"基本情報","question":"営業時間は？","answer":"営業時間は10:00〜20:00です。年末年始とソンクランの休業日は、スタッフへご確認ください。"},{"id":"address","category":"基本情報","question":"お店の住所は？","answer":"住所は595, 3rd Floor, 3-4 Soi Sukhumvit 33/1, Khlong Tan Nuea, Watthana, Bangkok 10110です。"},{"id":"phone","category":"基本情報","question":"電話番号は？","answer":"お電話は0983918717へお願いします。"},{"id":"parking","category":"基本情報","question":"駐車場はありますか？","answer":"専用駐車場はありません。近隣のEmQuartierの駐車料金は、現地でご確認ください。"},{"id":"payment","category":"基本情報","question":"支払い方法は？","answer":"現金、QR決済、VISA・MasterCard・JCBをご利用いただけます。カード決済には3%の手数料がかかります。American ExpressとDinersはご利用いただけません。"},{"id":"bts","category":"アクセス","question":"最寄りのBTS駅は？","answer":"最寄りのBTS駅はプロンポン駅です。"},{"id":"children","category":"来店","question":"子どもと一緒に来店できますか？","answer":"お子様と一緒にご来店いただけます。"},{"id":"early","category":"来店","question":"予約時間より早く着いても大丈夫ですか？","answer":"早めにご来店いただけますが、お待ちいただく場合があります。"},{"id":"same-day","category":"予約","question":"当日予約はできますか？","answer":"当日のご予約希望も受け付けます。空き状況をスタッフが確認してご案内します。"},{"id":"late","category":"来店","question":"予約に遅れそうな場合は？","answer":"遅れる場合は店舗へご連絡ください。施術時間が短くなる場合があります。"},{"id":"booking-request","category":"予約","question":"予約希望を送ると予約は確定しますか？","answer":"まだ予約は確定しません。希望日時とメニューを伺い、スタッフが空き状況を確認してご連絡します。"},{"id":"all-genders","category":"来店","question":"男性も女性も利用できますか？","answer":"男性も女性もご利用いただけます。"},{"id":"seasonal-closure","category":"営業時間","question":"年末年始とソンクランは営業していますか？","answer":"年末年始とソンクランは休業します。具体的な休業日はスタッフへご確認ください。"},{"id":"hair-full-face-vio","category":"脱毛","question":"全身脱毛には顔やVIOも含まれますか？","answer":"はい。全身脱毛には顔・VIOも含まれています。"},{"id":"pw-overview","category":"PW","question":"PWとは何ですか？","answer":"Premium Whitening by ecxia Japanを使用した美容ホワイトニングです。歯の表面の着色汚れを除去し、本来の自然な白さへ導きます。"},{"id":"pw-not-medical","category":"PW","question":"PWは医療ホワイトニングですか？","answer":"いいえ。PWは美容サービスです。歯科医院で行うホワイトニングとは施術方法や目的が異なります。"},{"id":"pw-time","category":"PW","question":"PWの施術時間はどのくらいですか？","answer":"施術時間の目安は約45〜50分です。予約枠の長さはスタッフが確認します。"},{"id":"pw-food","category":"PW","question":"PWの施術後に食事制限はありますか？","answer":"PW施術後の飲食制限はありません。"},{"id":"pw-coffee","category":"PW","question":"PWの施術後にコーヒーやお茶を飲んでも大丈夫ですか？","answer":"はい。問題ありません。ただし、着色しやすい飲食物を頻繁に摂取すると再び着色することがあります。"},{"id":"pw-smoking","category":"PW","question":"PWの施術後にタバコを吸っても大丈夫ですか？","answer":"問題ありませんが、喫煙は着色の原因になります。"},{"id":"pw-natural-white","category":"PW","question":"PWで本来の歯より白くなりますか？","answer":"PWは歯の表面の着色を除去し、本来の自然な白さへ導く美容ホワイトニングです。本来の歯以上に白くする施術ではありません。"},{"id":"plasma-overview","category":"Plasma","question":"プラズマシャワーとは何ですか？","answer":"特殊な低温プラズマを使用し、お肌を健やかな状態へ整える肌管理プログラムです。肌への負担を抑えながら、お肌のコンディションを整えます。"},{"id":"plasma-time","category":"Plasma","question":"プラズマシャワーの施術時間はどのくらいですか？","answer":"施術時間の目安は約70分です。予約枠の長さはスタッフが確認します。"},{"id":"plasma-makeup","category":"Plasma","question":"プラズマシャワーにはメイクをしたまま行けますか？","answer":"はい。メイクをしたままご来店いただけます。施術前にクレンジングを行います。"}],"en":[{"id":"hours","category":"基本情報","question":"What are your opening hours?","answer":"We are open from 10:00 to 20:00. Please ask our staff for the exact New Year and Songkran closure dates."},{"id":"address","category":"基本情報","question":"Where is the salon?","answer":"Our address is 595, 3rd Floor, 3-4 Soi Sukhumvit 33/1, Khlong Tan Nuea, Watthana, Bangkok 10110."},{"id":"phone","category":"基本情報","question":"What is your phone number?","answer":"Please call us at 0983918717."},{"id":"parking","category":"基本情報","question":"Is parking available?","answer":"We do not have dedicated parking. Please check the parking charges at nearby EmQuartier on site."},{"id":"payment","category":"基本情報","question":"What payment methods do you accept?","answer":"We accept cash, QR payment, Visa, MasterCard and JCB. Card payments incur a 3% fee. American Express and Diners are not accepted."},{"id":"bts","category":"アクセス","question":"Which BTS station is closest?","answer":"The nearest BTS station is Phrom Phong."},{"id":"children","category":"来店","question":"Can I bring my child?","answer":"You may visit with your child."},{"id":"early","category":"来店","question":"Can I arrive early for my appointment?","answer":"You may arrive early, but you might need to wait."},{"id":"same-day","category":"予約","question":"Can I book for today?","answer":"We accept same-day appointment requests. Our staff will check availability and get back to you."},{"id":"late","category":"来店","question":"What if I am running late?","answer":"Please contact the salon if you will be late. Your treatment time may be shortened."},{"id":"booking-request","category":"予約","question":"Is my appointment confirmed when I send a booking request?","answer":"Not yet. We will ask for your preferred date, time and service, then staff will check availability and contact you."},{"id":"all-genders","category":"来店","question":"Do you serve both men and women?","answer":"Both men and women are welcome."},{"id":"seasonal-closure","category":"営業時間","question":"Are you open over New Year and Songkran?","answer":"We close over New Year and Songkran. Please ask our staff for the exact dates."},{"id":"hair-full-face-vio","category":"脱毛","question":"Does full-body hair removal include the face and VIO?","answer":"Yes. Full-body hair removal includes the face and VIO."},{"id":"pw-overview","category":"PW","question":"What is PW?","answer":"PW is a cosmetic whitening service using Premium Whitening by ecxia Japan. It removes surface stains from the teeth to bring out their natural whiteness."},{"id":"pw-not-medical","category":"PW","question":"Is PW medical teeth whitening?","answer":"No. PW is a cosmetic service. Its method and purpose differ from whitening performed at a dental clinic."},{"id":"pw-time","category":"PW","question":"How long does a PW treatment take?","answer":"The treatment itself takes approximately 45–50 minutes. Please ask staff to confirm the booking slot length."},{"id":"pw-food","category":"PW","question":"Are there food or drink restrictions after PW?","answer":"There are no food or drink restrictions after PW."},{"id":"pw-coffee","category":"PW","question":"Can I drink coffee or tea after PW?","answer":"Yes. However, frequently consuming foods or drinks that cause staining may stain the teeth again."},{"id":"pw-smoking","category":"PW","question":"Can I smoke after PW?","answer":"Yes, but smoking can cause staining."},{"id":"pw-natural-white","category":"PW","question":"Can PW make my teeth whiter than their natural color?","answer":"PW is a cosmetic whitening service that removes surface stains and brings out the teeth’s natural whiteness. It does not make teeth whiter than their natural color."},{"id":"plasma-overview","category":"Plasma","question":"What is a plasma shower?","answer":"It is a skin-care program using special low-temperature plasma to help maintain skin in healthy condition while limiting strain on the skin."},{"id":"plasma-time","category":"Plasma","question":"How long does a plasma shower take?","answer":"The treatment itself takes approximately 70 minutes. Please ask staff to confirm the booking slot length."},{"id":"plasma-makeup","category":"Plasma","question":"Can I come wearing makeup for a plasma shower?","answer":"Yes. You may arrive wearing makeup. Cleansing is done before the treatment."}],"th":[{"id":"hours","category":"基本情報","question":"ร้านเปิดกี่โมง?","answer":"ร้านเปิดเวลา 10:00–20:00 น. กรุณาสอบถามพนักงานเกี่ยวกับวันหยุดช่วงปีใหม่และสงกรานต์ที่แน่นอน"},{"id":"address","category":"基本情報","question":"ร้านอยู่ที่ไหน?","answer":"ที่อยู่ของร้านคือ 595 ชั้น 3, 3-4 ซอยสุขุมวิท 33/1 แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพฯ 10110"},{"id":"phone","category":"基本情報","question":"เบอร์โทรของร้านคืออะไร?","answer":"ติดต่อร้านทางโทรศัพท์ได้ที่ 0983918717"},{"id":"parking","category":"基本情報","question":"มีที่จอดรถไหม?","answer":"ร้านไม่มีที่จอดรถเฉพาะ กรุณาตรวจสอบค่าจอดรถที่ EmQuartier ซึ่งอยู่ใกล้เคียง ณ สถานที่"},{"id":"payment","category":"基本情報","question":"รับชำระเงินด้วยวิธีใด?","answer":"รับเงินสด ชำระผ่าน QR, Visa, MasterCard และ JCB การชำระด้วยบัตรมีค่าธรรมเนียม 3% ไม่รับ American Express และ Diners"},{"id":"bts","category":"アクセス","question":"สถานี BTS ที่ใกล้ที่สุดคือสถานีไหน?","answer":"สถานี BTS ที่ใกล้ที่สุดคือพร้อมพงษ์"},{"id":"children","category":"来店","question":"พาเด็กมาด้วยได้ไหม?","answer":"สามารถพาเด็กมาด้วยได้"},{"id":"early","category":"来店","question":"มาก่อนเวลานัดได้ไหม?","answer":"สามารถมาก่อนเวลานัดได้ แต่อาจต้องรอ"},{"id":"same-day","category":"予約","question":"จองคิววันนี้ได้ไหม?","answer":"สามารถส่งคำขอจองภายในวันเดียวกันได้ พนักงานจะตรวจสอบคิวว่างและแจ้งกลับ"},{"id":"late","category":"来店","question":"หากไปสายควรทำอย่างไร?","answer":"หากจะมาสาย กรุณาติดต่อร้าน ระยะเวลาการทำทรีตเมนต์อาจสั้นลง"},{"id":"booking-request","category":"予約","question":"ส่งคำขอจองแล้วถือว่าจองสำเร็จหรือยัง?","answer":"ยังไม่ถือว่าจองสำเร็จ เราจะสอบถามวัน เวลา และบริการที่ต้องการ จากนั้นพนักงานจะตรวจสอบคิวว่างและติดต่อกลับ"},{"id":"all-genders","category":"来店","question":"ผู้หญิงและผู้ชายใช้บริการได้ไหม?","answer":"ทั้งผู้หญิงและผู้ชายสามารถใช้บริการได้"},{"id":"seasonal-closure","category":"営業時間","question":"ช่วงปีใหม่และสงกรานต์เปิดไหม?","answer":"ร้านหยุดในช่วงปีใหม่และสงกรานต์ กรุณาสอบถามพนักงานเกี่ยวกับวันที่หยุดที่แน่นอน"},{"id":"hair-full-face-vio","category":"脱毛","question":"กำจัดขนทั่วตัวรวมใบหน้าและ VIO หรือไม่?","answer":"รวมค่ะ/ครับ การกำจัดขนทั่วตัวรวมใบหน้าและ VIO"},{"id":"pw-overview","category":"PW","question":"PW คืออะไร?","answer":"PW คือบริการฟอกสีฟันเพื่อความงามที่ใช้ Premium Whitening by ecxia Japan ช่วยขจัดคราบสีบนผิวฟัน เพื่อให้เห็นความขาวตามธรรมชาติของฟัน"},{"id":"pw-not-medical","category":"PW","question":"PW เป็นการฟอกสีฟันทางการแพทย์หรือไม่?","answer":"ไม่ใช่ PW เป็นบริการเพื่อความงาม วิธีและวัตถุประสงค์แตกต่างจากการฟอกสีฟันที่คลินิกทันตกรรม"},{"id":"pw-time","category":"PW","question":"ทำ PW ใช้เวลานานเท่าไร?","answer":"ระยะเวลาทำบริการประมาณ 45–50 นาที กรุณาให้พนักงานยืนยันความยาวของช่วงเวลาจอง"},{"id":"pw-food","category":"PW","question":"หลังทำ PW ต้องงดอาหารหรือเครื่องดื่มหรือไม่?","answer":"หลังทำ PW ไม่มีข้อจำกัดเรื่องอาหารหรือเครื่องดื่ม"},{"id":"pw-coffee","category":"PW","question":"หลังทำ PW ดื่มกาแฟหรือชาได้ไหม?","answer":"ได้ อย่างไรก็ตาม การรับประทานอาหารหรือเครื่องดื่มที่ทำให้เกิดคราบสีบ่อย ๆ อาจทำให้ฟันกลับมามีคราบได้"},{"id":"pw-smoking","category":"PW","question":"หลังทำ PW สูบบุหรี่ได้ไหม?","answer":"ได้ แต่การสูบบุหรี่อาจทำให้เกิดคราบสีบนฟัน"},{"id":"pw-natural-white","category":"PW","question":"PW ทำให้ฟันขาวกว่าสีธรรมชาติได้ไหม?","answer":"PW เป็นบริการเพื่อความงามที่ขจัดคราบสีบนผิวฟันและช่วยให้เห็นความขาวตามธรรมชาติ ไม่ได้ทำให้ฟันขาวกว่าสีธรรมชาติ"},{"id":"plasma-overview","category":"Plasma","question":"พลาสมาชาวเวอร์คืออะไร?","answer":"เป็นโปรแกรมดูแลผิวที่ใช้พลาสมาอุณหภูมิต่ำชนิดพิเศษ เพื่อช่วยให้ผิวอยู่ในสภาพที่ดีโดยลดภาระต่อผิว"},{"id":"plasma-time","category":"Plasma","question":"พลาสมาชาวเวอร์ใช้เวลานานเท่าไร?","answer":"ระยะเวลาทำบริการประมาณ 70 นาที กรุณาให้พนักงานยืนยันความยาวของช่วงเวลาจอง"},{"id":"plasma-makeup","category":"Plasma","question":"แต่งหน้ามาทำพลาสมาชาวเวอร์ได้ไหม?","answer":"ได้ สามารถแต่งหน้ามาที่ร้านได้ โดยจะมีการทำความสะอาดผิวก่อนรับบริการ"}]};
 
 function addDays(day, count) {
   const value = new Date(`${day}T00:00:00Z`);
@@ -77,10 +79,13 @@ function seedDemo(today = bangkokDay()) {
         time: '13:00', status: 'pending' },
     ],
     rules: [
+      {id:'interest-whitening',label:'ホワイトニングに興味あり',kind:'interest',interestTag:'プレミアムホワイトニング',enabled:false,time:'10:00',days:0,sendDate:addDays(today,1),text:'【DEMO】ご興味のあるサービスのご案内です。',textEn:'[DEMO] Information about a service you are interested in.',textTh:'[DEMO] ข้อมูลบริการที่คุณสนใจ'},
       { id: 'day-before', label: '来店前日', kind: 'day_before', enabled: false,
         time: '10:00', days: 1, text: '【DEMO】明日はご予約日です。',
         textEn: '[DEMO] Your appointment is tomorrow.',
         textTh: '[DEMO] พรุ่งนี้เป็นวันนัดหมายของคุณ' },
+      { id: 'day-of', label: '来店当日', kind: 'day_of', enabled: false, time: '09:00', days: 0,
+        text: '【DEMO】本日はご予約日です。', textEn: '[DEMO] Your appointment is today.', textTh: '[DEMO] วันนี้เป็นวันนัดหมายของคุณ' },
       { id: 'one-hour', label: '来店1時間前', kind: 'hour_before', enabled: false,
         time: '', days: 0, text: '【DEMO】ご予約まであと1時間です。',
         textEn: '[DEMO] Your appointment is in one hour.',
@@ -104,6 +109,7 @@ function seedDemo(today = bangkokDay()) {
         textTh: '[DEMO] ข้อมูลเกี่ยวกับบริการฟอกสีฟัน' },
     ],
     campaigns: [],
+    completedOperations: [],
     settings: { open: '10:00', close: '20:00', lastStart: '19:00', staffWeekday: 3,
       staffWeekend: 4, closedDates: [] },
     audit: [{ at: today, text: '架空データでデモを初期化しました' }],
@@ -115,15 +121,18 @@ function customerSegment(state, customerId) {
   if (bookings.some(booking => booking.status === 'attended')) return '来店済み';
   if (bookings.some(booking => ['confirmed', 'pending'].includes(booking.status)))
     return '初回来店前の予約あり';
+  if(bookings.some(booking=>booking.status==='cancelled'))return '取消履歴あり・予約なし';
   return 'LINE登録のみ';
 }
 
 const minute = value => Number(value.slice(0, 2)) * 60 + Number(value.slice(3));
+function validDemoDay(day) { return /^\d{4}-\d{2}-\d{2}$/.test(day || '') && Number.isFinite(Date.parse(day+'T00:00:00Z')) && new Date(day+'T00:00:00Z').toISOString().slice(0,10) === day; }
 function canConfirmDemo(state, booking) {
   const menu = state.menus.find(item => item.id === booking?.menuId);
-  if (!menu?.verified || !menu.resource || !/^\d{4}-\d{2}-\d{2}$/.test(booking.day || '')
+  if (!menu?.verified || !menu.resource || !validDemoDay(booking.day)
     || !/^([01]\d|2[0-3]):[0-5]\d$/.test(booking.time || ''))
     return { ok: false, reason: '設備・所要時間の確認が必要です' };
+  if (state.settings.closedDates.includes(booking.day)) return {ok:false,reason:'休業日です'};
   const start = minute(booking.time), end = start + menu.duration + menu.cleanup;
   if (start < minute(state.settings.open) || start > minute(state.settings.lastStart)
     || end > minute(state.settings.close))
@@ -146,7 +155,7 @@ function shiftMinutes(day, time, minutes) {
 }
 
 function simulateCrm(state, atLocal) {
-  if (!/^\d{4}-\d{2}-\d{2}T([01]\d|2[0-3]):[0-5]\d$/.test(atLocal || '')) return [];
+  if (!/^\d{4}-\d{2}-\d{2}T([01]\d|2[0-3]):[0-5]\d$/.test(atLocal || '') || !validDemoDay(atLocal.slice(0,10))) return [];
   const atDay = atLocal.slice(0, 10);
   const results = [];
   for (const rule of state.rules.filter(item => item.enabled)) {
@@ -158,10 +167,12 @@ function simulateCrm(state, atLocal) {
       let eligible = false;
       if (rule.kind === 'day_before') eligible = active.some(item =>
         `${addDays(item.day, -1)}T${rule.time}` === atLocal);
+      else if (rule.kind === 'day_of') eligible = active.some(item => item.day === atDay && rule.time === atLocal.slice(11) && rule.time <= item.time);
+      else if (rule.kind === 'interest') eligible = customer.interests.includes(rule.interestTag) && rule.sendDate === atDay && rule.time === atLocal.slice(11);
       else if (rule.kind === 'hour_before') eligible = active.some(item =>
         shiftMinutes(item.day, item.time, -60) === atLocal);
       else if (rule.kind === 'thank_you') eligible = attended.some(item =>
-        `${item.day}T${rule.time}` === atLocal);
+        `${item.day}T${rule.time}` === atLocal && shiftMinutes(item.day,item.time,(state.menus.find(m=>m.id===item.menuId)?.duration || 0)) <= atLocal);
       else if (rule.kind === 'followup') eligible = attended.some(item =>
         `${addDays(item.day, rule.days)}T${rule.time}` === atLocal)
         && !active.some(item => item.day >= atDay);
@@ -170,7 +181,8 @@ function simulateCrm(state, atLocal) {
       else if (rule.kind === 'performed') eligible = attended.some(item =>
         item.performedMenuIds?.includes(rule.menuId))
         && rule.sendDate === atDay && rule.time === atLocal.slice(11);
-      if (eligible) results.push({ ruleId: rule.id, customerId: customer.id,
+      const messageText = customer.locale === 'en' ? rule.textEn : customer.locale === 'th' ? rule.textTh : rule.text;
+      if (eligible && messageText?.trim()) results.push({ ruleId: rule.id, customerId: customer.id,
         customer: customer.name, label: rule.label,
         text: customer.locale === 'en' ? rule.textEn : customer.locale === 'th'
           ? rule.textTh : rule.text });
@@ -216,11 +228,38 @@ function safeDemoState(value) {
   return value;
 }
 
+function bookingSnapshot(item) {return JSON.stringify(item);}
+function prepareDemoMutation(state,{id,action,day,time},now=Date.now()) {
+  const item=state.bookings.find(b=>b.id===id);
+  if(!state.synthetic || !item || !['confirmed','pending'].includes(item.status) || !['reschedule','cancel'].includes(action)) return {ok:false,reason:'操作できる架空予約を選んでください'};
+  if(action==='reschedule') {
+    if(day===item.day && time===item.time)return {ok:false,reason:'変更後の日時を選んでください'};
+    const checked=canConfirmDemo(state,{...item,day,time});if(!checked.ok)return checked;
+  }
+  return {ok:true,plan:{operationId:crypto.randomUUID(),id,action,before:structuredClone(item),expected:bookingSnapshot(item),
+    after:action==='cancel'?{...item,status:'cancelled'}:{...item,day,time},expiresAt:now+300000}};
+}
+function commitDemoMutation(state,plan,now=Date.now()) {
+  if(!plan || !state.synthetic || !plan.operationId || (state.completedOperations||[]).includes(plan.operationId))return {ok:false,reason:'この確認は完了済み、または無効です'};
+  const item=state.bookings.find(b=>b.id===plan.id);
+  if(now>=plan.expiresAt || !item || !['confirmed','pending'].includes(item.status) || bookingSnapshot(item)!==plan.expected)return {ok:false,reason:'予約内容が変わったか確認期限を過ぎました。もう一度確認してください'};
+  if(!['cancel','reschedule'].includes(plan.action))return {ok:false,reason:'操作が不正です'};
+  if(plan.action==='reschedule'){const checked=canConfirmDemo(state,plan.after);if(!checked.ok)return checked;item.day=plan.after.day;item.time=plan.after.time;}
+  else item.status='cancelled';
+  (state.completedOperations ||= []).push(plan.operationId);
+  return {ok:true,before:plan.before,after:structuredClone(item),operationId:plan.operationId};
+}
+function filterDemoCustomers(state,{segment='all',performed='',interest=''}={}) {
+  return state.customers.filter(c=>(segment==='all'||customerSegment(state,c.id)===segment)
+    && (!performed||state.bookings.some(b=>b.customerId===c.id&&b.status==='attended'&&b.performedMenuIds?.includes(performed)))
+    && (!interest||c.interests.includes(interest)));
+}
+
 (() => {
   const app = document.querySelector('#app');
   const title = document.querySelector('#page-title');
   const notice = document.querySelector('#notice');
-  const names = { test: '実TEST接続', overview: '概要', inbox: '対応チャット', customers: '顧客一覧',
+  const names = { test: '実TEST管理', overview: '概要', inbox: '対応チャット', customers: '顧客一覧',
     requests: '予約希望', bookings: '予約カレンダー', shifts: 'スタッフ体制',
     menus: 'メニュー・キャンペーン', review: '要確認', knowledge: '質問と回答',
     crm: 'CRM・配信設定', settings: '店舗・予約設定' };
@@ -230,7 +269,7 @@ function safeDemoState(value) {
   if (!state) state = seedDemo();
   let view = Object.hasOwn(names, location.hash.slice(2)) ? location.hash.slice(2) : 'inbox';
   let selectedCustomer = 'D-A', selectedBooking = 'DEMO-B1', selectedRule = 'day-before';
-  let selectedDay = bangkokDay(), segment = 'all', faqSearch = '', simulation = null;
+  let selectedDay = bangkokDay(), segment = 'all', faqSearch = '', simulation = null, mutationPlan = null, performedFilter = '', interestFilter = '', faqLocale = 'ja';
   const h = value => String(value ?? '').replace(/[&<>"']/g, char =>
     ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
   const attr = h;
@@ -242,7 +281,7 @@ function safeDemoState(value) {
   const field = (name, label, value = '', type = 'text', more = '') =>
     `<label class="field">${h(label)}<input name="${attr(name)}" type="${attr(type)}" value="${attr(value)}" ${more}></label>`;
   const panel = (heading, content) => `<section class="panel"><h2>${h(heading)}</h2>${content}</section>`;
-  const banner = `<div class="demo-banner"><strong>操作できる架空データの管理デモ</strong>このタブの名前・予約・会話はすべて架空データです。入力はこのブラウザー内だけに保存します。実データの閲覧は「実TEST接続」タブでGoogleログインした場合に限ります。</div>`;
+  const banner = `<div class="demo-banner"><strong>操作できる架空データの管理デモ</strong>このタブは架空データだけを端末内で操作します。「実TEST管理」ではGoogleログイン後、許可されたTESTデータだけを操作できます。実LINE配信は行いません。</div>`;
   const status = value => ({ confirmed: 'デモ予約確定', pending: 'スタッフ確認待ち',
     attended: '来店済み（デモ記録）', cancelled: '取消済み' })[value] || value;
   const save = (description) => {
@@ -274,18 +313,19 @@ function safeDemoState(value) {
     const list = state.customers.map(item => `<button type="button" class="list-item ${item.id === current.id ? 'selected' : ''}" data-action="select-customer" data-id="${attr(item.id)}"><strong>${h(item.name)}</strong><span>${h(customerSegment(state, item.id))} · ${item.botPaused ? '有人対応中' : 'AI対応可'}</span></button>`).join('');
     const chat = current.chat.map(item => `<div class="bubble ${item.from === 'staff' ? 'outgoing' : ''}">${h(item.text)}<small>${item.from === 'staff' ? 'スタッフのデモ下書き' : '架空の受信'} · ${h(item.at)}</small></div>`).join('');
     return `<div class="inbox-grid">${panel('架空の会話一覧', `<div class="list">${list}</div>`)}${panel(current.name,
-      `<div class="demo-controls"><span class="badge">${h(customerSegment(state, current.id))}</span>${button(current.botPaused ? '有人対応を解除' : '有人対応に切替', 'toggle-human', current.id)}</div>
+      `<div class="demo-controls"><span class="badge">${h(customerSegment(state, current.id))}</span>${button(current.botPaused ? 'botを再開（デモ）' : 'スタッフへ引継ぎ・bot停止（デモ）', 'toggle-human', current.id)}<span class="badge">${current.botPaused?'bot停止中・スタッフ対応':'bot対応可'}</span></div>
       <p class="demo-note">ここでの返信はブラウザー内だけに残り、LINEへは送られません。</p><div class="conversation demo-chat">${chat}</div>
       <form class="reply" data-form="reply"><input name="text" maxlength="500" required aria-label="デモ返信文" placeholder="デモ返信文を入力"><button class="action" type="submit">下書きを残す</button></form>`)}</div>`;
   }
 
   function customersView() {
-    const segments = ['all', 'LINE登録のみ', '初回来店前の予約あり', '来店済み'];
-    const shown = state.customers.filter(item => segment === 'all' || customerSegment(state, item.id) === segment);
+    const segments = ['all', 'LINE登録のみ', '初回来店前の予約あり', '来店済み', '取消履歴あり・予約なし'];
+    const shown = filterDemoCustomers(state,{segment,performed:performedFilter,interest:interestFilter});
+    if(!shown.length)return panel('顧客区分',`<p class="demo-note">該当：0人。選んだ条件に一致する顧客はいません。</p>${button('絞り込みを解除','clear-customer-filter')}`);
     const current = shown.find(item => item.id === selectedCustomer) || shown[0] || state.customers[0];
     selectedCustomer = current.id;
     const rows = shown.map(item => `<tr><td>${h(item.name)}</td><td>${h(item.fullName || '未入力')}</td><td>${h(customerSegment(state, item.id))}</td><td>${h(item.locale)}</td><td>${button('編集', 'select-customer', item.id)}</td></tr>`).join('');
-    return `${panel('顧客区分', `<div class="demo-controls">${segments.map(value => button(value === 'all' ? 'すべて' : value, 'segment', value, segment === value ? '' : 'secondary')).join('')}</div><p class="subtle">予約確定だけで「来店済み」にはしません。施術履歴と興味タグも別に扱います。</p>`)}
+    return `${panel('顧客区分', `<div class="demo-controls">${segments.map(value => button(value === 'all' ? 'すべて' : value, 'segment', value, segment === value ? '' : 'secondary')).join('')}</div><p class="subtle">予約確定だけで「来店済み」にはしません。施術履歴と興味タグも別に扱います。2つの条件はANDで絞り込みます。</p><form class="demo-inline-form" data-form="customer-filter"><label class="field">実施履歴<select name="performed"><option value="">指定なし</option>${state.menus.map(m=>`<option value="${attr(m.id)}" ${performedFilter===m.id?'selected':''}>${h(m.name)}</option>`).join('')}</select></label><label class="field">興味タグ<select name="interest"><option value="">指定なし</option>${[...new Set(state.customers.flatMap(c=>c.interests))].map(t=>`<option ${interestFilter===t?'selected':''}>${h(t)}</option>`).join('')}</select></label><button class="action" type="submit">絞り込む</button></form><p class="subtle">該当：${shown.length}人</p>`)}
       <div class="grid2">${panel('架空の顧客台帳', `<div class="table-wrap"><table><thead><tr><th>表示名</th><th>フルネーム</th><th>区分</th><th>言語</th><th></th></tr></thead><tbody>${rows}</tbody></table></div>`)}
       ${panel(`${current.name} のプロフィール`, `<form class="form-grid" data-form="profile">${field('fullName','フルネーム',current.fullName)}${field('birthday','誕生日（月日）',current.birthday,'text','placeholder="MM-DD" pattern="(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])"')}
       <label class="field">案内言語<select name="locale">${[['ja','日本語'],['en','English'],['th','ไทย']].map(([value,label]) => `<option value="${value}" ${current.locale === value ? 'selected' : ''}>${label}</option>`).join('')}</select></label>
@@ -308,9 +348,9 @@ function safeDemoState(value) {
     if (!item) return '<p class="empty">予約を選んでください。</p>';
     const result = canConfirmDemo(state, item);
     return `<p class="subtle">${h(customer(item.customerId)?.name)} · ${h(menu(item.menuId)?.name)} · ${h(status(item.status))}</p>
-      <form class="form-grid" data-form="booking-edit">${field('day','希望日（バンコク）',item.day,'date')}${field('time','開始時刻',item.time,'time')}
-      <div class="button-row field full"><button type="submit" class="action secondary">日時変更を保存</button>${item.status === 'pending' ? button('スタッフ確認で確定', 'confirm-booking', item.id, '') : ''}${item.status === 'confirmed' ? button('来店済みに記録', 'mark-attended', item.id) : ''}${item.status !== 'cancelled' ? button('取消（履歴保持）', 'cancel-booking', item.id, 'danger') : ''}</div></form>
-      <p class="footnote">${item.status === 'pending' ? h(result.ok ? 'デモ内では確定可能。実Google予定は作りません。' : result.reason) : '変更・取消もデモデータだけに反映します。'}</p>`;
+      <form class="form-grid" data-form="booking-edit">${field('day','希望日（バンコク）',mutationPlan?.id===item.id?mutationPlan.after.day:item.day,'date')}${field('time','開始時刻',mutationPlan?.id===item.id?mutationPlan.after.time:item.time,'time')}
+      <div class="button-row field full">${['confirmed','pending'].includes(item.status)?'<button type="submit" class="action secondary">日時変更を確認</button>':''}${item.status === 'pending' ? button('スタッフ確認で確定', 'confirm-booking', item.id, '') : ''}${item.status === 'confirmed' ? button('来店済みに記録', 'mark-attended', item.id) : ''}${['confirmed','pending'].includes(item.status) ? button('取消内容を確認', 'cancel-booking', item.id, 'danger') : ''}</div></form>
+      ${mutationPlan?.id===item.id?`<div class="demo-banner" role="region" aria-label="予約操作の最終確認"><strong>${mutationPlan.action==='cancel'?'取消の確認':'日時変更の確認'}（架空予約のみ）</strong><p>対象：${h(customer(item.customerId)?.name)} / ${h(menu(item.menuId)?.name)}</p><p>変更前：${h(mutationPlan.before.day)} ${h(mutationPlan.before.time)} / ${h(status(mutationPlan.before.status))}<br>変更後：${h(mutationPlan.after.day)} ${h(mutationPlan.after.time)} / ${h(status(mutationPlan.after.status))}<br>時刻：バンコク。Google予定・LINE送信への反映はありません。</p>${button('この内容でデモに反映','apply-mutation',item.id,'')}${button('戻る','dismiss-mutation',item.id)}</div>`:''}<p class="footnote">${item.status === 'pending' ? h(result.ok ? 'デモ内では確定可能。実Google予定は作りません。' : result.reason) : '変更・取消もデモデータだけに反映します。'}</p>`;
   }
 
   function bookingsView(filter = null) {
@@ -331,7 +371,7 @@ function safeDemoState(value) {
     const results = simulation ? simulation.results.map(item => `<div class="demo-row"><div><strong>${h(item.customer)} · ${h(item.label)}</strong><small>${h(item.text)}</small></div><span class="demo-feature-label">候補のみ</span></div>`).join('') : '';
     return `${panel('CRMは無送信シミュレーション', `<p class="demo-note">ルールをONにしても外部配信は始まりません。日時を進めると対象候補だけを表示します。施術履歴別の案内はデモで指定した日に一度だけ候補になります。取消・配信停止・次回予約を再確認します。</p>`)}
       <div class="grid2">${panel('通知ルール', `<div class="list">${rows}</div>`)}${panel(current.label, `<form class="form-grid" data-form="rule"><label class="demo-check"><input type="checkbox" name="enabled" ${current.enabled ? 'checked' : ''}>このデモルールをON</label>
-      ${field('time','配信時刻（バンコク）',current.time,'time',current.kind === 'hour_before' ? 'disabled' : '')}${current.kind === 'followup' ? field('days','来店後何日',current.days,'number','min="1" max="30"') : ''}${current.kind === 'performed' ? field('sendDate','デモ配信日（1回のみ）',current.sendDate,'date','required') : ''}
+      ${field('time','配信時刻（バンコク）',current.time,'time',current.kind === 'hour_before' ? 'disabled' : '')}${current.kind === 'followup' ? field('days','来店後何日',current.days,'number','min="1" max="30"') : ''}${['performed','interest'].includes(current.kind) ? field('sendDate','デモ配信日（1回のみ）',current.sendDate,'date','required') : ''}
       <label class="field full">日本語<textarea name="text" maxlength="300">${h(current.text)}</textarea></label><label class="field full">English<textarea name="textEn" maxlength="300">${h(current.textEn)}</textarea></label><label class="field full">ไทย<textarea name="textTh" maxlength="300">${h(current.textTh)}</textarea></label>
       <div class="field full"><button class="action" type="submit">デモ設定を保存</button></div></form>`)}</div>
       ${panel('時計を進めて候補を確認', `<form class="demo-inline-form" data-form="simulate"><label class="field">シミュレーション日時（バンコク）<input name="at" type="datetime-local" required value="${attr(simulation?.at || `${addDays(bangkokDay(),1)}T10:00`)}"></label><button type="submit" class="action">候補を計算（送信なし）</button></form><div class="demo-list">${simulation ? (results || '<p class="demo-empty">この日時に送信候補はありません。</p>') : '<p class="demo-empty">日時を選び、シミュレーションしてください。</p>'}</div>`)}`;
@@ -343,8 +383,8 @@ function safeDemoState(value) {
   }
 
   function knowledgeView() {
-    const rows = DEMO_FAQ.filter(item => `${item.question} ${item.answer}`.includes(faqSearch)).slice(0,24);
-    return `${panel('共有済みの質問と回答 24件', `<p class="demo-note">日本語の正規FAQの閲覧例です。英語・タイ語も実TESTコードにありますが、この架空プレビューでは送信しません。料金や医療的な個別判断はスタッフ確認です。</p><label class="field">質問を検索<input id="faq-search" value="${attr(faqSearch)}" placeholder="営業時間など"></label><div class="demo-list">${rows.map(item => `<details class="demo-tile"><summary>${h(item.question)}</summary><p class="subtle">${h(item.answer)}</p></details>`).join('') || '<p class="demo-empty">一致するFAQはありません。</p>'}</div>`)}`;
+    const rows = (DEMO_FAQ_BY_LANGUAGE[faqLocale] || DEMO_FAQ).filter(item => `${item.question} ${item.answer}`.includes(faqSearch)).slice(0,24);
+    return `${panel('共有済みの質問と回答 24件', `<p class="demo-note">共有済みFAQの日本語・英語・タイ語を切り替えて確認できます。料金や医療的な個別判断はスタッフ確認です。LINEへの送信は行いません。</p><label class="field">FAQの言語<select id="faq-locale">${[['ja','日本語'],['en','English'],['th','ไทย']].map(([v,l])=>`<option value="${v}" ${faqLocale===v?'selected':''}>${l}</option>`).join('')}</select></label><p></p><label class="field">質問を検索<input id="faq-search" value="${attr(faqSearch)}" placeholder="営業時間など"></label><div class="demo-list">${rows.map(item => `<details class="demo-tile"><summary>${h(item.question)}</summary><p class="subtle">${h(item.answer)}</p></details>`).join('') || '<p class="demo-empty">一致するFAQはありません。</p>'}</div>`)}`;
   }
 
   function settingsView() {
@@ -356,7 +396,7 @@ function safeDemoState(value) {
   function render() {
     title.textContent = names[view];
     document.querySelectorAll('[data-view]').forEach(item => item.classList.toggle('active', item.dataset.view === view));
-    const html = view === 'test' ? panel('実TEST接続', '<div id="test-connection-root"></div>') : view === 'overview' ? overviewView()
+    const html = view === 'test' ? panel('実TEST管理', '<div id="test-connection-root"></div><div id="test-operations-root"></div>') : view === 'overview' ? overviewView()
       : view === 'inbox' ? inboxView()
       : view === 'customers' ? customersView()
       : view === 'bookings' ? bookingsView()
@@ -377,13 +417,15 @@ function safeDemoState(value) {
     const { action, id } = control.dataset;
     if (action === 'go') { location.hash = `#/${id}`; return; }
     if (action === 'select-customer') { selectedCustomer = id; render(); return; }
-    if (action === 'select-booking') { selectedBooking = id; render(); return; }
+    if (action === 'select-booking') { mutationPlan=null; selectedBooking = id; render(); return; }
     if (action === 'select-rule') { selectedRule = id; render(); return; }
+    if(action==='clear-customer-filter'){segment='all';performedFilter='';interestFilter='';render();return;}
     if (action === 'segment') { segment = id; render(); return; }
     if (action === 'toggle-human') { const item = customer(id); item.botPaused = !item.botPaused;
       save(`${item.name}の有人対応を${item.botPaused ? '開始' : '解除'}しました（デモのみ）`); return; }
-    if (action === 'cancel-booking') { const item = booking(id); item.status = 'cancelled';
-      save(`${id}を取り消しました（架空予約のみ・履歴保持）`); return; }
+    if (action === 'cancel-booking') {const result=prepareDemoMutation(state,{id,action:'cancel'});if(!result.ok){message(result.reason,true);return;}mutationPlan=result.plan;render();return;}
+    if(action==='dismiss-mutation'){mutationPlan=null;render();return;}
+    if(action==='apply-mutation'){const result=commitDemoMutation(state,mutationPlan);mutationPlan=null;if(!result.ok){render();message(result.reason,true);return;}simulation=null;save(`${id}: ${result.before.day} ${result.before.time} ${status(result.before.status)} → ${result.after.day} ${result.after.time} ${status(result.after.status)}（架空予約のみ・履歴保持）`);return;}
     if (action === 'confirm-booking') { const item = booking(id), result = canConfirmDemo(state, item);
       if (!result.ok) { message(result.reason, true); return; }
       item.status = 'confirmed'; save(`${id}をデモ内で確定しました（Google予定なし）`); return; }
@@ -395,9 +437,11 @@ function safeDemoState(value) {
   });
 
   document.addEventListener('change', event => {
+    if(event.target.id==='faq-locale'){faqLocale=event.target.value;faqSearch='';render();}
     if (event.target.id === 'demo-calendar-day') { selectedDay = event.target.value; render(); }
   });
   document.addEventListener('input', event => {
+    if(event.target.closest('[data-form="booking-edit"]')){mutationPlan=null;document.querySelector('[aria-label="予約操作の最終確認"]')?.remove();}
     if (event.target.id === 'faq-search') { faqSearch = event.target.value; render();
       const input = document.querySelector('#faq-search'); input?.focus(); input?.setSelectionRange(faqSearch.length,faqSearch.length); }
   });
@@ -406,6 +450,7 @@ function safeDemoState(value) {
     if (!form) return;
     event.preventDefault();
     const input = Object.fromEntries(new FormData(form));
+    if(form.dataset.form==='customer-filter'){performedFilter=input.performed;interestFilter=input.interest;render();return;}
     if (form.dataset.form === 'reply') {
       const text = String(input.text || '').trim(); if (!text) return;
       customer(selectedCustomer).chat.push({ from: 'staff', text: `[DEMO] ${text}`, at: bangkokDay() });
@@ -424,20 +469,13 @@ function safeDemoState(value) {
         day: input.day, time: input.time, status: 'pending' });
       selectedBooking = id; save(`${id}をスタッフ確認待ちに追加しました（架空予約）`);
     } else if (form.dataset.form === 'booking-edit') {
-      const item = booking(selectedBooking);
-      const candidate = { ...item, day: input.day, time: input.time };
-      if (item.status === 'confirmed') {
-        const result = canConfirmDemo(state, candidate);
-        if (!result.ok) { message(result.reason, true); return; }
-      }
-      item.day = input.day; item.time = input.time;
-      if (item.status === 'attended') item.status = 'pending';
-      save(`${item.id}の日時を更新しました（架空予約）`);
+      const result=prepareDemoMutation(state,{id:selectedBooking,action:'reschedule',day:input.day,time:input.time});
+      if(!result.ok){message(result.reason,true);return;}mutationPlan=result.plan;render();
     } else if (form.dataset.form === 'rule') {
       const item = state.rules.find(row => row.id === selectedRule);
       item.enabled = input.enabled === 'on'; item.time = item.kind === 'hour_before' ? '' : input.time;
       if (item.kind === 'followup') item.days = Math.max(1,Math.min(30,Number(input.days) || 7));
-      if (item.kind === 'performed') item.sendDate = String(input.sendDate || '');
+      if (['performed','interest'].includes(item.kind)) item.sendDate = String(input.sendDate || '');
       item.text = String(input.text || '').slice(0,300);
       item.textEn = String(input.textEn || '').slice(0,300);
       item.textTh = String(input.textTh || '').slice(0,300);
@@ -488,7 +526,7 @@ function createTestClient({ apiOrigin = '', clientId = '', fetchImpl = fetch, no
         ...(authenticated ? { authorization: `Bearer ${token}` } : {}) }, body: body ? JSON.stringify(body) : undefined });
     if (current !== generation) throw new Error('stale_response');
     if (response.status === 401) { clear(path === '/auth/google' ? 'error' : 'expired'); throw new Error('unauthorized'); }
-    if (!response.ok) throw new Error(response.status === 503 ? 'not_connected' : 'request_failed');
+    if (!response.ok) { const failure=await response.json().catch(()=>({})); throw new Error(['disabled','not_found','stale_preview','preview_expired','target_busy','birthday_consent_required'].includes(failure.error)?failure.error:response.status===503?'not_connected':'request_failed'); }
     const data = await response.json();
     if (current !== generation) throw new Error('stale_response');
     return data;
@@ -515,7 +553,7 @@ function createTestClient({ apiOrigin = '', clientId = '', fetchImpl = fetch, no
     async completeSignIn(credential) {
       if (!challenge) throw new Error('invalid_login');
       try { const value = await call('/auth/google', { method: 'POST', body: { challengeId: challenge.challengeId, credential } });
-        if (!/^[a-f0-9]{64}$/.test(value.token || '') || !Number.isFinite(value.expiresAt) || value.mode !== 'test_read_only') throw new Error('invalid_response');
+        if (!/^[a-f0-9]{64}$/.test(value.token || '') || !Number.isFinite(value.expiresAt) || !['test_read_only','test_scoped_operations'].includes(value.mode)) throw new Error('invalid_response');
         const receivedAt = now();
         if (value.expiresAt <= receivedAt) throw new Error('session_expired');
         // The API enforces the real expiry. Allow bounded clock skew here,
@@ -541,12 +579,90 @@ function createTestClient({ apiOrigin = '', clientId = '', fetchImpl = fetch, no
         state = { ...state, messages: data.messages }; emit();
       } catch (error) { dataError(error); throw error; }
     },
+    async operations(operation, body = {}) {
+      if (!['preview','confirm','state','simulate','calendar'].includes(operation)) throw new Error('not_found');
+      const value=await call('/api/test/operations/'+operation,{method:'POST',body,authenticated:true});
+      if(value?.version!==1||value.scope!=='registered_test_customers'||value.operation!==operation||value.customerNotified!==false)throw new Error('invalid_response');
+      return value;
+    },
     async logout() { const oldToken = token; clear(configured ? 'ready' : 'not_connected');
       if (!oldToken) return;
       try { await fetchImpl(origin + '/auth/logout', { method: 'POST', credentials: 'omit', redirect: 'error',
         signal: AbortSignal.timeout(5000), headers: { authorization: `Bearer ${oldToken}` } }); } catch { /* Local session always cleared; server session expires within 15 min. */ }
     },
   };
+}
+
+// All data and tokens stay in memory. Server-side previews are authoritative.
+function mountOperationsPanel(root,client) {
+ const el=(tag,text)=>{const n=document.createElement(tag);if(text)n.textContent=text;return n;};
+ const status=el('p','TEST操作候補（無送信）'), body=el('div'), review=el('section'), message=el('p');
+ root.replaceChildren(status,message,body,review);
+ let current=null,generation=0,busy=false,disposed=false;
+ const bangkok=value=>{const d=new Date(value);return Number.isFinite(+d)?new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Bangkok',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(d):'未設定';};
+ const labels={'fixture.prepare':'架空TEST顧客の用意','booking.create':'架空TEST予約の作成','booking.reschedule':'予約日時変更','booking.cancel':'予約取消','customer.profile':'プロフィール変更','customer.settings':'言語・配信停止・bot・メモの変更','crm.draft':'CRM下書き保存'};
+ const error=e=>{message.textContent=({disabled:'この操作はまだ有効化されていません。',stale_preview:'情報が変わったため再確認してください。',preview_expired:'確認期限を過ぎました。もう一度内容を確認してください。',target_busy:'この対象は結果確認中です。繰り返し操作しないでください。',not_found:'操作できる対象がありません。',unauthorized:'再ログインしてください。',birthday_consent_required:'誕生日の利用同意と配信停止状態を確認してください。'})[e.message]||'結果を確認できませんでした。確定操作の再送は同じ確認番号で結果を照会します。';};
+ const clear=()=>{generation++;current=null;review.replaceChildren();};
+ const button=(text,fn)=>{const b=el('button',text);b.type='button';b.className='action secondary';b.onclick=fn;return b;};
+ function field(form,name,label,value='',type='text',options){
+  const l=el('label',label),n=el(options?'select':type==='textarea'?'textarea':'input');n.name=name;l.className='field';
+  if(options)for(const [v,t]of options){const o=el('option',t);o.value=v;n.append(o);}else if(type!=='textarea')n.type=type;
+  if(type==='checkbox')n.checked=!!value;else n.value=value??'';
+  l.append(n);form.append(l);return n;
+ }
+ function form(title){const s=el('section'),h=el('h3',title),f=el('form');f.className='form-grid';s.append(h,f);body.append(s);f.addEventListener('input',clear);return f;}
+ async function preview(action,target,input){
+  if(busy)return;busy=true;clear();message.textContent='変更内容を確認しています…';const epoch=generation;
+  try{const p=await client.operations('preview',{action,target,input});if(epoch!==generation||disposed)return;
+    if(!p.previewId||!Number.isFinite(p.expiresAt))throw Error('invalid_response');current=p;message.textContent='まだ変更していません。内容を確認してください。';drawReview();
+  }catch(e){if(epoch===generation)error(e);}finally{busy=false;}
+ }
+ function display(obj){const lines=[];const names={startAt:'開始（バンコク）',endAt:'終了（バンコク）',status:'状態',language:'言語',opt_out:'配信停止',optedOut:'配信停止',test_bot_paused:'bot停止',botPaused:'bot停止',note:'スタッフメモ',staffNote:'スタッフメモ',full_name:'氏名',fullName:'氏名',birthday_mmdd:'誕生日',birthdayMmdd:'誕生日',birthday_use_consent:'誕生日の利用同意',birthdayUseConsent:'誕生日の利用同意',interest_keys_json:'興味タグ',interestKeys:'興味タグ',kind:'案内の種類',bodyText:'日本語',bodyTextEn:'English',bodyTextTh:'ไทย',enabled:'プレビューON',sendLocalTime:'時刻',offsetDays:'来店後の日数',offsetMinutes:'来店前の分数',interestKey:'興味タグ',segmentMenuId:'実施メニュー'};
+  if(obj?.rule_json){try{return display(JSON.parse(obj.rule_json));}catch{}}
+  for(const [key,value]of Object.entries(obj||{}))if(names[key])lines.push(names[key]+'：'+(['startAt','endAt'].includes(key)?bangkok(value):Array.isArray(value)?value.join('、'):value===true?'ON':value===false?'OFF':value??'未設定'));
+  return lines.join('\n')||'未設定';
+ }
+ function drawReview(){
+  review.replaceChildren();if(!current)return;const p=current;
+  review.append(el('h3',(labels[p.action]||'操作')+'の確認'),el('p','対象：'+p.target+' ／ 時刻：バンコク'),el('h4','変更前'),el('pre',display(p.before)),el('h4','変更後'),el('pre',p.action==='booking.cancel'?'取消（履歴を残す）':display(p.after)),el('p','この操作ではLINEを送信しません。確認期限は5分です。'));
+  const commit=button('この内容でTESTに反映',async()=>{
+    if(busy||current!==p)return;busy=true;commit.disabled=true;const epoch=generation;
+    try{const result=await client.operations('confirm',{previewId:p.previewId});if(epoch!==generation||disposed)return;
+      if(result.status==='unknown'){message.textContent='結果確認中です。新しい操作を作らず、この確認番号で結果を照会してください。';commit.textContent='同じ確認番号で結果を照会';}
+      else if(result.status==='completed'||result.testCalendarEventChanged||result.testCalendarEventCreated){clear();message.textContent='TESTへの反映を確認しました（LINE送信なし）。';await load();}
+      else{clear();message.textContent='反映できませんでした：'+result.code;}
+    }catch(e){if(epoch===generation){error(e);commit.textContent='同じ確認番号で結果を照会';}}finally{busy=false;commit.disabled=false;}
+  });review.append(commit,button('戻る',clear));review.scrollIntoView({behavior:'smooth',block:'start'});
+ }
+ async function load(){
+  const epoch=generation;
+  try{const data=await client.operations('state');if(epoch!==generation||disposed)return;body.replaceChildren();
+   if(data.fixturePreparation)body.append(button('架空TEST顧客の用意を確認',()=>preview('fixture.prepare',data.fixturePreparation.requestId,{})));
+   const calendarForm=form('TESTカレンダーの空き時間');const from=field(calendarForm,'from','開始日','','date'),through=field(calendarForm,'through','終了日（含まない）','','date');calendarForm.append(button('カレンダーを確認（閲覧のみ）',async()=>{try{const d=await client.operations('calendar',{start:from.value,end:through.value});message.textContent=d.busy.length?d.busy.map(b=>bangkok(b.startAt)+'〜'+bangkok(b.endAt)).join('\n'):'指定期間に使用中の時間はありません。';}catch(e){error(e);}}));calendarForm.onsubmit=e=>e.preventDefault();
+   const bookings=data.bookings||client.snapshot().bookings;
+   for(const b of bookings.filter(b=>b.readOnly||(data.writableBookingIds||[]).includes(b.id))){const f=form('TEST予約：'+(b.menu||b.id));f.append(el('p',(b.startsAt?bangkok(b.startsAt):'')+' ／ '+(b.status||'')));
+    if(b.readOnly){f.append(el('p','取消済みの履歴です。追加操作はできません。'));continue;}
+    const at=field(f,'startAt','変更後の日時（バンコク）','','datetime-local');
+    if(b.status==='pending_staff'){const end=field(f,'endAt','終了日時（バンコク）','','datetime-local');f.append(button('架空TEST予約の作成を確認',()=>preview('booking.create',b.id,{startAt:at.value+':00+07:00',endAt:end.value+':00+07:00'})));}else f.append(button('日時変更を確認',()=>preview('booking.reschedule',b.id,{startAt:at.value.length===16?at.value+':00+07:00':at.value+'+07:00'})),button('取消内容を確認',()=>preview('booking.cancel',b.id,{})));f.onsubmit=e=>e.preventDefault();
+   }
+   for(const c of data.customers){
+    const f=form((c.displayName||c.id)+'：管理設定'),lang=field(f,'language','案内言語',c.settings.language,'select',[['ja','日本語'],['en','English'],['th','ไทย']]),out=field(f,'optedOut','配信停止',c.settings.optedOut,'checkbox'),pause=field(f,'botPaused','スタッフ対応・bot停止',c.settings.botPaused,'checkbox'),note=field(f,'staffNote','スタッフメモ',c.settings.staffNote,'textarea');
+    f.append(button('管理設定を確認',()=>preview('customer.settings',c.id,{language:lang.value,optedOut:out.checked,botPaused:pause.checked,staffNote:note.value})));f.onsubmit=e=>e.preventDefault();
+    const pf=form((c.displayName||c.id)+'：プロフィール'),p=c.profile||{},name=field(pf,'fullName','氏名',p.full_name),birth=field(pf,'birthday','誕生日（月-日）',p.birthday_mmdd),consent=field(pf,'consent','誕生日の利用同意あり',p.birthday_use_consent===1,'checkbox'),interest=field(pf,'interest','興味のある施術','','select',(data.interestOptions||[]).map(x=>[x.key,x.label]));
+    interest.multiple=true;for(const option of interest.options)option.selected=JSON.parse(p.interest_keys_json||'[]').includes(option.value);
+    pf.append(button('プロフィールを確認',()=>preview('customer.profile',c.id,{fullName:name.value,birthdayMmdd:birth.value,birthdayUseConsent:consent.checked,interestKeys:Array.from(interest.selectedOptions).map(o=>o.value),interestSource:'staff_entry'})));pf.onsubmit=e=>e.preventDefault();
+   }
+   const kinds=[['reminder_day_before','来店前日'],['reminder_day_of','来店当日'],['reminder_hours_before','来店1時間前'],['thank_you_after_visit','来店後のお礼'],['followup_days_after_visit','再来店'],['birthday','誕生日'],['interest_campaign','興味別'],['visit_segment_campaign','施術履歴別']];
+   for(const [kind,label]of kinds){const id='client-'+kind.replaceAll('_','-'),saved=data.drafts.find(d=>d.id===id),r=saved?JSON.parse(saved.rule_json):{};
+    const f=form('CRM下書き：'+label),on=field(f,'enabled','プレビューON（実配信はOFF）',r.enabled,'checkbox'),time=field(f,'time','時刻（バンコク）',r.sendLocalTime||'10:00','time'),days=field(f,'days','来店後の日数',r.offsetDays??(kind==='followup_days_after_visit'?7:0),'number'),interest=field(f,'interest','興味のある施術',r.interestKey||'whitening','select',(data.interestOptions||[]).map(x=>[x.key,x.label])),menu=field(f,'menu','実施した施術',r.segmentMenuId||'','select',(data.menuOptions||[]).map(x=>[x.id,x.name])),ja=field(f,'ja','日本語',r.bodyText||'','textarea'),en=field(f,'en','English',r.bodyTextEn||'','textarea'),th=field(f,'th','ไทย',r.bodyTextTh||'','textarea');
+    f.append(button('CRM下書きを確認',()=>preview('crm.draft',id,{kind,interestKey:kind==='interest_campaign'?interest.value:null,offsetMinutes:kind==='reminder_hours_before'?60:null,offsetDays:['thank_you_after_visit','followup_days_after_visit'].includes(kind)?Number(days.value):null,sendLocalTime:['interest_campaign','visit_segment_campaign','reminder_hours_before'].includes(kind)?null:time.value,bodyText:ja.value,bodyTextEn:en.value||null,bodyTextTh:th.value||null,segmentMenuId:kind==='visit_segment_campaign'?menu.value:null,enabled:on.checked})));f.onsubmit=e=>e.preventDefault();
+    if(saved){const at=field(f,'simulateAt','候補を確認する日時（バンコク）','','datetime-local');f.append(button('送信候補を確認（無送信）',async()=>{try{const data=await client.operations('simulate',{ruleId:id,at:at.value+':00+07:00'});message.textContent=data.candidates.length?data.candidates.map(c=>c.customerId+' / '+c.language+'：'+c.text).join('\n'):'この日時の候補はありません。';}catch(e){error(e);}}));}
+   }
+  }catch(e){if(epoch===generation)error(e);}
+ }
+ const loadButton=button('操作対象を読み込む',()=>{clear();load();});root.insertBefore(loadButton,body);
+ const unsubscribe=client.subscribe(s=>{if(!['authenticated','connected'].includes(s.status)){generation++;clear();body.replaceChildren();message.textContent='操作するにはログインしてください。';loadButton.disabled=true;}else loadButton.disabled=false;});
+ return ()=>{disposed=true;generation++;clear();unsubscribe();root.replaceChildren();};
 }
 
 function mountTestPanel(root, client, googleProvider = () => window.google) {
@@ -578,11 +694,11 @@ function mountTestPanel(root, client, googleProvider = () => window.google) {
   refresh.onclick = async () => { errors.hidden = true; try { await client.refresh(); } catch { report(); } };
   logout.onclick = async () => { googleButton.replaceChildren(); await client.logout(); };
   const statuses = { not_connected: '実TEST未接続', ready: '実TEST未接続・ログインが必要です', signing_in: 'ログイン準備中',
-    authenticated: 'ログイン済み・TESTデータ未取得', connected: '実TESTデータを取得済み（閲覧のみ）', expired: 'ログイン期限切れ', error: '実TESTの接続を確認できません' };
+    authenticated: 'ログイン済み・TESTデータ未取得', connected: '実TESTデータを取得済み', expired: 'ログイン期限切れ', error: '実TESTの接続を確認できません' };
   const unsubscribe = client.subscribe(state => {
     status.textContent = statuses[state.status] || statuses.error;
     const pill = document.getElementById('connection-pill');
-    if (pill) pill.textContent = state.status === 'connected' ? '実TEST閲覧のみ' : '実TEST未接続';
+    if (pill) pill.textContent = state.status === 'connected' ? '実TEST管理' : '実TEST未接続';
     detail.textContent = '実TESTの登録済み利用者だけを表示します。会話は保存済み要約です。Google予定の状態は保存記録であり、この画面での再照合はまだ行いません。';
     login.disabled = !client.configured || state.status === 'signing_in';
     refresh.disabled = !['authenticated','connected'].includes(state.status);
@@ -603,7 +719,7 @@ function mountTestPanel(root, client, googleProvider = () => window.google) {
 }
 // Configuration remains empty until a real endpoint and approved client ID exist.
 const localClient = createTestClient({ apiOrigin: 'https://salon-de-six-test-client-api.sales782396.chatgpt.site', clientId: '145507506805-5mkm6j4c99f96k0mc41iv2sc3ci8vpdl.apps.googleusercontent.com' });
-let unmount;
-function mount() { unmount?.(); const root = document.getElementById('test-connection-root'); if (root) unmount = mountTestPanel(root, localClient); }
+let unmount,unmountOperations;
+function mount() { unmount?.();unmountOperations?.(); const root = document.getElementById('test-connection-root'); if (root) {unmount = mountTestPanel(root, localClient);const operationsRoot=document.getElementById('test-operations-root');if(operationsRoot)unmountOperations=mountOperationsPanel(operationsRoot,localClient);} }
 if (typeof document !== 'undefined') { document.addEventListener('salon-test-panel', mount); mount(); }
 </script></body></html>
