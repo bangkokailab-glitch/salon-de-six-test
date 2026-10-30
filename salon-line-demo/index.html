@@ -281,7 +281,7 @@ function filterDemoCustomers(state,{segment='all',performed='',interest=''}={}) 
   const field = (name, label, value = '', type = 'text', more = '') =>
     `<label class="field">${h(label)}<input name="${attr(name)}" type="${attr(type)}" value="${attr(value)}" ${more}></label>`;
   const panel = (heading, content) => `<section class="panel"><h2>${h(heading)}</h2>${content}</section>`;
-  const banner = `<div class="demo-banner"><strong>操作できる架空データの管理デモ</strong>このタブは架空データだけを端末内で操作します。「実TEST管理」ではGoogleログイン後にTESTデータを閲覧できます。実TESTの予約・顧客・CRMの更新は停止中です。実LINE配信は行いません。</div>`;
+  const banner = `<div class="demo-banner"><strong>操作できる架空データの管理デモ</strong>このタブは架空データだけを端末内で操作します。「実TEST管理」ではGoogleログイン後、承認済みの架空TEST顧客と使い捨て予約1件だけを操作できます。CRMは下書き・無送信プレビュー専用です。</div>`;
   const status = value => ({ confirmed: 'デモ予約確定', pending: 'スタッフ確認待ち',
     attended: '来店済み（デモ記録）', cancelled: '取消済み' })[value] || value;
   const save = (description) => {
@@ -637,7 +637,7 @@ function mountOperationsPanel(root,client) {
  }
  async function load(){
   const epoch=generation;
-  try{const data=await client.operations('state');if(epoch!==generation||disposed)return;body.replaceChildren();
+  try{const data=await client.operations('state');if(epoch!==generation||disposed)return;body.replaceChildren();if(message.textContent==='操作するにはログインしてください。')message.textContent='操作対象を読み込みました。';
    if(data.fixturePreparation)body.append(button('架空TEST顧客の用意を確認',()=>preview('fixture.prepare',data.fixturePreparation.requestId,{})));
    const calendarForm=form('TESTカレンダーの空き時間');const from=field(calendarForm,'from','開始日','','date'),through=field(calendarForm,'through','終了日（含まない）','','date');calendarForm.append(button('カレンダーを確認（閲覧のみ）',async()=>{try{const d=await client.operations('calendar',{start:from.value,end:through.value});message.textContent=d.busy.length?d.busy.map(b=>bangkok(b.startAt)+'〜'+bangkok(b.endAt)).join('\n'):'指定期間に使用中の時間はありません。';}catch(e){error(e);}}));calendarForm.onsubmit=e=>e.preventDefault();
    const bookings=data.bookings||client.snapshot().bookings;
@@ -735,6 +735,6 @@ function mountTestPanel(root, client, googleProvider = () => window.google) {
 // Configuration remains empty until a real endpoint and approved client ID exist.
 const localClient = createTestClient({ apiOrigin: 'https://salon-de-six-test-client-api.sales782396.chatgpt.site', clientId: '145507506805-5mkm6j4c99f96k0mc41iv2sc3ci8vpdl.apps.googleusercontent.com' });
 let unmount,unmountOperations;
-function mount() { unmount?.();unmountOperations?.(); const root = document.getElementById('test-connection-root'); if (root) {unmount = mountTestPanel(root, localClient);const operationsRoot=document.getElementById('test-operations-root');if(operationsRoot)operationsRoot.textContent='実TESTの更新は停止中です。予約の作成・変更・取消、顧客編集、CRM下書き保存は利用できません。上のボタンからTESTデータを閲覧できます。操作感の確認には通常メニューの架空デモをご利用ください。';} }
+function mount() { unmount?.();unmountOperations?.(); const root = document.getElementById('test-connection-root'); if (root) {unmount = mountTestPanel(root, localClient);const operationsRoot=document.getElementById('test-operations-root');if(operationsRoot){unmountOperations=mountOperationsPanel(operationsRoot,localClient);const scope=document.createElement('p');scope.textContent='承認済みの架空TEST顧客・使い捨て予約1件だけを操作できます。既存予約2件は保護されています。CRMは下書きと無送信プレビュー専用です。';operationsRoot.prepend(scope);}} }
 if (typeof document !== 'undefined') { document.addEventListener('salon-test-panel', mount); mount(); }
 </script></body></html>
