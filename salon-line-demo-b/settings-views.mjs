@@ -44,8 +44,8 @@ export function renderSettingsView(ctx) {
         <details class="full language-editor"${language === 'th' ? ' open' : ''}><summary>ไทย ${editing.answerTh ? '✓' : ''}</summary><div class="form-grid">${field('questionTh', '質問（タイ語）', editing.questionTh, 'text', 'maxlength="500"', true)}${area('answerTh', '回答（タイ語）', editing.answerTh, 'maxlength="4000"')}</div></details>
         ${save('下書きを保存')}
       </form></section>` : '';
-    return `${heading('質問と回答', '', edit('faq', '', '回答を追加', true))}${filterForm(filterField('faqSearch', '質問・回答を検索') + filterSelect('faqStatus', '表示状態', [['', 'すべて'], ['published', '公開中'], ['draft', '下書き']]) + filterSelect('faqCategory', '分類', [['', 'すべて'], ...categories.map(item => [item, item])]))}
-      ${editor}<div class="stack">${rows.map(item => `<article class="panel"><div class="panel-head"><div class="button-row">${badge(item.published ? '公開中' : '下書き', item.published ? 'mint' : 'peach')}<span class="muted">${esc(item.category)}</span></div>${edit('faq', item.id)}</div><h2>${esc(localized(item, 'question'))}</h2><p class="preserve-lines">${esc(localized(item, 'answer')) || tr('回答は未入力です')}</p><div class="button-row"><span class="badge ${item.answer ? 'mint' : 'muted'}">日本語 ${item.answer ? '✓' : '—'}</span><span class="badge ${item.answerEn ? 'mint' : 'muted'}">English ${item.answerEn ? '✓' : '—'}</span><span class="badge ${item.answerTh ? 'mint' : 'muted'}">ไทย ${item.answerTh ? '✓' : '—'}</span></div><details><summary>${tr('表示を確認')}</summary>${preview(localized(item, 'question'), localized(item, 'answer'))}</details><div class="button-row">${action('faq.publish', item.published ? '下書きに戻す' : '公開前に確認', item.id, item.published ? 'secondary' : 'primary', ` data-value="${item.published ? 'false' : 'true'}"${!item.answer ? ' disabled' : ''}`)}</div></article>`).join('') || empty('一致する質問はありません') }</div>`;
+    return `${heading('質問と回答', '', edit('faq', '', '回答を追加', true))}${filterForm(filterField('faqSearch', '質問・回答を検索') + filterSelect('faqStatus', '表示状態', [['', 'すべて'], ['published', 'デモ表示中'], ['draft', '下書き']]) + filterSelect('faqCategory', '分類', [['', 'すべて'], ...categories.map(item => [item, item])]))}
+      ${editor}<div class="stack">${rows.map(item => `<article class="panel"><div class="panel-head"><div class="button-row">${badge(item.published ? 'デモ表示中' : '下書き', item.published ? 'mint' : 'peach')}<span class="muted">${esc(item.category)}</span></div>${edit('faq', item.id)}</div><h2>${esc(localized(item, 'question'))}</h2><p class="preserve-lines">${esc(localized(item, 'answer')) || tr('回答は未入力です')}</p><div class="button-row"><span class="badge ${item.answer ? 'mint' : 'muted'}">日本語 ${item.answer ? '✓' : '—'}</span><span class="badge ${item.answerEn ? 'mint' : 'muted'}">English ${item.answerEn ? '✓' : '—'}</span><span class="badge ${item.answerTh ? 'mint' : 'muted'}">ไทย ${item.answerTh ? '✓' : '—'}</span></div><details><summary>${tr('表示を確認')}</summary>${preview(localized(item, 'question'), localized(item, 'answer'))}</details><div class="button-row">${action('faq.publish', item.published ? '下書きに戻す' : 'デモに表示', item.id, item.published ? 'secondary' : 'primary', ` data-value="${item.published ? 'false' : 'true'}"${!item.answer ? ' disabled' : ''}`)}</div></article>`).join('') || empty('一致する質問はありません') }</div>`;
   }
 
   function questionsView() {
@@ -114,7 +114,7 @@ export function renderSettingsView(ctx) {
       interests: '興味タグ', botPaused: '自動返信の停止', optedOut: 'お知らせを受け取らない', memo: 'スタッフメモ', handoffStatus: '対応状況',
       customerId: '顧客', menuId: 'メニュー', day: '日付', time: '時刻', status: '状態', performedMenuIds: '実施した施術', notes: '施術メモ',
       question: '質問', answer: '回答', questionEn: '質問（英語）', answerEn: '回答（英語）', questionTh: '質問（タイ語）', answerTh: '回答（タイ語）',
-      category: '分類', published: '公開中', label: '名称', kind: '案内の種類', enabled: '有効', days: '来店後の日数', offsetMinutes: '来店前の分数',
+      category: '分類', published: 'デモ表示中', label: '名称', kind: '案内の種類', enabled: '有効', days: '来店後の日数', offsetMinutes: '来店前の分数',
       interest: '興味タグ', text: '本文', textEn: '本文（英語）', textTh: '本文（タイ語）', sendDate: 'お知らせ日', scheduledAt: '予定日時',
       cancelReason: '取消の理由', nameEn: 'メニュー名（英語）', nameTh: 'メニュー名（タイ語）', description: '説明（日本語）',
       descriptionEn: '説明（英語）', descriptionTh: '説明（タイ語）', duration: '施術時間（分）', cleanup: '準備・片付け（分）',
@@ -217,17 +217,29 @@ export function renderSettingsView(ctx) {
   }
 
   function moreView() {
-    const links = [
+    const groups = [
+      ['毎日の業務', [
+        ['bookings', '予約', '予約カレンダー・追加・変更・来店記録', 'booking', 'mint'],
+        ['customers', '顧客', 'プロフィール・来店履歴・スタッフメモ', 'customers', 'peach'],
+        ['messages', 'メッセージ', '返信下書き・スタッフ対応・自動返信', 'messages', 'lavender'],
+        ['crm', 'フォロー', '8種類のお知らせ・対象者・予定と履歴', 'crm', 'mint'],
+      ]],
+      ['質問への対応', [
       ['questions', '未回答の質問', '回答が必要な質問を確認', 'message', 'peach'],
       ['faq', '質問と回答', '回答の編集と表示確認', 'help', 'lavender'],
+      ]],
+      ['お店の設定', [
       ['menus', 'メニュー・料金', '施術時間・料金・施術席', 'menu', 'mint'],
       ['campaigns', 'キャンペーン・クーポン', '特典と有効期間', 'gift', 'peach'],
       ['richmenu', 'LINEメニュー', 'トーク下部のボタン', 'message', 'mint'],
       ['settings', '営業時間・受付設定', '休業日・スタッフ・施術席', 'settings', 'lavender'],
+      ]],
+      ['接続と履歴', [
       ['audit', '操作履歴', 'いつ・何を変更したか', 'history', 'peach'],
       ['test', '実TEST接続', 'Googleログイン・接続確認', 'shield', 'mint'],
+      ]],
     ];
-    return `${heading('その他')}<div class="grid two">${links.map(([view, title, subtitle, glyph, color]) => `<button type="button" class="panel hub-card" data-nav="${view}"><span class="hub-icon ${color}">${symbol(glyph)}</span><span><strong>${tr(title)}</strong><small>${tr(subtitle)}</small></span>${symbol('arrow')}</button>`).join('')}</div>`;
+    return `${heading('すべての機能')}<div class="feature-directory">${groups.map(([label,links]) => `<section class="feature-group"><h2>${tr(label)}</h2><div class="grid two">${links.map(([view, title, subtitle, glyph, color]) => `<button type="button" class="panel hub-card" data-nav="${view}"><span class="hub-icon ${color}">${symbol(glyph)}</span><span><strong>${tr(title)}</strong><small>${tr(subtitle)}</small></span>${symbol('arrow')}</button>`).join('')}</div></section>`).join('')}</div>`;
   }
 
   return ({ faq: faqView, questions: questionsView, menus: menusView, campaigns: campaignsView, richmenu: richmenuView, settings: settingsView, audit: auditView, more: moreView })[ui.view]?.() || '';

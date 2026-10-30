@@ -10,9 +10,9 @@ const ALLOWED_EDITS = new Set(['fixture.prepare', 'booking.create', 'booking.res
 const CRM_IDS = new Set(['reminder_day_before', 'reminder_day_of', 'reminder_hours_before', 'thank_you_after_visit',
   'followup_days_after_visit', 'birthday', 'interest_campaign', 'visit_segment_campaign'].map(kind => `client-${kind.replaceAll('_', '-')}`));
 const VALID_ID = /^[a-zA-Z0-9-]{1,64}$/;
-const OPERATION_NAMES = ['架空TEST顧客の用意', '架空TEST予約の作成', '予約日時変更', '予約取消', 'プロフィール変更', '言語・配信停止・bot・メモの変更', 'CRM下書き保存', '操作'];
+const OPERATION_NAMES = ['架空TEST顧客の用意', '架空TEST予約の作成', '予約日時変更', '予約取消', 'プロフィール変更', '言語・配信停止・自動応答・メモの変更', 'CRM下書き保存', '操作'];
 const CRM_LABELS = new Set(['来店前日', '来店当日', '来店1時間前', '来店後のお礼', '再来店', '誕生日', '興味別', '施術履歴別']);
-const PREVIEW_LABELS = new Set(['開始（バンコク）', '終了（バンコク）', '状態', '言語', '配信停止', 'bot停止', 'スタッフメモ', '氏名', '誕生日', '誕生日の利用同意', '興味タグ', '案内の種類', '日本語', 'English', 'ไทย', 'プレビューON', '時刻', '来店後の日数', '来店前の分数', '実施メニュー']);
+const PREVIEW_LABELS = new Set(['開始（バンコク）', '終了（バンコク）', '状態', '言語', '配信停止', '自動応答の停止', 'スタッフメモ', '氏名', '誕生日', '誕生日の利用同意', '興味タグ', '案内の種類', '日本語', 'English', 'ไทย', 'プレビューON', '時刻', '来店後の日数', '来店前の分数', '実施メニュー']);
 
 // Translate only system labels; keep customer names, IDs and preview values verbatim.
 export function translateOperationText(value, t, kind = 'static') {
@@ -28,7 +28,9 @@ export function translateOperationText(value, t, kind = 'static') {
   if (kind === 'preview') {
     return value.split('\n').map(line => {
       const separator = line.indexOf('：'), label = line.slice(0, separator);
-      return separator >= 0 && PREVIEW_LABELS.has(label) ? t(label) + '：' + line.slice(separator + 1)
+      const rawValue=line.slice(separator+1);
+      const displayValue=label==='案内の種類'&&CRM_LABELS.has(rawValue)?t(rawValue):rawValue;
+      return separator >= 0 && PREVIEW_LABELS.has(label) ? t(label) + '：' + displayValue
         : ['未設定', '取消（履歴を残す）'].includes(line) ? t(line) : line;
     }).join('\n');
   }
@@ -50,7 +52,7 @@ export function createScopedOperationsClient(client) {
   const reject = code => { throw new Error(code); };
   const clear = () => { epoch++; preparationId = ''; stateAcquired = false; customerIds.clear(); draftIds.clear(); bookingIds.clear(); previews.clear(); };
   const unsubscribe = client.subscribe(state => {
-    connected = state.status === 'connected';
+    connected = state.status === 'connected' && state.principal?.role !== 'participant';
     if (!connected) clear();
   });
   const safeSnapshot = state => ({ ...state, status: state.status === 'connected' ? 'connected' : 'ready', bookings: [] });
@@ -115,6 +117,23 @@ export function createScopedOperationsClient(client) {
 }
 
 const COPY = {
+  'ログイン中の役割': ['Signed-in role', 'บทบาทที่เข้าสู่ระบบ'],
+  'Googleアカウントで確認': ['Verify with your Google account', 'ยืนยันด้วยบัญชี Google'],
+  '共用アカウント・個人の識別なし': ['Shared account · no individual attribution', 'บัญชีส่วนกลาง · ไม่ระบุตัวบุคคล'],
+  'オーナーアカウント': ['Owner account', 'บัญชีเจ้าของ'],
+  'スタッフアカウント': ['Staff account', 'บัญชีพนักงาน'],
+  '参加者': ['Participant', 'ผู้เข้าร่วม'],
+  '閲覧のみ': ['Read only', 'ดูได้อย่างเดียว'],
+  'このアカウントは閲覧のみです': ['This account has read-only access', 'บัญชีนี้มีสิทธิ์ดูข้อมูลเท่านั้น'],
+  '自動応答を停止': ['Stop automatic replies', 'หยุดการตอบกลับอัตโนมัติ'],
+  '自動応答停止の確認': ['Confirm stopping automatic replies', 'ยืนยันการหยุดตอบกลับอัตโนมัติ'],
+  '編集内容と確認画面を破棄して、操作対象を読み直しますか？': ['Discard your edits and review, and reload the available records?', 'ละทิ้งข้อมูลที่แก้ไขและหน้าตรวจสอบ แล้วโหลดรายการที่จัดการได้ใหม่หรือไม่?'],
+  '変更を破棄して再読込': ['Discard changes and reload', 'ละทิ้งการแก้ไขและโหลดใหม่'],
+  '予約の操作': ['Manage appointments', 'จัดการการจอง'],
+  '顧客の編集': ['Edit customers', 'แก้ไขข้อมูลลูกค้า'],
+  'CRM下書き・送信候補': ['CRM drafts and preview recipients', 'แบบร่าง CRM และผู้รับตัวอย่าง'],
+  'デモに戻るとログアウトし、表示したTESTデータを消去します。': ['Returning to the demo signs you out and clears displayed TEST data.', 'เมื่อกลับไปที่ตัวอย่าง ระบบจะออกจากบัญชีและล้างข้อมูล TEST ที่แสดง'],
+  '保存済みの要約のみ表示します。返信送信はまだ接続していません。': ['Saved summaries only. Sending replies is not connected yet.', 'แสดงเฉพาะสรุปที่บันทึกไว้ ยังไม่ได้เชื่อมต่อการส่งข้อความตอบกลับ'],
   '接続の詳細': ['Connection details', 'รายละเอียดการเชื่อมต่อ'],
   '停止中の接続設定を確認': ['Check configuration while updates are stopped', 'ตรวจสอบการตั้งค่าเมื่อหยุดการอัปเดต'],
   '更新機能を停止中のときだけ確認できます。': ['This check is available only while updates are stopped.', 'ตรวจสอบได้เฉพาะเมื่อหยุดฟังก์ชันอัปเดตแล้ว'],
@@ -159,7 +178,7 @@ const COPY = {
   '取消済み': ['Cancelled', 'ยกเลิกแล้ว'], '来店済み': ['Visited', 'เข้าใช้บริการแล้ว'],
   'お客様': ['Customer', 'ลูกค้า'], 'スタッフ': ['Staff', 'พนักงาน'], '自動応答': ['Automated reply', 'ตอบกลับอัตโนมัติ'],
 };
-const STYLES = `.test-view{display:grid;gap:22px;min-width:0}.test-view .panel{margin:0}.test-view-status{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.test-view-status .badge{white-space:normal}.test-view-muted{color:var(--muted,#667b70);font-size:.9rem;line-height:1.7}.test-view-account{font-weight:650;overflow-wrap:anywhere}.test-view-error{padding:14px 17px;background:#fff1ed;color:#88372c;border:1px solid #e6b6ab;border-radius:14px}.test-view-error[hidden],.test-view [hidden]{display:none!important}.test-view-data{display:grid;gap:22px;min-width:0}.test-view-record{padding:16px 0;border-bottom:1px solid #e4eadf;overflow-wrap:anywhere}.test-view-record:last-child{border:0}.test-view-record strong{display:block}.test-view-record p{margin:6px 0 0}.test-view-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:22px}.test-view-customer-list{display:flex;flex-wrap:wrap;gap:10px}.test-view-summary{white-space:pre-wrap;overflow-wrap:anywhere}.test-view-operations>div>section{border:1px solid #dde7d9;border-radius:16px;margin:12px 0;padding:0 18px;background:#fffefa}.test-view-operations details>summary{padding:17px 0;font-weight:700;cursor:pointer;overflow-wrap:anywhere}.test-view-operations details>.form-grid{padding:2px 0 20px}.test-view-operations .form-grid>p{grid-column:1/-1}.test-view-operations .field input[type=checkbox]{width:22px;height:22px;align-self:flex-start}.test-view-operations>p,.test-view-operations pre{white-space:pre-wrap;overflow-wrap:anywhere}.test-view-operations>section:not(:empty){border:2px solid #d8bf86;background:#fff9e9;border-radius:18px;padding:22px;margin-top:20px}.test-view-operations>section button{margin:8px 10px 0 0}.test-view-operations pre{font:inherit;background:#fffefa;padding:12px;border-radius:10px}.test-view-google{margin-top:18px;min-height:0;overflow:auto}@media(max-width:720px){.test-view-grid{grid-template-columns:minmax(0,1fr)}.test-view .button-row>.btn{flex:1 1 40%}.test-view-operations .form-grid{grid-template-columns:minmax(0,1fr)}.test-view-operations .form-grid>button{width:100%}.test-view-operations>section:not(:empty){padding:16px}}`;
+const STYLES = `.test-view{display:grid;gap:22px;min-width:0}.test-view .panel{margin:0}.test-view-status{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.test-view-status .badge{white-space:normal}.test-view-muted{color:var(--muted,#667b70);font-size:.9rem;line-height:1.7}.test-view-account{font-weight:650;overflow-wrap:anywhere}.test-view-error{padding:14px 17px;background:#fff1ed;color:#88372c;border:1px solid #e6b6ab;border-radius:14px}.test-view-error[hidden],.test-view [hidden]{display:none!important}.test-view-data{display:grid;gap:22px;min-width:0}.test-view-record{padding:16px 0;border-bottom:1px solid #e4eadf;overflow-wrap:anywhere}.test-view-record:last-child{border:0}.test-view-record strong{display:block}.test-view-record p{margin:6px 0 0}.test-view-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:22px}.test-view-grid-single{grid-template-columns:minmax(0,1fr)}.test-view-customer-list{display:flex;flex-wrap:wrap;gap:10px}.test-view-summary{white-space:pre-wrap;overflow-wrap:anywhere}.test-view-operations>div>section{border:1px solid #dde7d9;border-radius:16px;margin:12px 0;padding:0 18px;background:#fffefa}.test-view-operations details>summary{padding:17px 0;font-weight:700;cursor:pointer;overflow-wrap:anywhere}.test-view-operations details>.form-grid{padding:2px 0 20px}.test-view-operations .form-grid>p{grid-column:1/-1}.test-view-operations .field input[type=checkbox]{width:22px;height:22px;align-self:flex-start}.test-view-operations>p,.test-view-operations pre{white-space:pre-wrap;overflow-wrap:anywhere}.test-view-operations>section:not(:empty){border:2px solid #d8bf86;background:#fff9e9;border-radius:18px;padding:22px;margin-top:20px}.test-view-operations>section button{margin:8px 10px 0 0}.test-view-operations pre{font:inherit;background:#fffefa;padding:12px;border-radius:10px}.test-view-google{margin-top:18px;min-height:0;overflow:auto}@media(max-width:720px){.test-view-grid{grid-template-columns:minmax(0,1fr)}.test-view .button-row>.btn{flex:1 1 40%}.test-view-operations .form-grid{grid-template-columns:minmax(0,1fr)}.test-view-operations .form-grid>button{width:100%}.test-view-operations>section:not(:empty){padding:16px}}`;
 let googleLoad;
 function loadGoogle(doc, win) {
   if (win.google?.accounts?.id) return Promise.resolve(win.google);
@@ -175,7 +194,9 @@ function loadGoogle(doc, win) {
   return googleLoad;
 }
 
-export function mountLiveTest(root, { t = value => value, locale = 'ja', onStatus = () => {}, connection = null } = {}) {
+export function mountLiveTest(root, { t = value => value, locale = 'ja', onStatus = () => {}, connection = null, section = 'all' } = {}) {
+  if (!['all', 'bookings', 'customers', 'messages', 'crm', 'connection'].includes(section)) throw new Error('invalid_section');
+  const show = value => section === 'all' || section === value;
   const doc = root.ownerDocument, win = doc.defaultView || window;
   const lang = ['ja', 'en', 'th'].includes(locale) ? locale : 'ja';
   const tx = value => { const translated = t(value); return translated !== value ? translated : COPY[value]?.[lang === 'th' ? 1 : 0] && lang !== 'ja' ? COPY[value][lang === 'th' ? 1 : 0] : value; };
@@ -191,23 +212,24 @@ export function mountLiveTest(root, { t = value => value, locale = 'ja', onStatu
   const container = node('div', '', 'test-view'), style = node('style', STYLES);
   const auth = panel('実TEST管理'), status = node('p', '', 'test-view-status'), badge = node('span', '', 'badge mint');
   badge.setAttribute('role', 'status'); badge.setAttribute('aria-live', 'polite'); status.append(badge);
-  const account = node('p', 'naokana.consulting@gmail.com', 'test-view-account');
+  const account = node('p', tx('Googleアカウントで確認'), 'test-view-account');
   const accountLabel = node('p', tx('登録済みアカウントのみ'), 'test-view-muted');
   const actions = node('div', '', 'button-row'), login = button('Googleでログイン', 'primary'), refresh = button('最新の情報に更新'), logout = button('ログアウト');
   actions.append(login, refresh, logout);
   const googleButton = node('div', '', 'test-view-google'), errors = node('p', '', 'test-view-error');
   errors.hidden = true; errors.setAttribute('role', 'alert');
   const details = node('p', tx('登録済みTESTデータだけを表示します。会話は保存済み要約、予約は保存記録です。'), 'test-view-muted');
-  const leave = node('p', tx('この画面を離れるとログアウトし、表示したTESTデータを消去します。'), 'test-view-muted');
+  const leave = node('p', tx('デモに戻るとログアウトし、表示したTESTデータを消去します。'), 'test-view-muted');
   const connectionDetails = node('details'), verify = button('停止中の接続設定を確認'), verificationResult = node('p', '', 'test-view-muted');
   verificationResult.setAttribute('role', 'status');
   connectionDetails.append(node('summary', tx('接続の詳細')), node('p', tx('更新機能を停止中のときだけ確認できます。'), 'test-view-muted'), verify, verificationResult);
   const dataRoot = node('div', '', 'test-view-data');
-  auth.append(status, accountLabel, account, actions, googleButton, errors, details, leave, connectionDetails);
+  auth.append(status, accountLabel, account, actions, googleButton, errors, details, leave);
+  if (show('connection')) auth.append(connectionDetails);
   container.append(style, auth, dataRoot); root.replaceChildren(container);
   container.addEventListener('input', event => {
     const form = event.target.closest('.test-view-operations form');
-    if (form) form.dataset.dirty = 'true';
+    if (form) { form.dataset.dirty = 'true'; controls(); }
   });
 
   const reportStatus = state => {
@@ -230,10 +252,11 @@ export function mountLiveTest(root, { t = value => value, locale = 'ja', onStatu
   };
   function controls() {
     const authenticated = client.isAuthenticated();
-    verify.disabled = !authenticated || busy || verifying;
+    connectionDetails.hidden = latest.principal?.role === 'participant';
+    verify.disabled = !authenticated || latest.principal?.role === 'participant' || busy || verifying;
     login.disabled = !allowedOrigin || !client.configured || busy || latest.status === 'signing_in' || authenticated;
-    refresh.disabled = !authenticated || busy || selecting;
-    logout.disabled = ['ready', 'not_connected'].includes(latest.status) && !busy;
+    refresh.disabled = !authenticated || busy || selecting || !!unmountOperations?.hasUnsavedChanges?.() || !!unmountOperations?.isBusy?.();
+    logout.disabled = !!unmountOperations?.isBusy?.() || (['ready', 'not_connected'].includes(latest.status) && !busy);
     dataRoot.querySelectorAll('[data-test-customer]').forEach(element => { element.disabled = busy || selecting; });
   }
   function enhanceOperations(operationsRoot) {
@@ -255,7 +278,7 @@ export function mountLiveTest(root, { t = value => value, locale = 'ja', onStatu
     }
     // Only the status/review paragraphs are system text. Form values and dynamic
     // customer/service option labels are deliberately outside these selectors.
-    for (const element of operationsRoot.querySelectorAll(':scope > p, :scope > section > p, select[name="language"] > option')) {
+    for (const element of operationsRoot.querySelectorAll(':scope > p, :scope > section > p, select[name="language"] > option, select > option[value=""]')) {
       const translated = translateOperationText(element.textContent, tx);
       if (translated !== element.textContent) element.textContent = translated;
     }
@@ -265,15 +288,16 @@ export function mountLiveTest(root, { t = value => value, locale = 'ja', onStatu
     }
   }
   function mountOperations() {
-    const section = panel('予約・顧客・フォローの操作');
-    section.append(node('p', tx('操作できる対象だけ表示します。変更前に内容を確認できます。'), 'test-view-muted'));
-    const operationsRoot = node('div', '', 'test-view-operations'); section.append(operationsRoot); dataRoot.append(section);
+    const operationsSection = panel(({bookings:'予約の操作',customers:'顧客の編集',crm:'CRM下書き・送信候補'})[section] || '予約・顧客・フォローの操作');
+    operationsSection.append(node('p', tx('操作できる対象だけ表示します。変更前に内容を確認できます。'), 'test-view-muted'));
+    const operationsRoot = node('div', '', 'test-view-operations'); operationsSection.append(operationsRoot); dataRoot.append(operationsSection);
     scoped = createScopedOperationsClient(client);
-    unmountOperations = mountOperationsPanel(operationsRoot, scoped);
+    unmountOperations = mountOperationsPanel(operationsRoot, scoped, { section });
     enhanceOperations(operationsRoot);
-    if (win.MutationObserver) { operationsObserver = new win.MutationObserver(() => enhanceOperations(operationsRoot)); operationsObserver.observe(operationsRoot, { childList: true, subtree: true }); }
+    if (win.MutationObserver) { operationsObserver = new win.MutationObserver(() => { enhanceOperations(operationsRoot); controls(); }); operationsObserver.observe(operationsRoot, { childList: true, subtree: true }); }
   }
   function renderData(state) {
+    if (section === 'connection') { dataRoot.replaceChildren(); return; }
     // Keep the operations panel alive while a conversation selection changes.
     const operationsSection = dataRoot.lastElementChild?.querySelector('.test-view-operations') ? dataRoot.lastElementChild : null;
     if (operationsSection) operationsSection.remove();
@@ -302,19 +326,27 @@ export function mountLiveTest(root, { t = value => value, locale = 'ja', onStatu
         node('p', tx(({ confirmed: '予約確定', pending_staff: '確認待ち', pending: '確認待ち', cancelled: '取消済み', attended: '来店済み' })[booking.status] || booking.status || '—'), 'test-view-muted'));
       bookings.append(row);
     }
-    grid.append(customers, bookings); dataRoot.append(grid);
+    if (show('customers') || section === 'messages') grid.append(customers);
+    if (show('bookings')) grid.append(bookings);
+    if (section !== 'all') grid.classList.add('test-view-grid-single');
+    if (grid.children.length) dataRoot.append(grid);
     const conversation = panel('会話の要約');
     if (selectedName) conversation.append(node('p', selectedName, 'test-view-account'));
     if (selecting) conversation.append(node('p', tx('会話を読み込んでいます…'), 'test-view-muted'));
     else if (!selectedId) conversation.append(node('p', tx('顧客を選ぶと、保存済みの要約を確認できます'), 'test-view-muted'));
-    else if (!state.messages.length) conversation.append(node('p', tx('保存済みの会話要約はありません'), 'test-view-muted'));
+    else if (!state.messages.length || state.conversationCustomerId !== selectedId) conversation.append(node('p', tx('保存済みの会話要約はありません'), 'test-view-muted'));
     else for (const message of state.messages) {
       const row = node('article', '', 'test-view-record');
       const role = ({ inbound: 'お客様', customer: 'お客様', outbound: '自動応答', bot: '自動応答', staff: 'スタッフ' })[message.direction] || '';
       row.append(node('small', `${time(message.at)}${role ? ` · ${tx(role)}` : ''}`, 'test-view-muted'), node('p', message.text || '', 'test-view-summary')); conversation.append(row);
     }
-    dataRoot.append(conversation);
-    if (operationsSection) dataRoot.append(operationsSection); else mountOperations();
+    if (show('messages') || section === 'customers') dataRoot.append(conversation);
+    if (section === 'messages') {
+      dataRoot.append(node('p', tx('保存済みの要約のみ表示します。返信送信はまだ接続していません。'), 'test-view-muted'));
+    } else if (state.principal?.role === 'participant' || state.mode === 'test_read_only') {
+      if (operationsSection) disposeOperations();
+      dataRoot.append(node('p', tx('このアカウントは閲覧のみです'), 'test-view-muted'));
+    } else if (operationsSection) dataRoot.append(operationsSection); else mountOperations();
   }
   const statusText = { ready: 'ログインしてください', signing_in: 'ログインを準備しています…', authenticated: 'TESTデータを読み込んでいます…', connected: '実TESTデータを取得済み', expired: 'ログイン期限が切れました', error: '接続を確認できませんでした', not_connected: '接続を確認できませんでした' };
   const unsubscribe = client.subscribe(state => {
@@ -325,6 +357,10 @@ export function mountLiveTest(root, { t = value => value, locale = 'ja', onStatu
       if (['expired', 'error', 'ready', 'not_connected'].includes(state.status)) { busy = false; googleButton.replaceChildren(); }
     }
     displayedStatus = state.status;
+    const authenticated = client.isAuthenticated();
+    accountLabel.textContent = tx(authenticated ? 'ログイン中の役割' : '登録済みアカウントのみ');
+    const roleLabel = ({ shared_admin: '共用アカウント・個人の識別なし', owner: 'オーナーアカウント', staff: 'スタッフアカウント', participant: '参加者' })[state.principal?.role] || '共用アカウント・個人の識別なし';
+    account.textContent = authenticated ? tx(roleLabel) + (state.mode === 'test_read_only' || state.principal?.role === 'participant' ? ` · ${tx('閲覧のみ')}` : '') : tx('Googleアカウントで確認');
     badge.textContent = tx(allowedOrigin ? statusText[state.status] || statusText.error : 'このローカルプレビューではGoogleログインを利用できません');
     badge.className = `badge ${state.status === 'connected' ? 'mint' : 'muted'}`;
     reportStatus(state);
@@ -358,14 +394,14 @@ export function mountLiveTest(root, { t = value => value, locale = 'ja', onStatu
     finally { if (!disposed && current === uiEpoch) { busy = false; controls(); } }
   };
   refresh.onclick = async () => {
-    if (disposed || busy || selecting || !client.isAuthenticated()) return;
+    if (disposed || busy || selecting || unmountOperations?.hasUnsavedChanges?.() || unmountOperations?.isBusy?.() || !client.isAuthenticated()) return;
     busy = true; errors.hidden = true; controls(); const current = uiEpoch;
     try { await client.refresh(); }
     catch (error) { if (!disposed && error.message !== 'stale_response') errorMessage(error); }
     finally { if (current === uiEpoch && !disposed) { busy = false; selectedId = ''; selectedName = ''; if (latest.status === 'connected') renderData(latest); controls(); } }
   };
   verify.onclick = async () => {
-    if (disposed || busy || verifying || !client.isAuthenticated()) return;
+    if (disposed || busy || verifying || latest.principal?.role === 'participant' || !client.isAuthenticated()) return;
     const current = ++verificationEpoch; verifying = true; controls();
     verificationResult.textContent = tx('接続設定を確認しています…');
     try {
@@ -380,22 +416,24 @@ export function mountLiveTest(root, { t = value => value, locale = 'ja', onStatu
     } finally { if (!disposed && current === verificationEpoch) { verifying = false; controls(); } }
   };
   logout.onclick = () => {
+    if (unmountOperations?.isBusy?.()) return;
     discard(); errors.hidden = true; googleButton.replaceChildren();
     try { win.google?.accounts?.id?.cancel(); win.google?.accounts?.id?.disableAutoSelect(); } catch { /* No automatic sign-in is used. */ }
     void client.logout();
   };
-  const expiryTimer = win.setInterval(() => { if (!disposed) client.snapshot(); }, 1000);
+  const expiryTimer = win.setInterval(() => { if (!disposed) { client.snapshot(); controls(); } }, 1000);
   const cleanup = () => {
     if (disposed) return;
     disposed = true; discard(); unsubscribe(); win.clearInterval(expiryTimer);
     try { win.google?.accounts?.id?.cancel(); } catch { /* The local session is still cleared. */ }
-    if (!retainConnection) void client.logout(); root.replaceChildren();
+    if (retainConnection) client.cancelConversation?.(); else void client.logout(); root.replaceChildren();
     reportStatus({ status: 'ready' });
   };
   // Re-rendering labels on this same route may retain its in-memory session.
   // Navigation away still uses ordinary cleanup and always logs out.
+  cleanup.isBusy = () => !disposed && (busy || selecting || verifying || !!unmountOperations?.isBusy?.());
   cleanup.hasUnsavedChanges = () => !disposed && (Array.from(container.querySelectorAll('form')).some(form => form.dataset.dirty === 'true')
-    || container.querySelectorAll('.test-view-operations pre').length > 0);
+    || container.querySelectorAll('.test-view-operations pre').length > 0 || !!unmountOperations?.hasUnsavedChanges?.());
   cleanup.retainConnection = () => {
     retainConnection = !disposed && client.isAuthenticated();
     return retainConnection ? client : null;

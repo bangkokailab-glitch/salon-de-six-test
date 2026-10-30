@@ -1,6 +1,36 @@
 // UI labels are separate from editable customer names, replies and other content.
 // Japanese keys are stable across all views; unknown content is returned unchanged.
 const rows = `
+フォロー|Follow-up|ติดตามลูกค้า
+予約を取り消す|Cancel booking|ยกเลิกการจอง
+すべての機能|All features|ฟังก์ชันทั้งหมด
+毎日の業務|Daily tasks|งานประจำวัน
+質問への対応|Questions & answers|คำถามและคำตอบ
+お店の設定|Salon settings|การตั้งค่าร้าน
+接続と履歴|Connections & history|การเชื่อมต่อและประวัติ
+予約カレンダー・追加・変更・来店記録|Calendar, bookings & visits|ปฏิทิน การจอง และบันทึกการเข้ารับบริการ
+プロフィール・来店履歴・スタッフメモ|Profiles, visits & staff notes|ข้อมูลลูกค้า ประวัติการเข้ารับบริการ และบันทึกพนักงาน
+返信下書き・スタッフ対応・自動返信|Drafts, staff replies & automatic replies|ร่างข้อความ พนักงานตอบ และการตอบกลับอัตโนมัติ
+8種類のお知らせ・対象者・予定と履歴|8 follow-ups, recipients & history|การติดตาม 8 แบบ ผู้รับ และประวัติ
+返信下書き|Reply drafts|ร่างข้อความตอบกลับ
+顧客の詳細|Customer details|รายละเอียดลูกค้า
+会話の詳細|Conversation details|รายละเอียดการสนทนา
+一覧に戻る|Back to list|กลับไปที่รายการ
+顧客を追加しました。予約の入力を続けられます|Customer added. Continue your booking.|เพิ่มลูกค้าแล้ว กรอกการจองต่อได้
+プレビューを取り消す|Cancel preview|ยกเลิกตัวอย่าง
+自動応答を停止中|Automatic replies paused|หยุดการตอบกลับอัตโนมัติอยู่
+自動応答の停止|Automatic replies paused|หยุดการตอบกลับอัตโนมัติ
+言語・配信停止・自動応答・メモの変更|Update language, opt-out, automatic replies and notes|แก้ไขภาษา การรับข้อความ การตอบกลับอัตโนมัติ และบันทึก
+ログイン中の役割|Signed-in role|บทบาทที่เข้าสู่ระบบ
+Googleアカウントで確認|Verify with your Google account|ยืนยันด้วยบัญชี Google
+共用アカウント・個人の識別なし|Shared account · no individual attribution|บัญชีส่วนกลาง · ไม่ระบุตัวบุคคล
+オーナーアカウント|Owner account|บัญชีเจ้าของ
+スタッフアカウント|Staff account|บัญชีพนักงาน
+参加者|Participant|ผู้เข้าร่วม
+閲覧のみ|Read only|ดูได้อย่างเดียว
+このアカウントは閲覧のみです|This account has read-only access|บัญชีนี้มีสิทธิ์ดูข้อมูลเท่านั้น
+自動応答を停止|Stop automatic replies|หยุดการตอบกลับอัตโนมัติ
+自動応答停止の確認|Confirm stopping automatic replies|ยืนยันการหยุดตอบกลับอัตโนมัติ
 この条件で候補が見つかりません|No suggested times match these conditions|ไม่พบเวลาที่แนะนำตามเงื่อนไขนี้
 実TESTデータを表示中|Showing TEST data|กำลังแสดงข้อมูล TEST
 実TEST・読み込み中|TEST · loading|TEST · กำลังโหลด
@@ -140,6 +170,8 @@ LINE登録のみ|LINE friend only|เพิ่มเพื่อน LINE เท�
 停止中|Paused|หยุดชั่วคราว
 元の質問を確認|View original question|ดูคำถามต้นฉบับ
 公開中|Published|เผยแพร่แล้ว
+デモ表示中|Shown in demo|แสดงในเดโม
+デモに表示|Show in demo|แสดงในเดโม
 公開前に確認|Review before publishing|ตรวจสอบก่อนเผยแพร่
 内容を保存|Save details|บันทึกรายละเอียด
 内容を確認|Review details|ตรวจสอบรายละเอียด
@@ -313,6 +345,7 @@ LINE登録のみ|LINE friend only|เพิ่มเพื่อน LINE เท�
 返信の下書きを保存|Save reply draft|บันทึกฉบับร่างข้อความตอบ
 返信待ち|Awaiting reply|รอตอบกลับ
 送信される文面の確認|Message preview|ตัวอย่างข้อความ
+送信せず文面を確認|Preview without sending|ดูตัวอย่างโดยไม่ส่ง
 送信なし|No sending|ไม่ส่งข้อความ
 週|Week|สัปดาห์
 過去の日時は選べません|Choose a future date and time|เลือกวันและเวลาในอนาคต
@@ -746,4 +779,24 @@ Object.assign(messages.th, {
   "接続設定を確認できませんでした。": "ไม่สามารถยืนยันการตั้งค่าได้",
   "予約・顧客・フォローの操作": "จัดการการจอง ลูกค้า และการติดตาม",
   "操作できる対象だけ表示します。変更前に内容を確認できます。": "แสดงเฉพาะรายการที่จัดการได้ ตรวจสอบการเปลี่ยนแปลงก่อนยืนยัน"
+});
+
+Object.assign(messages.en, {
+  "編集内容と確認画面を破棄して、操作対象を読み直しますか？": "Discard your edits and review, and reload the available records?",
+  "変更を破棄して再読込": "Discard changes and reload",
+  "予約の操作": "Manage appointments",
+  "顧客の編集": "Edit customers",
+  "CRM下書き・送信候補": "CRM drafts and preview recipients",
+  "デモに戻るとログアウトし、表示したTESTデータを消去します。": "Returning to the demo signs you out and clears displayed TEST data.",
+  "保存済みの要約のみ表示します。返信送信はまだ接続していません。": "Saved summaries only. Sending replies is not connected yet."
+});
+
+Object.assign(messages.th, {
+  "編集内容と確認画面を破棄して、操作対象を読み直しますか？": "ละทิ้งข้อมูลที่แก้ไขและหน้าตรวจสอบ แล้วโหลดรายการที่จัดการได้ใหม่หรือไม่?",
+  "変更を破棄して再読込": "ละทิ้งการแก้ไขและโหลดใหม่",
+  "予約の操作": "จัดการการจอง",
+  "顧客の編集": "แก้ไขข้อมูลลูกค้า",
+  "CRM下書き・送信候補": "แบบร่าง CRM และผู้รับตัวอย่าง",
+  "デモに戻るとログアウトし、表示したTESTデータを消去します。": "เมื่อกลับไปที่ตัวอย่าง ระบบจะออกจากบัญชีและล้างข้อมูล TEST ที่แสดง",
+  "保存済みの要約のみ表示します。返信送信はまだ接続していません。": "แสดงเฉพาะสรุปที่บันทึกไว้ ยังไม่ได้เชื่อมต่อการส่งข้อความตอบกลับ"
 });

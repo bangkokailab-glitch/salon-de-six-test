@@ -1,7 +1,7 @@
 import {seedDemo,validateState,applyAction} from './domain.mjs';
 import {e,icon,dateAdd,menuName} from './html.mjs';
 import {translator} from './i18n.mjs';
-import {home,bookings,customers,messagesView,crm,attendForm} from './views.mjs';
+import {home,bookings,customers,messagesView,crm,attendForm,customerForm} from './views.mjs';
 import {renderSettingsView} from './settings-views.mjs';
 import {mountLiveTest} from './test-view.mjs';
 
@@ -15,25 +15,31 @@ let preferred='ja';try{preferred=localStorage.getItem('salon-b-language')||'ja';
 const ui={locale:['ja','en','th'].includes(preferred)?preferred:'ja',view:'home',day:today,calendarMode:'day',selectedCustomer:'D-A',selectedMessage:'',selectedBooking:'',messageFilter:'open',crmTab:'rules',filters:{},edit:null,dirty:false,previewAt:`${today}T10:00`};
 const app=document.querySelector('#app'),modalRoot=document.querySelector('#modal-root'),toastEl=document.querySelector('#toast');
 let unmountLive=null,modal=null,busy=false,toastTimer,focusBeforeModal=null;
-const titles={home:'ホーム',bookings:'予約',customers:'顧客',messages:'メッセージ',crm:'CRM・フォロー',more:'その他',faq:'質問と回答',questions:'未回答の質問',menus:'メニュー・料金',campaigns:'キャンペーン・クーポン',richmenu:'LINEメニュー',settings:'営業時間・受付設定',audit:'操作履歴',test:'実TEST接続'};
+const titles={home:'ホーム',bookings:'予約',customers:'顧客',messages:'メッセージ',crm:'CRM・フォロー',more:'すべての機能',faq:'質問と回答',questions:'未回答の質問',menus:'メニュー・料金',campaigns:'キャンペーン・クーポン',richmenu:'LINEメニュー',settings:'営業時間・受付設定',audit:'操作履歴',test:'実TEST接続'};
 const aliases={overview:'home',booking:'bookings',inbox:'messages',knowledge:'faq',shifts:'settings',account:'test',coupons:'campaigns'};
+const testSections={all:'実TEST接続',bookings:'予約',customers:'顧客',messages:'メッセージ',crm:'CRM・フォロー',connection:'実TEST接続'};
+const testSection=hash=>{const part=(hash||'').replace(/^#\/?/,'').split(/[?\/]/)[1];return Object.hasOwn(testSections,part)?part:'all';};
+const currentPath=()=>ui.view==='test'&&ui.testSection!=='all'?`test/${ui.testSection}`:ui.view;
 const t=key=>translator(ui.locale)(key);
 const context=()=>({state,ui,t,e,icon});
 const route=hash=>{const name=(hash||'').replace(/^#\/?/,'').split(/[?\/]/)[0];return aliases[name]|| (Object.hasOwn(titles,name)?name:'home');};
-const navItems=[['bookings','予約','booking'],['customers','顧客','customers'],['messages','メッセージ','messages'],['crm','CRM','crm'],['more','その他','more']];
+const navItems=[['bookings','予約','booking'],['customers','顧客','customers'],['messages','メッセージ','messages'],['crm','フォロー','crm'],['more','すべて','more']];
+function focusPane(selector){const pane=document.querySelector(selector);if(!pane)return;pane.setAttribute?.('tabindex','-1');pane.focus({preventScroll:true});if(window.matchMedia?.('(max-width: 820px)').matches)pane.scrollIntoView({block:'start'});}
+function bookingResource(form){const menu=state.menus.find(m=>m.id===form?.querySelector('[name=menuId]')?.value),resource=state.settings.resources.find(r=>r.id===menu?.resource),box=form?.querySelector('[data-booking-resource]');if(box)box.textContent=`${t('設備はメニューに合わせて選ばれます')} · ${resource?.name||''} · ${menu?.duration} ${t('分')} + ${t('準備')} ${menu?.cleanup} ${t('分')}`;}
 function notify(message){clearTimeout(toastTimer);toastEl.textContent=t(message);toastEl.hidden=false;toastTimer=setTimeout(()=>toastEl.hidden=true,4200);}
 function render(){
   const liveConnection=ui.view==='test'?unmountLive?.retainConnection?.():null;
   unmountLive?.();unmountLive=null;
   document.documentElement.lang=ui.locale;
   const skip=document.querySelector('.skip-link');if(skip)skip.textContent=t('メインへ');
-  document.title=`${t(titles[ui.view])} | Salon de Six`;
-  const active=view=>ui.view===view||(view==='more'&&!['home','bookings','customers','messages','crm'].includes(ui.view));
-  const nav=mobile=>navItems.map(([view,label,glyph])=>`<a href="#/${view}" data-nav="${view}" class="${active(view)?'active':''}" ${active(view)?'aria-current="page"':''}>${icon(glyph)}<span>${e(t(label))}</span></a>`).join('');
+  const live=ui.view==='test',pageTitle=live?`TEST · ${t(testSections[ui.testSection]||testSections.all)}`:t(titles[ui.view]);
+  document.title=`${pageTitle} | Salon de Six`;
+  const active=view=>live?ui.testSection===(view==='more'?'connection':view):ui.view===view||(view==='more'&&!['home','bookings','customers','messages','crm'].includes(ui.view));
+  const nav=mobile=>navItems.map(([view,label,glyph])=>{const target=live?`test/${view==='more'?'connection':view}`:view;return `<a href="#/${target}" data-nav="${target}" class="${active(view)?'active':''}" ${active(view)?'aria-current="page"':''}>${icon(glyph)}<span>${e(t(live&&view==='more'?'実TEST接続':label))}</span></a>`;}).join('');
   const mainView=({home,bookings,customers,messages:messagesView,crm})[ui.view];
-  const head=!['home','more','faq','questions','menus','campaigns','richmenu','settings','audit'].includes(ui.view)?`<div class="page-header"><div class="title-group"><a href="#/home" data-nav="home" class="back-button" aria-label="${e(t('ホームへ'))}">${icon('back')}</a><h1>${e(t(titles[ui.view]))}</h1></div><img class="page-mascots" src="./assets/salon-b-mascots.png" alt=""></div>`:'';
-  app.innerHTML=`<header class="app-header"><a class="brand" href="#/home" data-nav="home">Salon de Six</a><nav class="desktop-nav" aria-label="${e(t('メインメニュー'))}">${nav(false)}</nav><div class="header-actions"><select class="language-select" data-language aria-label="${e(t('表示言語'))}"><option value="ja" ${ui.locale==='ja'?'selected':''}>日本語</option><option value="en" ${ui.locale==='en'?'selected':''}>English</option><option value="th" ${ui.locale==='th'?'selected':''}>ไทย</option></select><a class="account-button" href="#/test" data-nav="test" aria-label="${e(t('アカウント・実TEST接続'))}">${icon('account')}</a></div></header><div class="mode-strip"><span class="mode-dot"></span><span id="mode-label">${e(t(ui.view==='test'?'実TEST・Googleログインが必要':'デモ・この端末に保存'))}</span>${ui.view!=='test'?`<span class="mode-note">${e(t('架空データ・送信なし'))}</span>`:''}<a class="mode-switch" href="#/${ui.view==='test'?'home':'test'}" data-nav="${ui.view==='test'?'home':'test'}">${e(t(ui.view==='test'?'デモに戻る':'TEST管理へ'))} →</a></div><main class="app-main" id="main" tabindex="-1">${storageIssue?`<div class="error-state" role="alert">${e(t('保存データを読み込めなかったため、架空データを表示しています'))}</div>`:''}${head}${mainView?mainView(context()):ui.view==='test'?'<section class="panel" id="live-test"></section>':renderSettingsView(context())}</main><nav class="bottom-nav" aria-label="${e(t('メインメニュー'))}">${nav(true)}</nav>`;
-  if(ui.view==='test')unmountLive=mountLiveTest(document.querySelector('#live-test'),{t,locale:ui.locale,connection:liveConnection,onStatus:status=>{const label=document.querySelector('#mode-label');if(label&&ui.view==='test')label.textContent=t(({connected:'実TESTデータを表示中',authenticated:'実TEST・読み込み中',error:'実TEST・接続エラー',expired:'実TEST・ログイン期限切れ',signing_in:'実TEST・ログイン中'})[status.status]||'実TEST・Googleログインが必要');}});
+  const head=!['home','more','faq','questions','menus','campaigns','richmenu','settings','audit'].includes(ui.view)?`<div class="page-header"><div class="title-group"><a href="#/${live?'test':'home'}" data-nav="${live?'test':'home'}" class="back-button" aria-label="${e(t('ホームへ'))}">${icon('back')}</a><h1>${e(pageTitle)}</h1></div><img class="page-mascots" src="./assets/salon-b-mascots.png" alt=""></div>`:'';
+  app.innerHTML=`<header class="app-header"><a class="brand" href="#/${live?'test':'home'}" data-nav="${live?'test':'home'}">Salon de Six</a><nav class="desktop-nav" aria-label="${e(t('メインメニュー'))}">${nav(false)}</nav><div class="header-actions"><select class="language-select" data-language aria-label="${e(t('表示言語'))}"><option value="ja" ${ui.locale==='ja'?'selected':''}>日本語</option><option value="en" ${ui.locale==='en'?'selected':''}>English</option><option value="th" ${ui.locale==='th'?'selected':''}>ไทย</option></select><a class="account-button" href="#/${live?'test/connection':'test'}" data-nav="${live?'test/connection':'test'}" aria-label="${e(t('アカウント・実TEST接続'))}">${icon('account')}</a></div></header><div class="mode-strip"><span class="mode-dot"></span><span id="mode-label">${e(t(ui.view==='test'?'実TEST・Googleログインが必要':'デモ・この端末に保存'))}</span>${ui.view!=='test'?`<span class="mode-note">${e(t('架空データ・送信なし'))}</span>`:''}<a class="mode-switch" href="#/${ui.view==='test'?'home':['bookings','customers','messages','crm'].includes(ui.view)?`test/${ui.view}`:'test'}" data-nav="${ui.view==='test'?'home':['bookings','customers','messages','crm'].includes(ui.view)?`test/${ui.view}`:'test'}">${e(t(ui.view==='test'?'デモに戻る':'TEST管理へ'))} →</a></div><main class="app-main" id="main" tabindex="-1">${storageIssue&&!live?`<div class="error-state" role="alert">${e(t('保存データを読み込めなかったため、架空データを表示しています'))}</div>`:''}${head}${mainView?mainView(context()):ui.view==='test'?'<section class="panel" id="live-test"></section>':renderSettingsView(context())}</main><nav class="bottom-nav" aria-label="${e(t('メインメニュー'))}">${nav(true)}</nav>`;
+  if(ui.view==='test')unmountLive=mountLiveTest(document.querySelector('#live-test'),{t,locale:ui.locale,connection:liveConnection,section:ui.testSection,onStatus:status=>{const label=document.querySelector('#mode-label');if(label&&ui.view==='test')label.textContent=t(({connected:'実TESTデータを表示中',authenticated:'実TEST・読み込み中',error:'実TEST・接続エラー',expired:'実TEST・ログイン期限切れ',signing_in:'実TEST・ログイン中'})[status.status]||'実TEST・Googleログインが必要');}});
 }
 function showModal(title,body,{confirm,cancel,onConfirm,html=false}={}){
   focusBeforeModal=document.activeElement;
@@ -45,8 +51,8 @@ function showModal(title,body,{confirm,cancel,onConfirm,html=false}={}){
 }
 function closeModal(all=false){if(busy)return;if(!all&&modal?.parent){const parent=modal.parent;modal=parent.model;modalRoot.replaceChildren(...parent.nodes);return;}if(modalRoot.querySelector('form'))ui.dirty=modal?.dirtyBefore||false;modal=null;modalRoot.replaceChildren();app.inert=false;document.body.classList.remove('modal-open');focusBeforeModal?.isConnected&&focusBeforeModal.focus();}
 function syncStored(){try{const next=validateState(JSON.parse(localStorage.getItem(STORE)||'null'));if(next){state=upgradeDemo(next);}}catch{}}
-function guarded(action){if(!ui.dirty&&!unmountLive?.hasUnsavedChanges?.()){syncStored();action();return;}showModal('保存していない変更があります','変更を破棄して移動しますか？',{confirm:'変更を破棄',cancel:'編集を続ける',onConfirm:()=>{ui.dirty=false;closeModal();syncStored();action();}});}
-function go(view,{reset=true}={}){guarded(()=>{ui.view=aliases[view]||view;if(reset){ui.edit=null;ui.selectedBooking='';}history.pushState(null,'',`#/${ui.view}`);render();window.scrollTo({top:0});});}
+function guarded(action){if(unmountLive?.isBusy?.()){notify('処理中');return;}if(!ui.dirty&&!unmountLive?.hasUnsavedChanges?.()){syncStored();action();return;}showModal('保存していない変更があります','変更を破棄して移動しますか？',{confirm:'変更を破棄',cancel:'編集を続ける',onConfirm:()=>{ui.dirty=false;closeModal();syncStored();action();}});}
+function go(view,{reset=true}={}){guarded(()=>{ui.view=route(view);ui.testSection=testSection(view);if(reset){ui.edit=null;ui.selectedBooking='';}history.pushState(null,'',`#/${currentPath()}`);render();window.scrollTo({top:0});});}
 function edit(kind,id=''){guarded(()=>{ui.edit={kind,id};ui.view=({customer:'customers',booking:'bookings',rule:'crm',faq:'faq',menu:'menus',campaign:'campaigns',coupon:'campaigns'})[kind]||ui.view;history.pushState(null,'',`#/${ui.view}`);render();document.querySelector('form[data-action]:not([data-action="ui.filter"]) input:not([type=hidden])')?.focus();});}
 const errorMessages={
  INVALID_IMAGE:'PNG・JPEG・WebPの500KB以下の画像を選んでください',
@@ -56,14 +62,17 @@ function persist(next){try{localStorage.setItem(STORE,JSON.stringify(next));}cat
 function captureOtherDrafts(type,payload){return [...document.querySelectorAll('form[data-dirty]')].filter(form=>!(form.dataset.action===type&&(!payload.id||form.querySelector('[name=id]')?.value===payload.id))).map(form=>({action:form.dataset.action,id:form.querySelector('[name=id]')?.value||'',fields:[...form.querySelectorAll('input,select,textarea')].map(el=>({name:el.name,value:el.value,checked:el.checked}))}));}
 function restoreDrafts(drafts){for(const draft of drafts){const form=[...document.querySelectorAll('form[data-action]')].find(f=>f.dataset.action===draft.action&&(f.querySelector('[name=id]')?.value||'')===draft.id);if(!form)continue;for(const entry of draft.fields){const input=[...form.querySelectorAll('input,select,textarea')].find(el=>el.name===entry.name);if(input){input.value=entry.value;if(input.type==='checkbox')input.checked=entry.checked;}}form.dataset.dirty='true';ui.dirty=true;}}
 function run(type,payload,key=crypto.randomUUID(),revision=state.revision){
+  const bookingDraft=type==='customer.add'?modal?.bookingDraft:null;
   const current=localStorage.getItem(STORE);if(current){let parsed=null;try{parsed=validateState(JSON.parse(current));}catch{}if(parsed&&parsed.revision!==state.revision)throw Error('REVISION_CONFLICT');if(!parsed){try{localStorage.setItem(`${STORE}-recovery`,current);}catch{throw Error('STORAGE_ERROR');}}}
   const drafts=captureOtherDrafts(type==='message.draft'||type==='message.note'?'message.compose':type,payload);
   const out=applyAction(state,type,payload,{idempotencyKey:key,expectedRevision:revision,nowISO:new Date().toISOString()});persist(out.state);ui.dirty=false;
-  if(type==='customer.add'){ui.selectedCustomer=out.result.id;ui.edit=null;}
+  if(type==='customer.add'){ui.selectedCustomer=out.result.id;ui.edit=bookingDraft?{kind:'booking',id:''}:null;}
   if(type==='booking.create'){ui.selectedBooking=out.result.id;ui.day=payload.day;ui.calendarMode='day';}
   if(type==='booking.change')ui.day=payload.day;
-  if(!['message.draft','message.note','question.save','settings.save','richmenu.save'].includes(type))ui.edit=null;
-  render();restoreDrafts(drafts);notify(type.startsWith('message.')?'下書きを保存しました':type==='crm.previewJob'?'プレビューを保存しました・送信なし':'保存しました');return out;
+  if(!bookingDraft&&!['message.draft','message.note','question.save','settings.save','richmenu.save'].includes(type))ui.edit=null;
+  render();restoreDrafts(drafts);
+  if(bookingDraft){const form=document.querySelector('form[data-action="booking.create"]');for(const el of form?.querySelectorAll('input[name],select[name],textarea[name]')||[]){if(Object.hasOwn(bookingDraft,el.name))el.value=bookingDraft[el.name];if(el.name==='customerId')el.value=out.result.id;}bookingResource(form);closeModal(true);ui.dirty=true;if(form)form.dataset.dirty='true';form?.querySelector('[name=customerId]')?.focus();}
+  notify(bookingDraft?'顧客を追加しました。予約の入力を続けられます':type.startsWith('message.')?'下書きを保存しました':type==='crm.previewJob'?'プレビューを保存しました・送信なし':'保存しました');return out;
 }
 function summaryFor(type,payload){
   if(type.startsWith('booking.')){
@@ -79,7 +88,8 @@ function summaryFor(type,payload){
 function confirmAction(type,payload){
   const key=crypto.randomUUID(),rev=state.revision;
   const title=({'booking.create':'この内容で予約を保存しますか？','booking.confirm':'予約を確定しますか？','booking.change':'この内容に変更しますか？','booking.cancel':'この予約を取り消しますか？','booking.attend':'来店を記録しますか？','message.draft':'返信の下書きを確認','message.note':'スタッフメモを確認','faq.publish':'表示内容を確認','customer.resume':'自動返信を再開しますか？','customer.takeover':'スタッフ対応に切り替えますか？','customer.resolve':'対応を完了しますか？','crm.cancelJob':'プレビューを取り消しますか？'})[type]||'内容を確認';
-  showModal(title,summaryFor(type,payload),{confirm:type==='booking.cancel'||type==='crm.cancelJob'?'取り消す':'保存する',html:true,onConfirm:()=>{try{run(type,payload,key,rev);closeModal(true);}catch(error){report(error);}}});
+  const confirmLabels={'booking.create':payload.status==='confirmed'?'予約を確定':'希望として保存','booking.confirm':'予約を確定','booking.change':'予約を変更','booking.cancel':'予約を取り消す','booking.attend':'来店を記録','message.draft':'下書きを保存','message.note':'スタッフメモを保存','richmenu.save':'デモに保存','faq.publish':payload.published?'デモに表示':'下書きに戻す','customer.takeover':'スタッフが対応','customer.resume':'自動返信を再開','customer.resolve':'対応を完了','crm.cancelJob':'プレビューを取り消す','crm.pauseJob':'保留する','crm.resumeJob':'再開する'};
+  showModal(title,summaryFor(type,payload),{confirm:confirmLabels[type]||'保存する',html:true,onConfirm:()=>{try{run(type,payload,key,rev);closeModal(true);}catch(error){report(error);}}});
 }
 function formValues(form){
   const read=container=>{const data={};for(const element of container.querySelectorAll('input[name],select[name],textarea[name]')){if(element.closest('[data-collection]')&&container===form)continue;if(element.disabled)continue;const name=element.name;if(element.hasAttribute('data-array')){data[name]??=[];if(element.checked)data[name].push(element.value);continue;}if(element.hasAttribute('data-bool'))data[name]=element.checked;else if(element.hasAttribute('data-number'))data[name]=element.value.trim()===''?NaN:Number(element.value);else if(element.hasAttribute('data-list'))data[name]=[...new Set(element.value.split(',').map(s=>s.trim()).filter(Boolean))];else if(element.hasAttribute('data-lines'))data[name]=[...new Set(element.value.split(/\r?\n/).map(s=>s.trim()).filter(Boolean))];else data[name]=element.value;}return data;};
@@ -109,15 +119,18 @@ document.addEventListener('click',event=>{
  if(el.matches('.skip-link')){event.preventDefault();document.querySelector('#main')?.focus();return;}
  if(el.hasAttribute('data-modal-close')){event.preventDefault();closeModal();return;}
  if(el.hasAttribute('data-modal-confirm')){event.preventDefault();if(busy)return;const callback=modal?.onConfirm;if(callback){busy=true;el.disabled=true;Promise.resolve().then(()=>{busy=false;callback();}).finally(()=>{busy=false;if(el.isConnected)el.disabled=false;});}return;}
+ if(el.dataset.shortcut){event.preventDefault();guarded(()=>{const shortcut=el.dataset.shortcut;if(shortcut==='today-bookings'){ui.calendarMode='day';ui.day=today;go('bookings');}else if(shortcut==='unanswered'){ui.filters.questionStatus='unanswered';ui.filters.questionSearch='';ui.filters.questionLocale='';ui.filters.questionFrom='';ui.filters.questionTo='';go('questions');}else if(['message-drafts','message-waiting'].includes(shortcut)){ui.messageFilter=shortcut==='message-drafts'?'drafts':'waiting';ui.selectedMessage='';ui.filters.messageSearch='';go('messages');}});return;}
  if(el.dataset.nav){event.preventDefault();go(el.dataset.nav);return;}
  if(el.dataset.edit){event.preventDefault();edit(el.dataset.edit,el.dataset.id);return;}
- if(el.dataset.customer){event.preventDefault();guarded(()=>{ui.selectedCustomer=el.dataset.customer;ui.filters.customerSearch='';ui.filters.customerSegment='';ui.edit=null;ui.view='customers';history.pushState(null,'','#/customers');render();});return;}
- if(el.dataset.message){event.preventDefault();guarded(()=>{ui.selectedMessage=el.dataset.message;ui.messageFilter='all';ui.filters.messageSearch='';ui.view='messages';ui.edit=null;history.pushState(null,'','#/messages');render();});return;}
+ if(el.dataset.customer){event.preventDefault();guarded(()=>{ui.selectedCustomer=el.dataset.customer;ui.filters.customerSearch='';ui.filters.customerSegment='';ui.edit=null;ui.view='customers';history.pushState(null,'','#/customers');render();focusPane('.detail-pane');});return;}
+ if(el.dataset.message){event.preventDefault();guarded(()=>{ui.selectedMessage=el.dataset.message;if(ui.view!=='messages'){ui.messageFilter='all';ui.filters.messageSearch='';}ui.view='messages';ui.edit=null;history.pushState(null,'','#/messages');render();focusPane('.detail-pane');});return;}
  if(el.dataset.booking){event.preventDefault();guarded(()=>{ui.selectedBooking=el.dataset.booking;ui.view='bookings';ui.edit=null;history.pushState(null,'','#/bookings');render();document.querySelector('.app-main > .panel:last-child')?.scrollIntoView({block:'nearest'});});return;}
  if(el.dataset.tab){guarded(()=>{if(el.dataset.tab==='calendar')ui.calendarMode=el.dataset.value;if(el.dataset.tab==='message'){ui.messageFilter=el.dataset.value;ui.selectedMessage='';}if(el.dataset.tab==='crm')ui.crmTab=el.dataset.value;ui.edit=null;render();});return;}
  if(el.dataset.dayOffset){guarded(()=>{ui.day=dateAdd(ui.day,Number(el.dataset.dayOffset));render();});return;}
  if(el.dataset.propose){edit('booking',el.dataset.id);const input=document.querySelector('input[name="time"]');if(input){input.value=el.dataset.propose;ui.dirty=true;}return;}
  const action=el.dataset.act,id=el.dataset.id;if(!action)return;
+ if(action==='focus-list'){focusPane('.list-pane');return;}
+ if(action==='booking.addCustomer'){const form=document.querySelector('form[data-action="booking.create"]');if(!form)return;const draft=formValues(form),markup=customerForm({...context(),ui:{...ui,edit:{kind:'customer',id:''}}});showModal('顧客を追加',markup.slice(markup.indexOf('<form ')),{html:true});modal.bookingDraft=draft;return;}
  if(['edit.close','close-edit'].includes(action)){guarded(()=>{ui.edit=null;render();});return;}
  if(action==='today'){guarded(()=>{ui.day=today;render();});return;}
  if(action==='attend-form'){const b=state.bookings.find(b=>b.id===id);showModal('来店を記録',attendForm(b,context()),{html:true});return;}
@@ -133,7 +146,7 @@ document.addEventListener('keydown',event=>{
  if(!modal)return;if(event.key==='Escape'){event.preventDefault();closeModal();}
  if(event.key==='Tab'){const elements=[...modalRoot.querySelectorAll('button:not([disabled]),input:not([type=hidden]),textarea,select,a[href]')].filter(el=>el.offsetParent!==null);const first=elements[0],last=elements.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus();}}
 });
-window.addEventListener('hashchange',()=>{const target=route(location.hash);if(target===ui.view)return;if(ui.dirty){history.replaceState(null,'',`#/${ui.view}`);guarded(()=>go(target));}else{ui.view=target;ui.edit=null;render();}});
-window.addEventListener('beforeunload',event=>{if(ui.dirty){event.preventDefault();event.returnValue='';}});
-window.addEventListener('storage',event=>{if(event.key===STORE&&event.newValue){try{const next=validateState(JSON.parse(event.newValue));if(next){if(!ui.dirty&&!modal){state=upgradeDemo(next);render();}else notify('別の画面で更新されました。保存前に内容を確認してください');}}catch{}}});
-ui.view=route(location.hash);render();
+window.addEventListener('hashchange',()=>{const target=route(location.hash),section=testSection(location.hash);if(target===ui.view&&(target!=='test'||section===ui.testSection))return;const next=target==='test'&&section!=='all'?`test/${section}`:target;if(ui.dirty||unmountLive?.hasUnsavedChanges?.()||unmountLive?.isBusy?.()){history.replaceState(null,'',`#/${currentPath()}`);go(next);}else{ui.view=target;ui.testSection=section;ui.edit=null;render();}});
+window.addEventListener('beforeunload',event=>{if(ui.dirty||unmountLive?.hasUnsavedChanges?.()||unmountLive?.isBusy?.()){event.preventDefault();event.returnValue='';}});
+window.addEventListener('storage',event=>{if(event.key===STORE&&event.newValue){try{const next=validateState(JSON.parse(event.newValue));if(next){if(!ui.dirty&&!modal){state=upgradeDemo(next);if(ui.view!=='test')render();}else notify('別の画面で更新されました。保存前に内容を確認してください');}}catch{}}});
+ui.view=route(location.hash);ui.testSection=testSection(location.hash);render();
