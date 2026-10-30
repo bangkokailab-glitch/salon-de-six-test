@@ -522,7 +522,7 @@ function createTestClient({ apiOrigin = '', clientId = '', fetchImpl = fetch, no
     expire(); if (authenticated && !token) throw new Error('unauthorized');
     const current = generation;
     const response = await fetchImpl(origin + path, { method, credentials: 'omit', cache: 'no-store', redirect: 'error',
-      signal: AbortSignal.timeout(10000), headers: { ...(body ? { 'content-type': 'application/json' } : {}),
+      signal: AbortSignal.timeout(path==='/api/test/operations/confirm'?45000:10000), headers: { ...(body ? { 'content-type': 'application/json' } : {}),
         ...(authenticated ? { authorization: `Bearer ${token}` } : {}) }, body: body ? JSON.stringify(body) : undefined });
     if (current !== generation) throw new Error('stale_response');
     if (response.status === 401) { clear(path === '/auth/google' ? 'error' : 'expired'); throw new Error('unauthorized'); }
@@ -600,7 +600,7 @@ function mountOperationsPanel(root,client) {
  const status=el('p','TEST操作候補（無送信）'), body=el('div'), review=el('section'), message=el('p');
  root.replaceChildren(status,message,body,review);
  let current=null,generation=0,busy=false,disposed=false;
- const bangkok=value=>{const d=new Date(value);return Number.isFinite(+d)?new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Bangkok',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(d):'未設定';};
+ const bangkok=value=>{if(value==null||value==='')return '未設定';const d=new Date(value);return Number.isFinite(+d)?new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Bangkok',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(d):'未設定';};
  const labels={'fixture.prepare':'架空TEST顧客の用意','booking.create':'架空TEST予約の作成','booking.reschedule':'予約日時変更','booking.cancel':'予約取消','customer.profile':'プロフィール変更','customer.settings':'言語・配信停止・bot・メモの変更','crm.draft':'CRM下書き保存'};
  const error=e=>{message.textContent=({disabled:'この操作はまだ有効化されていません。',stale_preview:'情報が変わったため再確認してください。',preview_expired:'確認期限を過ぎました。もう一度内容を確認してください。',target_busy:'この対象は結果確認中です。繰り返し操作しないでください。',not_found:'操作できる対象がありません。',unauthorized:'再ログインしてください。',birthday_consent_required:'誕生日の利用同意と配信停止状態を確認してください。'})[e.message]||'結果を確認できませんでした。確定操作の再送は同じ確認番号で結果を照会します。';};
  const clear=()=>{generation++;current=null;review.replaceChildren();};
@@ -639,9 +639,10 @@ function mountOperationsPanel(root,client) {
   const epoch=generation;
   try{const data=await client.operations('state');if(epoch!==generation||disposed)return;body.replaceChildren();if(message.textContent==='操作するにはログインしてください。')message.textContent='操作対象を読み込みました。';
    if(data.fixturePreparation)body.append(button('架空TEST顧客の用意を確認',()=>preview('fixture.prepare',data.fixturePreparation.requestId,{})));
+   for(const p of data.pendingOperations||[])body.append(button((labels[p.action]||'操作')+'の結果を確認（再実行なし）',async()=>{if(busy)return;busy=true;try{const r=await client.operations('confirm',{previewId:p.previewId});message.textContent=r.testCalendarEventChanged?'Google予定との照合が完了しました（再実行・LINE送信なし）。':'結果確認中です。再操作せず、時間をおいて同じ確認番号で照合してください。';if(r.testCalendarEventChanged){clear();await load();}}catch(e){error(e);}finally{busy=false;}}));
    const calendarForm=form('TESTカレンダーの空き時間');const from=field(calendarForm,'from','開始日','','date'),through=field(calendarForm,'through','終了日（含まない）','','date');calendarForm.append(button('カレンダーを確認（閲覧のみ）',async()=>{try{const d=await client.operations('calendar',{start:from.value,end:through.value});message.textContent=d.busy.length?d.busy.map(b=>bangkok(b.startAt)+'〜'+bangkok(b.endAt)).join('\n'):'指定期間に使用中の時間はありません。';}catch(e){error(e);}}));calendarForm.onsubmit=e=>e.preventDefault();
    const bookings=data.bookings||client.snapshot().bookings;
-   for(const b of bookings.filter(b=>b.readOnly||(data.writableBookingIds||[]).includes(b.id))){const f=form('TEST予約：'+(b.menu||b.id));f.append(el('p',(b.startsAt?bangkok(b.startsAt):'')+' ／ '+(b.status||'')));
+   for(const b of bookings.filter(b=>b.readOnly||(data.writableBookingIds||[]).includes(b.id))){if((data.pendingOperations||[]).some(p=>p.target===b.id))continue;const f=form('TEST予約：'+(b.menu||b.id));f.append(el('p',(b.startsAt?bangkok(b.startsAt):'')+' ／ '+(b.status||'')));
     if(b.readOnly){f.append(el('p','取消済みの履歴です。追加操作はできません。'));continue;}
     const at=field(f,'startAt','変更後の日時（バンコク）','','datetime-local');
     if(b.status==='pending_staff'){const end=field(f,'endAt','終了日時（バンコク）','','datetime-local');f.append(button('架空TEST予約の作成を確認',()=>preview('booking.create',b.id,{startAt:at.value+':00+07:00',endAt:end.value+':00+07:00'})));}else f.append(button('日時変更を確認',()=>preview('booking.reschedule',b.id,{startAt:at.value.length===16?at.value+':00+07:00':at.value+'+07:00'})),button('取消内容を確認',()=>preview('booking.cancel',b.id,{})));f.onsubmit=e=>e.preventDefault();
